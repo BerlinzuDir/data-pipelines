@@ -25,7 +25,7 @@ jobs:
           python-version: 3.8
       - name: Configure GPG Key
         run: |
-          echo -n "$GPG_KEY" | base64 --decode | gpg --import
+          echo -n "$GPG_KEY"  | gpg --import
         env:
           GPG_KEY: ${{ secrets.GPG_KEY }}
       - name: Reveal secrets
@@ -55,7 +55,7 @@ jobs:
           python-version: 3.8
       - name: Configure GPG Key
         run: |
-          echo -n "$GPG_KEY" | base64 --decode | gpg --import
+          echo -n "$GPG_KEY"  | gpg --import
         env:
           GPG_KEY: ${{ secrets.GPG_KEY }}
       - name: Reveal secrets
