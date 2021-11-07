@@ -1,6 +1,5 @@
 import os
-import sys
-
+import pathlib
 import gspread
 import ramda as R
 from oauth2client.service_account import ServiceAccountCredentials
@@ -9,7 +8,7 @@ from pydrive2.drive import GoogleDrive
 
 
 def connect_to_service_account(file_name: str) -> gspread.Client:
-    return gspread.service_account(os.path.join(sys.path[0], file_name))
+    return gspread.service_account(os.path.join(_get_path_of_file(), file_name))
 
 
 def connect_do_drive_with_service_account(
@@ -23,11 +22,14 @@ def connect_do_drive_with_service_account(
 
 
 def _get_service_account_credentials(file_name: str) -> ServiceAccountCredentials:
-    print(os.path.join(sys.path[0], file_name))
     return ServiceAccountCredentials.from_json_keyfile_name(
-        os.path.join(sys.path[0], file_name),
+        os.path.join(_get_path_of_file(), file_name),
         scopes="https://www.googleapis.com/auth/drive",
     )
+
+
+def _get_path_of_file() -> str:
+    return str(pathlib.Path(__file__).parent.resolve())
 
 
 def _authenticate_with_google_with_service_account(auth) -> GoogleAuth:
