@@ -2,16 +2,13 @@
 include .env
 export $(shell sed 's/=.*//' .env)
 
-test:
-	env
-
 build:
 	 DOCKER_BUILDKIT=1 docker-compose build
 
 setup:
 	docker-compose up -d
 
-down:
+teardown:
 	docker-compose down -v
 
 unittest:
@@ -28,6 +25,3 @@ stylecheck:
 
 watch:
 	docker exec -it airflow-scheduler pytest -f --ignore ./logs -k 'not integration'
-
-watchintegration:
-	docker exec -it airflow-scheduler pytest -k 'integration' -n 'auto' -f

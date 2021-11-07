@@ -5,13 +5,12 @@ description = "Pipelines to organize products uploads at BerlinzuDir"
 authors = ["Jakob J. Kolb <jakob.j.kolb@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "3.8.10"
+python = "^3.8.10"
 returns = "^0.16.0"
-apache-airflow = "^2.1.4"
 fsspec = "^2021.7.0"
 ramda = "^0.6.1"
 polars = "0.9.12"
-celery = "5.1.2"
+api-wrappers = {path = '../../libraries/api-wrappers', develop=true}
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.9.2"
