@@ -16,9 +16,8 @@ ARG YOUR_ENV
 
 ENV PYTHONFAULTHANDLER=1 \
     PYTHONUNBUFFERED=1 \
-    PIP_NO_CACHE_DIR=off \
     PIP_DISABLE_PIP_VERSION_CHECK=on \
-    POETRY_VERSION=1.1.11
+    POETRY_VERSION="1.1.11"
 
 RUN pip install "poetry==$POETRY_VERSION"
 
@@ -31,6 +30,7 @@ ADD services/airflow/airflow.cfg services/airflow/poetry.lock services/airflow/p
 # copy libs into the container, so their paths exist for editable installs
 COPY libraries ../../libraries
 
-RUN pip install --requirement <(poetry export  --without-hashes --dev --format requirements.txt)
+RUN poetry config virtualenvs.create false \
+  && poetry install --no-interaction --no-ansi
 
 ENV PYTHONPATH "${PYTHONPATH}:/opt/airflow/dags"

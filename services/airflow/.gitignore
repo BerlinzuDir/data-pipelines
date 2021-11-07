@@ -134,8 +134,5 @@ dmypy.json
 
 # secrets
 .gitsecret/keys/random_seed
-
+**/shop-secrets.json
 **/api-credentials.json
-
-# editor settings
-.idea
