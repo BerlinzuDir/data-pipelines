@@ -5,7 +5,6 @@ name: CI api-wrappers
 on:
   push:
     branches: [main]
-    paths: ["libraries/api-wrappers/*"]
   pull_request:
     branches: [main]
     paths: ["libraries/api-wrappers/*"]

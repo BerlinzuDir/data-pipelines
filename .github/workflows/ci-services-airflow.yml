@@ -7,7 +7,6 @@ on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ main ]
-    paths: ["services/airflow/**"]
   pull_request:
     branches: [ main ]
     paths: ["services/airflow/**"]
@@ -88,8 +87,6 @@ jobs:
         run: make setup
       - name: Wait for container health
         run: bash wait-for-healthy-container.sh airflow-scheduler 300
-      - name: Run DB migrations
-        run: make migrations
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
         if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_enabled }}
