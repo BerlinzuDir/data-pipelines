@@ -1,0 +1,1369 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - catalog.stolitschniy.shop
+      User-Agent:
+      - Python-urllib/3.8
+    method: GET
+    uri: https://catalog.stolitschniy.shop/private/2VNgFokABP/vendors/berlinzudir/export
+  response:
+    body:
+      string: "id,name,ru name,price,tax,weight,unit,category,tags,supplier,pic,description\r\n4030011750737,\"Akazienhonig
+        mit Sommertracht mild, fl\xFC\xDFig\",\u041C\u0451\u0434 \u0430\u043A\u0430\u0446\u0438\u0435\u0432\u044B\u0439,6.99,7,500.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011750737.jpg,\r\n4600893900492,\"Aromatisierter
+        Vodka \"\"Green Mark Rye\"\" 40% vol.\",\"A\u0440\u043E\u043C\u0430\u0442\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u0430\u044F
+        \u0432\u043E\u0434\u043A\u0430 \"\"\u0417\u0435\u043B\u0435\u043D\u0430\u044F
+        \u041C\u0430\u0440\u043A\u0430\"\", \u0420\u0436\u0430\u043D\u0430\u044F\"\"
+        40% \u0430\u043B\u043A.\",7.99,19,0.5,l,spirituosen,\"imported, online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4600893900492.jpg,Enth\xE4lt
+        Weizen und Roggen.\r\n4603514007105,\"Aromatisierter Vodka \"\"Imperial Collection
+        Gold\"\" 40% vol\",\"\u0412\u043E\u0434\u043A\u0430 \"\"Imperial Collection
+        Gold\"\" 40% \u0430\u043B\u043A.\",11.59,19,0.5,l,spirituosen,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4603514007105.jpg,\r\n4601728011949,\"Aromatisierter
+        Vodka \"\"Pjat Ozer- Five Lakes Osobaya\"\" 40% vol.\",\"\u0412\u043E\u0434\u043A\u0430
+        \"\"\u041F\u044F\u0442\u044C \u043E\u0437\u0451\u0440 - \u041E\u0441\u043E\u0431\u0430\u044F\"\"
+        40% \u0430\u043B\u043A.\",10.49,19,0.7,l,spirituosen,\"imported, online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4601728011949.jpg,\r\n4601728011932,\"Aromatisierter
+        Vodka \"\"Pjat Ozer Osobaya\"\" 40% vol.\",\"\u0412\u043E\u0434\u043A\u0430
+        \"\"\u041F\u044F\u0442\u044C \u043E\u0437\u0451\u0440 - \u041E\u0441\u043E\u0431\u0430\u044F\"\"
+        40% \u0430\u043B\u043A.\",7.5,19,0.5,l,spirituosen,\"imported, online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4601728011932.jpg,\r\n4030011350104,Auberginen
+        in scharfer Gem\xFCsezubereitung,\u0411\u0430\u043A\u043B\u0430\u0436\u0430\u043D\u044B
+        \u043C\u0430\u0440\u0438\u043D\u043E\u0432\u0430\u043D\u043D\u044B\u0435 \u0432
+        a\u0434\u0436\u0438\u043A\u0435,2.19,7,660.0,g,konserven,\"imported, online,
+        wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011350104.jpg,\"Auberginen
+        58%, Tomatenmark, Paprika 8,5%, Sonnenblumen\xF6l, Zucker, Salz, Knoblauch
+        1%, Essig aus Essigessenz, Peperoni gemahlen 0,1%\"\r\n4030011350227,Auberginen
+        in scharfer Gem\xFCsezubereitung,\u0411\u0430\u043A\u043B\u0430\u0436\u0430\u043D\u044B
+        \u0432 \u0430\u0434\u0436\u0438\u043A\u0435,1.89,7,680.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011350227.jpg,\r\n4030011420401,Auberginenp\xFCree,\u0418\u043A\u0440\u0430
+        \u0431\u0430\u043A\u043B\u0430\u0436\u0430\u043D\u043D\u0430\u044F \u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F,1.99,7,680.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011420401.jpg,\"Auberginen
+        77,4%, M\xF6hren, Tomatenmark, Zwiebeln, Sonnenblumen\xF6l, Salz, Zucker,
+        Sellerie, Gew\xFCrze.\"\r\n4030011420418,Auberginenp\xFCree,\u0418\u043A\u0440\u0430
+        \u0431\u0430\u043A\u043B\u0430\u0436\u0430\u043D\u043D\u0430\u044F \u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F,1.49,7,370.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011420418.jpg,\"Auberginen
+        77,4, M\xF6hren, Tomatenmark, Zwiebeln, Sonnenblumen\xF6l, Salz, Zucker, Sellerie,
+        Gew\xFCrze.\"\r\n4030011420425,Auberginenp\xFCree mit Peperoni,\u0418\u043A\u0440\u0430
+        \u0431\u0430\u043A\u043B\u0430\u0436\u0430\u043D\u043D\u0430\u044F \u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F
+        \u043E\u0441\u0442\u0440\u0430\u044F,2.19,7,680.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011420425.jpg,\"Auberginen
+        75,3%, M\xF6hren, Tomatenmark, Zwiebeln, Sonnenblumen\xF6l, Peperoni 2,7%,
+        Salz, Zucker, Sellerie, Gew\xFCrze.\"\r\n4030011350098,Auberginensalat mit
+        Gem\xFCse,\u0421\u0430\u043B\u0430\u0442 \u0438\u0437 \u0431\u0430\u043A\u043B\u0430\u0436\u0430\u043D
+        \u0441 \u043E\u0432\u043E\u0449\u0430\u043C\u0438,2.79,7,640.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011350098.jpg,\"Auberginen
+        29 %, Paprika 24 %, Tomaten 23 %, Zwiebeln 18 %, Zucker, Sonnenblumen\xF6l,
+        Knoblauch, Salz, schwarzer Pfeffer, Essig aus Essigessen.\"\r\n4030011350081,Auberginensalat
+        mit Wei\xDFkohl,\u0421\u0430\u043B\u0430\u0442 \u0438\u0437 \u0431\u0430\u043A\u043B\u0430\u0436\u0430\u043D
+        \u0441 \u0441 \u043A\u0430\u043F\u0443\u0441\u0442\u043E\u0439,2.79,7,660.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011350081.jpg,\"Auberginen
+        (40%), Wei\xDFkohl, Zwiebel, Karotten, Paprika, Sonnenblumen\xF6l, Knoblauch,
+        Zucker, Salz, S\xE4uerungsmittel: Essigs\xE4ure.\"\r\n4600682408475,\"Bier
+        \"\"Baltika\"\" Nr.8, 5,0% vol.\",\"\u041F\u0438\u0432\u043E \"\"\u0411\u0430\u043B\u0442\u0438\u043A\u0430\"\"
+        \u21168, 5,0% \u0430\u043B\u043A.\",1.19,19,0.47,l,spirituosen,\"imported,
+        online, p8, mehrweg, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4600682408475.jpg,\r\n4030011750713,\"Bl\xFCtenhonig
+        fein streichf\xE4hig \"\"Lugowoj\"\"\",\u041C\u0451\u0434 \u043B\u0443\u0433\u043E\u0432\u043E\u0439,4.99,7,500.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011750713.jpg,\r\n4033443562138,Bohnen
+        rot,\u0424\u0430\u0441\u043E\u043B\u044C \u043A\u0440\u0430\u0441\u043D\u0430\u044F,2.39,7,500.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4033443562138.jpg,\r\n4030011400274,Borschtsch
+        mit Rindfleisch,\u0411\u043E\u0440\u0449 \u0441 \u0433\u043E\u0432\u044F\u0434\u0438\u043D\u043E\u0439,2.19,7,530.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011400274.jpg,\"Rote
+        Bete 28%, Wei\xDFkohl, Kartoffel, Rindfleisch 10%, M\xF6hren, Zwiebel, Schweinefleisch,
+        Tomatenmark, Weizenmehl, Kochsalz, Zucker, Dill, Gew\xFCrze, Geschmacksverst\xE4rker
+        Mononatriumglutamat, S\xE4ureregulator Citronens\xE4ure, Sellerie, Sojaeiwei\xDF.\"\r\n4030011400267,Bortschtsch
+        nach ukrainischer Art mit Schweinefleisch,\u0423\u043A\u0440\u0430\u0438\u043D\u0441\u043A\u0438\u0439
+        \u0431\u043E\u0440\u0449 \u0441\u043E \u0441\u0432\u0438\u043D\u0438\u043D\u043E\u0439,2.19,7,530.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011400267.jpg,\"Schweinefleisch
+        20%, Rote Bete 17%, Wei\xDFkohl, Schweineschmalz, Tomatenmark, Bohnen, Paprika,
+        Weizenmehl, Kochsalz, Zucker, Gew\xFCrze, Sellerie, Geschmacksverst\xE4rker
+        Mononatriumglutamat, S\xE4ureregulator Zitronens\xE4ure.\"\r\n4850001001157,Brandy
+        Ani/6Jahre/40%,\"\u0411\u0440\u0435\u043D\u0434\u0438 \u0410\u043D\u0438/\u0410\u0440\u043C.0,5\u043B
+        40%/6 \u043B\u0435\u0442/\u043F\u043E\u0434.\u0443\u043F. 1/6\",19.99,19,0.5,l,spirituosen,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4850001001157.jpg,\r\n4850001000013,Brandy
+        Ararat/3Jahre/40%,\u0411\u0440\u0435\u043D\u0434\u0438 \u0410\u0440\u0430\u0440\u0430\u0442/\u0410\u0440\u043C.40%,15.2,19,0.5,l,spirituosen,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4850001000013.jpg,\r\n4850001000037,Brandy
+        Ararat/5Jahre/40%,\"\u0411\u0440\u0435\u043D\u0434\u0438 \u0410\u0440\u0430\u0440\u0430\u0442/5
+        \u043B\u0435\u0442/\u0410\u0440\u043C 40% 0,5\u043B/\u043F\u043E\u0434.\u0443\u043F.
+        1/6\",17.8,19,0.5,l,spirituosen,\"imported, online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4850001000037.jpg,\r\n4850005980021,Brandy
+        Arma/5Jahre/40%,\u0411\u0440\u0435\u043D\u0434\u0438 \u0410\u0440\u043C\u0430/5
+        \u0437\u0432\u0451\u0437\u0434/\u0410\u0440\u043C. 40%,10.4,19,0.5,l,spirituosen,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4850005980021.jpg,\r\n4850005980076,Brandy
+        Arma/7Jahre/40%,\u0411\u0440\u0435\u043D\u0434\u0438 \u0410\u0440\u043C\u0430/7
+        \u0437\u0432\u0451\u0437\u0434/\u0410\u0440\u043C. 40%,11.2,19,0.5,l,spirituosen,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4850005980076.jpg,\r\n4030011560664,Buchweizen
+        ger\xF6stet,\"\u041A\u0440\u0443\u043F\u0430 \u0433\u0440\u0435\u0447\u043D\u0435\u0432\u0430\u044F
+        \"\"\u042F\u0434\u0440\u0438\u0446\u0430\"\"\",2.59,7,900.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011560664.jpg,\r\n4260099271019,\"Buchweizen
+        \"\"Jadriza\"\"\",,2.59,7,1.0,kg,getreide,\"online, wolt\",,https://catalog.stolitschniy.shop/static/img/products/normalized/4260099271019.jpg,\"Portionsgr\xF6\xDFe:\t100
+        Gramm\r\nEnergie (kJ):\t1310.00 kJ\r\nEnergie (kcal):\t313.09 kcal\r\nFett:\t3.30
+        Gramm\r\nKohlenhydrate:\t61.10 Gramm\r\nEiwei\xDF\t12.60 Gramm\"\r\n4260099271026,\"Buchweizen
+        \"\"Jadriza\"\" stark ger\xF6stet\",,2.59,7,1.0,kg,getreide,\"online, wolt\",,https://catalog.stolitschniy.shop/static/img/products/normalized/4c36437442304a71b918c69b71360ccc.jpg,\r\n4030957191182,Buchweizenmehl,\u0413\u0440\u0435\u0447\u043D\u0435\u0432\u0430\u044F
+        \u043C\u0443\u043A\u0430,0.99,7,300.0,g,getreide,\"imported, online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957191182.jpg,\r\n4030011350173,\"Bulgarische
+        Gem\xFCsezubereitung aus Zucchini \"\"Jasichki\"\" nach Art des Hauses\",\"\u0411\u043E\u043B\u0433\u0430\u0440\u0441\u043A\u0438\u0435
+        \u043A\u0430\u0431\u0430\u0447\u043A\u0438 \"\"\u042F\u0437\u044B\u0447\u043A\u0438\"\"
+        \u043F\u043E-\u0434\u043E\u043C\u0430\u0448\u043D\u0435\u043C\u0443\",2.39,7,520.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011350173.jpg,\r\n4030011350340,\"Bulgarische
+        Gem\xFCsezubereitung \"\"Po-Vostochny\"\" aus Zucchini\",\"\u0411\u043E\u043B\u0433\u0430\u0440\u0441\u043A\u0438\u0439
+        \u043E\u0432\u043E\u0449\u043D\u043E\u0439 \u043F\u0440\u043E\u0434\u0443\u043A\u0442
+        \"\"\u041F\u043E-\u0412\u043E\u0441\u0442\u043E\u0447\u043D\u043E\u043C\u0443\"\"
+        \u0438\u0437 \u043A\u0430\u0431\u0430\u0447\u043A\u043E\u0432\",2.19,7,520.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011350340.jpg,\r\n4030011350357,\"Bulgarische
+        Gem\xFCsezubereitung \"\"Yurcha\"\" aus Zucchini\",\"\u0417\u0430\u043A\u0443\u0441\u043A\u0430
+        \u0438\u0437 \u043A\u0430\u0431\u0430\u0447\u043A\u043E\u0432 \"\"\u042E\u0440\u0447\u0430\"\"\",2.39,7,520.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011350357.jpg,\r\n4030011350326,Bulgarisches
+        Auberginenragout,\u0411\u043E\u043B\u0433\u0430\u0440\u0441k\u043E\u0435 \u0440\u0430\u0433\u0443
+        \u0438\u0437 \u0436\u0430\u0440\u0435\u043D\u044B\u0445 \u0431\u0430\u043A\u043B\u0430\u0436\u0430\u043D,1.79,7,345.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011350326.jpg,\"Auberginen
+        47%, Paprika, Tomatenmark, Raps\xF6l, Salz, Zucker, Knoblauch, Petersilie.\"\r\n4033443592463,Dessertpulver
+        mit Erdbeergeschmack,\u041A\u0438\u0441\u0435\u043B\u044C \u043A\u043B\u0443\u0431\u043D\u0438\u0447\u043D\u044B\u0439,0.89,7,225.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4033443592463.jpg,\"Zucker,
+        Kartoffelst\xE4rke, Erdbeersaftkonzentrat, S\xE4uerungsmittel Citronens\xE4ure,
+        Aroma, Farbstoff: E 122, E 102. Tartrazin, Azorubin: Kann Aktivit\xE4t und
+        Aufmerksamkeit bei Kindern beeintr\xE4chtigen.\"\r\n4033443592449,Dessertpulver
+        mit Himbeergeschmack,\u041A\u0438\u0441\u0435\u043B\u044C \u043C\u0430\u043B\u0438\u043D\u043E\u0432\u044B\u0439,0.89,7,225.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4033443592449.jpg,\"Zucker,
+        Kartoffelst\xE4rke, Himbeersaftkonzentrat, S\xE4uerungsmittel Citronens\xE4ure,
+        Aroma, Farbstoffe: E 124, E 122. Azorubin, Cochenillerot A: Kann Aktivit\xE4t
+        und Aufmerksamkeit bei Kindern beeintr\xE4chtigen.\"\r\n4033443592432,Dessertpulver
+        mit Mehrfruchtgeschmack,\"\u041A\u0438\u0441\u0435\u043B\u044C \"\"\u0424\u0440\u0443\u043A\u0442\u043E\u0432\u043E\u0435
+        \u0430\u0441\u0441\u043E\u0440\u0442\u0438\"\"\",0.89,7,225.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4033443592432.jpg,\r\n4033443592425,Dessertpulver
+        mit Waldbeerengeschmack,\u041A\u0438\u0441\u0435\u043B\u044C \u041B\u0435\u0441\u043D\u0430\u044F
+        \u044F\u0433\u043E\u0434\u0430 \u0437\u0435\u043C\u043B\u044F\u043D\u0438\u043A\u0430,0.89,7,225.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4033443592425.jpg,\r\n1403,Dorade,,1.29,7,100.0,g,fisch,\"online,
+        ww\",,https://catalog.stolitschniy.shop/static/img/products/normalized/1403.jpg,\"Dieser
+        Edelfisch liefert ein w\xFCrzig wei\xDFes und aromatisches Fleisch. Seine
+        feinsten Filets eignen sich ideal zum Grillen in Kombination mit mediterranen
+        Kr\xE4utern an.\r\nDie Dorade erfreut sich im Ganzen oder als Filet wachsender
+        Beliebtheit, und das zu Recht!\r\n\"\r\n4074900325125,\"Ebereschenbeere mit
+        Weinbrand \"\"Rjabina na Konjake\"\" 20 % vol.\",\u0420\u044F\u0431\u0438\u043D\u0430
+        \u043D\u0430 \u043A\u043E\u043D\u044C\u044F\u043A\u0435 20% \u0430\u043B\u043A.,5.69,19,0.5,l,getraenke,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4074900325125.jpg,\r\n4033443682225,Ebereschenbeerenlik\xF6r
+        20% vol.,\"\u0421\u043B\u0430\u0434\u043A\u0430\u044F \u043D\u0430\u0441\u0442\u043E\u0439\u043A\u0430
+        \"\"\u0420\u044F\u0431\u0438\u043D\u0430 \u043D\u0430 \u043A\u043E\u043D\u044C\u044F\u043A\u0435\"\"
+        20%\u0430\u043B\u043A.\",4.29,19,0.5,l,spirituosen,\"imported, online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4033443682225.jpg,\r\n4030957721044,Eiernudeln
+        - Schnittnudeln,\u041B\u0430\u043F\u0448\u0430 \u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F
+        (2 \u044F\u0439\u0446\u0430) \u0432\u044B\u0441\u0448\u0438\u0439 \u0441\u043E\u0440\u0442,1.49,7,500.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957721044.jpg,\"Hartweizengrie\xDF,
+        Eier 10%\"\r\n4030011500073,Eingelegte Cherrytomaten,\u041F\u043E\u043C\u0438\u0434\u043E\u0440\u044B
+        \u0447\u0435\u0440\u0440\u0438,1.79,7,720.0,ml,konserven,\"imported, online,
+        wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011500073.jpg,\"Cherry-Tomaten,
+        Zucker, Gew\xFCrze, Salz, Zwiebeln, Essig aus Essigs\xE4ure, Knoblauch.\"\r\n4030957511539,Eingelegte
+        Cornichons Premium,\u041A\u043E\u0440\u043D\u0438\u0448\u043E\u043D\u044B,1.75,7,680.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957511539.jpg,\"Cornichons,
+        Zucker , Salz, S\xE4uerungsmittel: Essigs\xE4ure, Gew\xFCrze, Kaliumiodat.\"\r\n4030011500097,Eingelegte
+        gelbe Tomaten,\u041A\u043E\u043D\u0441\u0435\u0440\u0432\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0435
+        \u0436\u0435\u043B\u0442\u044B\u0435 \u043F\u043E\u043C\u0438\u0434\u043E\u0440\u044B,3.59,7,1850.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011500097.jpg,\"gelbe
+        Tomaten, Zucker, Salz, Zwiebel, Meerrettichblatt, Petersilie, Dill, Knoblauch,
+        S\xE4uerungsmittel Essigs\xE4ure, schwarzer Pfeffer, Lorbeerblatt.\"\r\n4030011500158,Eingelegte
+        gelbe Tomaten,\u0422\u043E\u043C\u0430\u0442\u044B \u043C\u0430\u0440\u0438\u043D\u043E\u0432\u0430\u043D\u043D\u044B\u0435
+        \u0436\u0435\u043B\u0442\u044B\u0435,1.89,7,1000.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011500158.jpg,\"gelbe
+        Tomaten, Zucker, Salz, Dill, Meerrettichblatt, Petersilie, S\xE4uerungsmittel:
+        Essigs\xE4ure, Knoblauch, Piment, Lorbeerblatt.\"\r\n4030011520217,\"Eingelegte
+        gelbe und rote Tomaten und Gurken \"\"Assorti Trikolor\"\"\",\u0410\u0441\u0441\u043E\u0440\u0442\u0438
+        \u0422\u0440\u0438\u043A\u043E\u043B\u043E\u0440 \u0436\u0451\u043B\u0442\u044B\u0435
+        \u0438 \u043A\u0440\u0430\u0441\u043D\u044B\u0435 \u043F\u043E\u043C\u0438\u0434\u043E\u0440\u044B
+        \u0438 \u043E\u0433\u0443\u0440\u0446\u044B,2.59,7,1620.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011520217.jpg,\"gelbe
+        Tomaten, Gurken, rote Tomaten, Zwiebel, Zucker, Salz, Sellerie, Knoblauch,
+        S\xE4uerungsmittel Essigs\xE4ure, Dill, schwarzer Pfeffer, Lorbeerblatt.\"\r\n4030957511515,\"Eingelegte
+        Gurken \"\"Derevenskie\"\"\",\u041E\u0433\u0443\u0440\u0446\u044B \u0434\u0435\u0440\u0435\u0432\u0435\u043D\u0441\u043A\u0438\u0435,1.49,7,880.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957511515.jpg,\"Gurken,
+        Zucker, Salz, S\xE4uerungsmittel E260, Dill, Knoblauch, schwarzer Pfeffer,
+        Nelkenpfeffer, Lorbeerblatt, Kaliumiodat.\"\r\n4030957511522,\"Eingelegte
+        Gurken \"\"Derevenskie ostrie\"\", scharf\",\u041E\u0433\u0443\u0440\u0446\u044B
+        \u0434\u0435\u0440\u0435\u0432\u0435\u043D\u0441\u043A\u0438\u0435 \u043E\u0441\u0442\u0440\u044B\u0435,1.49,7,880.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957511522.jpg,\"Gurken,
+        Zucker, Salz, S\xE4uerungsmittel E260, Dill, Paprika scharf, Lorbeerblatt,
+        Kaliumiodat.\"\r\n4033443372041,\"Eingelegte Patissons \"\"Solnechnye\"\"
+        scharf\",\"\u041F\u0430\u0442\u0438\u0441\u0441\u043E\u043D\u044B \u043E\u0441\u0442\u0440\u044B\u0435
+        \"\"\u0421\u043E\u043B\u043D\u0435\u0447\u043D\u044B\u0435\"\"\",2.09,7,860.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4033443372041.jpg,\"Patissons,
+        Branntweinessig, Zucker, M\xF6hren, harfe Paprika 0,4%, S\xE4uerungsmittel:
+        Citronens\xE4ure, Aroma.\"\r\n4030011500028,Eingelegte Tomaten,\u041F\u043E\u043C\u0438\u0434\u043E\u0440\u044B
+        \u043A\u043E\u043D\u0441\u0435\u0440\u0432\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0435
+        \u0431\u0435\u0437 \u0443\u043A\u0441\u0443\u0441\u0430,1.99,7,1000.0,ml,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011500028.jpg,\"Tomaten,
+        Zucker, Salz, Paprika, Knoblauch, Pfeffer, Gew\xFCrze, S\xE4uerungsmittel
+        Citronens\xE4ure.\"\r\n4030957501417,\"Eingelegte Tomaten \"\"Malosolnie\"\"\",\u041F\u043E\u043C\u0438\u0434\u043E\u0440\u044B
+        \u043C\u0430\u043B\u043E\u0441\u043E\u043B\u044C\u043D\u044B\u0435,2.79,7,1700.0,ml,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957501417.jpg,\"Tomaten,
+        Zucker, Salz, S\xE4uerungsmittel Citronens\xE4ure, Peperoni, Knoblauch, Kirschblatt,
+        Weintraubenblatt, Lorbeerblatt, Dill, Pfeffer, Kaliumiodat.\"\r\n4030957501035,\"Eingelegte
+        Tomaten \"\"Malosolnije\"\"\",\u041F\u043E\u043C\u0438\u0434\u043E\u0440\u044B
+        \u043C\u0430\u043B\u043E\u0441\u043E\u043B\u044C\u043D\u044B\u0435,1.49,7,1062.0,ml,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957501035.jpg,\"Tomaten,
+        Zucker, Salz, S\xE4uerungsmittel: Citronens\xE4ure, Peperoni, Knoblauch, Kirschblatt,
+        Weintraubenblatt, Lorbeerblatt, Dill, Pfeffer, Kaliumiodat.\"\r\n4030011500059,Eingelegte
+        Tomaten nach kawkasischer Art,\"\u041F\u043E\u043C\u0438\u0434\u043E\u0440\u044B
+        \"\"\u041F\u043E- \u043A\u0430\u0432\u043A\u0430\u0437\u0441\u043A\u0438\"\"\",1.79,7,850.0,ml,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011500059.jpg,\"Tomaten
+        (50%), Zucker, Essig aus Essigessenz, Dill, Salz, Meerrettichbl\xE4tter, Kr\xE4uter,
+        Knoblauch, Zwiebeln, roter Pfeffer, Lorbeerbl\xE4tter.\"\r\n4030011500066,Eingelegte
+        Tomaten nach khersoner Art,\"\u041F\u043E\u043C\u0438\u0434\u043E\u0440\u044B
+        \"\"\u041F\u043E-\u0445\u0435\u0440\u0441\u043E\u043D\u0441\u043A\u0438\"\"\",1.79,7,850.0,ml,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011500066.jpg,\"Tomaten
+        (50%), Zucker, Essig aus Essigessenz, Dill, Salz, Meerrettichbl\xE4tter, Kr\xE4uter,
+        Knoblauch, Zwiebeln, roter Pfeffer, Lorbeerbl\xE4tter.\"\r\n4030957501042,\"Eingelegte
+        Tomaten \"\"Na Pososchok\"\", scharf\",\"\u041F\u043E\u043C\u0438\u0434\u043E\u0440\u044B
+        \u043E\u0441\u0442\u0440\u044B\u0435 \u043C\u0430\u043B\u043E\u0441\u043E\u043B\u044C\u043D\u044B\u0435
+        \"\"\u041D\u0430 \u043F\u043E\u0441\u043E\u0448\u043E\u043A\"\" \u0431\u0435\u0437
+        \u0443\u043A\u0441\u0443\u0441\u0430\",1.49,7,1062.0,ml,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957501042.jpg,\"Tomaten,
+        Zucker, Speisesalz, S\xE4uerungsmittel: Citronens\xE4ure, Peperoni, scharfe
+        Kirschpeperoni, Knoblauch, Kirschblatt, Weintraubenblatt, Lorbeerblatt, Dill,
+        Pfeffer, Kaliumiodat.\"\r\n4030957501424,\"Eingelegte Tomaten \"\"Na Pososchok\"\",
+        scharf\",\"\u041F\u043E\u043C\u0438\u0434\u043E\u0440\u044B \u043E\u0441\u0442\u0440\u044B\u0435
+        \u043C\u0430\u043B\u043E\u0441\u043E\u043B\u044C\u043D\u044B\u0435 \"\"\u041D\u0430
+        \u043F\u043E\u0441\u043E\u0448\u043E\u043A\"\" \u0431\u0435\u0437 \u0443\u043A\u0441\u0443\u0441\u0430\",2.79,7,1700.0,ml,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957501424.jpg,\"Tomaten,
+        Zucker, Speisesalz, S\xE4uerungsmittel Citronens\xE4ure, Peperoni, scharfe
+        Kirschpeperoni, Knoblauch, Kirschblatt, Weintraubenblatt, Lorbeerblatt, Dill,
+        Pfeffer, Kaliumiodat.\"\r\n4030011500141,\"Eingelegte Tomaten \"\"Pomidory
+        solnechnye\"\"\",\u041F\u043E\u043C\u0438\u0434\u043E\u0440\u044B \u0441\u043E\u043B\u043D\u0435\u0447\u043D\u044B\u0435,2.79,7,1950.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011500141.jpg,\"Tomaten,
+        Zwiebel, Zucker, Salz, Sellerie, Knoblauch, S\xE4uerungsmittel Essigs\xE4ure,
+        Dill, schwarzer Pfeffer, Lorbeerblatt.\"\r\n4033443502011,Eingelegte Tomaten
+        scharf,\u041F\u043E\u043C\u0438\u0434\u043E\u0440\u044B \u043E\u0441\u0442\u0440\u044B\u0435,1.49,7,880.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4033443502011.jpg,\"Tomaten,
+        Zucker, scharfe Paprika 2,5%, Salz, Dill, Selleriebl\xE4tter, Branntweinessig,
+        Gew\xFCrze, S\xE4ureregulator Citronens\xE4ure.\"\r\n4030011500042,Eingelegte
+        Tomaten scharf,\"\u041F\u043E\u043C\u0438\u0434\u043E\u0440\u044B \u043A\u043E\u043D\u0441\u0435\u0440\u0432\u0430\u043D\u043D\u044B\u0435
+        \"\"\u041E\u0433\u043E\u043De\u043A\"\" \u0431\u0435\u0437 \u0443\u043A\u0441\u0443\u0441\u0430\",1.99,7,1000.0,ml,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011500042.jpg,\"Tomaten,
+        Zucker, Salz, Peperoni, Knoblauch, Gew\xFCrze, S\xE4uerungsmittel Citronens\xE4ure.\"\r\n4030957501547,\"Eingelegte
+        Tomaten \"\"Tiraspolskije-Moldawanka\"\"\",\"\u041C\u0430\u0440\u0438\u043D\u043E\u0432\u0430\u043D\u043D\u044B\u0435
+        \u043F\u043E\u043C\u0438\u0434\u043E\u0440\u044B \"\"\u0422\u0438\u0440\u0430\u0441\u043F\u043E\u043B\u044C\u0441\u043A\u0438\u0435\"\"\",2.69,7,1500.0,ml,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957501547.jpg,\"Tomaten,
+        Zucker, Salz, S\xE4uerungsmittel: Citronens\xE4ure, Essigs\xE4ure; Peperoni,
+        Knoblauch, Lorbeerblatt, Dill, schwarzer Pfeffer, Kaliumiodat.\"\r\n4030957521002,\"Eingelegte
+        Tomaten und Gurken \"\"Na Pososchok\"\"\",\"\u041A\u043E\u043D\u0441\u0435\u0440\u0432\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0435
+        \u043F\u043E\u043C\u0438\u0434\u043E\u0440\u044B \u0438 \u043E\u0433\u0443\u0440\u0446\u044B
+        \"\"\u041D\u0430 \u043F\u043E\u0441\u043E\u0448\u043E\u043A\"\", \u043F\u0438\u043A\u0430\u043D\u0442\u043D\u044B\u0435.\",1.59,7,1062.0,ml,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957521002.jpg,\"Tomaten
+        32%, Gurken 19%, Zucker, Salz, S\xE4uerungsmittel: Essigs\xE4ure, Citronens\xE4ure;
+        Peperoni, scharfe Kirschpeperoni, Knoblauch, Kirschblatt, Weintraubenblatt,
+        Lorbeerblatt, Dill, Pfeffer, Kaliumiodat.\"\r\n4030011400069,\"Eintopf nach
+        georgischer Art mit Reis \"\"Chartscho\"\"\",\"\u0421\u0443\u043F \"\"\u0425\u0430\u0440\u0447\u043E\"\"\",1.39,7,500.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011400069.jpg,\r\n4260007240236,Emelja
+        Ajvar,\u0410\u0439\u0432\u0430\u0440 350g 1/12 Emelja,1.59,7,350.0,g,konserven,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260007240236.jpg,\r\n4260007247778,Emelja
+        Assorti Tom.+Gurken hausgem.Nezhnoe Nr.2,\"\u0410\u0441\u0441\u043E\u0440\u0442\u0438
+        \u0414\u043E\u043C\u0430\u0448\u043D\u0435\u0435 \u041D\u0435\u0436\u043D\u043E\u0435
+        \u21162 \u041F\u043E\u043C\u0438\u0434\u043E\u0440\u044B+\u041E\u0433\u0443\u0440\u0446\u044B
+        1,7L 1/6 Emelja\",2.89,7,1.7,l,konserven,\"imported, online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260007247778.jpg,\r\n4260007247792,Emelja
+        Assorti Tom.+Gurken mit Dill,\"\u0410\u0441\u0441\u043E\u0440\u0442\u0438
+        \u0414\u043E\u043C\u0430\u0448\u043D\u0435\u0435 \u041F\u043E\u043C\u0438\u0434\u043E\u0440\u044B+\u041E\u0433\u0443\u0440\u0446\u044B
+        \u0443\u043A\u0440\u043E\u043F\u043D\u043E\u0435 1,7L 1/6 Emelja\",3.19,7,1.7,l,konserven,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260007247792.jpg,\r\n4260007247785,Emelja
+        Assorti Tom.+Gurken scharf Nr.3,\"\u0410\u0441\u0441\u043E\u0440\u0442\u0438
+        \u0414\u043E\u043C\u0430\u0448\u043D\u0435\u0435 \u21163 \u041F\u043E\u043C\u0438\u0434\u043E\u0440\u044B+\u041E\u0433\u0443\u0440\u0446\u044B
+        \u043E\u0441\u0442\u0440\u043E\u0435 1,7L 1/6 Emelja\",2.89,7,1.7,l,konserven,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260007247785.jpg,\r\n4260007240151,Emelja
+        Auberginenpueree,\u0418\u043A\u0440\u0430 \u0431\u0430\u043A\u043B\u0430\u0436\u0430\u043D\u043D\u0430\u044F,1.39,7,360.0,ml,konserven,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260007240151.jpg,\r\n4260007244500,Emelja
+        Auberginenpueree Nezhnaja,\u0418\u043A\u0440\u0430 \u0431\u0430\u043A\u043B\u0430\u0436\u0430\u043D\u043D\u0430\u044F
+        \u041D\u0435\u0436\u043D\u0430\u044F,2.19,7,540.0,g,konserven,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260007244500.jpg,\r\n4260007240502,Emelja
+        Auberginenpueree Samorskaja,\u0418\u043A\u0440\u0430 \u0431\u0430\u043A\u043B\u0430\u0436\u0430\u043D\u043D\u0430\u044F
+        \u0437\u0430\u043C\u043E\u0440\u0441\u043A\u0430\u044F,2.19,7,720.0,ml,konserven,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260007240502.jpg,\r\n4260007246498,Emelja
+        Blumenkohl nach georgischer Art,\u0426\u0432\u0435\u0442\u043D\u0430\u044F
+        \u043A\u0430\u043F\u0443\u0441\u0442\u0430 \u043F\u043E-\u0433\u0440\u0443\u0437\u0438\u043D\u0441\u043A\u0438,2.49,7,530.0,g,konserven,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260007246498.jpg,\r\n4260007240229,Emelja
+        Gemueseragout Gurman,\u0413\u0443\u0440\u043C\u0430\u043D \u0440\u0430\u0433\u0443
+        \u043E\u0432\u043E\u0449\u043D\u043E\u0435,2.59,7,560.0,g,konserven,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260007240229.jpg,\r\n4260007246528,Emelja
+        Gemueseragout mit gebratener Paprika,\u0420\u0430\u0433\u0443 \u043E\u0432\u043E\u0449\u043D\u043E\u0435
+        \u0441 \u0436\u0430\u0440\u0435\u043D. \u043F\u0435\u0440\u0446\u0435\u043C,1.89,7,350.0,g,konserven,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260007246528.jpg,\r\n4260007246511,Emelja
+        Mediterranes Ratatouille mit Pilzen,\u0420\u0430\u0442\u0430\u0442\u0443\u0439
+        \u0441 \u0433\u0440\u0438\u0431\u0430\u043C\u0438,1.89,7,350.0,g,konserven,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260007246511.jpg,\r\n4260007240144,Emelja
+        Zucchinipueree,\u0418\u043A\u0440\u0430 \u043A\u0430\u0431\u0430\u0447\u043A\u043E\u0432\u0430\u044F,1.39,7,350.0,ml,konserven,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260007240144.jpg,\r\n4260007246924,Emelja
+        Zucchinipueree Domaschnaja,\u0418\u043A\u0440\u0430 \u043A\u0430\u0431\u0430\u0447\u043A\u043E\u0432\u0430\u044F
+        \u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F,1.99,7,540.0,g,konserven,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260007246924.jpg,\r\n4260007240670,Emelja
+        Zucchinipueree Nezhnaja,\u0418\u043A\u0440\u0430 \u043A\u0430\u0431\u0430\u0447\u043A\u043E\u0432\u0430\u044F
+        \u041D\u0435\u0436\u043D\u0430\u044F,2.29,7,580.0,g,konserven,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260007240670.jpg,\r\n4030011560701,Erbsen,\u0433\u043E\u0440\u043E\u0445,1.39,7,900.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011560701.jpg,\r\n4030011400076,Erbseneintopf,\u0413\u043E\u0440\u043E\u0445\u043E\u0432\u044B\u0439
+        \u0441\u0443\u043F.,1.39,7,500.0,g,konserven,\"imported, online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011400076.jpg,\"Erbsen
+        65%, Zwiebeln, Wasser, Karotten, Raps\xF6l, Kochsalz, Gew\xFCrze.\"\r\n4030011560152,Erbsen
+        halbiert,\u0413\u043E\u0440\u043E\u0445 \u043F\u043E\u043B\u043E\u0432\u0438\u043D\u0447\u0430\u0442\u044B\u0439,0.99,7,900.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011560152.jpg,\r\n4840022005647,\"Erdbeer-Konfit\xFCre
+        extra, aus gro\xDFen Fruchtst\xFCckchen\",\u0412\u0430\u0440\u0435\u043D\u044C\u0435
+        \u0438\u0437 \u043A\u043B\u0443\u0431\u043D\u0438\u043A\u0438 \u0422\u041C
+        \xABVita\xBB,3.39,7,680.0,g,suesswaren,\"imported, online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4840022005647.jpg,\"Erdbeeren,
+        Glukose-Fruktose-Sirup, Zucker, S\xE4ureregulator Citronens\xE4ure. Hergestellt
+        aus 45g Fr\xFCchten je 100g.\"\r\n4030011788013,\"Feingeb\xE4ck \"\"Fruktowie\"\"
+        russischer Art, mit Fruchtgeschmack\",\"\u0420\u0443\u0441\u0441\u043A\u0438\u0435
+        \u041F\u0440\u044F\u043D\u0438\u043A\u0438 \"\"\u0424\u0440\u0443\u043A\u0442\u043E\u0432\u044B\u0435\"\"\",0.99,7,400.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011788013.jpg,\r\n4030011788112,Feingeb\xE4ck
+        mit Honig (4%) russischer Art,\u0420\u0443\u0441\u0441\u043A\u0438\u0435 \u041F\u0440\u044F\u043D\u0438\u043A\u0438
+        c \u043C\u0451\u0434\u043E\u043C,0.99,7,400.0,g,suesswaren,\"imported, online,
+        wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011788112.jpg,\r\n4033443782260,\"Feingeb\xE4ck
+        mit Karamellgeschmack \"\"Assorti\"\"\",\"\u041F\u0440\u044F\u043D\u0438\u043A\u0438
+        \"\"\u0410\u0441\u0441\u043E\u0440\u0442\u0438\"\"\",0.99,7,400.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4033443782260.jpg,\"Weizenmehl,
+        Zucker, Invertzuckersirup, Roggenmehl, Backfett (Sonnenblumen\xF6l teilweise
+        geh\xE4rtet, Palm\xF6l, Palmolein, Sonnenblumen\xF6l, Emulgator: E 471, Antioxidationsmittel:
+        E 320, E 321), Karamell, Sonnenblumen\xF6l, Backtriebmittel: E 503, E 500,
+        Aroma.\"\r\n4033443782253,\"Feingeb\xE4ck mit Minzgeschmack \"\"Holodok\"\"\",\"\u041F\u0440\u044F\u043D\u0438\u043A\u0438
+        \"\"\u0425\u043E\u043B\u043E\u0434\u043E\u043A\"\"\",0.99,7,400.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4033443782253.jpg,\"Weizenmehl,
+        Zucker, Invertzuckersirup, Backfett (Sonnenblumen\xF6l teilweise geh\xE4rtet,
+        Palm\xF6l, Palmolein, Sonnenblumen\xF6l, Emulgator: E 471, Antioxidationsmittel::
+        E 320, E 321), Backtriebmittel: E 503, E 500, Aroma.\"\r\n4030011788068,\"Feingeb\xE4ck
+        \"\"Mjatnie\"\" russischer Art, mit Pfefferminzgeschmack\",\"\u0420\u0443\u0441\u0441\u043A\u0438\u0435
+        \u041F\u0440\u044F\u043D\u0438\u043A\u0438 \"\"\u041C\u044F\u0442\u043D\u044B\u0435\"\"\",0.99,7,400.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011788068.jpg,\r\n4030011788075,\"Feingeb\xE4ck
+        \"\"Moloschnij smak\"\" russischer Art\",\"\u0420\u0443\u0441\u0441\u043A\u0438\u0435
+        \u041F\u0440\u044F\u043D\u0438\u043A\u0438 \"\"\u041C\u043E\u043B\u043E\u0447\u043D\u044B\u0439
+        \u0441\u043C\u0430\u043A\"\"\",0.99,7,400.0,g,suesswaren,\"imported, online,
+        wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011788075.jpg,\r\n4030011788044,\"Feingeb\xE4ck
+        \"\"Podmoskovnie\"\" russischer Art\",\"\u0420\u0443\u0441\u0441\u043A\u0438\u0435
+        \u041F\u0440\u044F\u043D\u0438\u043A\u0438 \"\"\u041F\u043E\u0434\u043C\u043E\u0441\u043A\u043E\u0432\u043D\u044B\u0435\"\"\",0.99,7,400.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011788044.jpg,\r\n4030011788082,\"Feingeb\xE4ck
+        russischer Art, mit Mandelgeschmack\",\"\u0420\u0443\u0441\u0441\u043A\u0438\u0435
+        \u041F\u0440\u044F\u043D\u0438\u043A\u0438 \"\"\u041C\u0438\u043D\u0434\u0430\u043B\u044C\u043D\u044B\u0439
+        \u0430\u0440\u043E\u043C\u0430\u0442\"\"\",0.99,7,400.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011788082.jpg,\r\n4030011788020,\"Feingeb\xE4ck
+        \"\"Saporoschskie figurnie\"\"\",\"\u041F\u0440\u044F\u043D\u0438\u043A\u0438
+        \"\"\u0417\u0430\u043F\u043E\u0440\u043E\u0436\u0441\u043A\u0438\u0435 \u0444\u0438\u0433\u0443\u0440\u043D\u044B\u0435\"\"\",0.99,7,400.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011788020.jpg,\r\n4030011788037,\"Feingeb\xE4ck
+        \"\"Severnie\"\" russischer Art\",\"\u0420\u0443\u0441\u0441\u043A\u0438\u0435
+        \u041F\u0440\u044F\u043D\u0438\u043A\u0438 \"\"\u0421\u0435\u0432\u0435\u0440\u043D\u044B\u0435\"\"\",0.99,7,400.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011788037.jpg,\r\n4601713001702,\"Feingeb\xE4ck
+        \"\"Tulskij Prjanik\"\" mit Apfelf\xFCllung\",\"\u041F\u0440\u044F\u043D\u0438\u043A
+        \"\"Tulskij Prjanik \u0441 \u044F\u0431\u043B\u043E\u0447\u043D\u043E\u0439
+        \u043D\u0430\u0447\u0438\u043D\u043A\u043E\u0439\",0.79,7,140.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4601713001702.jpg,\"Weizenmehl,
+        Zucker, Apfelf\xFCllung 14,7% (Apfelp\xFCree 47,6%, Zucker, Glukosesirup,
+        S\xE4ureregulator E330, Konservierungsstoff Schwefeldioxid), Vollei, Pflanzenfett
+        (pflanzliche Fette (Palm\xF6l, Shea), Emulgator E471), Honig, Backtriebmittel:
+        E503, E500; Aroma, S\xE4ureregulator \u0415330. Kann Spuren von Milch und
+        Soja enthalten.\"\r\n4601713001719,\"Feingeb\xE4ck \"\"Tulskij Prjanik\"\"
+        mit karamellisierter Milchcremef\xFCllung\",\"\u0422\u0443\u043B\u044C\u0441\u043A\u0438\u0439
+        \u043F\u0440\u044F\u043D\u0438\u043A \u0441 \u043D\u0430\u0447\u0438\u043D\u043A\u043E\u0439
+        \"\"\u0412\u0430\u0440\u0451\u043D\u0430\u044F \u0441\u0433\u0443\u0449\u0451\u043D\u043A\u0430\"\"\",0.79,7,140.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4601713001719.jpg,\"Weizenmehl,
+        Zucker, Cremef\xFCllung 11,6% (Milch, Magermilch, Magermilchpulver, Zucker,
+        Milchstreichfett 72,5%, pflanzliches Fett und \xD6l (Palm\xF6l, Sonnenblumen\xF6l)
+        ganz geh\xE4rtet), Vollei, Pflanzenfett (pflanzliche Fette (Palm\xF6l, Shea),
+        Emulgator E471), Honig, Backtriebmittel: E503, E500; Aroma, S\xE4ureregulator
+        \u0415330. Kann Spuren von Soja enthalten.\"\r\n4030957761019,\"Geb\xE4ckringe
+        \"\"Malutka\"\" mit Vanillegeschmack\",\"\u0421\u0443\u0448\u043A\u0438 \"\"M\u0430\u043B\u044E\u0442\u043A\u0430\"\"
+        \u0441 \u0432\u0430\u043D\u0438\u043B\u044C\u043D\u044B\u043C \u0432\u043A\u0443\u0441\u043E\u043C\",0.79,7,180.0,g,teigwaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957761019.jpg,\"Weizenmehl,
+        Wasser, Zucker, Raps\xF6l, Palm\xF6l, Hefe, Speisesalz, Aroma, Kaliumiodat.
+        Kann Spuren von Erdn\xFCssen und Milch enthalten.\"\r\n4030957761071,\"Geb\xE4ckringe
+        \"\"Mal\xFCtka\"\" Sliwotschnie\",\"\u0421\u0443\u0448\u043A\u0438 \"\"M\u0430\u043B\u044E\u0442\u043A\u0430\"\"
+        \u0441\u043E \u0441\u043B\u0438\u0432\u043E\u0447\u043D\u044B\u043C \u0432\u043A\u0443\u0441\u043E\u043C\",0.79,7,180.0,g,teigwaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957761071.jpg,\"Weizenmehl,
+        Zucker, Wasser, Palm\xF6l, Farbstoff Beta-Carotin, pflanzliches \xD6l, Hefe,
+        Jodsalz, Aromen. (Kann Spuren von Erdnuss, Mohn und Milch enthalten).\"\r\n4030011350074,Gebratene
+        Auberginen mit Knoblauch,\u0411\u0430\u043A\u043B\u0430\u0436\u0430\u043D\u044B
+        \u0436\u0430\u0440\u0435\u043D\u044B\u0435 \u0441 \u0447\u0435\u0441\u043D\u043E\u043A\u043E\u043C,3.19,7,640.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011350074.jpg,\"Auberginen
+        (72%), Paprika (15%), Sonnenblumen\xF6l, Chili (2%), Knoblauch(2%), Salz.\"\r\n4033443842124,\"Gef\xFCllte
+        Schaumzuckerware \"\"Sefir Sguschjonnoe Moloko\"\"\",\"\u0417\u0435\u0444\u0438\u0440
+        \u0441 \u043D\u0430\u0447\u0438\u043D\u043A\u043E\u0439 \"\"\u0421\u0433\u0443\u0449\u0435\u043D\u043D\u043E\u0435
+        \u043C\u043E\u043B\u043E\u043A\u043E\"\"\",1.69,7,300.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4033443842124.jpg,\"Zucker,
+        Glukosesirup, karamellisiertes gezuckertes Kondensmilcherzeugnis 12,5% (Vollmilch,
+        Zucker, Laktose), Apfelp\xFCree, Eiklar, Puderzucker, Geliermittel Agar-Agar,
+        S\xE4ureregulator E270, Aroma.\"\r\n4030011410426,Gem\xFCsemischung pikant,\u0411\u043E\u043B\u0433\u0430\u0440\u0441\u043A\u0438\u0439
+        \u043F\u0435\u0440\u0435\u0446 \u0440\u0435\u0437\u0430\u043D\u043D\u044B\u0439
+        \u0441 \u043E\u0432\u043E\u0449\u0430\u043C\u0438,2.39,7,710.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011410426.jpg,\"Paprika,
+        M\xF6hre, Zwiebel, Tomaten, Sellerie, Zucker, pflanzliches \xD6l, Salz, Peperoni.\"\r\n4030011410419,Gem\xFCsemischung
+        pikant scharf,\"\u0411\u043E\u043B\u0433\u0430\u0440\u0441\u043A\u0438\u0439
+        \u043F\u0435\u0440\u0435\u0446 \u0440\u0435\u0437\u0430\u043D\u043D\u044B\u0439
+        \u0441 \u043E\u0432\u043E\u0449\u0430\u043C\u0438, \u043E\u0441\u0442\u0440\u044B\u0439\",2.39,7,710.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011410419.jpg,\"Paprika,
+        M\xF6hre, Zwiebel, Tomaten, Sellerie, Zucker, pflanzliches \xD6l, Salz, Peperoni.\"\r\n4030011350258,\"Gem\xFCsemischung
+        \"\"Sommer\"\"\",\"\u0421\u0430\u043B\u0430\u0442 \"\"\u041B\u0435\u0442\u043E\"\"\",2.69,7,650.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011350258.jpg,\"Auberginen
+        52%, Paprika 15,6%, Sonnenblumen\xF6l, Zwiebeln, Moehren, Tomatenmark, Salz,
+        Pfeffer.\"\r\n4030011350029,\"Gem\xFCsesalat \"\"Belozerkowskij\"\"\",\"\u0421\u0430\u043B\u0430\u0442
+        \"\"\u0411\u0435\u043B\u043E\u0446\u0435\u0440\u043A\u043E\u0432\u0441\u043A\u0438\u0439\"\"\",2.09,7,660.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011350029.jpg,\"Wei\xDFkohl
+        (40%), Paprika (20%), M\xF6hren (18%), Zwiebeln (12%), Sonnenblumen\xF6l,
+        Salz, Zucker, Essig aus Essigessenz, roter Paprika.\"\r\n4030011350012,\"Gem\xFCsesalat
+        \"\"Belozerkowskij\"\"\",\"\u0421\u0430\u043B\u0430\u0442 \"\"\u0411\u0435\u043B\u043E\u0446\u0435\u0440\u043A\u043E\u0432\u0441\u043A\u0438\u0439\"\"
+        \u043D\u0435 \u043E\u0441\u0442\u0440\u044B\u0439\",1.95,7,660.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011350012.jpg,\"Wei\xDFkohl
+        (40%), Paprika (20%), M\xF6hren (18%), Zwiebeln (12%), Sonnenblumen\xF6l,
+        Salz, Zucker, Essig aus Essigessenz, roter Pfeffer.\"\r\n4030011350197,\"Gem\xFCsesalat
+        \"\"Dunaiskij\"\"\",\"\u041E\u0432\u043E\u0449\u043D\u043E\u0439 \u0441\u0430\u043B\u0430\u0442
+        \"\"\u0414\u0443\u043D\u0430\u0439\u0441\u043A\u0438\u0439\"\"\",1.89,7,670.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011350197.jpg,\"gr\xFCne
+        Tomaten, Zwiebeln, M\xF6hren, Paprika, Zucker, Essig aus Essigessenz, Sonnenblumen\xF6l,
+        Salz, Gew\xFCrze.\"\r\n4030011350135,Gem\xFCsesalat mit Reis. Gem\xFCse 65%.,\u041E\u0432\u043E\u0449\u043D\u043E\u0439
+        \u0441\u0430\u043B\u0430\u0442 \u0441 \u0440\u0438\u0441\u043E\u043C,1.99,7,660.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011350135.jpg,\"Tomaten,
+        Reis 21%, Zwiebeln ger\xF6stet, M\xF6hren gebraten, Paprika gebraten, Sonnenblumen\xF6l,
+        Zucker, Salz, S\xE4uerungsmittel: Essigs\xE4ure, Chilipulver.\"\r\n4030011350388,\"Gem\xFCsesalat,
+        scharf-s\xFC\xDF\",\u0421\u0430\u043B\u0430\u0442 \u041E\u0441\u0442\u0440\u043E-\u0421\u043B\u0430\u0434\u043A\u0438\u0439,1.99,7,680.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011350388.jpg,\"Paprika
+        21%, M\xF6hren 21%, gr\xFCne Tomaten 16%, Zwiebeln 16%, Spargelbohnen 9%,
+        Zucker, Sonnenblumen\xF6l, Tomatenmark, Salz, modifizierte St\xE4rke, S\xE4uerungsmittel:
+        Essigs\xE4ure, Sesamsamen, Chili gemahlen.\"\r\n4030011350609,\"Gem\xFCsesalat
+        \"\"Vinegret\"\" nach russischer Art\",\u041E\u0432\u043E\u0449\u043D\u043E\u0439
+        \u0441\u0430\u043B\u0430\u0442 \u0412\u0438\u043D\u0435\u0433\u0440\u0435\u0442,1.59,7,500.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011350609.jpg,\"Rote
+        Bete 35%, Bohnen, Wei\xDFkohl, Kartoffeln, Karotten, Zwiebeln, eingelegte
+        Gurken, Raps\xF6l, Salz, S\xE4ureregulator Essigs\xE4ure, schwarzer Pfeffer,
+        Zucker, Gew\xFCrze.\"\r\n4030011350517,Gem\xFCsezubereitung,\u041E\u0432\u043E\u0449\u043D\u043E\u0435
+        \u0440\u0430\u0433\u0443,2.29,7,530.0,g,konserven,\"imported, online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011350517.jpg,\"Paprika
+        61%, Auberginen 12%, Zwiebeln, Tomatenmark, Sonnenblumen\xF6l, Salz, Knoblauch,
+        Petersilie, S\xE4uerungsmittel Essigs\xE4ure.\"\r\n4030011350234,\"Gem\xFCsezubereitung
+        aus blanchierten Auberginen (45%), nach griechischer Art\",\"\u041E\u0432\u043E\u0449\u043D\u043E\u0439
+        \u043F\u0440\u043E\u0434\u0443\u043A\u0442 \u0438\u0437 \u0431\u043B\u0430\u043D\u0448\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0445
+        \u0431\u0430\u043A\u043B\u0430\u0436\u0430\u043D\u043E\u0432 (45%), \u043F\u043E
+        \u0433\u0440\u0435\u0447\u0435\u0441\u043A\u0438\",1.69,7,680.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011350234.jpg,\"blanchierte
+        Auberginen, ger\xF6stete M\xF6hren mit Zwiebeln, Wasser, Tomatenmark, Sonnenblumen\xF6l,
+        Zucker, Salz, Weizenmehl, Oliven\xF6l.\"\r\n4030011420302,Gem\xFCsezubereitung
+        aus kleingehackten Auberginen,\u0418\u043A\u0440\u0430 \u0438\u0437 \u0436\u0430\u0440\u0435\u043D\u044B\u0445
+        \u0431\u0430\u043A\u043B\u0430\u0436\u0430\u043D,1.99,7,540.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011420302.jpg,\"Auberginen
+        59%, Paprika 13%, Sonnenblumen\xF6l, Tomatenmark, Zucker, Knoblauch, Salz,
+        S\xE4ureregulator: E575.\"\r\n4030011420319,Gem\xFCsezubereitung aus kleingehackten
+        Zucchini,\u0418\u043A\u0440\u0430 \u0438\u0437 \u0436\u0430\u0440\u0435\u043D\u044B\u0445
+        \u043A\u0430\u0431\u0430\u0447\u043A\u043E\u0432,1.99,7,540.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011420319.jpg,\"Zucchini
+        81%, Karotten 8,3%, Tomatenmark, Sonnenblumen\xF6l, Salz, Zucker, Knoblauch,
+        S\xE4ureregulator: E575, Citronens\xE4ure; schwarzer Pfeffer, Dill\xF6l, modifizierte
+        St\xE4rke.\"\r\n4030011420074,\"Gem\xFCsezubereitung aus Paprika (50%) und
+        M\xF6hren (27%), nach mediterraner Art\",\u0418\u043A\u0440\u0430 \u0438\u0437
+        \u0441\u043B\u0430\u0434\u043A\u043E\u0433\u043E \u043F\u0435\u0440\u0446\u0430,2.19,7,680.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011420074.jpg,\r\n4030011420067,Gem\xFCsezubereitung
+        aus p\xFCrierten K\xFCrbissen,\u0418\u043A\u0440\u0430 \u043E\u0432\u043E\u0449\u043D\u0430\u044F
+        \u0438\u0437 \u0442\u044B\u043A\u0432\u044B,1.49,7,680.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011420067.jpg,\r\n4030011410013,Gem\xFCsezubereitung
+        mit gegrillter Paprika nach makedonischer Art,\u041E\u0432\u043E\u0449\u043D\u0430\u044F
+        \u0438\u043A\u0440\u0430 \u0441 \u043F\u0435\u0447\u0451\u043D\u044B\u043C
+        \u043F\u0435\u0440\u0446\u0435\u043C \u043F\u043E-\u043C\u0430\u043A\u0435\u0434\u043E\u043D\u0441\u043A\u0438,2.85,7,550.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011410013.jpg,\r\n4030011420531,Gem\xFCsezubereitung
+        mit gr\xFCnen Tomaten,\u0418\u043A\u0440\u0430 \u0438\u0437 \u0437\u0435\u043B\u0435\u043D\u044B\u0445
+        \u043F\u043E\u043C\u0438\u0434\u043E\u0440,2.79,7,670.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011420531.jpg,\"gr\xFCne
+        Tomaten 43,9%, Karotten, Paprika, Zwiebeln, Sonnenblumen\xF6l, Zucker, Petersilie,
+        Dill, Knoblauch, Pfeffer, Salz, Essig aus Essigessenz.\"\r\n4030011420500,Gem\xFCsezubereitung
+        mit kleingehackten Auberginen,\u0418\u043A\u0440\u0430 \u0431\u0430\u043A\u043B\u0430\u0436\u0430\u043D\u043D\u0430\u044F
+        \u0440\u0443\u0431\u043B\u0435\u043D\u0430\u044F,2.49,7,650.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011420500.jpg,\"Auberginen
+        41,5%, Tomaten, Zwiebeln, Sonnenblumen\xF6l, Salz.\"\r\n4030011420524,Gem\xFCsezubereitung
+        mit Tomaten und \xC4pfeln,\u041F\u043E\u043C\u0438\u0434\u043E\u0440\u043D\u043E-\u044F\u0431\u043B\u043E\u0447\u043D\u0430\u044F
+        \u0438\u043A\u0440\u0430,2.99,7,670.0,g,konserven,\"imported, online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011420524.jpg,\"Tomaten
+        35,5%, Karotten, Apfel 14,2%, Paprika, Zwiebeln, Sonnenblumen\xF6l, Zucker,
+        Salz, Knoblauch, Dill, Petersilie, Pfeffer, Essig aus Essigessenz.\"\r\n4030011350371,\"Gem\xFCsezubereitung
+        \"\"Salat Mexiko\"\"\",\"\u0421\u0430\u043B\u0430\u0442 \"\"\u041C\u0435\u043A\u0441\u0438\u043A\u0430\u043D\u0430\"\"\",1.99,7,690.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011350371.jpg,\r\n4030011350524,Gem\xFCsezubereitung
+        scharf,\"\u041E\u0432\u043E\u0449\u043D\u043E\u0435 \u0440\u0430\u0433\u0443,
+        \u043E\u0441\u0442\u0440\u043E\u0435\",2.39,7,550.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011350524.jpg,\"Paprika
+        61%, Auberginen 12%, Zwiebeln, Tomatenmark, Sonnenblumen\xF6l, Salz, Knoblauch,
+        Petersilie, S\xE4uerungsmittel Essigs\xE4ure, Chiliextrakt.\"\r\n4030011560169,Gerstengraupen,\u041F\u0435\u0440\u043B\u043E\u0432\u0430\u044F
+        \u043A\u0440\u0443\u043F\u0430,1.19,7,900.0,g,getreide,\"imported, online,
+        wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011560169.jpg,\r\n4030957561329,Gerstengraupen,\u041F\u0435\u0440\u043B\u043E\u0432\u0430\u044F
+        \u043A\u0440\u0443\u043F\u0430,1.19,7,800.0,g,getreide,\"imported, online,
+        wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957561329.jpg,\r\n4030011560060,Gerstengr\xFCtze,\u042F\u0447\u043D\u0435\u0432\u0430\u044F
+        \u043A\u0440\u0443\u043F\u0430,0.99,7,800.0,g,getreide,\"imported, online,
+        wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011560060.jpg,\r\n4030957591074,\"Getr\xE4nkepulver
+        \"\"Kissel\"\" mit Erdbeergeschmack\",\u0421\u0443\u0445\u043E\u0439 \u043A\u043B\u0443\u0431\u043D\u0438\u0447\u043D\u044B\u0439
+        \u043A\u0438\u0441\u0435\u043B\u044C,0.89,7,240.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957591074.jpg,\"Zucker,
+        Kartoffelst\xE4rke, S\xE4ureregulatoren: E330, E331; Trennmittel E551, Maltodextrin,
+        Aroma, Erdbeersaftkonzentrat 0,15%, Farbstoffe: E120, E160\u0430. Kann Spuren
+        von Schalenfr\xFCchten, Milchbestandteilen und glutenhaltigem Getreide enthalten.\"\r\n4030957591050,\"Getr\xE4nkepulver
+        \"\"Kissel\"\" mit Himbeergeschmack\",\u0421\u0443\u0445\u043E\u0439 \u043C\u0430\u043B\u0438\u043D\u043E\u0432\u044B\u0439
+        \u043A\u0438\u0441\u0435\u043B\u044C,0.89,7,240.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957591050.jpg,\"Zucker,
+        Kartoffelst\xE4rke, S\xE4ureregulatoren: E330, E331; Maltodextrin, Aroma,
+        Trennmittel: E551, Himbeersaftkonzentrat 0,15%, Farbstoffe: E120, E163. Kann
+        Spuren von Schalenfr\xFCchten, Milchbestandteilen und glutenhaltigem Getreide
+        enthalten.\"\r\n4030011300116,\"Gezuckerte Kondensmilch \"\"Sgusch\xF6nka\"\"
+        8% Fett\",\"\u0421\u0433\u0443\u0449\u0451\u043D\u043D\u043E\u0435 \u0446\u0435\u043B\u044C\u043D\u043E\u0435
+        \u043C\u043E\u043B\u043E\u043A\u043E \u0441 \u0441\u0430\u0445\u0430\u0440\u043E\u043C,
+        8% \u0436\u0438\u0440\u043D\u043E\u0441\u0442\u0438\",1.19,7,397.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011300116.jpg,\"Vollmilch,
+        Zucker.\"\r\n4030011300192,\"Gezuckerte Kondensmilch \"\"Sgusch\xF6nka\"\"
+        8% Fett\",\u0421\u0433\u0443\u0449\u0435\u043D\u043D\u043E\u0435 \u043C\u043E\u043B\u043E\u043A\u043E
+        8% \u0436\u0438\u0440\u0430,2.99,7,1000.0,g,molkerei,\"imported, online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011300192.jpg,\"Vollmilch,
+        Zucker.\"\r\n4030011300147,\"Gezuckerte Kondensmilch \"\"Sgusch\xF6nka\"\"
+        9% Fett\",C\u0433\u0443\u0449\u0451\u043D\u043D\u043E\u0435 \u043C\u043E\u043B\u043E\u043A\u043E,1.39,7,397.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011300147.jpg,\"Vollmilch,
+        Zucker.\"\r\n4030011300154,Gezuckertes Kondensmilcherzeugnis mit fettarmen
+        Kakao,\u0421\u0433\u0443\u0449\u0435\u043D\u043D\u043E\u0435 \u043C\u043E\u043B\u043E\u043A\u043E
+        \u0441 \u043A\u0430\u043A\u0430\u043E,1.6,7,397.0,g,molkerei,\"imported, online,
+        wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011300154.jpg,\"Vollmilch
+        (51%), Zucker (46%), Fettarmes Kakaopulver (3%).\"\r\n4030011300123,\"Gezuckertes
+        und gekochtes Kondensmilcherzeugnis \"\"Sgusch\xF6nka Warjonka\"\" 6% Fett\",C\u0433\u0443\u0449\u0451\u043D\u043D\u043E\u0435
+        \u043C\u043E\u043B\u043E\u043A\u043E \u0432\u0430\u0440\u0451\u043D\u043E\u0435,1.6,7,397.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011300123.jpg,\"Milch
+        (Vollmilch, Magermilch), Zucker 48%, Stabilisator Dinatriumphosphat.\"\r\n4260077960010,Gorbuscha-Lachskaviar
+        Klassik 95g,,6.5,7,95.0,g,kaviar,\"online, wolt\",Zarendom,https://catalog.stolitschniy.shop/static/img/products/normalized/672aa4ebc03743298b5f8b67a39cbd10.jpg,\"Gorbuscha-Kaviar
+        (Kaviar vom Buckellachs) - geh\xF6rt zu den beliebtesten Lachskaviarsorten
+        und bietet ein au\xDFerordentlich gutes Preis-Qualit\xE4ts-Verh\xE4ltnis.
+        Der strahlend-orangenfarbige Rogen ist delikat und zart. Dieser Kaviar enth\xE4lt
+        viel Eiwei\xDF, mehrere Vitamine und besonders wertvolles Fischfett (Omega-3-Fetts\xE4uren).
+        Diese Kombination kann einen willkommenen Beitrag f\xFCr eine gesunde Ern\xE4hrung
+        leisten. Ein Plastikdeckel erleichtert die Aufbewahrung nach dem \xD6ffnen.\r\n\r\nZutatenliste:
+        Buckellachsrogen, Salz, Sorbins\xE4ure.\r\n\r\nN\xE4hrwertangaben pro 100g:
+        Brennwert Kcal 231 / 964 KJ ; Fett in g - 13,0, davon ges\xE4ttigte Fetts\xE4uren
+        in g - 3,0 ; Kohlenhydrate in g - 2,7, davon Zucker in g - 0,0 ; Eiwei\xDF
+        in g - 25,7 ; Salz in g - 2.8\r\nBei einer Lagerungstemperatur von 0\xB0 bis
+        +4\xB0C unge\xF6ffnet ca. 6 Monate haltbar.\r\nHersteller: Zarendom Lebensmittel
+        GmbH\"\r\n4260077960737,Gorbuscha-Lachskaviar Klassik Gold 250g,,14.9,7,250.0,g,kaviar,\"online,
+        wolt\",Zarendom,https://catalog.stolitschniy.shop/static/img/products/normalized/4260077960737.jpg,\"Keta-Lachskaviar
+        hat einen gro\xDFen Rogen (ca. 4-7mm) begleitet von einem \xE4u\xDFerst milden
+        Geschmack. Eine Delikatesse vom Feinsten - wertvoll, k\xF6stlich und dekorativ.
+        In der Lachskaviar-Rangliste geh\xF6rt der 1. Platz dem Ketakaviar. In diesem
+        Kaviar werden h\xF6chste Qualit\xE4t und Preisbewusstsein vereint. Der Ketekaviar
+        z\xE4hlt zu den wenigen Produkte, die so viel Vitamine, Eiweise und wichtige
+        Mineralien nachweisen k\xF6nnen und damit eine gesunde Ern\xE4hrung beg\xFCnstigen.
+        \r\n\r\nZutaten: Ketarogen, Salz, Sorbins\xE4ure.\r\n\r\nN\xE4hrwertangaben
+        pro 100g:\r\nBrennwert Kcal\t231 / 964 KJ\r\nFett \t\t13,0g\r\n\tdavon ges\xE4ttigte
+        Fetts\xE4uren 3,0g\r\nKohlenhydrate\t 2,7g\r\n\tdavon Zucker\t 0,0g\r\nEiwei\xDF\t\t\t25,7g\r\nSalz\t\t\t\t
+        2,8g\r\n\r\nBei einer Lagerungstemperatur von 0\xB0 bis +4\xB0C unge\xF6ffnet
+        ca. 6 Monate haltbar.\r\nHersteller: Zarendom Lebensmittel GmbH\"\r\n1316,Hackfleisch
+        gemischt,,0.549,7,100.0,g,fleisch,\"online, ww, wolt\",,https://catalog.stolitschniy.shop/static/img/products/normalized/1316.jpg,\"Hackfleisch
+        gemischt vom Schwein und Rind, zum Braten\"\r\n1315,Hackfleisch vom Schwein,,0.549,7,100.0,g,fleisch,\"online,
+        ww, wolt\",,https://catalog.stolitschniy.shop/static/img/products/normalized/1315.jpg,\"Hackfleisch
+        vom Rind, zum Braten\"\r\n4640008030676,Haferflockenbrei,\u041A\u0430\u0448\u0430
+        \u043E\u0432\u0441\u044F\u043D\u0430\u044F \u0441o \u0441\u043B\u0438\u0432\u043A\u0430\u043C\u0438,2.99,7,410.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4640008030676.jpg,\"Haferflocken
+        (66%), Zucker, Sahnepulver, Salz, Aroma.\"\r\n4640008030713,Haferflockenbrei
+        mit Aprikosenst\xFCcken,\u041A\u0430\u0448\u0430 \u043E\u0432\u0441\u044F\u043D\u0430\u044F
+        \u0441 \u0430\u0431\u0440\u0438\u043A\u043E\u0441\u043E\u043C \u0438 \u0441\u043B\u0438\u0432\u043A\u0430\u043C\u0438,2.99,7,410.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4640008030713.jpg,\"Haferflocken
+        (62%), Zucker, Kokos\xF6l, Molkenpulver, Sahnepulver, getrocknete Aprikosenst\xFCcke
+        (0,7%), Salz, Aroma.\"\r\n4640008030683,Haferflockenbrei mit Erdbeerenst\xFCcken,\u041A\u0430\u0448\u0430
+        \u043E\u0432\u0441\u044F\u043D\u0430\u044F \u0441 \u043A\u043B\u0443\u0431\u043D\u0438\u043A\u043E\u0439
+        \u0438 \u0441\u043B\u0438\u0432\u043A\u0430\u043C\u0438,2.99,7,410.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4640008030683.jpg,\"Haferflocken
+        ( 67%), Zucker, Kokos\xF6l, Molkenpulver, Sahnepulver, getrocknete Erdbeerenst\xFCcke
+        ( 0,1%), Salz, Aroma .\"\r\n4640008030706,Haferflockenbrei mit Himbeerst\xFCcken,\u041A\u0430\u0448\u0430
+        \u043E\u0432\u0441\u044F\u043D\u0430\u044F \u0441 \u043C\u0430\u043B\u0438\u043D\u043E\u0439
+        \u0441\u043E \u0441\u043B\u0438\u0432\u043A\u0430\u043C\u0438,2.99,7,410.0,g,drogerie,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4640008030706.jpg,\"Haferflocken
+        (67%), Zucker, Kokos\xF6l, Molkenpulver, Sahnepulver, getrocknete Himbeerst\xFCcke
+        (0,1%), Salz, Aroma.\"\r\n4640008030645,Haferflockenbrei mit Walderdbeerenst\xFCcken,\u041A\u0430\u0448\u0430
+        \u043E\u0432\u0441\u044F\u043D\u0430\u044F \u0441 \u0437\u0435\u043C\u043B\u044F\u043D\u0438\u043A\u043E\u0439,2.59,7,370.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4640008030645.jpg,\"Haferflocken
+        (77%), Zucker, getrocknete Walderdbeerenst\xFCcke (0,1%), Salz, Aroma.\"\r\n4030957561381,\"Haferflocken
+        \"\"HERKULES\"\"\",\u041E\u0432\u0441\u044F\u043D\u044B\u0435 \u0445\u043B\u043E\u043F\u044C\u044F,1.19,7,500.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957561381.jpg,\r\n4820039840141,Haferflocken
+        mit Erdbeerst\xFCckchen,\u041C\u043E\u043C\u0435\u043D\u0442\u0430\u043B\u044C\u043D\u0430\u044F
+        \u043E\u0432\u0441\u044F\u043D\u0443\u0448\u043A\u0430 \u0441\u043E \u0441\u043B\u0438\u0432\u043A\u0430\u043C\u0438
+        \u0438 \u043A\u043B\u0443\u0431\u043D\u0438\u043A\u043E\u0439,1.89,7,225.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4820039840141.jpg,\"Haferflocken
+        63,5%, Zucker, getrocknete Erdbeerst\xFCcke 6,5%, pflanzliches Sahneanaloga
+        (Glukosesirup, pflanzliches \xD6l, Milcheiwei\xDF, Emulgator E 471, Stabilisator
+        E341), Speisesalz, Aroma.\"\r\n4820039840202,Haferflocken mit Pfirsichst\xFCckchen,\u041C\u043E\u043C\u0435\u043D\u0442\u0430\u043B\u044C\u043D\u0430\u044F
+        \u043E\u0432\u0441\u044F\u043D\u0443\u0448\u043A\u0430 \u0441\u043E \u0441\u043B\u0438\u0432\u043A\u0430\u043C\u0438
+        \u0438 \u043F\u0435\u0440\u0441\u0438\u043A\u043E\u043C,1.89,7,225.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4820039840202.jpg,\"Haferflocken
+        63,5%, Zucker, getrocknete Pfirsichst\xFCcke 6,5%, pflanzliches Sahneanaloga
+        (Glukosesirup, pflanzliches \xD6l, Milcheiwei\xDF, Emulgator E 471, Stabilisator
+        E341), Speisesalz, Aroma.\"\r\n4820039840479,Haferflocken mit Sauerkirschst\xFCckchen,\u041C\u043E\u043C\u0435\u043D\u0442\u0430\u043B\u044C\u043D\u0430\u044F
+        \u043E\u0432\u0441\u044F\u043D\u0443\u0448\u043A\u0430 \u0441\u043E \u0441\u043B\u0438\u0432\u043A\u0430\u043C\u0438
+        \u0438 \u0432\u0438\u0448\u043D\u0435\u0439,1.49,7,225.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4820039840479.jpg,\"Haferflocken
+        63,5%, Zucker, getrocknete Sauerkirschst\xFCcke 6,5%, pflanzliches Sahneanaloga
+        (Glukosesirup, pflanzliches \xD6l, Milcheiwei\xDF, Emulgator E 471, Stabilisator
+        E341), Speisesalz, Aroma.\"\r\n4030957791818,Haferkekse,\u041E\u0432\u0441\u044F\u043D\u043E\u0435
+        \u043F\u0435\u0447\u0435\u043D\u044C\u0435,1.69,7,500.0,g,teigwaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957791818.jpg,\"Zucker,
+        Weizenmehl, Hafermehl 12,5%, Palm\xF6l, Rosinen gemahlen, Backtriebmittel
+        E500, jodiertes Speisesalz (Salz, Kaliumiodat), Zimt, Aroma. Kann Spuren von
+        Erdn\xFCssen, Sesam und Milch enthalten.\"\r\n4030957791832,Haferkekse mit
+        K\xFCrbiskernen,\u041E\u0432\u0441\u044F\u043D\u043E\u0435 \u043F\u0435\u0447\u0435\u043D\u044C\u0435
+        \u0441 \u0441\u0435\u043C\u0435\u043D\u0430\u043C\u0438 \u0442\u044B\u043A\u0432\u044B,1.69,7,500.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957791832.jpg,\"Zucker,
+        Weizenmehl, Hafermehl 11%, Palm\xF6l, Wasser, K\xFCrbiskerne ger\xF6stet 4,6%,
+        Sonnenblumenkerne ganz und ger\xF6stet, Rosinen gemahlen, Backtriebmittel
+        E500, jodiertes Speisesalz (Salz, Kaliumiodat), Zimt, Aroma.Kann Spuren von
+        Erdn\xFCssen, Sesam und Milch enthalten.\"\r\n4030957791801,Haferkekse mit
+        Sonnenblumenkernen,\u041E\u0432\u0441\u044F\u043D\u043E\u0435 \u043F\u0435\u0447\u0435\u043D\u044C\u0435
+        \u0441 \u0441\u0435\u043C\u0435\u043D\u0430\u043C\u0438 \u043F\u043E\u0434\u0441\u043E\u043B\u043D\u0435\u0447\u043D\u0438\u043A\u0430,1.69,7,500.0,g,teigwaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957791801.jpg,\"Zucker,
+        Weizenmehl, Palm\xF6l, Hafermehl 13%, Rosinen gemahlen, Sonnenblumenkerne
+        ganz und ger\xF6stet 1,9%, Sesam, Backtriebmittel E500, jodiertes Speisesalz
+        (Salz, Kaliumiodat), Aroma.Kann Spuren von Erdn\xFCssen und Milch enthalten.\"\r\n1301,H\xE4hnchenbrustfilet,,0.799,7,100.0,g,fleisch,\"online,
+        ww, wolt\",,https://catalog.stolitschniy.shop/static/img/products/normalized/1301.jpg,\r\n1302,H\xE4hnchenfl\xFCgel,,0.349,7,100.0,g,fleisch,\"online,
+        ww, wolt\",,https://catalog.stolitschniy.shop/static/img/products/normalized/1302.jpg,\r\n1303,H\xE4hnchenfuss,,0.349,7,100.0,g,fleisch,\"online,
+        ww, wolt\",,https://catalog.stolitschniy.shop/static/img/products/normalized/1303.jpg,\r\n1304,H\xE4hnchenschenkel,,0.299,7,100.0,g,fleisch,\"online,
+        ww, wolt\",,https://catalog.stolitschniy.shop/static/img/products/normalized/1304.jpg,\r\n4820026700113,Halva
+        aus Sonnenblumenkernen mit Erdn\xFCssen (10%),\u0425\u0430\u043B\u0432\u0430
+        \u043F\u043E\u0434\u0441\u043E\u043B\u043D\u0435\u0447\u043D\u0430\u044F \u0441
+        \u0430\u0440\u0430\u0445\u0438\u0441\u043E\u043C,0.89,7,270.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4820026700113.jpg,\"Sonnenblumenkerne
+        ger\xF6stet und gemahlen 44 %, Zucker, Invertzuckersirup, Erdn\xFCsse ger\xF6stet,
+        Seifenkrautextrakt, S\xE4uerungsmittel Citronens\xE4ure, Aroma. Kann Spuren
+        von Sesamsamen enthalten.\"\r\n4820026702100,Halva aus Sonnenblumenkernen
+        mit Milchgeschmack,\"\u0425\u0430\u043B\u0432\u0430 \u043F\u043E\u0434\u0441\u043E\u043B\u043D\u0435\u0447\u043D\u0430\u044F
+        \"\"\u041C\u043E\u043B\u043E\u0447\u043D\u0430\u044F \u043D\u0435\u0436\u043D\u043E\u0441\u0442\u044C\"\"\",0.99,7,270.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4820026702100.jpg,\r\n4820026700106,Halva
+        aus Sonnenblumenkernen mit Vanille,\"\u0425\u0430\u043B\u0432\u0430 \u043F\u043E\u0434\u0441\u043E\u043B\u043D\u0435\u0447\u043D\u0430\u044F,
+        \u0432\u0430\u043D\u0438\u043B\u044C\u043D\u0430\u044F\",0.79,7,270.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4820026700106.jpg,\"Sonnenblumenkerne
+        ger\xF6stet und gemahlen 60,8 %, Invertzuckersirup, Zucker, Seifenkrautextrakt,
+        S\xE4ureregulator: Citronens\xE4ure, Vanilleextrakt. Kann Spuren von Erdn\xFCssen
+        und Sesamsamen und Milch enthalten.\"\r\n4820026701264,Halva aus Sonnenblumenkernen
+        mit Vanillegeschmack,\u0425\u0430\u043B\u0432\u0430 \u043F\u043E\u0434\u0441\u043E\u043B\u043D\u0435\u0447\u043D\u0430\u044F
+        \u0432\u0430\u043D\u0438\u043B\u044C\u043D\u0430\u044F,1.39,7,500.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4820026701264.jpg,\"Sonnenblumenkerne
+        gemahlen 60,8 %, Invertzuckersirup, Zucker, Seifenkrautextrakt, Aroma, S\xE4ureregulator:
+        Citronens\xE4ure, Vanilleextrakt. Kann Spuren von Erdn\xFCssen, Sesamsamen
+        und Milch enthalten.\"\r\n4260168541647,Halwa,\u0425\u0430\u043B\u0432\u0430
+        \u043F\u043E\u0434\u0441\u043E\u043B.,0.99,7,270.0,g,suesswaren,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260168541647.jpg,\r\n4260168541180,Halwa,\u0425\u0430\u043B\u0432\u0430
+        \u043F\u043E\u0434\u0441\u043E\u043B\u043D\u0435\u0447\u043D\u0430\u044F,1.49,7,0.5,kg,suesswaren,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260168541180.jpg,\r\n4260168541654,Halwa,\u0425\u0430\u043B\u0432\u0430
+        \u043F\u043E\u0434\u0441\u043E\u043B.\u0441 \u0430\u0440\u0430\u0445\u0438\u0441\u043E\u043C,0.99,7,270.0,g,suesswaren,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260168541654.jpg,\r\n4030011560718,Hartweizengruetze,\u041A\u0440\u0443\u043F\u0430
+        \u043F\u0448\u0435\u043D\u0438\u0447\u043D\u0430\u044F,1.89,7,850.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011560718.jpg,\r\n4820033590479,\"Hefegeb\xE4ckringe
+        mit Mohn \"\"Sushki\"\"\",\u0421\u0443\u0448\u043A\u0438 \u0441 \u043C\u0430\u043A\u043E\u043C,0.99,7,300.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4820033590479.jpg,\r\n4820033590974,\"Hefegeb\xE4ckringe
+        mit Vanillingeschmack \"\"Sushki\"\"\",\"\u0421\u0443\u0448\u043A\u0438 \u0432\u0430\u043D\u0438\u043B\u044C\u043D\u044B\u0435
+        \"\"\u0424\u041B\u041E\u0420\u0410\"\"\",0.99,7,300.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4820033590974.jpg,\"Weizenmehl,
+        Zucker, Sonnenblumen\xF6l, Hefe, Kochsalz, Backtriebmittel Ammoniumhydrogencarbonat,
+        Aroma.\"\r\n1406,Heilbutt,,1.499,7,100.0,g,fisch,\"online, ww\",,https://catalog.stolitschniy.shop/static/img/products/normalized/1406.jpg,\"Sein
+        wei\xDFes, festes Fleisch hat einen leicht milden und dezenten Geschmack nach
+        Meer. Die Filets \xE4hneln von ihrer Konsistenz entfernt dem hellen Kalbsfleisch.
+        Leicht gew\xFCrzt und in gutem \xD6l angebraten macht den Heilbutt zu einem
+        wahrhaftigen Genuss. Der vielseitige Fisch kann mit Leichtigkeit im Ofen gegart,
+        gegrillt oder mit erg\xE4nzenden Zutaten  verarbeitet werden.\"\r\n4030011560077,Hirse,\u041F\u0448\u0435\u043D\u043E,1.99,7,900.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011560077.jpg,\r\n4030011560671,Hirse,\u041F\u0448\u0435\u043D\u043E,2.59,7,900.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011560671.jpg,\r\n4030957561374,Hirse,\u041F\u0448\u0435\u043D\u043E,1.69,7,800.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957561374.jpg,Kann
+        Spuren von glutenhaltigem Getreide enthalten.\r\n8901036191972,Indian Instant
+        Kaffee,\u0418\u043D\u0434\u0438\u0439\u0441\u043A\u0438\u0439 \u0440\u0430\u0441\u0442\u0432\u043E\u0440\u0438\u043C\u044B\u0439
+        \u043A\u043E\u0444\u0435,2.79,7,90.0,g,kaffe,\"imported, online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/8901036191972.jpg,\r\n1408,Kabeljaufilet,,2.4,7,100.0,g,fisch,\"online,
+        ww\",,https://catalog.stolitschniy.shop/static/img/products/normalized/1408.jpg,\"Das
+        Kabeljaufilet hat ein schneewei\xDFes bis ros\xE9-r\xF6tliches Fleisch. Aufgrund
+        seiner zarten aber dennoch festen Konsistenz l\xE4sst sich das Kabeljaufilet
+        sehr gut Braten. Das Fleisch sticht durch eine dezente Salznote und geringen
+        Fettgehalt hervor. \r\nSein milder Geschmack kann wahlweise durch aromatische
+        Zutaten vielf\xE4ltig hervorgehoben werden.\"\r\n4770281171275,\"Karamelltafel
+        mit Erdn\xFCssen \"\"Scherbet\"\"\",\u0429\u0435\u0440\u0431\u0435\u0442 \u0441
+        \u0430\u0440\u0430\u0445\u0438\u0441\u043E\u043C,2.99,7,500.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4770281171275.jpg,\r\n4030011350180,\"Karottensalat
+        \"\"Morkownij\"\"\",\u0421\u0430\u043B\u0430\u0442 \u043C\u043E\u0440\u043A\u043E\u0432\u043D\u044B\u0439,1.99,7,660.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011350180.jpg,\"Karotten
+        56,4%, Paprika, Zwiebeln, Sonnenblumen\xF6l, Tomatenmark, Peperoni, Salz,
+        Zucker.\"\r\n4030011400236,\"Kartoffelsuppe mit Rindfleisch \"\"Rassolnik\"\"\",\u0420\u0430\u0441\u0441\u043E\u043B\u044C\u043D\u0438\u043A
+        \u0441 \u0433\u043E\u0432\u044F\u0434\u0438\u043D\u043E\u0439,2.09,7,530.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011400236.jpg,\"Kartoffeln
+        32%, Salzgurken (Gurken, Kochsalz), Perlgraupen (Gerste), Rindfleisch 10%,
+        M\xF6hren, Zwiebeln, Schweineschmalz, Dill, Weizenmehl, Kochsalz, Gew\xFCrze,
+        Geschmacksverst\xE4rker Mononatriumglutamat.\"\r\n4250239103829,KAZ Tomaten
+        gelb,\u041F\u043E\u043C\u0438\u0434\u043E\u0440\u044B \u0436\u0435\u043B\u0442\u044B\u0435,3.29,7,2150.0,ml,konserven,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4250239103829.jpg,\r\n4751001312697,Kekse
+        Konvertiki Aprikose,\u041F\u0435\u0447\u0435\u043D\u044C\u0435 \u041A\u043E\u043D\u0432\u0435\u0440\u0442\u0438\u043A\u0438
+        \u0410\u0431\u0440\u0438\u043A\u043E\u0441\u043E\u0432\u044B\u0439 \u0434\u0436\u0435\u043C,1.99,7,350.0,g,suesswaren,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4751001312697.jpg,\r\n4751001312710,Kekse
+        Konvertik Prazdnichnij Apfel,\u041F\u0435\u0447\u0435\u043D\u044C\u0435 \u041A\u043E\u0432\u0435\u0440\u0442\u0438\u043A
+        \u041F\u0440\u0430\u0437\u0434\u043D\u0438\u0447\u043D\u044B\u0439 \u042F\u0431\u043B\u043E\u043A\u043E,1.99,7,350.0,g,suesswaren,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4751001312710.jpg,\r\n4751001312659,Kekse
+        Rogalik Domashnij,\u041F\u0435\u0447\u0435\u043D\u044C\u0435 \u0420\u043E\u0433\u0430\u043B\u0438\u043A
+        \u0414\u043E\u043C\u0430\u0448\u043D\u0438\u0439,1.99,7,350.0,g,suesswaren,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4751001312659.jpg,\r\n4751001372660,Kekse
+        Rogalik k Chaju m.Kirschfuellung,\u041F\u0435\u0447\u0435\u043D\u044C\u0435
+        \u0420\u043E\u0433\u0430\u043B\u0438\u043A \u043A \u0447\u0430\u044E \u0441
+        \u0432\u0438\u0448\u043D\u0435\u0432\u044B\u043C \u0432\u0430\u0440\u0435\u043D\u044C\u0435\u043C,1.99,7,350.0,g,suesswaren,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4751001372660.jpg,\r\n4751000187616,Kekse
+        Zdorovje,\u041F\u0435\u0447\u0435\u043D\u044C\u0435 \u0417\u0434\u043E\u0440\u043E\u0432\u044C\u0435,2.49,7,330.0,g,suesswaren,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4751000187616.jpg,\r\n4260077960584,Keta-Lachskaviar
+        Premium 400g Dose,,40.0,7,400.0,g,kaviar,\"online, wolt\",,https://catalog.stolitschniy.shop/static/img/products/normalized/4260077960584.jpg,\"Keta-Lachskaviar
+        hat einen gro\xDFen Rogen (ca. 4-7mm) begleitet von einem \xE4u\xDFerst milden
+        Geschmack. Eine Delikatesse vom Feinsten - wertvoll, k\xF6stlich und dekorativ.
+        In der Lachskaviar-Rangliste geh\xF6rt der 1. Platz dem Ketakaviar. In diesem
+        Kaviar werden h\xF6chste Qualit\xE4t und Preisbewusstsein vereint. Der Ketekaviar
+        z\xE4hlt zu den wenigen Produkte, die so viel Vitamine, Eiweise und wichtige
+        Mineralien nachweisen k\xF6nnen und damit eine gesunde Ern\xE4hrung beg\xFCnstigen.
+        \r\nDer Kaviar ist frisch und harmonisch im Geschmack. Die Kornschale des
+        Keta-Kaviars ist etwas kr\xE4ftiger, als die des Gorbuscha-Kaviars, deswegen
+        eignet sich diese Sorte besonders gut f\xFCr die Zubereitung der Kaviar-Gerichte.
+        Auch die Dose hat zus\xE4tzlich einen Plastikdeckel f\xFCr eine einfache Aufbewahrung
+        nach dem \xD6ffnen.\r\n\r\nZutaten: Ketarogen, Salz, Sorbins\xE4ure.\r\n\r\nN\xE4hrwertangaben
+        pro 100g: Brennwert Kcal 231 / 964 KJ ; Fett in g - 13,0, davon ges\xE4ttigte
+        Fetts\xE4uren in g - 3,0 ; Kohlenhydrate in g - 2,7, davon Zucker in g - 0,0
+        ; Eiwei\xDF in g - 25,7 ; Salz in g - 2.8\r\nBei einer Lagerungstemperatur
+        von 0\xB0 bis +4\xB0C unge\xF6ffnet ca. 6 Monate haltbar.\r\nHersteller: Zarendom
+        Lebensmittel GmbH\"\r\n4750001008043,\"Konfekt Assorti \"\"Moskauer Goldkuppeln\"\"\",\"\u0428\u043E\u043A\u043E\u043B\u0430\u0434\u043D\u044B\u0435
+        \u043A\u043E\u043D\u0444\u0435\u0442\u044B \u0430\u0441\u0441\u043E\u0440\u0442\u0438
+        \"\"\u041C\u043E\u0441\u043A\u0432\u0430\"\"\",4.69,7,360.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4750001008043.jpg,\"Zucker,
+        Kakaomasse, Kakaobutter, gezuckertes Kondensmilch, Pflanzenfett, Glukosesirup,
+        Magermilchpulver, Branntwein, Wasser, fettarmes Kakaopulver, Eierlik\xF6rzubereitung,
+        Farbstoff E160a, Konservierungsstoff E202, Emulgatoren(Sojalecithine E312,E442),
+        Aromen.\"\r\n4030957921109,\"Konfekt aus Schaumzuckerware mit Vanillegeschmack
+        \"\"Ptitschje Moloko\"\" umh\xFCllt von Schokolade.\",\"\u041A\u043E\u043D\u0444\u0435\u0442\u044B
+        \"\"\u041F\u0442\u0438\u0447\u044C\u0435 \u043C\u043E\u043B\u043E\u043A\u043E\"\"
+        \u0432\u0430\u043D\u0438\u043B\u044C\u043D\u044B\u0435\",1.69,7,230.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957921109.jpg,\"Glukose-Fruktose-Sirup,
+        Zucker, Schokolade 22% (Zucker, Kakaomasse, Kakaobutter, Palm\xF6l, Butterreinfett,
+        Emulgatoren: Sojalecithine, E476; Aroma), Wasser, Palm\xF6l, Magermilchpulver,
+        Geliermittel Agar-Agar, Eiklarpulver (Eiklar, Stabilisator E1505), Konservierungsstoff
+        E202, S\xE4ureregulator E330, Aroma, Salz, Farbstoff E160a. Kann Spuren von
+        Sesam enthalten.\"\r\n4030957921123,\"Konfekt aus Schaumzuckerware \"\"Ptitschje
+        Moloko\"\" mit Sahnegeschmack umh\xFCllt von Schokolade\",\u041F\u0442\u0438\u0447\u044C\u0435
+        \u043C\u043E\u043B\u043E\u043A\u043E \u0441\u043B\u0438\u0432\u043E\u0447\u043D\u043E\u0435,1.69,7,230.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957921123.jpg,\"Glukose-Fruktose-Sirup,
+        Zucker, Schokolade 22% (Zucker, Kakaomasse, Kakaobutter, Palm\xF6l, Butterreinfett,
+        Emulgatoren: Sojalecithine, E476; Aroma), Wasser, Palm\xF6l, Magermilchpulver,
+        Sahnepulver, Geliermittel Agar-Agar, Eiklarpulver (Eiklar, Stabilisator E1505),
+        Aroma, Konservierungsstoff E202, S\xE4uerungsmittel E330, Salz. Kann Spuren
+        von Sesam enthalten.\"\r\n4600300080762,\"Konfektmischung \"\"Assorti-Podmoskovnye
+        vechera\"\" mit Cremef\xFCllungen: Schokogeschmack 27%, Sahnegeschmack 9%,
+        Milch-Karamell-Geschmack 9%, umh\xFCllt von kakaohaltiger Fettglasur 55%\",\"\u041A\u043E\u043D\u0444\u0435\u0442\u044B
+        \u0430\u0441\u0441\u043E\u0440\u0442\u0438 \"\"\u041F\u043E\u0434\u043C\u043E\u0441\u043A\u043E\u0432\u043D\u044B\u0435
+        \u0432\u0435\u0447\u0435\u0440\u0430\"\" \u0441 \u043A\u0440\u0435\u043C\u043E\u0432\u043E\u0439
+        \u043D\u0430\u0447\u0438\u043D\u043A\u043E\u0439 \u0432 \u043A\u0430\u043A\u0430\u043E\u0441\u043E\u0434\u0435\u0440\u0436\u0430\u0449\u0435\u0439
+        \u0433\u043B\u0430\u0437\u0443\u0440\u0438\",2.69,7,200.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4600300080762.jpg,\"kakaohaltige
+        Fettglasur (Zucker, Pflanzenfett (pflanzliches \xD6l und Fett (Soja\xF6l,
+        Palm\xF6l) teilweise geh\xE4rtet, Emulgatoren: E492, E322), fettarmes Kakaopulver,
+        Erdn\xFCsse zerkleinert 5,1%, Emulgatoren: Sojalecithine, E476; Aroma), Zucker,
+        gezuckerte Kondensmilch (Milch, Zucker), Pflanzenfett (pflanzliche Fette (Palm\xF6l,
+        Shea) teilweise geh\xE4rtet, Emulgator E322), Glukosesirup, Mandeln 1,6%,
+        Vollmilchpulver, Pflanzenfett (pflanzliches Fett und \xD6l (Palm\xF6l, Soja\xF6l),
+        Antioxidationsmittel: E322, E304, E306, E330), Alkohol, Emulgator Sojalecithine,
+        Aromen. Kann Spuren von anderen Schalenfr\xFCchten, glutenhaltigem Getreide
+        und Eiern enthalten.\"\r\n4750001009132,\"Konfekt \"\"Petersburger Mischung\"\"\",\"\u0410\u0441\u0441\u043E\u0440\u0442\u0438
+        \"\"\u041B\u0430\u0439\u043C\u0430\"\" (\u041F\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433\u0441\u043A\u0430\u044F
+        \u0441\u043C\u0435\u0441\u044C)\",4.69,7,360.0,g,suesswaren,\"imported, online,
+        wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4750001009132.jpg,\r\n1410,Lachsforelle
+        (Ger\xE4uchert),,1.39,7,100.0,g,fisch,\"online, ww\",,https://catalog.stolitschniy.shop/static/img/products/normalized/1410.jpg,\"Ger\xE4ucherte
+        Lachsforelle ist eine besondere Spezialit\xE4t. Die Lachsforellenfilets haben
+        ein mildes Holzaroma. Das Fleisch der Lachsforelle hat \xFCblicherweise eine
+        zart rosafarbene Struktur. Wir empfehlen diese mit etwas Brot, frischem Blattsalat
+        und Meerrettich  oder als Einlage f\xFCr eine cremige Suppe zu servieren.\"\r\n4030011410402,Letscho
+        nach Art des Hauses,\u041B\u0435\u0447\u043E \u043F\u043E-\u0434\u043E\u043C\u0430\u0448\u043D\u0435\u043C\u0443,2.59,7,700.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011410402.jpg,\"Paprika
+        57%, Tomaten, Zucker, pflanzliches \xD6l, Salz.\"\r\n4751002128914,Lettisches
+        Roggenmischbrot,\u041B\u0430\u0442\u0432\u0438\u0439\u0441\u043A\u0438\u0439
+        \u043A\u0438\u0441\u043B\u043E-\u0441\u043B\u0430\u0434\u043A\u0438\u0439
+        \u0445\u043B\u0435\u0431,1.99,7,600.0,g,brot,\"imported, online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4751002128914.jpg,\"Roggenmehl
+        52%, Weizenmehl 20%, Wasser, Zucker, Weizenspeisekleie, Roggenmalz 1,6%, Hefe,
+        Salz, K\xFCmmel, Backmittel (Weizenmehl, Bohnenmehl,Mehlbehandlungsmittel:
+        Ascorbins\xE4ure), Weizengluten. Im Betrieb werden auch Eiern, Erdn\xFCsse,
+        Schalenfr\xFCchte, Soja, Sesam, verarbeitet.\"\r\n4260168542934,Lidia Tomaten
+        o.Essig Krimskie,\u041F\u043E\u043C\u0438\u0434\u043E\u0440\u044B \u0431\u0435\u0437
+        \u0443\u043A\u0441\u0443\u0441\u0430 \u041A\u0440\u044B\u043C\u0441\u043A\u0438\u0435,2.99,7,1.9,l,konserven,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260168542934.jpg,\r\n4260168543078,Lidia
+        Tomaten o.Essig Saratowskie,\u041F\u043E\u043C\u0438\u0434\u043E\u0440\u044B
+        \u0431\u0435\u0437 \u0443\u043A\u0441\u0443\u0441\u0430 \u0421\u0430\u0440\u0430\u0442\u043E\u0432\u0441\u043A\u0438\u0435,3.29,7,1.9,l,konserven,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260168543078.jpg,\r\n5904277113973,\"L\xF6slicher
+        Kaffee \"\"Bon Aroma\"\" Gold\",\"\u041A\u043E\u0444\u0435 \"\"Bon Aroma\"\"
+        Gold\",5.99,7,200.0,g,kaffe,\"imported, online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/5904277113973.jpg,\r\n4033443822126,\"Maisknabbererzeugnis
+        \"\"Detskie\"\"\",\"\u041A\u0443\u043A\u0443\u0440\u0443\u0437\u043D\u044B\u0435
+        \u043F\u0430\u043B\u043E\u0447\u043A\u0438 \"\"\u0414\u0435\u0442\u0441\u043A\u0438\u0435\"\"\",1.15,7,180.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4033443822126.jpg,\"Maisgr\xFCtze
+        65%, Zucker, Raps\xF6l, Aroma.\"\r\n4033443822072,\"Maisknabbererzeugnis \"\"Mascha
+        i Medwedj\"\"\",\"\u041A\u0443\u043A\u0443\u0440\u0443\u0437\u043D\u044B\u0435
+        \u043F\u0430\u043B\u043E\u0447\u043A\u0438 \"\"\u041C\u0430\u0448\u0430 \u0438
+        \u041C\u0435\u0434\u0432\u0435\u0434\u044C\"\"\",1.29,7,160.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4033443822072.jpg,\"Maisgr\xFCtze
+        65%, Zucker, Raps\xF6l, Aroma.\"\r\n4033443822089,\"Maisknabbererzeugnis \"\"Mascha
+        i Medwedj\"\" mit Milchgeschmack\",\"\u041A\u0443\u043A\u0443\u0440\u0443\u0437\u043D\u044B\u0435
+        \u043F\u0430\u043B\u043E\u0447\u043A\u0438 \"\"\u041C\u0430\u0448\u0430 \u0438
+        \u041C\u0435\u0434\u0432\u0435\u0434\u044C\"\" \u043C\u043E\u043B\u043E\u0447\u043D\u044B\u0435\",1.29,7,160.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4033443822089.jpg,\"Maisgr\xFCtze
+        65%, Zucker, Raps\xF6l, Aroma.\"\r\n4033443822133,\"Maisknabbererzeugnis mit
+        Milchgeschmack \"\"Molotschnije\"\"\",\"\u041A\u0443\u043A\u0443\u0440\u0443\u0437\u043D\u044B\u0435
+        \u043F\u0430\u043B\u043E\u0447\u0438 \"\"\u041C\u043E\u043B\u043E\u0447\u043D\u044B\u0435\"\"\",1.15,7,180.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4033443822133.jpg,\"Maisgr\xFCtze
+        65%, Zucker, Raps\xF6l, Aroma.\"\r\n4033443822294,\"Maisknabbererzeugnis \"\"Obschorka\"\"
+        mit Milchgeschmack\",\"\u041F\u0430\u043B\u043E\u0447\u043A\u0438 \u043A\u0443\u043A\u0443\u0440\u0443\u0437\u043D\u044B\u0435
+        \u0441\u043B\u0430\u0434\u043A\u0438\u0435 \"\"\u041E\u0431\u0436\u043E\u0440\u043A\u0430\"\"
+        \u043C\u043E\u043B\u043E\u0447\u043D\u044B\u0435\",0.69,7,80.0,g,teigwaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4033443822294.jpg,\"Maisgr\xFCtze
+        65%, Zucker, Raps\xF6l, Aroma.\"\r\n4030011820072,\"Maisknabbererzeugnis \"\"S\xFCsse
+        Maisstbchen\"\" mit Milchgeschmack\",\u0421\u043B\u0430\u0434\u043A\u0438\u0435
+        \u043A\u0443\u043A\u0443\u0440\u0443\u0437\u043D\u044B\u0435 \u043F\u0430\u043B\u043E\u0447\u043A\u0438
+        \u0441 \u043C\u043E\u043B\u043E\u0447\u043D\u044B\u043C \u0430\u0440\u043E\u043C\u0430\u0442\u043E\u043C,0.99,7,110.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011820072.jpg,\r\n4033443822324,\"Maisknabbererzeugnis
+        \"\"Vkusnasha\"\"\",\"\u041F\u0430\u043B\u043E\u0447\u043A\u0438 \u043A\u0443\u043A\u0443\u0440\u0443\u0437\u043D\u044B\u0435
+        \u0441\u043B\u0430\u0434\u043A\u0438\u0435 \"\"\u0412\u043A\u0443\u0441\u043D\u044F\u0448\u0430\"\"\",0.99,7,150.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4033443822324.jpg,\"Maisgr\xFCtze
+        72%, Puderzucker, Mais\xF6l, Salz, Aroma, S\xE4ureregulator Citronens\xE4ure.\"\r\n1413,Makrele,,0.699,7,100.0,g,fisch,\"online,
+        ww\",,https://catalog.stolitschniy.shop/static/img/products/normalized/1413.jpg,\"Die
+        Makrele ist zwar mit dem vornehmen Thunfisch verwandt aber doch ganz eigen.
+        Ihr leicht r\xF6tliches Fleisch ist w\xFCrzig und vor allem in der mediterranen
+        und nordischen K\xFCche ist die Makrele sehr beliebt. Das Fleisch der Makrele
+        vertr\xE4gt kr\xE4ftig sowie vielseitige W\xFCrzungen, intensive Aromen, l\xE4sst
+        sich unkompliziert grillen und r\xE4uchern, braten und einlegen und bietet
+        somit ein breites Spektrum an Zubereitungsarten. \xDCber Holzkohle gegrillt,
+        als \u201ESteckerlfisch\u201C am offenen Feuer gegart oder in sch\xE4umender
+        Butter mit Oliven\xF6l gebraten, braucht es nur noch einen Spritzer Zitrone,
+        eine Sch\xFCssel Salat und gutes Brot \u2013 fertig ist das Fisch-Festessen!\"\r\n4030011420111,\"Melonenkuerbispueree
+        mit Peperoni, pasteurisiert\",\u0418\u043A\u0440\u0430 \u043A\u0430\u0431\u0430\u0447\u043A\u043E\u0432\u0430\u044F
+        \u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u043E\u0441\u0442\u0440\u0430\u044F,1.99,7,720.0,ml,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011420111.jpg,\"Melonenk\xFCrbisse
+        80,5%, M\xF6hren, Sonnenblumen\xF6l, Tomatenmark, Peperoni, Zwiebeln, Salz,
+        Zucker, Sellerie, Gew\xFCrze, Konservierungsstoff E 202.\"\r\n4030011420104,Melonenk\xFCrbisp\xFCree,\u0418\u043A\u0440\u0430
+        \u043A\u0430\u0431\u0430\u0447\u043A\u043E\u0432\u0430\u044F,1.89,7,720.0,ml,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011420104.jpg,\"Zucchini
+        (10%), Zwiebeln, M\xF6hren, Tomatenmark, Pflanzen\xF6l, Gew\xFCrze, Salz,
+        Weizenmehl, schwarzer Pfeffer, roter Pfeffer.\"\r\n4030011420012,\"Melonenk\xFCrbisp\xFCree
+        \"\"Domaschnaja\"\", pasteurisiert\",\u0418\u043A\u0440\u0430 \u043A\u0430\u0431\u0430\u0447\u043A\u043E\u0432\u0430\u044F
+        \u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F,1.49,7,380.0,ml,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011420012.jpg,\"Melonenk\xFCrbisse
+        82,86%, M\xF6hren 5,4%, Sonnenblumen\xF6l 3,6%, Tomatenmark 3,57%, Zwiebel
+        2,4%, Zucker, Salz, Sellerie, Gew\xFCrze.\"\r\n4030011420128,\"Melonenk\xFCrbisp\xFCree
+        mit Knoblauch, pasteurisiert\",\u0418\u043A\u0440\u0430 \u043A\u0430\u0431\u0430\u0447\u043A\u043E\u0432\u0430\u044F
+        \u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0441 \u0447\u0435\u0441\u043D\u043E\u043A\u043E\u043C,2.19,7,720.0,ml,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011420128.jpg,\"Melonenk\xFCrbisse
+        77,7%, Knoblauch, M\xF6hren, Sonnenblumen\xF6l, Tomatenmark, Zwiebeln, Salz,
+        Zucker, Gew\xFCrze, Konservierungsstoff E 202.\"\r\n4030011420036,\"Melonenk\xFCrbisp\xFCree
+        mit Knoblauch, pasteurisiert\",\u0418\u043A\u0440\u0430 \u043A\u0430\u0431\u0430\u0447\u043A\u043E\u0432\u0430\u044F
+        \u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u0441 \u0447\u0435\u0441\u043D\u043E\u043A\u043E\u043C,1.49,7,380.0,ml,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011420036.jpg,\"Melonenk\xFCrbisse
+        77,7%, Knoblauch, M\xF6hren, Sonnenblumen\xF6l, Tomatenmark, Zwiebeln, Salz,
+        Zucker, Sellerie, Gew\xFCrze, Konservierungsstoff: E202.\"\r\n4030011420029,\"Melonenk\xFCrbisp\xFCree
+        mit Peperoni, pasteurisiert\",\u0418\u043A\u0440\u0430 \u043A\u0430\u0431\u0430\u0447\u043A\u043E\u0432\u0430\u044F
+        \u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F \u043E\u0441\u0442\u0440\u0430\u044F,1.49,7,380.0,ml,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011420029.jpg,\"Melonenk\xFCrbisse
+        80,5%, M\xF6hren, Sonnenblumen\xF6l, Tomatenmark, Peperoni, Zwiebeln, Zucker,
+        Salz, Sellerie, Gew\xFCrze, Konservierungsstoff E 202.\"\r\n4030011420203,\"Melonenk\xFCrbisp\xFCree,
+        pasteuresiert \"\"Domaschnaja\"\"\",\u0418\u043A\u0440\u0430 \u043A\u0430\u0431\u0430\u0447\u043A\u043E\u0432\u0430\u044F
+        \u0434\u043E\u043C\u0430\u0448\u043D\u044F\u044F,1.99,7,680.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011420203.jpg,\"Zucchini,
+        M\xF6hren, Zwiebeln, Tomatenmark, Sonnenblumen\xF6l, Salz, Zucker, Gew\xFCrze.\"\r\n4600300075409,\"Milchschokolade
+        \"\"Al\xF6nka\"\"\",\"\u041C\u043E\u043B\u043E\u0447\u043D\u044B\u0439 \u0448\u043E\u043A\u043E\u043B\u0430\u0434
+        \"\"\u0410\u043B\u0451\u043D\u043Aa\"\"\",1.59,7,100.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4600300075409.jpg,\r\n4030957791788,\"M\xFCrbegeb\xE4ck
+        \"\"Margaritki\"\" mit fruchtiger Auflage-Kirschgeschmack\",\"\u041F\u0435\u0441\u043E\u0447\u043D\u043E\u0435
+        \u043F\u0435\u0447\u0435\u043D\u044C\u0435 \"\"\u041C\u0430\u0440\u0433\u0430\u0440\u0438\u0442\u043A\u0438\"\"
+        \u0441 \u0444\u0440\u0443\u043A\u0442\u043E\u0432\u043E\u0441\u043E\u0434\u0435\u0440\u0436\u0430\u0448\u0435\u0439
+        \u043D\u0430\u0447\u0438\u043D\u043A\u043E\u0439 \u0441\u043E \u0432\u043A\u0443\u0441\u043E\u043C
+        \u0432\u0438\u0448\u043D\u0438\",1.49,7,300.0,g,suesswaren,\"imported, online,
+        wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957791788.jpg,\"Weizenmehl,
+        Margarine (pflanzliches Fett, pflanzliches Fett geh\xE4rtet, Wasser, Emulgator:
+        E471, Speisesalz, S\xE4ureregulator: Citronens\xE4ure, Konservierungsstoff:
+        E202, Farbstoff: E160b, Aroma), fruchtige Auflage 20% (Zucker, Apfelp\xFCree,
+        Glukose-Fruktose-Sirup, Fruchtmark (Kirschen, Stachelbeeren, Aronia), S\xE4ureregulator:
+        Citronens\xE4ure, Verdickungsmittel: E440, Konservierungsstoffe: E202, Schwefeldioxid;
+        Aroma, Farbstoff: E120), Zucker, Molkenerzeugnis, Eipulver, Aroma, Farbstoff:
+        E160a. Kann Spuren von Sesam, Soja und Erdn\xFCssen enthalten.\"\r\n4030957791740,\"M\xFCrbekekse
+        \"\"Kunschutnoe\"\" mit Sesam\",\"\u041F\u0435\u0447\u0435\u043D\u044C\u0435
+        \"\"\u041A\u0443\u043D\u0436\u0443\u0442\u043D\u043E\u0435\"\"\",1.69,7,300.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957791740.jpg,\"Weizenmehl,
+        Margarine (Palm\xF6l, Raps\xF6l, Palm\xF6l teilweise geh\xE4rtet, Wasser,
+        Emulgatoren: E 471, E475, Sojalecithine; Salz, S\xE4ureregulator E 330, Konservierungsstoff
+        E 202, Farbstoff E 160b, Aroma), Sesam 15 %, Zucker, Glucosesirup, Molkenerzeugnis,
+        Volleipulver, Farbstoff E 160a, Aroma. Kann Spuren von Erdn\xFCssen enthalten.\"\r\n4030957791696,M\xFCrbekekse
+        mit Erdn\xFCssen,\u0420\u0430\u0441\u0441\u044B\u043F\u0447\u0430\u0442\u043E\u0435
+        \u043F\u0435\u0447\u0435\u043D\u044C\u0435 \u0441 \u0430\u0440\u0430\u0445\u0438\u0441\u043E\u043C,1.59,7,300.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957791696.jpg,\"Erdn\xFCsse
+        35%, Weizenmehl, Margarine (Palm\xF6l, Raps\xF6l, Palm\xF6l teilweise geh\xE4rtet,
+        Wasser, Emulgatoren: E471, E475, Sojalecithine, Salz S\xE4ureregulator: E330,
+        Farbstoff: E160b, Aroma), Zucker, Glukosesirup, Molkenerzeugnis, Volleipulver,
+        Farbstoff E 160a, Aroma. Kann Spuren von Sesam enthalten.\"\r\n4030957791757,\"M\xFCrbekekse
+        \"\"Podsolnechnoe\"\"\",\"\u041F\u0435\u0447\u0435\u043D\u044C\u0435 \"\"\u041F\u043E\u0434\u0441\u043E\u043B\u043D\u0435\u0447\u043D\u043E\u0435\"\"\",1.69,7,300.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957791757.jpg,\"Weizenmehl,
+        Margarine (Palm\xF6l, Raps\xF6l, Palm\xF6l teilweise geh\xE4rtet, Wasser,
+        Emulgatoren: E 471, E475, Sojalecithine; Salz, S\xE4ureregulator E 330, Konservierungsstoff
+        E 202, Farbstoff E 160b, Aroma), Sonnenblumenkerne, Zucker, K\xFCrbiskerne,
+        Glucosesirup, Molkenerzeugnis, Volleipulver, Farbstoff E 160a, Aroma.\r\nKann
+        Spuren von Erdn\xFCssen und Sesam enthalten.\"\r\n4030957791764,\"M\xFCrbekekse
+        \"\"Swadebnoe\"\", bestreut mit Puderzucker\",\"\u041F\u0435\u0447\u0435\u043D\u044C\u0435
+        \"\"\u0421\u0432\u0430\u0434\u0435\u0431\u043D\u043E\u0435\"\"\",1.59,7,300.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957791764.jpg,\"Weizenmehl,
+        Margarine (pflanzliches Fett, pflanzliche Fette geh\xE4rtet, Wasser, Emulgator
+        E 471, Salz, S\xE4ureregulator E 330, Konservierungsstoff E 202, Farbstoff
+        E 160b, Aroma), Zucker, Molkenpulver, Volleipulver, Puderzucker 1%, Farbstoff
+        E 160a, Aroma. Kann Spuren von Erdn\xFCssen und Sesam enthalten.\"\r\n4030957791771,\"M\xFCrbekekse
+        \"\"Uzelki\"\"\",\"\u041F\u0435\u0447\u0435\u043D\u044C\u0435 \"\"\u0423\u0437\u0435\u043B\u043A\u0438\"\"\",1.49,7,300.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957791771.jpg,\"Weizenmehl,
+        Margarine (Palm\xF6l, Raps\xF6l, Palm\xF6l teilweise geh\xE4rtet, Wasser,
+        Emulgatoren: E 471, E475, Sojalecithine; Salz, S\xE4ureregulator E 330, Konservierungsstoff
+        E 202, Farbstoff E 160b, Aroma), Zucker, Molkenerzeugnis, Volleipulver, Farbstoff
+        E 160a, Aroma. Kann Spuren von Erdn\xFCssen und Sesam enthalten.\"\r\n4033443682249,Pflaumenlik\xF6r
+        20% vol.,\"\u0421\u043B\u0430\u0434\u043A\u0430\u044F \u043D\u0430\u0441\u0442\u043E\u0439\u043A\u0430
+        \"\"\u0421\u043B\u0438\u0432\u0430 \u043D\u0430 \u043A\u043E\u043D\u044C\u044F\u043A\u0435\"\"
+        20% \u0430\u043B\u043A.\",4.29,19,0.5,l,spirituosen,\"imported, online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4033443682249.jpg,\r\n7613030111146,PL
+        Waffelriegel Princessa Vollmilchschoko Erdnuesse,PL \u0411\u0430\u0442\u043E\u043D\u0447\u0438\u043A
+        \u0432\u0430\u0444.\u041F\u0440\u0438\u043D\u0446\u0435\u0441\u0441\u0430
+        \u043E\u0440\u0435\u0445.\u0432 \u0448\u043E\u043A\u043E,0.39,7,31.0,g,suesswaren,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/7613030111146.jpg,\r\n4750001008166,Pralinen
+        Auslese,\u041A\u043E\u043D\u0444\u0435\u0442\u044B \u0430\u0441\u0441\u043E\u0440\u0442\u0438
+        \u0432 \u0442\u0451\u043C\u043D\u043E\u043C \u0448\u043E\u043A\u043E\u043B\u0430\u0434\u0435,3.69,7,215.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4750001008166.jpg,\r\n4750001817058,\"Pralinen
+        Auslese \"\"Laima\"\"\",\"\u041A\u043E\u043D\u0444\u0435\u0442\u044B \"\"\u0413\u043E\u0440\u0434\u043E\u0441\u0442\u044C
+        \u041C\u043E\u0441\u043A\u0432\u044B\"\"\",4.69,7,360.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4750001817058.jpg,\r\n4600300077656,\"Pralinenmischung
+        \"\"Assorti -Tretjakowskaja Galerija\"\"\",\"\u0428\u043E\u043A\u043E\u043B\u0430\u0434\u043D\u044B\u0435
+        \u043A\u043E\u043D\u0444\u0435\u0442\u044B \"\"Assorti Tret'jakovskaja galereja\"\"\",3.89,7,240.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4600300077656.jpg,\r\n4030957921994,\"Pralinenmischung
+        \"\"Wetschernjaja Moskwa\"\" oder \"\"Boljschoj Theater\"\"\",\"\u041D\u0430\u0431\u043E\u0440
+        \u043A\u043E\u043D\u0444\u0435\u0442 \"\"\u0411\u043E\u043B\u044C\u0448\u043E\u0439
+        \u0442\u0435\u0430\u0442\u0440 + \u0412\u0435\u0447\u0435\u0440\u043D\u044F\u044F
+        \u041C\u043E\u0441\u043A\u0432\u0430\"\"\",2.79,7,165.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957921994.jpg,\r\n4030011750720,Propolis
+        mit Bienenhonig w\xFCrzig und aromatisch,\u041C\u0451\u0434 \u0441 \u043F\u0440\u043E\u043F\u043E\u043B\u0438\u0441\u043E\u043C,7.79,7,500.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011750720.jpg,\"kaltgeschleuderter
+        Bienenh\xF6nig, Bl\xFCtenpollen, 0,5% Propolis.\"\r\n1305,Putenhals,,0.399,7,100.0,g,fleisch,\"online,
+        ww, wolt\",,https://catalog.stolitschniy.shop/static/img/products/normalized/1305.jpg,\r\n1306,Putenoberkeule,,0.499,7,100.0,g,fleisch,\"online,
+        ww, wolt\",,https://catalog.stolitschniy.shop/static/img/products/normalized/1306.jpg,\r\n42152101,\"Quellwasser
+        ohne Kohlens\xE4ure \"\"Cristaline\"\"\",\u041C\u0438\u043D\u0435\u0440\u0430\u043B\u044C\u043D\u0430\u044F
+        \u0440\u043E\u0434\u043D\u0438\u043A\u043E\u0432\u044F \u0432\u043E\u0434\u0430,0.45,19,1.5,l,getraenke,\"imported,
+        p25, einweg, online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/42152101.jpg,\r\n4030011350289,Reissalat
+        mit Gem\xFCse,\u0421\u0430\u043B\u0430\u0442 \u0440\u0438\u0441\u043E\u0432\u044B\u0439
+        \u0441 \u043E\u0432\u043E\u0449\u0430\u043C\u0438,2.49,7,720.0,ml,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011350289.jpg,\"Gem\xFCse
+        in ver\xE4nderlichen Gewichtsanteilen (81,2%) (M\xF6hren, Zwiebeln, Paprika,
+        Tomaten), Sonnenblumen\xF6l, Reis 5,9%, Zucker, Essig aus Essigessenz, Salz.\"\r\n4600823030091,\"RF
+        Schokolade \"\"Babaevskij\"\" mit Fondantf\xFCllung-Sahnegeschmack.\",\"\u0428\u043E\u043A\u043E\u043B\u0430\u0434\u043D\u044B\u0439
+        \u0431\u0430\u0442\u043E\u043D\u0447\u0438\u043A \"\"\u0411\u0430\u0431\u0430\u0435\u0432\u0441\u043A\u0438\u0439\"\"
+        \u0441 \u043F\u043E\u043C\u0430\u0434\u043D\u043E\u0439 \u043D\u0430\u0447\u0438\u043D\u043A\u043E\u0439-
+        \u0441\u043B\u0438\u0432\u043E\u0447\u043D\u044B\u0439 \u0432\u043A\u0443\u0441.\",0.69,7,50.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4600823030091.jpg,\"Schokolade
+        58% (Zucker, Kakaomasse, Kakaobutter, Emulgatoren: Sojalecithine, E476; Aroma),
+        Fondantf\xFCllung 42% (gezuckerte Kondensmilch (Milch, Zucker), Zucker, pflanzliche
+        Fette (Palm\xF6l, Shea), Glukosesirup, Spirituose, Alkohol, Emulgator E471,
+        Aroma).\"\r\n4600823031098,\"RF Schokolade \"\"Babaevskij\"\" mit Praline-F\xFCllung\",\"\u0428\u043E\u043A\u043E\u043B\u0430\u0434\u043D\u044B\u0439
+        \u0431\u0430\u0442\u043E\u043D\u0447\u0438\u043A \"\"\u0411\u0430\u0431\u0430\u0435\u0432\u0441\u043A\u0438\u0439\"\"
+        \u0441 \u043D\u0430\u0447\u0438\u043D\u043A\u043E\u0439 \u0441\u043E \u0432\u043A\u0443\u0441\u043E\u043C
+        \u0448\u043E\u043A\u043E\u043B\u0430\u0434\u0430.\",0.69,7,50.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4600823031098.jpg,\"Schokolade
+        58% (Zucker, Kakaomasse, Kakaobutter, Emulgatoren: Sojalecithine, E476; Aroma),
+        Pralinenf\xFCllung 42% (Schokolade (Zucker, Kakaomasse, Kakaobutter, Emulgator:
+        Sojalecithine, E476; Aroma), Zucker, gezuckerte Kondensmilch (Milch, Zucker),
+        Apfelp\xFCree, Glukosesirup, Haseln\xFCsse zerkleinert, Kakaobutter, Spirituose,
+        Alkohol, S\xE4uerungsmittel Citronens\xE4ure, Aroma, Konservierungsstoff Schwefeldioxid).Kann
+        Spuren von Erdn\xFCssen und anderen Schalenfr\xFCchten enthalten.\"\r\n1307,Rinderbeinscheiben,,0.599,7,100.0,g,fleisch,\"online,
+        ww, wolt\",,https://catalog.stolitschniy.shop/static/img/products/normalized/1307.jpg,\r\n1308,Rinderschmorbraten,,0.95,7,100.0,g,fleisch,\"online,
+        ww, wolt\",,https://catalog.stolitschniy.shop/static/img/products/normalized/1308.jpg,\r\n1416,Rotbarsch,,1.49,7,100.0,g,fisch,\"online,
+        ww\",,https://catalog.stolitschniy.shop/static/img/products/normalized/1416.jpg,\"Der
+        Rotbarsch, ebenso Goldbarsch genannt, geh\xF6rt zur Angeh\xF6rige der Stachelk\xF6pfe.\r\nEr
+        lebt im Nordatlantik, ist trotzdem genauso in der Nordsee zu finden.\r\nDer
+        Rotbarsch (Goldbarsch) lebt in Tiefen bis zu 1000 m , kleinere Exemplare kommen\r\nallerdings
+        ebenso in K\xFCstenn\xE4he vor. Er kann bis zu 1 m lang werden,\r\nist nichtsdestotrotz
+        im Durschnitt blo\xDF 40-50 Zentimeter lang.\"\r\n4260346363597,Russischer
+        St\xF6rkaviar 125g,,80.0,19,125.0,g,kaviar,\"online, wolt\",Zarendom,https://catalog.stolitschniy.shop/static/img/products/normalized/4260346363597.jpg,\"Kaviar
+        vom Russischen St\xF6r ist eine hochkar\xE4tige Delikatesse der Extraklasse.
+        Der urspr\xFCngliche Lebensraum f\xFCr Russische St\xF6re sind die zahlreiche
+        Fl\xFCsse Russlands. Von dort stammt auch die Bezeichnung \u201EMalossol\u201C,
+        was soviel bedeutet, wie \u201Ewenig Salz\u201C. Diese St\xF6rart wird seit
+        Jahrzehnten erfolgreich gez\xFCchtet und ist im Kreis der Gourmets bekannt.
+        Unser Kaviar kommt aus einer Aquakultur.\r\n\r\nNach dem \xD6ffnen soll der
+        Kaviar im K\xFChlschrank max. 3 Tage aufbewahrt werden.\r\nBei einer Lagerungstemperatur
+        von -3 \xB0 bis +3 \xB0 C unge\xF6ffnet ca. 4 Monate haltbar.\r\nZutaten:
+        Kaviar, Salz, E 285.\r\nN\xE4hrwertangaben pro 100g: Brennwert Kcal 282 /1097
+        KJ ; Fett in g - 18,0, davon ges\xE4ttigte Fetts\xE4uren in g - 4,1 ; Kohlenhydrate
+        in g - 4,0, davon Zucker in g - 0,0 ; Eiwei\xDF in g - 26,0 , Salz in g -
+        3,5\"\r\n4840022002363,Sauerkirschen mit Stein in Zuckersirup,\"\u0412\u0430\u0440\u0435\u043D\u044C\u0435
+        \u0438\u0437 \u0432\u0438\u0448\u043D\u0438 \u0441 \u043A\u043E\u0441\u0442\u043E\u0447\u043A\u043E\u0439
+        \u0422\u041C \"\"Vita\"\"\",3.39,7,680.0,g,suesswaren,\"imported, online,
+        wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4840022002363.jpg,\r\n1311,Sch\xE4lrippchen,,6.49,7,1.0,kg,fleisch,\"online,
+        ww, wolt\",,https://catalog.stolitschniy.shop/static/img/products/normalized/1311.jpg,\r\n4750001007381,\"Schaumgeb\xE4ck
+        \"\"Sefir\"\" mit Vanillegeschmack\",\u0417\u0435\u0444\u0438\u0440 \u0432\u0430\u043D\u0438\u043B\u044C\u043D\u044B\u0439,2.89,7,500.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4750001007381.jpg,\"Zucker,
+        Apfelp\xFCree, Wasser, Glukosesirup, Geliermittel Pektine, S\xE4ureregulatoren:
+        Citronens\xE4ure, Natriumcitrate; Eiklarpulver, Konservierungsstoff Kaliumsorbat,
+        nat\xFCrliches Vanillearoma 0,09%.\"\r\n4750001004267,\"Schaumzuckergeb\xE4ck
+        \"\"Sefir\"\" mit Vanillegeschmack in Schokoglasur\",\u0417\u0435\u0444\u0438\u0440
+        \u0432 \u0448\u043E\u043A\u043E\u043B\u0430\u0434\u0435,1.69,7,200.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4750001004267.jpg,\"Glukosesirup(mit
+        Konservierungsstoff E220), Schokolade(30%) (Zucker, Kakaomasse, Kakaobutter,
+        Pflanzenfett, Emulgator E442, Aroma), Zucker, Wasser, Eiklarpulver (Trennmittel
+        E 1505), Geliermittel (Agar-Agar), S\xE4ureregulator E 331, Aroma (Vanillin),
+        Stabilisator E407.\"\r\n4030957921031,\"Schaumzuckerwarekonfekt mit Sahnegeschmack
+        \"\"Ptitschje Molotschko\"\" in kakaohaltiger Fettglasur\",\"\u041A\u043E\u043D\u0444\u0435\u0442\u044B
+        \"\"\u041F\u0442\u0438\u0447\u044C\u0435 \u043C\u043E\u043B\u043E\u0447\u043A\u043E\"\"
+        \u0441\u043E \u0441\u043B\u0438\u0432\u043E\u0447\u043D\u044B\u043C \u0432\u043A\u0443\u0441\u043E\u043C
+        \u0432 \u043A\u0430\u043A\u0430\u043E\u0441\u043E\u0434\u0435\u0440\u0436\u0430\u0449\u0435\u0439
+        \u0433\u043B\u0430\u0437\u0443\u0440\u0438\",1.49,7,220.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957921031.jpg,\r\n4030957921055,\"Schaumzuckerwarekonfekt
+        mit Vanillegeschmack \"\"Ptitschje Molotschko\"\" in kakaohaltiger Fettglasur\",\"\u041A\u043E\u043D\u0444\u0435\u0442\u044B
+        \"\"\u041F\u0442\u0438\u0447\u044C\u0435 \u043C\u043E\u043B\u043E\u0447\u043A\u043E\"\"
+        \u0441\u043E \u0432\u043A\u0443\u0441\u043E\u043C \u0432\u0430\u043D\u0438\u043B\u0438
+        \u0432 \u043A\u0430\u043A\u0430\u043E\u0441\u043E\u0434\u0435\u0440\u0436\u0430\u0449\u0435\u0439
+        \u0433\u043B\u0430\u0437\u0443\u0440\u0438\",1.49,7,220.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957921055.jpg,\r\n4030957841346,\"Schaumzuckerware
+        \"\"Lanesch\"\" mit gezuckertem Kondensmilchgeschmack\",\u0417\u0435\u0444\u0438\u0440
+        \u0441\u043E \u0432\u043A\u0443\u0441\u043E\u043C \u0441\u0433\u0443\u0449\u0435\u043D\u043D\u043E\u0433\u043E
+        \u043C\u043E\u043B\u043E\u043A\u0430,2.59,7,420.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957841346.jpg,\"Zucker,
+        Glukosesirup, Apfelp\xFCree, Wasser, Eiklar, Geliermittel \u0415440, Maisst\xE4rke,
+        S\xE4ureregulator \u0415270, Feuchthaltemittel E325, Arom\u0430, Konservierungsstoff
+        E202.\"\r\n4030957841230,\"Schaumzuckerware \"\"Lanesch\"\" mit Moosbeerengeschmack\",\"\u0417\u0435\u0444\u0438\u0440
+        \"\"Lanesch\"\" \u0441\u043E \u0432\u043A\u0443\u0441\u043E\u043C \u043A\u043B\u044E\u043A\u0432\u044B\",1.99,7,315.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957841230.jpg,\"Zucker,
+        Glukosesirup, Apfelp\xFCree, Wasser, Eiklar, Geliermittel \u0415440, Maisst\xE4rke,
+        S\xE4ureregulator \u0415270, Feuchthaltemittel E325, Aromen, Farbstoff E163,
+        Konservierungsstoff E202.\"\r\n4030957841308,\"Schaumzuckerware \"\"Lanesch\"\"
+        mit Vanille-Erdbeer-Geschmack\",\u0417\u0435\u0444\u0438\u0440 \u0441 \u0432\u0430\u043D\u0438\u043B\u044C\u043D\u043E-\u043A\u043B\u0443\u0431\u043D\u0438\u0447\u043D\u044B\u043C
+        \u0432\u043A\u0443\u0441\u043E\u043C,2.59,7,420.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957841308.jpg,\"Zucker,
+        Glukosesirup, Apfelp\xFCree, Wasser, Eiklar, Geliermittel \u0415440, Maisst\xE4rke,
+        S\xE4ureregulator \u0415270, Feuchthaltemittel E325, Aromen, Farbstoff E163,
+        Konservierungsstoff E202.\"\r\n4823088402469,\"Schaumzuckerware \"\"Moosbeere\"\"\",\"\u0417\u0435\u0444\u0438\u0440
+        \"\"\u041A\u043B\u044E\u043A\u0432\u0430\"\"\",1.29,7,260.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4823088402469.jpg,\"Zucker,
+        Apfelp\xFCree, Glukosesirup, Puderzucker, Eiklarpulver, Verdickungsmittel:
+        Agar-Agar, S\xE4ureregulator: Milchs\xE4ure, Aroma, Moosbeerensaftkonzentrat
+        0,15%, Stabilisator: Pektine, Farbstoff: Echtes Karmin, Antioxidationsmittel:
+        Schwefeldioxid.\"\r\n4820112365073,\"Schaumzuckerware \"\"Pink / Wei\xDF\"\"
+        mit Himbeer- und Vanillegeschmack\",\u0417\u0435\u0444\u0438\u0440 \u0441
+        \u043C\u0430\u043B\u0438\u043D\u043E\u0432\u044B\u043C \u0438 \u0432\u0430\u043D\u0438\u043B\u044C\u043D\u044B\u043C
+        \u0432\u043A\u0443\u0441\u043E\u043C,1.29,7,260.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4820112365073.jpg,\r\n4820112369088,\"Schaumzuckerware
+        \"\"Wei\xDF\"\" mit Vanillegeschmack\",\"\u0417\u0435\u0444\u0438\u0440 \"\"\u0412\u0430\u043D\u0438\u043B\u044C\u043D\u044B\u0439\"\"\",1.29,7,260.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4820112369088.jpg,\"Zucker,
+        Apfelp\xFCree, Glukosesirup, Puderzucker, Eiklarpulver, Verdickungsmittel
+        Agar-Agar, S\xE4ureregulator Milchs\xE4ure, Stabilisator Pektine, Aroma, Antioxidationsmittel:
+        Schwefeldioxid.\"\r\n4607051150270,\"Schwarzer Ceylon Tee \"\"Korona rossijskoj
+        Imperii\"\" 100Btl.\",\"\u0427\u0430\u0439 \u0446\u0435\u0439\u043B\u043E\u043D\u0441\u043A\u0438\u0439
+        \"\"\u041A\u043E\u0440\u043E\u043D\u0430 \u0420\u043E\u0441\u0441\u0438\u0439\u0441\u043A\u043E\u0439
+        \u0418\u043C\u043F\u0435\u0440\u0438\u0438\"\"\",3.19,7,200.0,g,tee,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4607051150270.jpg,\r\n4607051151369,\"Schwarzer
+        Ceylon Tee \"\"Otbornij\"\" 100Btl.\",\"\u0427\u0430\u0439 \u0446\u0435\u0439\u043B\u043E\u043D\u0441\u043A\u0438\u0439
+        \"\"\u041E\u0442\u0431\u043E\u0440\u043D\u044B\u0439\"\"\",2.89,7,200.0,g,tee,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4607051151369.jpg,\r\n4607051150355,\"Schwarzer
+        indischer Tee \"\"Korolewskoje Safari\"\" 100Btl.\",\"\u0427\u0430\u0439 \u0438\u043D\u0434\u0438\u0439\u0441\u043A\u0438\u0439
+        \"\"\u041A\u043E\u0440\u043E\u043B\u0435\u0432\u0441\u043A\u043E\u0435 \u0441\u0430\u0444\u0430\u0440\u0438\"\"\",2.79,7,200.0,g,tee,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4607051150355.jpg,Schwarzer
+        Tee.\r\n4607051152717,\"Schwarzer Tee aus Ceylon \"\"Majskij Vysokogornij\"\"\",\"\u0426\u0435\u0439\u043B\u043E\u043D\u0441\u043A\u0438\u0439
+        \u0447\u0430\u0439 \"\"\u041C\u0430\u0439\u0441\u043A\u0438\u0439 \u0412\u044B\u0441\u043E\u043A\u043E\u0433\u043E\u0440\u043D\u044B\u0439\"\"\",3.35,7,200.0,g,tee,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4607051152717.jpg,\r\n4607051152700,\"Schwarzer
+        Tee aus Ceylon \"\"Majskij Vysokogornij\"\"\",\"\u0426\u0435\u0439\u043B\u043E\u043D\u0441\u043A\u0438\u0439
+        \u0447\u0430\u0439 \"\"\u041C\u0430\u0439\u0441\u043A\u0438\u0439 \u0412\u044B\u0441\u043E\u043A\u043E\u0433\u043E\u0440\u043D\u044B\u0439\"\"\",0.99,7,50.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4607051152700.jpg,\r\n4607051159006,\"Schwarzer
+        Tee aus Kenia \"\"Majskij\"\" 80 x 2,5g\",\"\u0427\u0430\u0439 \u043A\u0435\u043D\u0438\u0439\u0441\u043A\u0438\u0439\"\"\u041C\u0430\u0439\u0441\u043A\u0438\u0439\"\"
+        \u0432 \u0433\u0440\u0430\u043D\u0443\u043B\u0430\u0445 80 x 2,5\u0433.\",3.15,7,200.0,g,tee,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4607051159006.jpg,\r\n4607051150379,\"Schwarzer
+        Tee aus Kenia \"\"Majskij Tschornyj Brilliant\"\" 100Btl.\",\"\u041A\u0435\u043D\u0438\u0439\u0441\u043A\u0438\u0439
+        \u0447\u0430\u0439 \"\"\u0427\u0451\u0440\u043D\u044B\u0439 \u0431\u0440\u0438\u043B\u043B\u0438\u0430\u043D\u0442\"\"\",3.19,7,200.0,g,tee,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4607051150379.jpg,\r\n4607051159235,Schwarzer
+        Tee mit Bergamottearoma 25 x 2g,\"\u0427\u0430\u0439 \u041C\u0430\u0439\u0441\u043A\u0438\u0439
+        \u0410\u0440\u043E\u043C\u0430\u0442\u043D\u044B\u0439, \u0431\u0435\u0440\u0433\u0430\u043C\u043E\u0442\",1.75,7,50.0,g,tee,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4607051159235.jpg,\"schwarzer
+        Tee aus Ceylon, Aroma, Orangenschalen, Pfefferminze.\"\r\n4607012351005,\"Schwarze
+        Sonnenblumenkerne in Schale, ger\xF6stet \"\"Ot Martina\"\"\",\"\u0421\u0435\u043C\u0435\u0447\u043A\u0438
+        \u0447\u0451\u0440\u043D\u044B\u0435 \u0436\u0430\u0440\u0435\u043D\u044B\u0435
+        \"\"\u041E\u0442 \u041C\u0430\u0440\u0442\u0438\u043D\u0430\"\" \u043E\u0442\u0431\u043E\u0440\u043D\u044B\u0435\",2.19,7,200.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4607012351005.jpg,\r\n4607012351128,\"Schwarze
+        Sonnenblumenkerne in Schale, ger\xF6stet \"\"Ot Martina\"\"\",\"\u0421\u0435\u043C\u0435\u0447\u043A\u0438
+        \u0447\u0451\u0440\u043D\u044B\u0435 \u0436\u0430\u0440\u0435\u043D\u044B\u0435
+        \"\"\u041E\u0442 \u041C\u0430\u0440\u0442\u0438\u043D\u0430\"\" \u043E\u0442\u0431\u043E\u0440\u043D\u044B\u0435\",5.19,7,500.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4607012351128.jpg,\r\n4607146900445,\"Schwarze
+        Sonnenblumenkerne mit Schale, in \xD6l ger\xF6stet\",\"\u0421\u0435\u043C\u0435\u0447\u043A\u0438
+        \u0436\u0430\u0440\u0435\u043D\u044B\u0435, \u043E\u0442\u0431\u043E\u0440\u043D\u044B\u0435
+        \"\"\u041F\u043E\u0442\u0435\u0445\u0430\"\"\",1.59,7,300.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4607146900445.jpg,\"Sonnenblumenkerne
+        96%, Sonnenblumen\xF6l, Palmolein. Kann Spuren von Schalenfr\xFCchten und
+        Erdn\xFCssen enthalten.\"\r\n4607146900452,\"Schwarze Sonnenblumenkerne mit
+        Schale, in \xD6l ger\xF6stet\",\"\u0421\u0435\u043C\u0435\u0447\u043A\u0438
+        \u0436\u0430\u0440\u0435\u043D\u044B\u0435, \u043E\u0442\u0431\u043E\u0440\u043D\u044B\u0435
+        \"\"\u041F\u043E\u0442\u0435\u0445\u0430\"\"\",2.49,7,500.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4607146900452.jpg,\"Sonnenblumenkerne
+        96%, Sonnenblumen\xF6l, Palmolein. K\xFChl und trocken lagern.\"\r\n1317,Schweinekamm
+        (Knochenlos),,0.549,7,100.0,g,fleisch,\"online, ww, wolt\",,https://catalog.stolitschniy.shop/static/img/products/normalized/1317.jpg,\r\n1312,Schweine-Kotelett,,0.599,7,100.0,g,fleisch,\"ww,
+        online, wolt\",,https://catalog.stolitschniy.shop/static/img/products/normalized/60a7f051d0d04615a89a3fb8a862fb1e.jpg,\r\n1313,Schweinekotelettrippe,,6.99,7,1.0,kg,fleisch,\"online,
+        ww, wolt\",,https://catalog.stolitschniy.shop/static/img/products/normalized/1313.jpg,\r\n1314,Schweine-Lachse,,0.699,7,100.0,g,fleisch,\"online,
+        ww, wolt\",,https://catalog.stolitschniy.shop/static/img/products/normalized/1314.jpg,\r\n1318,Schweinerippe
+        (Dick),,5.49,7,1.0,kg,fleisch,\"online, ww, wolt\",,https://catalog.stolitschniy.shop/static/img/products/normalized/1318.jpg,\r\n1319,Schweinerippe
+        (D\xFCnn),,3.49,7,1.0,kg,fleisch,\"online, ww, wolt\",,https://catalog.stolitschniy.shop/static/img/products/normalized/1319.jpg,\r\n4607026340118,\"Sekt
+        Abrau Durso Brut, weiss\",\u0428\u0430\u043C\u043F\u0430\u043D\u0441\u043A\u043E\u0435
+        \u0410\u0431\u0440\u0430\u0443 \u0414\u044E\u0440\u0441\u043E \u0411\u0440\u044E\u0442
+        \u0431\u0435\u043B\u043E\u0435,7.49,19,0.75,l,spirituosen,\"imported, online,
+        wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4607026340118.jpg,\r\n4607026340149,\"Sekt
+        Abrau Durso halbtrocken, weiss\",\u0428\u0430\u043C\u043F\u0430\u043D\u0441\u043A\u043E\u0435
+        \u0410\u0431\u0440\u0430\u0443 \u0414\u044E\u0440\u0441\u043E \u043F\u043E\u043B\u0443\u0441\u0443\u0445\u043E\u0435
+        \u0431\u0435\u043B\u043E\u0435,7.49,19,0.75,l,spirituosen,\"imported, online,
+        wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4607026340149.jpg,\r\n4607026340132,\"Sekt
+        Abrau Durso Semi Sweet, weiss\",\u0428\u0430\u043C\u043F\u0430\u043D\u0441\u043A\u043E\u0435
+        \u0410\u0431\u0440\u0430\u0443 \u0414\u044E\u0440\u0441\u043E \u0441\u0443\u0445\u043E\u0435
+        \u0431\u0435\u043B\u043E\u0435,7.49,19,0.75,l,spirituosen,\"imported, online,
+        wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4607026340132.jpg,\r\n4607026341047,\"Sekt
+        Abrau Durso trocken, rose\",\u0428\u0430\u043C\u043F\u0430\u043D\u0441\u043A\u043E\u0435
+        \u0410\u0431\u0440\u0430\u0443 \u0414\u044E\u0440\u0441\u043E \u0440\u043E\u0437\u043E\u0432\u0435
+        \u0441\u0443\u0445\u043E\u0435,7.49,19,0.75,l,spirituosen,\"imported, online,
+        wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4607026341047.jpg,\r\n4033443662036,\"Sekt
+        aus Ukraine \"\"Die Perle von Krim\"\" halbtrocken, wei\xDF 12,5% vol.\",\"\u041A\u043E\u043B\u043B\u0435\u043A\u0446\u0438\u043E\u043D\u043D\u043E\u0435
+        \u0438\u0433\u0440\u0438\u0441\u0442\u043E\u0435 \u0432\u0438\u043D\u043E
+        \"\"\u0416\u0435\u043C\u0447\u0443\u0436\u0438\u043D\u0430 \u041A\u0440\u044B\u043C\u0430\"\"
+        \u043F/\u0441\u0443\u0445\u043E\u0435 12,5% \u0430\u043B\u043A.\",7.99,19,0.75,l,spirituosen,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4033443662036.jpg,\r\n4033443662173,\"Sekt
+        aus Ukraine \"\"Die Perle von Krim\"\" mild, rot 12,5% vol.\",\"\u0416\u0435\u043C\u0447\u0443\u0436\u0438\u043D\u0430
+        \u041A\u0440\u044B\u043C\u0430 \u043A\u0440\u0430\u0441\u043D\u043E\u0435
+        12,5% \u0430\u043B\u043A.\",8.89,19,0.75,l,spirituosen,\"imported, online,
+        wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4033443662173.jpg,\r\n4033443662043,\"Sekt
+        aus Ukraine \"\"Die Perle von Krim\"\" mild, wei\xDF 12,5% vol.\",\"\u041A\u043E\u043B\u043B\u0435\u043A\u0446\u0438\u043E\u043D\u043D\u043E\u0435
+        \u0438\u0433\u0440\u0438\u0441\u0442\u043E\u0435 \u0432\u0438\u043D\u043E
+        \"\"\u0416\u0435\u043C\u0447\u0443\u0436\u0438\u043D\u0430 \u041A\u0440\u044B\u043C\u0430\"\"
+        \u0441\u043B\u0430\u0434\u043A\u043E\u0435 12,5% \u0430\u043B\u043A.\",7.99,19,0.75,l,spirituosen,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4033443662043.jpg,\r\n4033443662067,\"Sekt
+        aus Ukraine \"\"Die Perle von Krim\"\" trocken, wei\xDF 12,5% vol.\",\"\u041A\u043E\u043B\u043B\u0435\u043A\u0446\u0438\u043E\u043D\u043D\u043E\u0435
+        \u0438\u0433\u0440\u0438\u0441\u0442\u043E\u0435 \u0432\u0438\u043D\u043E
+        \"\"\u0416\u0435\u043C\u0447\u0443\u0436\u0438\u043D\u0430 \u041A\u0440\u044B\u043C\u0430\"\"
+        \u0441\u0443\u0445\u043E\u0435 12,5% \u0430\u043B\u043A.\",7.99,19,0.75,l,spirituosen,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4033443662067.jpg,\r\n4607146900186,\"Sonnenblumenkerne
+        ger\xF6stet, mit Schale \"\"Poteha\"\"\",\"\u0421\u0435\u043C\u0435\u0447\u043A\u0438
+        \u0436\u0430\u0440\u0435\u043D\u044B\u0435, \u043E\u0442\u0431\u043E\u0440\u043D\u044B\u0435
+        \"\"\u041F\u043E\u0442\u0435\u0445\u0430\"\"\",2.39,7,500.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4607146900186.jpg,\r\n4607146900032,\"Sonnenblumenkerne
+        ger\xF6stet, mit Schale \"\"Poteha\"\"\",\"\u0421\u0435\u043C\u0435\u0447\u043A\u0438
+        \u0436\u0430\u0440\u0435\u043D\u044B\u0435, \u043E\u0442\u0431\u043E\u0440\u043D\u044B\u0435
+        \"\"\u041F\u043E\u0442\u0435\u0445\u0430\"\"\",1.59,7,300.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4607146900032.jpg,\r\n4607012351999,\"Sonnenblumenkerne
+        in Schale, ger\xF6stet und gesalzen \"\"Ot Martina\"\"\",\"\u0421\u0435\u043C\u0435\u0447\u043A\u0438
+        \u0447\u0451\u0440\u043D\u044B\u0435 \u0436\u0430\u0440\u0435\u043D\u044B\u0435
+        \"\"\u041E\u0442 \u041C\u0430\u0440\u0442\u0438\u043D\u0430\"\" \u043E\u0442\u0431\u043E\u0440\u043D\u044B\u0435
+        \u0441 \u0441\u043E\u043B\u044C\u044E\",2.29,7,200.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4607012351999.jpg,\"Sonnenblumenkerne
+        95%, Meersalz.\"\r\n4607014782111,\"Sonnenblumen\xF6l \"\"Blago\"\" nicht
+        raffiniert\",\"\u041C\u0430\u0441\u043B\u043E \u043F\u043E\u0434\u0441\u043E\u043B\u043D\u0435\u0447\u043D\u043E\u0435
+        \u043D\u0435\u0440\u0430\u0444\u0438\u043D\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u043E\u0435
+        \"\"\u0411\u043B\u0430\u0433\u043E\"\"\",2.29,7,1.0,l,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4607014782111.jpg,\r\n4607014782036,\"Sonnenblumen\xF6l
+        \"\"Dary Kubani\"\" nicht raffiniert\",\"\u041C\u0430\u0441\u043B\u043E \u043F\u043E\u0434\u0441\u043E\u043B\u043D\u0435\u0447\u043D\u043E\u0435
+        \u043D\u0435\u0440\u0430\u0444\u0438\u043D\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u043E\u0435
+        \"\"\u0414\u0430\u0440\u044B \u041A\u0443\u0431\u0430\u043D\u0438\"\"\",1.69,7,0.65,l,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4607014782036.jpg,\r\n4033443682218,\"Spirituose
+        \"\"Wischnya\"\" 20% vol.\",\"\u0421\u043B\u0430\u0434\u043A\u0430\u044F \u043D\u0430\u0441\u0442\u043E\u0439\u043A\u0430
+        \"\"\u0412\u0438\u0448\u043D\u044F \u043D\u0430 \u043A\u043E\u043D\u044C\u044F\u043A\u0435\"\"\",4.29,19,0.5,l,spirituosen,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4033443682218.jpg,\r\n4260346368462,St\xF6rkaviar
+        Adria 50g,,32.0,19,50.0,g,kaviar,\"online, wolt\",Zarendom,https://catalog.stolitschniy.shop/static/img/products/normalized/4260346368462.jpg,\"Die
+        St\xF6rrogen sind nur leicht gesalzen, wunderbar zart und weisen eine feine
+        Nussnote im vollmundigen Geschmack auf. Farblich schimmern die Rogen eher
+        in Graut\xF6nen, von Schiefer-Schwarz bis Mittelgrau, k\xF6nnen aber auch
+        Bernstein-Braun sein und sind seidig gl\xE4nzend. \r\nUrspr\xFCnglich im Adriatischen
+        Meer und in umgebenden Fl\xFCssen beheimatet, ist der Adriatische St\xF6r
+        zunehmend selten geworden und galt bis vor kurzem als nicht zuchtf\xE4hig.
+        Unser Kaviar kommt jedoch aus einer Aquakultur und wir freuen uns Ihnen diese
+        Art von St\xF6rkaviar anbieten zu k\xF6nnen.\r\n\r\nNach dem \xD6ffnen sollte
+        der Kaviar im K\xFChlschrank nicht l\xE4nger als 3 Tage aufbewahrt werden.\r\nBei
+        einer Lagerungstemperatur von -3 \xB0 bis +3 \xB0 C unge\xF6ffnet ca. 4 Monate
+        haltbar.\r\nZutaten: Kaviar, Salz, E 285.\r\n\r\nN\xE4hrwertangaben pro 100g:
+        Brennwert Kcal 282 /1097 KJ ; Fett in g : 18,0, davon ges\xE4ttigte Fetts\xE4uren
+        in g: 4,1 ; Kohlenhydrate in g\_: 4,0, davon Zucker in g\_: 0,0 ; Eiwei\xDF
+        in g\_: 26,0 , Salz in g\_: 3,5\"\r\n4030957781093,\"Suessgebaeck \"\"Prjaniki\"\"
+        mit Moosbeerenaroma\",\u041F\u0440\u044F\u043D\u0438\u043A\u0438 \u0441 \u0430\u0440\u043E\u043C\u0430\u0442\u043E\u043C
+        \u043A\u043B\u044E\u043A\u0432\u044B,1.09,7,400.0,g,getreide,\"imported, online,
+        wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957781093.jpg,\"Weizenmehl,
+        Zucker, Wasser, Palm\xF6l, Raps\xF6l, Backtriebmittel: E503, E500; Konservierungsstoff
+        E282, Aroma, S\xE4ureregulator Citronens\xE4ure. Kann Spuren von Erdn\xFCssen
+        und Milch enthalten.\"\r\n4260168540596,Suppe Bohnensuppe,\u0421\u0443\u043F
+        \u0424\u0430\u0441\u043E\u043B\u0435\u0432\u044B\u0439,1.59,7,480.0,g,konserven,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260168540596.jpg,\r\n4260168540541,Suppe
+        Borsch mit Frischkraut,\u0421\u0443\u043F \u0411\u043E\u0440\u0449 \u0438\u0437
+        \u0441\u0432\u0435\u0436\u0435\u0439 \u043A\u0430\u043F\u0443\u0441\u0442\u044B,1.79,7,480.0,g,konserven,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260168540541.jpg,\r\n4030011400021,\"Suppe
+        \"\"Borschtsch\"\" mit Sauerkraut\",\u0411\u043E\u0440\u0449 \u0438\u0437
+        \u043A\u0432\u0430\u0448\u0435\u043D\u043D\u043E\u0439 \u043A\u0430\u043F\u0443\u0441\u0442\u044B,1.39,7,500.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011400021.jpg,\"Rote
+        Bete (60%), Kartoffeln (19%), Sauerkraut (12%), Zwiebeln (7%), Karotten (6%),
+        Tomatenmark, Pflanzen\xF6l, Gew\xFCrze, Salz.\"\r\n4030011400014,\"Suppe \"\"Borschtsch\"\"
+        mit Wei\xDFkohl\",\u0411\u043E\u0440\u0449 \u0438\u0437 \u0441\u0432\u0435\u0436\u0435\u0439
+        \u043A\u0430\u043F\u0443\u0441\u0442\u044B,1.39,7,500.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011400014.jpg,\"Rote
+        Bete (50%), Wei\xDFkohl (21%), Kartoffeln (14%), Karotten (12%), Zwiebeln
+        (9%), Tomatenmark, Pflanzen\xF6l, Gew\xFCrze, Salz.\"\r\n4260168540527,Suppe
+        Borsch Ukrainskij mit Bohnen,\u0421\u0443\u043F \u0411\u043E\u0440\u0449 \u0423\u043A\u0440\u0430\u0438\u043D\u0441\u043A\u0438\u0439
+        \u0441 \u0444\u0430\u0441\u043E\u043B\u044C\u044E,1.79,7,480.0,g,konserven,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260168540527.jpg,\r\n1309,Suppenfleisch
+        vom Rind,,0.59,7,100.0,g,fleisch,\"online, ww, wolt\",,https://catalog.stolitschniy.shop/static/img/products/normalized/1309.jpg,\r\n4260168540664,Suppe
+        Pilzsuppe,\u0421\u0443\u043F \u0413\u0440\u0438\u0431\u043D\u043E\u0439,1.59,7,480.0,g,konserven,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260168540664.jpg,\r\n4030011400045,\"Suppe
+        \"\"Soljanka\"\"\",\"C\u0443\u043F \"\"C\u043E\u043B\u044F\u043D\u043A\u0430\"\"\",1.45,7,480.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011400045.jpg,\"Sauerkraut
+        (54%), Salzgurken (16%), Karotten (13%), Zwiebeln (12%), Kartoffeln (8%),
+        Tomatenmark, Pflanzen\xF6l, Gew\xFCrze.\"\r\n4260168540626,Suppe Soljanka
+        aus Frischkraut,\u0421\u0443\u043F \u0421\u043E\u043B\u044F\u043D\u043A\u0430
+        \u0438\u0437 \u0441\u0432\u0435\u0436.\u043A\u0430\u043F\u0443\u0441\u0442\u044B,1.69,7,480.0,g,konserven,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260168540626.jpg,\r\n4260168540619,Suppe
+        Soljanka aus Sauerrkr. m.Pilzen,\u0421\u0443\u043F \u0421\u043E\u043B\u044F\u043D\u043A\u0430
+        \u0438\u0437 \u043A\u0432\u0430\u0448.\u043A\u0430\u043F\u0443\u0441\u0442.\u0441
+        \u0433\u0440\u0438\u0431\u0430\u043C\u0438,1.59,7,480.0,g,konserven,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260168540619.jpg,\r\n4260168540589,Suppe
+        Swekolnik,\u0421\u0443\u043F \u0421\u0432\u0435\u043A\u043E\u043B\u044C\u043D\u0438\u043A,1.69,7,480.0,g,konserven,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260168540589.jpg,\r\n4600508719297,\"S\xFC\xDFgeb\xE4ck
+        \"\"Korovka Lubimie\"\"\",\"\u041F\u0440\u044F\u043D\u0438\u043A\u0438 \"\"\u041A\u043E\u0440\u043E\u0432\u043A\u0430\"\"
+        \u041B\u044E\u0431\u0438\u043C\u044B\u0435\",1.19,7,300.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4600508719297.jpg,\r\n4030957781123,\"S\xFC\xDFgeb\xE4ck
+        mit Karamellgeschmack \"\"Prjaniki Karamelnije\"\"\",\"\u041F\u0440\u044F\u043D\u0438\u043A\u0438
+        \"\"\u041A\u0430\u0440\u0430\u043C\u0435\u043B\u044C\u043D\u044B\u0435\"\"\",1.09,7,400.0,g,teigwaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957781123.jpg,\"Weizenmehl,
+        Zucker, Wasser, Palm\xF6l, pflanzliches \xD6l, Farbstoff: Ammoniak-Zuckerkul\xF6r,
+        Backtriebmittel (Ammoniumcarbonate, Natriumcarbonate), Konservierungsstoff:
+        Calciumpropionat, Aroma, S\xE4ureregulator Zitronens\xE4ure. Kann Spuren von
+        Erdnuss, Mohn und Milch enthalten.\"\r\n4030957781178,\"S\xFC\xDFgeb\xE4ck
+        \"\"Prjaniki\"\" mit Himbeeraroma\",\u041F\u0440\u044F\u043D\u0438\u043A\u0438
+        \u0441 \u0430\u0440\u043E\u043C\u0430\u0442\u043E\u043C \u043C\u0430\u043B\u0438\u043D\u044B,1.09,7,400.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957781178.jpg,\"Weizenmehl,
+        Zucker, Wasser, Palm\xF6l, Raps\xF6l, Backtriebmittel: E503, E500; Konservierungsstoff
+        \u0415 282, Aroma, S\xE4ureregulator: Citronens\xE4ure. Kann Spuren von Erdn\xFCssen
+        und Milch enthalten.\"\r\n4030957781161,\"S\xFC\xDFgeb\xE4ck \"\"Prjaniki\"\"
+        mit Pfirsicharoma\",\u041F\u0440\u044F\u043D\u0438\u043A\u0438 \u0441 \u0430\u0440\u043E\u043C\u0430\u0442\u043E\u043C
+        \u043F\u0435\u0440\u0441\u0438\u043A\u0430,1.09,7,400.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957781161.jpg,\"Weizenmehl,
+        Zucker, Wasser, Palm\xF6l, Raps\xF6l, Backtriebmittel: E503, E500; Konservierungsstoff
+        E282, Aroma, S\xE4ureregulator Citronens\xE4ure. Kann Spuren von Erdn\xFCssen
+        und Milch enthalten.\"\r\n4030957781154,\"S\xFC\xDFgeb\xE4ck \"\"Prjaniki\"\"
+        mit Schoko-Geschmack\",\u041F\u0440\u044F\u043D\u0438\u043A\u0438 \u0441\u043E
+        \u0432\u043A\u0443\u0441\u043E\u043C \u0448\u043E\u043A\u043E\u043B\u0430\u0434\u0430,1.09,7,400.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957781154.jpg,\"Weizenmehl,
+        Zucker, Wasser, Palm\xF6l, Kakaopulver 2,4%, Raps\xF6l, Backtriebmittel: E503,
+        E 500; Konservierungsstoff: E282, Aroma, Antioxidationsmittel: Citronens\xE4ure.
+        Kann Spuren von Erdn\xFCssen und Milch enthalten.\"\r\n4030957781130,\"S\xFC\xDFgeb\xE4ck
+        \"\"Prjaniki\"\" mit Vanillearoma\",\u041F\u0440\u044F\u043D\u0438\u043A\u0438
+        \u0441 \u0430\u0440\u043E\u043C\u0430\u0442\u043E\u043C \u0432\u0430\u043D\u0438\u043B\u0438,1.09,7,400.0,g,teigwaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957781130.jpg,\"Weizenmehl,
+        Zucker, Wasser, Palm\xF6l, Raps\xF6l, Backtriebmittel: E503, E500; Konservierungsstoff:
+        E282, Aroma, S\xE4ureregulator: Citronens\xE4ure. Kann Spuren von Erdn\xFCssen
+        und Milch enthalten.\"\r\n4030957781116,\"S\xFC\xDFgeb\xE4ck \"\"Prjaniki
+        Mjatnije\"\" mit Minzaroma\",\u041F\u0440\u044F\u043D\u0438\u043A\u0438 \u0441
+        \u0430\u0440\u043E\u043C\u0430\u0442\u043E\u043C \u043C\u044F\u0442\u044B,1.09,7,400.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957781116.jpg,\"Weizenmehl,
+        Zucker, Wasser, Palm\xF6l, Raps\xF6l, Backtriebmittel: E503, E500; Konservierungsstoff
+        E282, Aroma, S\xE4ureregulator: Citronens\xE4ure. Kann Spuren von Erdn\xFCssen
+        und Milch enthalten.\"\r\n4030957781086,\"S\xFC\xDFgeb\xE4ck \"\"Prjaniki
+        Severnyj poljus\"\"\",\"\u041F\u0440\u044F\u043D\u0438\u043A\u0438 \"\"\u0421\u0435\u0432\u0435\u0440\u043D\u044B\u0439
+        \u043F\u043E\u043B\u044E\u0441\"\"\",1.09,7,400.0,g,suesswaren,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957781086.jpg,\"Weizenmehl,
+        Zucker, Wasser, Palm\xF6l, Raps\xF6l, Backtriebmittel: E503, E500; Konservierungsstoff:
+        E282; Aroma, S\xE4ureregulator: Citronens\xE4ure. Kann Spuren von Erdn\xFCssen
+        und Milch enthalten.\"\r\n4260007244227,Tchaj wdwoem G.Ringe Lubitelskaja,\u0421\u0443\u0448\u043A\u0438
+        \u041B\u044E\u0431\u0438\u0442\u0435\u043B\u044C\u0441\u043A\u0438\u0435,1.49,7,500.0,g,teigwaren,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260007244227.jpg,\r\n4260007249628,Tchaj
+        wdwoem G.Ringe Malyschok Vanille,\u0421\u0443\u0448\u043A\u0438 \u041C\u0430\u043B\u044B\u0448\u043E\u043A
+        \u0432\u0430\u043D\u0438\u043B\u044C,1.59,7,400.0,g,suesswaren,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260007249628.jpg,\r\n4260007244203,Tchaj
+        wdwoem G.Ringe m. Mohn,\u0421\u0443\u0448\u043A\u0438 \u0441 \u043C\u0430\u043A\u043E\u043C,1.49,7,500.0,g,teigwaren,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260007244203.jpg,\r\n4260007244210,Tchaj
+        wdwoem G.Ringe Vanille,\u0421\u0443\u0448\u043A\u0438 \u0432\u0430\u043D\u0438\u043B\u044C\u043D\u044B\u0435,1.49,7,500.0,g,teigwaren,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4260007244210.jpg,\r\n4030011410259,Ungarisches
+        Letscho,\u0412\u0435\u043D\u0433\u0435\u0440\u0441\u043A\u043E\u0435 \u043B\u0435\u0447\u043E,1.59,7,680.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011410259.jpg,\"Paprika
+        30%, Tomaten, Wasser, Zucker, Salz, modifizierte St\xE4rke.\"\r\n4607016245324,Uvelka
+        Getreideflocken aus 4 Sorten,\u0425\u043B\u043E\u043F\u044C\u044F 4-\u0445
+        \u0437\u0435\u0440\u043D\u043E\u0432\u044B\u0435 \u0442\u043E\u043D\u043A\u0438\u0435,1.89,7,350.0,g,getreide,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4607016245324.jpg,\r\n4607016245362,Uvelka
+        Haferflocken duenn,\u0425\u043B\u043E\u043F\u044C\u044F \u043E\u0432\u0441.\u0442\u043E\u043D\u043A\u0438\u0435,1.99,7,400.0,g,getreide,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4607016245362.jpg,\r\n4607016245379,Uvelka
+        Haferflocken mit Kleien,\u0425\u043B\u043E\u043F\u044C\u044F \u043E\u0432\u0441.\u0441
+        \u043E\u0442\u0440\u0443\u0431\u044F\u043C\u0438,2.19,7,400.0,g,getreide,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4607016245379.jpg,\r\n4607016245355,Uvelka
+        Haferflocken Tradizionel,\u0425\u043B\u043E\u043F\u044C\u044F \u043E\u0432\u0441.\u0442\u0440\u0430\u0434.,1.89,7,400.0,g,getreide,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4607016245355.jpg,\r\n4607016245522,Uvelka
+        Linsen in Kochbeutel,\u0427\u0435\u0447\u0435\u0432\u0438\u0446\u0430 \u0432\u0430\u0440.-\u043F\u0430\u043A,1.79,7,80.0,g,getreide,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4607016245522.jpg,\r\n4607016242460,Uvelka
+        Mix Druzhba/Reis mit Hirse 5/,\u0421\u043C\u0435\u0441\u044C \u0440\u0438\u0441
+        \u0438 \u043F\u0448\u0435\u043D\u043E \u0414\u0440\u0443\u0436\u0431\u0430
+        5\u0445,1.69,7,80.0,g,getreide,\"imported, online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4607016242460.jpg,\r\n1419,Viktoriabarschfilet,,2.19,7,100.0,g,fisch,\"online,
+        ww\",,https://catalog.stolitschniy.shop/static/img/products/normalized/1419.jpg,\"Viktoriabarsch
+        Ist ein schmackhafter S\xFC\xDFwasser-Speisefisch mit festem, wei\xDFen Fleisch
+        und daher eine gelungene Abwechslung und Erg\xE4nzung f\xFCr den BARF-Speiseplan.\r\nViktoriabarsch
+        auch Nilbarsch genann ist ein S\xFC\xDFwasser Raubfisch. Das Fleisch ist fein
+        und hat eine wei\xDFe Farbe.\_\r\nSie ist besonders arm an Kalorien und Fett
+        enth\xE4lt jedoch viele Vitamine (A, B1 und B2 sowie Vitamin D), Eiwei\xDF
+        wertvolles Jod und Omega-3-Fetts\xE4uren. Da es sich um eine Naturprodukt
+        handelt, kann es in seltenen F\xE4llen zum Auffinden von Gr\xE4ten und Haut
+        kommen. \"\r\n4603928000969,\"VODKA BELUGA NOBLE, 40% vol.\",\"\u0411\u0435\u043B\u0443\u0433\u0430
+        \u041D\u043E\u0431\u043B\u044C \u0432\u043E\u0434\u043A\u0430, 40% \u0430\u043B\u043A.\",25.6,19,0.5,l,spirituosen,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4603928000969.jpg,\r\n4603928000976,\"VODKA
+        BELUGA NOBLE, 40% vol.\",\"\u0411\u0435\u043B\u0443\u0433\u0430 \u041D\u043E\u0431\u043B\u044C
+        \u0432\u043E\u0434\u043A\u0430, 40% \u0430\u043B\u043A.\",35.2,19,0.7,l,spirituosen,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4603928000976.jpg,\r\n4607027550011,\"Vodka
+        \"\"Green Mark Traditional\"\" 40% vol.\",\"\u0412\u043E\u0434\u043A\u0430
+        \"\"\u0417\u0435\u043B\u0435\u043D\u0430\u044F \u041C\u0430\u0440\u043A\u0430
+        \u0422\u0440\u0430\u0434\u0438\u0446\u0438\u043E\u043D\u043D\u0430\u044F\"\"
+        40% \u0430\u043B\u043A.\",7.99,19,0.5,l,spirituosen,\"imported, online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4607027550011.jpg,Enth\xE4lt
+        Weizen.\r\n4820229031304,\"Vodka \"\"Khortytsa Platinum\"\" 40% vol.\",\"\u0412\u043E\u0434\u043A\u0430
+        \"\"\u0425\u043E\u0440\u0442\u0438\u0446\u0430 \u041F\u043B\u0430\u0442\u0438\u043D\u0443\u043C\"\"
+        40% \u0430\u043B\u043A.\",7.59,19,0.5,l,spirituosen,\"imported, online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4820229031304.jpg,\r\n4820181420611,\"Vodka
+        \"\"Nemiroff - Original\"\" 40% vol.\",\"\u0412\u043E\u0434\u043A\u0430 \"\"Nemiroff\"\"
+        \u043E\u0440\u0438\u0433\u0438\u043D\u0430\u043B 40% \u0430\u043B\u043A.\",7.99,19,0.5,l,spirituosen,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4820181420611.jpg,\r\n4601728010720,\"Vodka
+        \"\"Pjat Ozer\"\" 40% vol.\",\"\u0412\u043E\u0434\u043A\u0430 \"\"\u041F\u044F\u0442\u044C
+        \u043E\u0437\u0451\u0440\"\" 40% \u0430\u043B\u043A.\",7.5,19,0.5,l,spirituosen,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4601728010720.jpg,\r\n4601728011079,\"Vodka
+        \"\"Pjat Ozer- Five Lakes\"\" 40% vol.\",\"\u0412\u043E\u0434\u043A\u0430
+        \"\"\u041F\u044F\u0442\u044C \u043E\u0437\u0451\u0440\"\" 40% \u0430\u043B\u043A.\",10.29,19,0.7,l,spirituosen,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4601728011079.jpg,\r\n4607179801337,\"Vodka
+        \"\"Russian crown Original\"\" 40% vol\",\"\u0412\u043E\u0434\u043A\u0430
+        \"\"\u0420\u043E\u0441\u0441\u0438\u0439\u0441\u043A\u0430\u044F \u043A\u043E\u0440\u043E\u043D\u0430
+        \u041E\u0440\u0438\u0433\u0438\u043D\u0430\u043B\u044C\u043D\u0430\u044F\"\"
+        40% \u0430\u043B\u043A.\",7.69,19,0.5,l,spirituosen,\"imported, online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4607179801337.jpg,\r\n4607179802037,\"Vodka
+        \"\"Russian crown Original\"\" 40% vol\",\"\u0412\u043E\u0434\u043A\u0430
+        \"\"\u0420\u043E\u0441\u0441\u0438\u0439\u0441\u043A\u0430\u044F \u041A\u043E\u0440\u043E\u043D\u0430
+        \u041E\u0440\u0438\u0433\u0438\u043D\u0430\u043B\u044C\u043D\u0430\u044F\"\"
+        40% vol\",9.99,19,0.7,l,spirituosen,\"imported, online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4607179802037.jpg,\r\n4607179801351,\"Vodka
+        \"\"Russian crown Premium\"\" 40% vol.\",\"\u0412\u043E\u0434\u043A\u0430
+        \"\"\u0420\u043E\u0441\u0441\u0438\u0439\u0441\u043A\u0430\u044F \u043A\u043E\u0440\u043E\u043D\u0430
+        \u043F\u0440\u0435\u043C\u0438\u0443\u043C\"\" 40% \u0430\u043B\u043A.\",7.69,19,0.5,l,spirituosen,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4607179801351.jpg,\r\n1320,Vordereisbein,,3.99,7,1.0,kg,fleisch,\"online,
+        ww, wolt\",,https://catalog.stolitschniy.shop/static/img/products/normalized/1320.jpg,\r\n4750007898426,Waffeltorte
+        Belotschka,\u0422\u043E\u0440\u0442 \u0432\u0430\u0444.\u0411\u0435\u043B\u043E\u0447\u043A\u0430,2.99,7,350.0,g,suesswaren,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4750007898426.jpg,\r\n4600648573858,Waffeltorte
+        Otlomi,\u0422\u043E\u0440\u0442 \u0432\u0430\u0444. \u041E\u0442\u043B\u043E\u043C\u0438,2.69,7,250.0,g,suesswaren,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4600648573858.jpg,\r\n4850005980250,Wein
+        Arame Granatapfelwein/halbtr./rot,\"\u0412\u0438\u043D\u043E \u0413\u0440\u0430\u043D\u0430\u0442\u043E\u0432\u043E\u0435
+        \u043A\u0440\u0430\u0441\u043D.,\u043F\u043E\u043B\u0443\u0441\u0443\u044511,5%\",5.69,19,0.75,l,spirituosen,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4850005980250.jpg,\r\n4030957561466,Wei\xDFe
+        Bohnen,\u0411\u0435\u043B\u0430\u044F \u0444\u0430\u0441\u043E\u043B\u044C,1.59,7,500.0,g,getreide,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030957561466.jpg,Wei\xDFe
+        Bohnen. Kann Spuren von glutenhaltigem Getreide und Soja enthalten.\r\n4033443352005,Wei\xDFe
+        Bohnen in Tomatensauce,\u0424\u0430\u0441\u043E\u043B\u044C \u0432 \u0442\u043E\u043C\u0430\u0442\u043D\u043E\u043C
+        \u0441\u043E\u0443\u0441\u0435,1.59,7,480.0,g,konserven,\"imported, online,
+        wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4033443352005.jpg,\"Wei\xDFe
+        Bohnen 55%, Tomatensauce 45% (Wasser, Tomatenmark 5,5%, Raps\xF6l, Weizenmehl,
+        Zwiebeln, M\xF6hren, Petersilie, Sellerie, Salz, Zucker, Gew\xFCrze, Kr\xE4uter).\"\r\n4030011350036,Wei\xDFe
+        Bohnen in Tomatenso\xDFe,\u0424\u0430\u0441\u043E\u043B\u044C \u0432 \u0442\u043E\u043C\u0430\u0442\u043D\u043E\u0439
+        \u0437\u0430\u043B\u0438\u0432\u043A\u0435,2.09,7,575.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011350036.jpg,\"Tomaten
+        35%, Wei\xDFe Bohnen 29%, Tomatenmark 15%, Sonnenblumen\xF6l 9%, Karotten
+        6%, Weizenmehl, Zwiebeln, Zucker, Salz, Pfeffer.\"\r\n5941863002648,\"Wei\xDFkohlbl\xE4tter
+        in Salzlake \"\"Frunze de Varza\"\"\",\"\u041B\u0438\u0441\u0442\u044C\u044F
+        \u043A\u0430\u043F\u0443\u0441\u0442\u044B, \u043C\u0430\u0440\u0438\u043D\u043E\u0432\u0430\u043D\u043D\u044B\u0435\",3.89,7,1600.0,g,konserven,\"imported,
+        online, wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/5941863002648.jpg,\r\n4030011560688,Weizengriess,\u041C\u0430\u043D\u043D\u0430\u044F
+        \u043A\u0440\u0443\u043F\u0430,1.89,7,850.0,g,getreide,\"imported, online,
+        wolt\",Monolith,https://catalog.stolitschniy.shop/static/img/products/normalized/4030011560688.jpg,\r\n4601728011161,Wodka
+        5 Oser Premium 40% Alc.,\"\u0412\u043E\u0434\u043A\u0430 \u041F\u044F\u0442\u044C
+        \u041E\u0437\u0435\u0440 \u041F\u0440\u0435\u043C\u0438\u0443\u043C 0,7L 40%
+        1/6\",11.59,19,0.7,l,spirituosen,\"imported, online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4601728011161.jpg,\r\n4750129441869,Wodka
+        Arsenitch/Moosbeerengeschmack 40%,\u0412\u043E\u0434\u043A\u0430 \u0410\u0440\u0441\u0435\u043D\u0438\u0447
+        \u043A\u043B\u044E\u043A\u0432\u0435\u043D\u043D\u0430\u044F 40% \u0410\u043B\u043A,8.5,19,0.5,l,spirituosen,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4750129441869.jpg,\r\n4750129442279,Wodka
+        Arsenitch/Sanddorngeschmack 40%,\u0412\u043E\u0434\u043A\u0430 \u0410\u0440\u0441\u0435\u043D\u0438\u0447
+        \u043E\u0431\u043B\u0435\u043F\u0438\u0445\u043E\u0432\u0430\u044F  40% \u0410\u043B\u043A,8.5,19,0.5,l,spirituosen,\"imported,
+        online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4750129442279.jpg,\r\n4620004470027,Wodka
+        Baikal 40 %,\u0412\u043E\u0434\u043A\u0430 \u0411\u0430\u0439\u043A\u0430\u043B
+        40%,12.49,19,0.7,l,spirituosen,\"imported, online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4620004470027.jpg,\r\n4620004470010,Wodka
+        Baikal 40 %,\u0412\u043E\u0434\u043A\u0430 \u0411\u0430\u0439\u043A\u0430\u043B
+        40%,8.49,19,0.5,l,spirituosen,\"imported, online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4620004470010.jpg,\r\n4620004470546,Wodka
+        Baikal Ice 40%,\u0412\u043E\u0434\u043A\u0430 \u0411\u0430\u0439\u043A\u0430\u043B
+        \u0410\u0439\u0441 40%,23.2,19,0.7,l,spirituosen,\"imported, online, wolt\",SLCO,https://catalog.stolitschniy.shop/static/img/products/normalized/4620004470546.jpg,\r\n"
+    headers:
+      Connection:
+      - close
+      Content-Disposition:
+      - attachment; filename=export.csv
+      Content-Length:
+      - '108636'
+      Content-Type:
+      - text/csv
+      Date:
+      - Tue, 16 Nov 2021 14:22:31 GMT
+      Server:
+      - nginx
+    status:
+      code: 200
+      message: OK
+version: 1
