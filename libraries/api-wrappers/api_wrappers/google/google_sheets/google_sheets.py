@@ -10,7 +10,7 @@ DEFAULT_CATEGORY_MAPPING_SHEET = "1vlQEu1yFn535-paVcP16Ffm_kH4xRYDLkJw0OZMDBfM"
 
 def get_product_data_from_sheets(
     sheet_address: str, credentials_file: str = "api-credentials.json"
-):
+) -> pd.DataFrame:
     return R.use_with(
         _get_sheet_with_account("Products"),
         [connect_to_service_account, R.identity],
