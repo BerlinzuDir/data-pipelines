@@ -1,7 +1,7 @@
 import pandas as pd
 import pytest
 
-from api_wrappers.generic.sheets import get_product_data_from_sheets
+from api_wrappers.external.sheets import get_product_data_from_sheets
 
 TEST_URL = 'https://catalog.stolitschniy.shop/private/2VNgFokABP/vendors/berlinzudir/export'
 
