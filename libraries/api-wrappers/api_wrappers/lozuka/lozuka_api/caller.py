@@ -7,7 +7,7 @@ from returns.curry import curry
 from api_wrappers.errors import ResponseError
 from api_wrappers.lozuka.lozuka_api.transform import transform_articles
 
-BASE_URL = "https://siegen.lozuka.de/"
+BASE_URL = "https://berlinzudir.de/"
 
 
 @curry
