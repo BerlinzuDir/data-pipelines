@@ -31,7 +31,4 @@ def test_get_file_list_with_wrong_or_restricted_folder():
     with pytest.raises(ValueError) as err:
         _ = get_file_list_from_drive(FOLDER_ID_NOT_SHARED)
 
-    assert (
-        "No files returned from server. Make sure, folder id is correct and folder is shared."
-        in str(err)
-    )
+    assert "No files returned from server. Make sure, folder id is correct and folder is shared." in str(err)

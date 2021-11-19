@@ -8,9 +8,7 @@ from api_wrappers.google.shared import connect_to_service_account
 DEFAULT_CATEGORY_MAPPING_SHEET = "1vlQEu1yFn535-paVcP16Ffm_kH4xRYDLkJw0OZMDBfM"
 
 
-def get_product_data_from_sheets(
-    sheet_address: str, credentials_file: str = "api-credentials.json"
-) -> pd.DataFrame:
+def get_product_data_from_sheets(sheet_address: str, credentials_file: str = "api-credentials.json") -> pd.DataFrame:
     return R.use_with(
         _get_sheet_with_account("Products"),
         [connect_to_service_account, R.identity],
@@ -29,9 +27,7 @@ def get_default_category_mapping(
 
 
 @curry
-def _get_sheet_with_account(
-    worksheet_name: str, account, sheet_address: str
-) -> pd.DataFrame:
+def _get_sheet_with_account(worksheet_name: str, account, sheet_address: str) -> pd.DataFrame:
     return pipe(
         _open_sheet(account),
         _select_worksheet(worksheet_name),

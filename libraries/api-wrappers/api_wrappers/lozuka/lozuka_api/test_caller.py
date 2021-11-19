@@ -25,8 +25,7 @@ def test_post_articles(transform_articles_patch) -> None:
     )
     assert len(responses.calls) == 2
     assert (
-        responses.calls[0].request.body
-        == f'username={LOGIN_DETAILS["username"]}&password={LOGIN_DETAILS["password"]}'
+        responses.calls[0].request.body == f'username={LOGIN_DETAILS["username"]}&password={LOGIN_DETAILS["password"]}'
     )
     assert responses.calls[1].request.body == 12
 
