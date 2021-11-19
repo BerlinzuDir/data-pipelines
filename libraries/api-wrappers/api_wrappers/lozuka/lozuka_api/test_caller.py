@@ -4,12 +4,11 @@ from unittest.mock import patch
 import pandas as pd
 import responses
 
-from api_wrappers.lozuka.lozuka_api import post_articles
+from api_wrappers.lozuka.lozuka_api import post_articles, BASE_URL
 
 
 LOGIN_DETAILS = {"username": "sample_username", "password": "sample_pw"}
 TRADER_ID = 123
-BASE_URL = "https://siegen.lozuka.de/"
 
 
 @responses.activate
