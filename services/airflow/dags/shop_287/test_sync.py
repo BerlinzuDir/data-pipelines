@@ -21,10 +21,7 @@ def test_product_pipeline():
     product_pipeline()
     assert len(responses.calls) == 2
     assert len(json.loads(responses.calls[1].request.body)["data"]["articles"]) == 2
-    assert (
-        json.loads(responses.calls[1].request.body)["data"]["articles"][0]
-        == FIRST_PRODUCT
-    )
+    assert json.loads(responses.calls[1].request.body)["data"]["articles"][0] == FIRST_PRODUCT
 
 
 def test_map_product_category_returns_correct_product_id():

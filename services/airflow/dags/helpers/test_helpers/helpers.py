@@ -44,9 +44,7 @@ def get_from_dag_conf(name: str):
 
 @curry
 def check_if_var_exists_in_dag_conf(name: str, kwargs):
-    return R.try_catch(R.pipe(get_from_dag_conf(name), R.is_nil, R.not_func), R.F)(
-        kwargs
-    )
+    return R.try_catch(R.pipe(get_from_dag_conf(name), R.is_nil, R.not_func), R.F)(kwargs)
 
 
 @curry
@@ -68,9 +66,7 @@ def set_env_variable_from_dag_config_if_present(name: str, kwargs):
 
 
 @curry
-def if_var_exists_in_dag_conf_use_as_first_arg(
-    var_name, task_function, url, *args, **kwargs
-):
+def if_var_exists_in_dag_conf_use_as_first_arg(var_name, task_function, url, *args, **kwargs):
     print(R.path(["dag_run", "conf"], kwargs))
     return R.if_else(
         check_if_var_exists_in_dag_conf(var_name),
@@ -85,9 +81,7 @@ def if_var_exists_in_dag_conf_use_as_first_arg(
 def create_task_instance(dag_id: str, task_id: str, url: str = None):
     dag = DagBag().get_dag(dag_id)
     execution_date = datetime.now()
-    dr = dag.create_dagrun(
-        state="running", run_type=DagRunType("manual"), execution_date=execution_date
-    )
+    dr = dag.create_dagrun(state="running", run_type=DagRunType("manual"), execution_date=execution_date)
 
     task = dag.get_task(task_id)
     if url:
