@@ -40,9 +40,9 @@ def _load_product_data():
 
 def _transform_product_data(product_data: List[pd.DataFrame]):
     products, images = product_data
-    products["Produktbild \n(Dateiname oder url)"] = products[
-        "Produktbild \n(Dateiname oder url)"
-    ].apply(lambda val: (images[images["title"] == val])["link"].values[0])
+    products["Produktbild \n(Dateiname oder url)"] = products["Produktbild \n(Dateiname oder url)"].apply(
+        lambda val: (images[images["title"] == val])["link"].values[0]
+    )
     products["Bruttopreis"] = products["Bruttopreis"].apply(
         lambda price: R.pipe(
             lambda val: val[1:],
@@ -62,13 +62,9 @@ def _transform_product_data(product_data: List[pd.DataFrame]):
 @R.curry
 def _map_product_category(mapping: pd.DataFrame, category_name: str) -> int:
     return R.pipe(
-        lambda df: df[df["category_name"] == category_name].astype(
-            {"category_id": str}
-        ),
+        lambda df: df[df["category_name"] == category_name].astype({"category_id": str}),
         lambda df: df["category_id"].values,
-        R.if_else(
-            lambda x: len(x) == 1, list, lambda: raise_value_error("Invalid category")
-        ),
+        R.if_else(lambda x: len(x) == 1, list, lambda: raise_value_error("Invalid category")),
     )(mapping)
 
 
