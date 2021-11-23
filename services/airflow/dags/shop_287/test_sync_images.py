@@ -93,9 +93,7 @@ IMAGE_URL2 = "http://static-files/static/images/2.jpg"
 HASH2 = "1lakskdasdfuiobjkdasldkj"
 FILENAME2 = "2.jpg"
 
-GOOGLE_URL = (
-    "https://drive.google.com/uc?id=1ym44i-TWgTHu5Ncd9XIQjS4UIKdCAOfa&export=download"
-)
+GOOGLE_URL = "https://drive.google.com/uc?id=1ym44i-TWgTHu5Ncd9XIQjS4UIKdCAOfa&export=download"
 GOOGLE_FILENAME = "2.jpeg"
 
 FILE_LIST = pd.DataFrame(

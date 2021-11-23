@@ -4,12 +4,11 @@ from unittest.mock import patch
 import pandas as pd
 import responses
 
-from api_wrappers.lozuka.lozuka_api import post_articles
+from api_wrappers.lozuka.lozuka_api import post_articles, BASE_URL
 
 
 LOGIN_DETAILS = {"username": "sample_username", "password": "sample_pw"}
 TRADER_ID = 123
-BASE_URL = "https://siegen.lozuka.de/"
 
 
 @responses.activate
@@ -25,8 +24,7 @@ def test_post_articles(transform_articles_patch) -> None:
     )
     assert len(responses.calls) == 2
     assert (
-        responses.calls[0].request.body
-        == f'username={LOGIN_DETAILS["username"]}&password={LOGIN_DETAILS["password"]}'
+        responses.calls[0].request.body == f'username={LOGIN_DETAILS["username"]}&password={LOGIN_DETAILS["password"]}'
     )
     assert responses.calls[1].request.body == 12
 

@@ -7,7 +7,7 @@ from returns.curry import curry
 from api_wrappers.errors import ResponseError
 from api_wrappers.lozuka.lozuka_api.transform import transform_articles
 
-BASE_URL = "https://siegen.lozuka.de/"
+BASE_URL = "https://berlinzudir.de/"
 
 
 @curry
@@ -17,9 +17,7 @@ def post_articles(login_details: dict, trader_id: int, articles: pd.DataFrame) -
     response = requests.post(request_url, data=articles)
     response.raise_for_status()
     if response.status_code != 200:
-        raise ResponseError(
-            f"Posting Articles to {request_url} resulted in status code {response.status_code}."
-        )
+        raise ResponseError(f"Posting Articles to {request_url} resulted in status code {response.status_code}.")
 
 
 def _request_url(login_details, trader_id: int):

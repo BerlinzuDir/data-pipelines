@@ -60,9 +60,7 @@ dag = DAG(
     description="an example DAG that downloads a csv and uploads it to postgres",
     start_date=days_ago(1),
     tags=["TEST DAG"],
-    on_failure_callback=slack_notifier_factory(
-        create_slack_error_message_from_task_context
-    ),
+    on_failure_callback=slack_notifier_factory(create_slack_error_message_from_task_context),
 )
 
 t1 = PythonOperator(task_id=TASK_ID, python_callable=fail, dag=dag, op_args=[""])

@@ -12,9 +12,7 @@ from api_wrappers.google import get_file_list_from_drive
 
 
 def load_files_from_google_to_ftp(store_id: int, google_drive_folder_id: str):
-    R.pipe(get_file_list_from_drive, load_all_files_to_ftp(store_id))(
-        google_drive_folder_id
-    )
+    R.pipe(get_file_list_from_drive, load_all_files_to_ftp(store_id))(google_drive_folder_id)
 
 
 @R.curry
@@ -40,9 +38,7 @@ def load_ftp_credentials_from_env() -> FtpCredentials:
 def load_all_files_to_ftp(store_id: int, file_list: pd.DataFrame) -> pd.DataFrame:
     credentials = load_ftp_credentials_from_env()
     with connect_to_ftp(credentials) as session:
-        file_list["title"].apply(
-            lambda title: load_single_image_to_ftp(session, store_id, title)
-        )
+        file_list["title"].apply(lambda title: load_single_image_to_ftp(session, store_id, title))
     return file_list
 
 
@@ -69,9 +65,7 @@ def load_single_image_to_ftp(session, store_id: int, filename: str):
 
 
 def download_all(file_list: pd.DataFrame) -> pd.DataFrame:
-    file_list[["link", "title"]].apply(
-        lambda row: download(row["link"], row["title"]), axis=1
-    )
+    file_list[["link", "title"]].apply(lambda row: download(row["link"], row["title"]), axis=1)
     return file_list
 
 

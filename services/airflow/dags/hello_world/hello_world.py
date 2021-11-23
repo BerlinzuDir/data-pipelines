@@ -39,15 +39,11 @@ dag = DAG(
     tags=["example"],
 )
 
-t1 = PythonOperator(
-    task_id="extract", python_callable=execute_push("data1", extract), dag=dag
-)
+t1 = PythonOperator(task_id="extract", python_callable=execute_push("data1", extract), dag=dag)
 t2 = PythonOperator(
     task_id="transform",
     python_callable=pull_execute_push("data1", "data2", transform),
     dag=dag,
 )
-t3 = PythonOperator(
-    task_id="load", python_callable=pull_execute("data2", transform), dag=dag
-)
+t3 = PythonOperator(task_id="load", python_callable=pull_execute("data2", transform), dag=dag)
 t1 >> t2 >> t3

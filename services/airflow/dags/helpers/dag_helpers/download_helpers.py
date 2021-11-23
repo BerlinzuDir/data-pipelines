@@ -9,9 +9,7 @@ def download_csv(url: str) -> DataFrame:
     return R.pipe(
         R.try_catch(
             requests.get,
-            lambda err, url: _raise(
-                FileNotFoundError(f"Cannot find file at {url} \n trace: \n {err}")
-            ),
+            lambda err, url: _raise(FileNotFoundError(f"Cannot find file at {url} \n trace: \n {err}")),
         ),
         R.prop("content"),
         R.invoker(1, "decode")("utf-8"),
