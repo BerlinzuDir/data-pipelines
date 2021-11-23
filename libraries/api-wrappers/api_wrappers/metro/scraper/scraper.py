@@ -69,11 +69,11 @@ def get_products_from_metro(store_id, brands: List[str], categories: List[str]) 
             net_piece_unit = list(bundles[bundle]["contentData"].keys())[0]
             products_dict["Maßeinheit"].append(
                 "stk" if int(bundles[bundle]["bundleSize"]) >
-                         1 else bundles[bundle]["contentData"][net_piece_unit]["uom"]
+                1 else bundles[bundle]["contentData"][net_piece_unit]["uom"]
             )
             products_dict["Verpackungsgröße"].append(
                 bundles[bundle]["bundleSize"] if int(bundles[bundle]["bundleSize"]) >
-                                                 1 else bundles[bundle]["contentData"][net_piece_unit]["value"]
+                1 else bundles[bundle]["contentData"][net_piece_unit]["value"]
             )
             products_dict["Kategorie"].append(bundles[bundle]["categories"][0]["name"])
             products_dict["Produktbild"].append(bundles[bundle]["imageUrl"])
