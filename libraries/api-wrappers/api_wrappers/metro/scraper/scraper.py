@@ -15,14 +15,14 @@ def get_products_from_metro(store_id, brands: List[str], categories: List[str]) 
     products_endpoint = (
         PRODUCTS_ENDPOINT +
         f'search?storeId={store_id}' +
-        f"&language=de-DE" +
-        f"&country=DE" +
-        f"&query=*" +
-        f"&profile=boostRopoTopsellers" +
-        f"&facets=true" +
-        f"&categories=true" +
-        f"&rows=1000" +
-        f"&page=1"  # TODO: next page
+        "&language=de-DE" +
+        "&country=DE" +
+        "&query=*" +
+        "&profile=boostRopoTopsellers" +
+        "&facets=true" +
+        "&categories=true" +
+        "&rows=1000" +
+        "&page=1"  # TODO: next page
     )
     if categories:
         products_endpoint += ''.join([f"&filter=category%3A{category}" for category in categories])
@@ -40,6 +40,7 @@ def get_products_from_metro(store_id, brands: List[str], categories: List[str]) 
         "Verpackungsgröße": [],
         "Kategorie": [],
         "Produktbild": [],
+        "gtins/eans": [],
     }
     for article_id in article_ids:
         betty_article_id = article_id[:-4]
@@ -62,7 +63,9 @@ def get_products_from_metro(store_id, brands: List[str], categories: List[str]) 
             products_dict["Titel"].append(bundles[bundle]["description"])
             products_dict["Beschreibung"].append("")
             products_dict["Bruttopreis"].append(bundles[bundle]["stores"]["00032"]["sellingPriceInfo"]["finalPrice"])
-            products_dict["Mehrwertsteuer"].append(int(bundles[bundle]["stores"]["00032"]["sellingPriceInfo"]["vatPercent"] * 100))
+            products_dict["Mehrwertsteuer"].append(
+                int(bundles[bundle]["stores"]["00032"]["sellingPriceInfo"]["vatPercent"] * 100)
+            )
             net_piece_unit = list(bundles[bundle]["contentData"].keys())[0]
             products_dict["Maßeinheit"].append("stk" if int(bundles[bundle]["bundleSize"]) > 1 else bundles[bundle]["contentData"][net_piece_unit]["uom"])
             products_dict["Verpackungsgröße"].append(bundles[bundle]["bundleSize"] if int(bundles[bundle]["bundleSize"]) > 1 else bundles[bundle]["contentData"][net_piece_unit]["value"])
@@ -91,6 +94,7 @@ def get_products_from_metro(store_id, brands: List[str], categories: List[str]) 
                 except Exception:
                     gtin_eans = []
                     print("could not  parse gtin from file")
+            products_dict["gtins/eans"].append(gtin_eans)
     return pd.DataFrame.from_dict(products_dict)
 
 

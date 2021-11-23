@@ -33,6 +33,7 @@ def _expected_dataframe():
                 "https://cdn.metro-group.com/de/de_pim_353252001002_01.png?format=jpg&quality=80&dpi=72",
                 "https://cdn.metro-group.com/de/de_pim_367333001002_01.png?format=jpg&quality=80&dpi=72",
             ],
+            "gtins/eans": [[4014472002741], [4014472980056]],
         },
         index=[1, 2],
     )
