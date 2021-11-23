@@ -9,7 +9,6 @@ import uuid
 
 PRODUCTS_ENDPOINT = "https://produkte.metro.de/explore.articlesearch.v1/"
 PRODUCT_DETAIL_ENDPOINT = 'https://produkte.metro.de/evaluate.article.v1/'
-PRODUCT_PATH = 'https://produkte.metro.de/shop/pv/'
 
 
 def get_products_from_metro(store_id, brands: List[str], categories: List[str]) -> pd.DataFrame:
@@ -22,11 +21,13 @@ def get_products_from_metro(store_id, brands: List[str], categories: List[str]) 
         f"&profile=boostRopoTopsellers" +
         f"&facets=true" +
         f"&categories=true" +
-        ''.join(
-            [f"&filter=brand%3A{brand}" for brand in brands] +
-            [f"&filter=category%3A{category}" for category in categories]
-        )
+        f"&rows=1000" +
+        f"&page=1"  # TODO: next page
     )
+    if categories:
+        products_endpoint += ''.join([f"&filter=category%3A{category}" for category in categories])
+    if brands:
+        products_endpoint += ''.join([f"&filter=brand%3A{brand}" for brand in brands])
     products_response = requests.get(products_endpoint)
     products = json.loads(products_response.content)
     article_ids = products["resultIds"]
@@ -67,7 +68,10 @@ def get_products_from_metro(store_id, brands: List[str], categories: List[str]) 
             products_dict["Verpackungsgröße"].append(bundles[bundle]["bundleSize"] if int(bundles[bundle]["bundleSize"]) > 1 else bundles[bundle]["contentData"][net_piece_unit]["value"])
             products_dict["Kategorie"].append(bundles[bundle]["categories"][0]["name"])
             products_dict["Produktbild"].append(bundles[bundle]["imageUrl"])
-            pdf_url = bundles[bundle]["details"]["media"]["documents"][0]["url"]
+            try:
+                pdf_url = bundles[bundle]["details"]["media"]["documents"][0]["url"]
+            except IndexError:
+                pdf_url = ""
             response = requests.get(pdf_url)
             filename = "my_pdf.pdf"
             with open(filename, 'wb') as my_data:
@@ -87,12 +91,11 @@ def get_products_from_metro(store_id, brands: List[str], categories: List[str]) 
                 except Exception:
                     gtin_eans = []
                     print("could not  parse gtin from file")
-            print("ean:", gtin_eans)
     return pd.DataFrame.from_dict(products_dict)
 
 
 if __name__ == '__main__':
     STORE_ID = "0032"
-    CATEGORIES = ['food']
-    BRANDS = ["Bionade"]
+    CATEGORIES = ['food/obst-gemüse']
+    BRANDS = [""]
     get_products_from_metro(store_id=STORE_ID, categories=CATEGORIES, brands=BRANDS)
