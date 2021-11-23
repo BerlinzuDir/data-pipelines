@@ -22,6 +22,9 @@ def test_get_file_list_from_drive():
     assert requests.get(file_list.link[0]).status_code == 200
     assert requests.get(file_list.link[1]).status_code == 200
 
+    # hash contains hash
+    assert file_list.hash[0] == '15bdf97b0e2de0293ec02720e25144ec'
+
 
 def test_get_file_list_with_wrong_or_restricted_folder():
 

@@ -6,7 +6,7 @@ build:
 	 DOCKER_BUILDKIT=1 docker-compose build
 
 setup:
-	docker-compose up -d
+	docker-compose up -d && make migrations
 
 teardown:
 	docker-compose down -v
@@ -25,3 +25,6 @@ stylecheck:
 
 watch:
 	docker exec -it airflow-scheduler pytest -f --ignore ./logs -k 'not integration'
+
+migrations:
+	docker exec -w /opt/airflow/ airflow-scheduler poetry run yoyo apply --no-config-file --database postgresql://${TARGET_DB_USER}:${TARGET_DB_PW}@${TARGET_DB_HOSTNAME}/${TARGET_DB} ../../libraries/database/database/migrations/migration_files

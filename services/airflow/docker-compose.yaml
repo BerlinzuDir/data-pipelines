@@ -52,6 +52,8 @@ x-airflow-common:
       condition: service_healthy
     postgres:
       condition: service_healthy
+    target-db:
+      condition: service_healthy
 
 services:
   static-files:
@@ -61,10 +63,41 @@ services:
       dockerfile: ./docker/nginx/Dockerfile
     volumes:
       - ./files/static:/var/www/static
-      - ./files/thryve:/var/www/thryve
     command: nginx
     ports:
-      - 80:80
+      - "80:80"
+
+  target-db:
+    container_name: "test_db"
+    image: postgres:13
+    environment:
+      POSTGRES_USER: "${TARGET_DB_USER}"
+      POSTGRES_PASSWORD: "${TARGET_DB_PW}"
+      POSTGRES_DB: "${TARGET_DB}"
+    volumes:
+      - target-db-volume:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-U", "${TARGET_DB_USER}", "-d", "${TARGET_DB}" ]
+      interval: 5s
+      retries: 5
+    restart: always
+    ports:
+      - "5432:5432"
+
+  ftp:
+    container_name: 'ftp'
+    image: stilliard/pure-ftpd:latest
+    environment:
+      FTP_USER_NAME: bob
+      FTP_USER_PASS: password
+      FTP_USER_HOME: /home/bob
+    healthcheck:
+      interval: 5s
+      test: ["CMD", "curl", "--fail", "ftp://bob:password@ftp"]
+      retries: 5
+    ports:
+      - "21:21"
+      - "30000-30009:30000-30009"
 
   postgres:
     image: postgres:13
@@ -137,3 +170,4 @@ services:
 volumes:
   postgres-db-volume:
   airflow-logs-volume:
+  target-db-volume:

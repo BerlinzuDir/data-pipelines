@@ -10,7 +10,7 @@ returns = "^0.16.0"
 pandas = "^1.2.4"
 gspread = "^3.7.0"
 PyDrive2 = "^1.8.3"
-ramda = "^0.6.1"
+ramda = "^2021.10.24"
 requests = "^2.25.1"
 setuptools = "^57.0.0"
 
