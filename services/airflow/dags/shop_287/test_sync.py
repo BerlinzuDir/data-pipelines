@@ -1,16 +1,14 @@
-from sync import (
+from .sync import (
     product_pipeline,
     TRADER_ID,
-    _load_product_data,
-    _transform_product_data,
     _map_product_category,
 )
 from api_wrappers.lozuka.lozuka_api.caller import BASE_URL
 from api_wrappers.google.google_sheets import get_default_category_mapping
 import responses
 import urllib
-import ramda as R
 import json
+import pandas as pd
 
 
 @responses.activate
@@ -18,7 +16,7 @@ def test_product_pipeline():
     responses.add_passthru("https://oauth2.googleapis.com/token")
     responses.add_passthru("https://sheets.googleapis.com")
     _setup_request_mocks()
-    product_pipeline()
+    product_pipeline(FILE_LIST)
     assert len(responses.calls) == 2
     assert len(json.loads(responses.calls[1].request.body)["data"]["articles"]) == 2
     assert json.loads(responses.calls[1].request.body)["data"]["articles"][0] == FIRST_PRODUCT
@@ -29,14 +27,6 @@ def test_map_product_category_returns_correct_product_id():
 
     assert _map_product_category(mapping, "Alkoholhaltige Getränke") == ["51"]
     assert _map_product_category(mapping, "Obst Gemüse") == ["36"]
-
-
-def test_transformation_adds_imaged_download_links():
-    res = R.pipe(lambda x: _load_product_data(), _transform_product_data)("")
-    assert (
-        res["Produktbild \n(Dateiname oder url)"].values[0]
-        == "https://drive.google.com/uc?id=10ROgXCXo1uC9M8nLuiMdHe526fLTpKyd&export=download"
-    )
 
 
 def _setup_request_mocks() -> None:
@@ -78,7 +68,7 @@ FIRST_PRODUCT = {
     "description": "Süß und Knackig\nHerkunft: Spanien,\n\n"
     + "Tip: für längere Haltbarkeit, Äpfel und Bananen getrennt lagern.",
     "vat": "7",
-    "images": "https://drive.google.com/uc?id=10ROgXCXo1uC9M8nLuiMdHe526fLTpKyd&export=download",
+    "images": "1.png",
     "stock": 10,
     "unitSection": {
         "weightUnit": "stk",
@@ -88,3 +78,17 @@ FIRST_PRODUCT = {
         "ean": "",
     },
 }
+
+FILE_LIST = pd.DataFrame.from_dict(
+    {
+        "link": {
+            0: "https://drive.google.com/uc?id=1ym44i-TWgTHu5Ncd9XIQjS4UIKdCAOfa&export=download",
+            1: "https://drive.google.com/uc?id=10ROgXCXo1uC9M8nLuiMdHe526fLTpKyd&export=download",
+        },
+        "title": {0: "2.jpeg", 1: "1.png"},
+        "hash": {
+            0: "15bdf97b0e2de0293ec02720e25144ec",
+            1: "6de5e0a8daffcd6b92e180d703518639",
+        },
+    }
+)

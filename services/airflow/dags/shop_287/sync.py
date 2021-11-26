@@ -3,7 +3,7 @@ import json
 import pandas as pd
 from typing import List
 import pathlib
-from api_wrappers.google import get_product_data_from_sheets, get_file_list_from_drive
+from api_wrappers.google import get_product_data_from_sheets
 from api_wrappers.google.google_sheets import get_default_category_mapping
 from api_wrappers.lozuka.lozuka_api import post_articles
 import ramda as R
@@ -14,12 +14,13 @@ GOOGLE_SHEETS_ADDRESS = "1HrA07_T95T6OyL-T012tGF4F6ZuaHalzFmSTtYAyjpo"
 GOOGLE_DRIVE_ADDRESS = "1lQ2dyF3bschhZIl4MdMZ-Bn0VmbEz5Qv"
 
 
-def product_pipeline():
+def product_pipeline(file_list: dict):
     return R.pipe(
-        lambda *args: _load_product_data(),
+        pd.DataFrame.from_dict,
+        _load_product_data,
         _transform_product_data,
         post_articles(_load_credentials("/shop-secrets.json"), TRADER_ID),
-    )("")
+    )(file_list)
 
 
 def _load_credentials(filename: str):
@@ -31,18 +32,15 @@ def _get_path_of_file() -> str:
     return str(pathlib.Path(__file__).parent.resolve())
 
 
-def _load_product_data():
+def _load_product_data(file_list):
     return [
         get_product_data_from_sheets(GOOGLE_SHEETS_ADDRESS),
-        get_file_list_from_drive(GOOGLE_DRIVE_ADDRESS),
+        file_list,
     ]
 
 
 def _transform_product_data(product_data: List[pd.DataFrame]):
-    products, images = product_data
-    products["Produktbild \n(Dateiname oder url)"] = products["Produktbild \n(Dateiname oder url)"].apply(
-        lambda val: (images[images["title"] == val])["link"].values[0]
-    )
+    products, file_list = product_data
     products["Bruttopreis"] = products["Bruttopreis"].apply(
         lambda price: R.pipe(
             lambda val: val[1:],

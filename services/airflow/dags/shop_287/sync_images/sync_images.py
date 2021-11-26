@@ -12,12 +12,13 @@ from api_wrappers.google import get_file_list_from_drive
 
 
 def load_files_from_google_to_ftp(store_id: int, google_drive_folder_id: str):
-    R.pipe(get_file_list_from_drive, load_all_files_to_ftp(store_id))(google_drive_folder_id)
-
-
-@R.curry
-def load_all_files_to_ftp(store_id: int, file_list: pd.DataFrame):
-    R.pipe(download_all, load_all_files_to_ftp(store_id))(file_list)
+    return R.pipe(
+        get_file_list_from_drive,
+        _download_all_files,
+        _load_all_files_to_ftp(store_id),
+        lambda df: df.to_dict(),  # return values have to be json serializable
+        R.tap(print),
+    )(google_drive_folder_id)
 
 
 class FtpCredentials(TypedDict):
@@ -26,7 +27,7 @@ class FtpCredentials(TypedDict):
     hostname: str
 
 
-def load_ftp_credentials_from_env() -> FtpCredentials:
+def _load_ftp_credentials_from_env() -> FtpCredentials:
     return {
         "username": os.environ["FTP_USER"],
         "password": os.environ["FTP_PASSWORD"],
@@ -35,15 +36,17 @@ def load_ftp_credentials_from_env() -> FtpCredentials:
 
 
 @R.curry
-def load_all_files_to_ftp(store_id: int, file_list: pd.DataFrame) -> pd.DataFrame:
-    credentials = load_ftp_credentials_from_env()
-    with connect_to_ftp(credentials) as session:
-        file_list["title"].apply(lambda title: load_single_image_to_ftp(session, store_id, title))
+def _load_all_files_to_ftp(store_id: int, file_list: pd.DataFrame) -> pd.DataFrame:
+    credentials = _load_ftp_credentials_from_env()
+    with _connect_to_ftp(credentials) as session:
+        file_list["title"].apply(
+            lambda title: _load_single_image_to_ftp(session, store_id, title)
+        )
     return file_list
 
 
 @contextmanager
-def connect_to_ftp(credentials: FtpCredentials):
+def _connect_to_ftp(credentials: FtpCredentials):
     session = FTP(credentials["hostname"])
     session.login(credentials["username"], credentials["password"])
     try:
@@ -52,24 +55,31 @@ def connect_to_ftp(credentials: FtpCredentials):
         session.close()
 
 
-def load_single_image_to_ftp(session, store_id: int, filename: str):
-
+@R.curry
+def _load_single_image_to_ftp(session, store_id: int, filename: str):
     with open(filename, "rb") as file:
         try:
-            session.cwd(f"/{store_id}/")
+            session.cwd("/BerlinzuDir/")
         except ftplib.error_perm:
-            session.mkd(f"/{store_id}/")
-            session.cwd(f"/{store_id}/")
+            session.mkd("/BerlinzuDir/")
+            session.cwd("/BerlinzuDir/")
+        try:
+            session.cwd(f"/BerlinzuDir/{store_id}/")
+        except ftplib.error_perm:
+            session.mkd(f"/BerlinzuDir/{store_id}/")
+            session.cwd(f"/BerlinzuDir/{store_id}/")
         session.storbinary(f"STOR {filename}", file)
     return filename
 
 
-def download_all(file_list: pd.DataFrame) -> pd.DataFrame:
-    file_list[["link", "title"]].apply(lambda row: download(row["link"], row["title"]), axis=1)
+def _download_all_files(file_list: pd.DataFrame) -> pd.DataFrame:
+    file_list[["link", "title"]].apply(
+        lambda row: _download(row["link"], row["title"]), axis=1
+    )
     return file_list
 
 
-def download(url: str, filename: str) -> None:
+def _download(url: str, filename: str) -> None:
 
     while not os.path.isfile(filename):
 
