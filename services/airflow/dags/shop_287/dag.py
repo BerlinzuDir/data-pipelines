@@ -23,7 +23,7 @@ default_args = {
 }
 
 dag = DAG(
-    "shop_287_product_upload",
+    f"shop_{TRADER_ID}_product_upload",
     default_args=default_args,
     description="Extract product data and image links from google and upload to lozuka api",
     schedule_interval=timedelta(days=1),

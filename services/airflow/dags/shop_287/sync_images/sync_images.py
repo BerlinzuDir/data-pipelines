@@ -3,7 +3,7 @@ from contextlib import contextmanager
 import requests
 import shutil
 import pandas as pd
-from typing import TypedDict
+from typing import TypedDict, List
 from ftplib import FTP
 from time import sleep
 import os
@@ -11,13 +11,18 @@ import ramda as R
 from api_wrappers.google import get_file_list_from_drive
 
 
-def load_files_from_google_to_ftp(store_id: int, google_drive_folder_id: str):
+class FileListDict(TypedDict):
+    title: List[str]
+    url: List[str]
+    hash: List[str]
+
+
+def load_files_from_google_to_ftp(store_id: int, google_drive_folder_id: str) -> FileListDict:
     return R.pipe(
         get_file_list_from_drive,
         _download_all_files,
         _load_all_files_to_ftp(store_id),
         lambda df: df.to_dict(),  # return values have to be json serializable
-        R.tap(print),
     )(google_drive_folder_id)
 
 
@@ -39,9 +44,7 @@ def _load_ftp_credentials_from_env() -> FtpCredentials:
 def _load_all_files_to_ftp(store_id: int, file_list: pd.DataFrame) -> pd.DataFrame:
     credentials = _load_ftp_credentials_from_env()
     with _connect_to_ftp(credentials) as session:
-        file_list["title"].apply(
-            lambda title: _load_single_image_to_ftp(session, store_id, title)
-        )
+        file_list["title"].apply(lambda title: _load_single_image_to_ftp(session, store_id, title))
     return file_list
 
 
@@ -56,7 +59,7 @@ def _connect_to_ftp(credentials: FtpCredentials):
 
 
 @R.curry
-def _load_single_image_to_ftp(session, store_id: int, filename: str):
+def _load_single_image_to_ftp(session, store_id: int, filename: str) -> str:
     with open(filename, "rb") as file:
         try:
             session.cwd("/BerlinzuDir/")
@@ -73,9 +76,7 @@ def _load_single_image_to_ftp(session, store_id: int, filename: str):
 
 
 def _download_all_files(file_list: pd.DataFrame) -> pd.DataFrame:
-    file_list[["link", "title"]].apply(
-        lambda row: _download(row["link"], row["title"]), axis=1
-    )
+    file_list[["link", "title"]].apply(lambda row: _download(row["link"], row["title"]), axis=1)
     return file_list
 
 
