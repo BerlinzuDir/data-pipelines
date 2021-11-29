@@ -62,15 +62,10 @@ def _connect_to_ftp(credentials: FtpCredentials):
 def _load_single_image_to_ftp(session, store_id: int, filename: str) -> str:
     with open(filename, "rb") as file:
         try:
-            session.cwd("/BerlinzuDir/")
+            session.cwd(f"/{store_id}/")
         except ftplib.error_perm:
-            session.mkd("/BerlinzuDir/")
-            session.cwd("/BerlinzuDir/")
-        try:
-            session.cwd(f"/BerlinzuDir/{store_id}/")
-        except ftplib.error_perm:
-            session.mkd(f"/BerlinzuDir/{store_id}/")
-            session.cwd(f"/BerlinzuDir/{store_id}/")
+            session.mkd(f"/{store_id}/")
+            session.cwd(f"/{store_id}/")
         session.storbinary(f"STOR {filename}", file)
     return filename
 
@@ -86,15 +81,11 @@ def _download(url: str, filename: str) -> None:
         response = requests.get(url, stream=True)
 
         # Check if the image was retrieved successfully
-        if response.status_code == 200:
-            # Set decode_content value to True, otherwise the downloaded image file's size will be zero.
-            response.raw.decode_content = True
+        response.raise_for_status()
+        # Set decode_content value to True, otherwise the downloaded image file's size will be zero.
+        response.raw.decode_content = True
 
-            # Open a local file with wb ( write binary ) permission.
-            with open(filename, "wb") as f:
-                shutil.copyfileobj(response.raw, f)
-
-            print("Image sucessfully Downloaded: ", filename)
-        else:
-            print("Image Couldn't be retreived")
+        # Open a local file with wb ( write binary ) permission.
+        with open(filename, "wb") as f:
+            shutil.copyfileobj(response.raw, f)
         sleep(1)
