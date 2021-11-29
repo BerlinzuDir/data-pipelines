@@ -47,7 +47,7 @@ def test_load_to_ftp(clean_cwd):
 def file_exists_on_ftp(filename):
     credentials = _load_ftp_credentials_from_env()
     with _connect_to_ftp(credentials) as session:
-        session.cwd(f"/BerlinzuDir/{STORE_ID}")
+        session.cwd(f"/{STORE_ID}")
         exists = filename in session.nlst()
         if exists:
             session.delete(filename)
