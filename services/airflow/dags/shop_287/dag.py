@@ -5,7 +5,6 @@ from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago
 from dags.shop_287.sync import product_pipeline, TRADER_ID, GOOGLE_DRIVE_ADDRESS
 from dags.shop_287.sync_images import load_files_from_google_to_ftp
-from dags.airflow_fp.airflow_fp import execute_push, pull_execute
 from dags.helpers.dag_helpers import (
     slack_notifier_factory,
     create_slack_error_message_from_task_context,
