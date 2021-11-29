@@ -5,16 +5,16 @@ import numpy as np
 import pandas as pd
 from .sync_images import (
     _download,
-    _load_single_image_to_ftp,
-    _load_ftp_credentials_from_env,
+    _load_single_image_to_sftp,
+    _load_sftp_credentials_from_env,
     _download_all_files,
-    _connect_to_ftp,
-    load_files_from_google_to_ftp,
+    _connect_to_sftp,
+    load_files_from_google_to_sftp,
 )
 
 
-def test_load_files_from_google_to_ftp(clean_cwd):
-    load_files_from_google_to_ftp(STORE_ID, FOLDER_ID)
+def test_load_files_from_google_to_sftp(clean_cwd):
+    load_files_from_google_to_sftp(STORE_ID, FOLDER_ID)
 
     assert os.path.isfile(GOOGLE_FILENAME)
     assert file_exists_on_ftp(GOOGLE_FILENAME)
@@ -33,20 +33,20 @@ def test_download_file(clean_cwd):
     assert os.path.isfile(FILENAME1)
 
 
-def test_load_to_ftp(clean_cwd):
+def test_load_to_sftp(clean_cwd):
     _download(IMAGE_URL1, FILENAME1)
     assert os.path.isfile(FILENAME1)
 
-    credentials = _load_ftp_credentials_from_env()
-    with _connect_to_ftp(credentials) as session:
-        _load_single_image_to_ftp(session, STORE_ID, FILENAME1)
+    credentials = _load_sftp_credentials_from_env()
+    with _connect_to_sftp(credentials) as session:
+        _load_single_image_to_sftp(session, STORE_ID, FILENAME1)
 
     assert file_exists_on_ftp(FILENAME1)
 
 
-def file_exists_on_ftp(filename):
-    credentials = _load_ftp_credentials_from_env()
-    with _connect_to_ftp(credentials) as session:
+def file_exists_on_sftp(filename):
+    credentials = _load_sftp_credentials_from_env()
+    with _connect_to_sftp(credentials) as session:
         session.cwd(f"/{STORE_ID}")
         exists = filename in session.nlst()
         if exists:

@@ -4,7 +4,7 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago
 from dags.shop_287.sync import product_pipeline, TRADER_ID, GOOGLE_DRIVE_ADDRESS
-from dags.shop_287.sync_images import load_files_from_google_to_ftp
+from dags.shop_287.sync_images import load_files_from_google_to_sftp
 from dags.helpers.dag_helpers import (
     slack_notifier_factory,
     create_slack_error_message_from_task_context,
@@ -33,7 +33,7 @@ dag = DAG(
 
 load_images = PythonOperator(
     task_id="load_images_from_ggl_to_ftp",
-    python_callable=lambda *_: load_files_from_google_to_ftp(TRADER_ID, GOOGLE_DRIVE_ADDRESS),
+    python_callable=lambda *_: load_files_from_google_to_sftp(TRADER_ID, GOOGLE_DRIVE_ADDRESS),
     dag=dag,
 )
 
