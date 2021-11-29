@@ -13,7 +13,7 @@ from .sync_images import (
 )
 
 
-def test_load_files_from_google(clean_cwd):
+def test_load_files_from_google_to_ftp(clean_cwd):
     load_files_from_google_to_ftp(STORE_ID, FOLDER_ID)
 
     assert os.path.isfile(GOOGLE_FILENAME)
@@ -66,7 +66,7 @@ def clean_cwd():
         rmtree(directory)
 
 
-STORE_ID = 123
+STORE_ID = 1234
 FOLDER_ID = "1lQ2dyF3bschhZIl4MdMZ-Bn0VmbEz5Qv"
 
 IMAGE_URL1 = "http://static-files/static/images/1.jpeg"

@@ -17,8 +17,8 @@ class FileListDict(TypedDict):
     hash: List[str]
 
 
-def load_files_from_google_to_ftp(store_id: int, google_drive_folder_id: str) -> FileListDict:
-    return R.pipe(
+def load_files_from_google_to_ftp(store_id: int, google_drive_folder_id: str) -> None:
+    R.pipe(
         get_file_list_from_drive,
         _download_all_files,
         _load_all_files_to_ftp(store_id),
@@ -81,7 +81,6 @@ def _download_all_files(file_list: pd.DataFrame) -> pd.DataFrame:
 
 
 def _download(url: str, filename: str) -> None:
-
     while not os.path.isfile(filename):
 
         response = requests.get(url, stream=True)

@@ -16,7 +16,7 @@ def test_product_pipeline():
     responses.add_passthru("https://oauth2.googleapis.com/token")
     responses.add_passthru("https://sheets.googleapis.com")
     _setup_request_mocks()
-    product_pipeline(FILE_LIST)
+    product_pipeline()
     assert len(responses.calls) == 2
     assert len(json.loads(responses.calls[1].request.body)["data"]["articles"]) == 2
     assert json.loads(responses.calls[1].request.body)["data"]["articles"][0] == FIRST_PRODUCT
