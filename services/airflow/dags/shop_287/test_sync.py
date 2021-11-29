@@ -68,7 +68,7 @@ FIRST_PRODUCT = {
     "description": "Süß und Knackig\nHerkunft: Spanien,\n\n"
     + "Tip: für längere Haltbarkeit, Äpfel und Bananen getrennt lagern.",
     "vat": "7",
-    "images": "1.png",
+    "images": "http://s739086489.online.de/bzd-bilder/287/1.png",
     "stock": 10,
     "unitSection": {
         "weightUnit": "stk",
@@ -78,17 +78,3 @@ FIRST_PRODUCT = {
         "ean": "",
     },
 }
-
-FILE_LIST = pd.DataFrame.from_dict(
-    {
-        "link": {
-            0: "https://drive.google.com/uc?id=1ym44i-TWgTHu5Ncd9XIQjS4UIKdCAOfa&export=download",
-            1: "https://drive.google.com/uc?id=10ROgXCXo1uC9M8nLuiMdHe526fLTpKyd&export=download",
-        },
-        "title": {0: "2.jpeg", 1: "1.png"},
-        "hash": {
-            0: "15bdf97b0e2de0293ec02720e25144ec",
-            1: "6de5e0a8daffcd6b92e180d703518639",
-        },
-    }
-)
