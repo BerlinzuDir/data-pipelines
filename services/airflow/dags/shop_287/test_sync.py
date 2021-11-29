@@ -8,7 +8,6 @@ from api_wrappers.google.google_sheets import get_default_category_mapping
 import responses
 import urllib
 import json
-import pandas as pd
 
 
 @responses.activate
