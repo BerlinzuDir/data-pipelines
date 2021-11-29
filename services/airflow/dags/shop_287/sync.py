@@ -1,7 +1,6 @@
 import json
 
 import pandas as pd
-from typing import List
 import pathlib
 from api_wrappers.google import get_product_data_from_sheets
 from api_wrappers.google.google_sheets import get_default_category_mapping
