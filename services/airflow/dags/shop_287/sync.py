@@ -9,6 +9,7 @@ import ramda as R
 
 
 TRADER_ID = "287"
+FTP_ENDPOINT = "http://s739086489.online.de/bzd-bilder"
 GOOGLE_SHEETS_ADDRESS = "1HrA07_T95T6OyL-T012tGF4F6ZuaHalzFmSTtYAyjpo"
 GOOGLE_DRIVE_ADDRESS = "1lQ2dyF3bschhZIl4MdMZ-Bn0VmbEz5Qv"
 
@@ -47,6 +48,9 @@ def _transform_product_data(products: pd.DataFrame):
 
     products["Kategorie"] = products["Kategorie"].apply(
         lambda category_name: _map_product_category(mapping, category_name)
+    )
+    products["Produktbild \n(Dateiname oder url)"] = (
+        f'{FTP_ENDPOINT}/{TRADER_ID}/' + products["Produktbild \n(Dateiname oder url)"]
     )
     return products
 
