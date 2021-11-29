@@ -50,7 +50,7 @@ def _transform_product_data(products: pd.DataFrame):
         lambda category_name: _map_product_category(mapping, category_name)
     )
     products["Produktbild \n(Dateiname oder url)"] = (
-        f'{FTP_ENDPOINT}/{TRADER_ID}/' + products["Produktbild \n(Dateiname oder url)"]
+        f"{FTP_ENDPOINT}/{TRADER_ID}/" + products["Produktbild \n(Dateiname oder url)"]
     )
     return products
 
