@@ -17,7 +17,7 @@ def test_load_files_from_google_to_sftp(clean_cwd):
     load_files_from_google_to_sftp(STORE_ID, FOLDER_ID)
 
     assert os.path.isfile(GOOGLE_FILENAME)
-    assert file_exists_on_ftp(GOOGLE_FILENAME)
+    assert file_exists_on_sftp(GOOGLE_FILENAME)
 
 
 def test_download_all(clean_cwd):
@@ -41,16 +41,15 @@ def test_load_to_sftp(clean_cwd):
     with _connect_to_sftp(credentials) as session:
         _load_single_image_to_sftp(session, STORE_ID, FILENAME1)
 
-    assert file_exists_on_ftp(FILENAME1)
+    assert file_exists_on_sftp(FILENAME1)
 
 
 def file_exists_on_sftp(filename):
     credentials = _load_sftp_credentials_from_env()
-    with _connect_to_sftp(credentials) as session:
-        session.cwd(f"/{STORE_ID}")
-        exists = filename in session.nlst()
+    with _connect_to_sftp(credentials) as client:
+        exists = filename in client.listdir(f'bzd/{STORE_ID}')
         if exists:
-            session.delete(filename)
+            client.remove(f'bzd/{STORE_ID}/{filename}')
     return exists
 
 

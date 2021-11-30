@@ -29,14 +29,16 @@ class FtpCredentials(TypedDict):
     username: str
     password: str
     hostname: str
+    port: int
 
 
 def _load_sftp_credentials_from_env() -> FtpCredentials:
-    return {
-        "username": os.environ["FTP_USER"],
-        "password": os.environ["FTP_PASSWORD"],
-        "hostname": os.environ["FTP_HOSTNAME"],
-    }
+    return FtpCredentials(
+        username=os.environ["FTP_USER"],
+        password=os.environ["FTP_PASSWORD"],
+        hostname=os.environ["FTP_HOSTNAME"],
+        port=int(os.environ["FTP_PORT"]),
+    )
 
 
 @R.curry
@@ -49,7 +51,7 @@ def _load_all_files_to_sftp(store_id: int, file_list: pd.DataFrame) -> pd.DataFr
 
 @contextmanager
 def _connect_to_sftp(credentials: FtpCredentials):
-    transport = paramiko.Transport((credentials["hostname"], 22))
+    transport = paramiko.Transport((credentials["hostname"], int(credentials["port"])))
     transport.connect(username=credentials["username"], password=credentials["password"])
     client = paramiko.SFTPClient.from_transport(transport)
     try:
@@ -61,9 +63,11 @@ def _connect_to_sftp(credentials: FtpCredentials):
 @R.curry
 def _load_single_image_to_sftp(sftp_client, store_id: int, filename: str) -> str:
     with open(filename, "rb") as file:
-        if store_id not in sftp_client.list_dir():
-            sftp_client.mkdir(f"/{store_id}/")
-        sftp_client.put(filename, f"{store_id}/{filename}")
+        if 'bzd' not in sftp_client.listdir():
+            sftp_client.mkdir(f"bzd/")
+        if str(store_id) not in sftp_client.listdir('bzd'):
+            sftp_client.mkdir(f"bzd/{store_id}/")
+        sftp_client.put(filename, f"bzd/{store_id}/{filename}")
     return filename
 
 
