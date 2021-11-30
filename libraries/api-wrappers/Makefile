@@ -1,2 +1,2 @@
-watch:
-	poetry run pytest -f
+unittest:
+	poetry run pytest
