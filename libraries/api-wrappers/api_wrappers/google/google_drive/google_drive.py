@@ -13,9 +13,7 @@ class File(TypedDict):
     title: str
 
 
-def get_file_list_from_drive(
-    folder_id: str, credentials_file: str = "api-credentials.json"
-) -> pd.DataFrame:
+def get_file_list_from_drive(folder_id: str, credentials_file: str = "api-credentials.json") -> pd.DataFrame:
     return R.pipe(
         connect_do_drive_with_service_account,
         _get_file_list_from_drive_instance(folder_id),
@@ -33,9 +31,7 @@ def _select_title_and_download_link_from_file_list(
 
 
 @R.curry
-def _get_file_list_from_drive_instance(
-    folder_id: str, drive: GoogleDrive
-) -> List[GoogleDrive]:
+def _get_file_list_from_drive_instance(folder_id: str, drive: GoogleDrive) -> List[GoogleDrive]:
     return drive.ListFile({"q": f"parents in '{folder_id}'"}).GetList()
 
 
@@ -43,9 +39,7 @@ def _assert_that_files_are_present(file_list: List) -> List[str]:
     if len(file_list) > 0:
         return file_list
     else:
-        raise ValueError(
-            "No files returned from server. Make sure, folder id is correct and folder is shared."
-        )
+        raise ValueError("No files returned from server. Make sure, folder id is correct and folder is shared.")
 
 
 @R.curry

@@ -64,20 +64,13 @@ services:
     command: nginx
     ports:
       - "80:80"
-  ftp:
-    container_name: 'ftp'
-    image: stilliard/pure-ftpd:latest
-    environment:
-      FTP_USER_NAME: bob
-      FTP_USER_PASS: password
-      FTP_USER_HOME: /home/bob
-    healthcheck:
-      interval: 5s
-      test: ["CMD", "curl", "--fail", "ftp://bob:password@ftp"]
-      retries: 5
+
+  sftp:
+    image: atmoz/sftp
+    container_name: sftp
     ports:
-      - "21:21"
-      - "30000-30009:30000-30009"
+      - 21:22
+    command: ${FTP_USER}:${FTP_PASSWORD}:::bzd
 
   postgres:
     image: postgres:13
