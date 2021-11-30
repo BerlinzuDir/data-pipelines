@@ -47,9 +47,9 @@ def test_load_to_sftp(clean_cwd):
 def file_exists_on_sftp(filename):
     credentials = _load_sftp_credentials_from_env()
     with _connect_to_sftp(credentials) as client:
-        exists = filename in client.listdir(f'bzd/{STORE_ID}')
+        exists = filename in client.listdir(f"bzd/{STORE_ID}")
         if exists:
-            client.remove(f'bzd/{STORE_ID}/{filename}')
+            client.remove(f"bzd/{STORE_ID}/{filename}")
     return exists
 
 
