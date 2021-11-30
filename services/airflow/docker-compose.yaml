@@ -67,8 +67,9 @@ services:
 
   sftp:
     image: atmoz/sftp
+    container_name: sftp
     ports:
-      - ${FTP_PORT}:22
+      - 21:22
     command: ${FTP_USER}:${FTP_PASSWORD}:::bzd
 
   postgres:
