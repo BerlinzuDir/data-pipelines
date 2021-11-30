@@ -60,12 +60,11 @@ def _connect_to_sftp(credentials: FtpCredentials):
 
 @R.curry
 def _load_single_image_to_sftp(sftp_client, store_id: int, filename: str) -> str:
-    with open(filename, "rb") as file:
-        if 'bzd' not in sftp_client.listdir():
-            sftp_client.mkdir(f"bzd/")
-        if str(store_id) not in sftp_client.listdir('bzd'):
-            sftp_client.mkdir(f"bzd/{store_id}/")
-        sftp_client.put(filename, f"bzd/{store_id}/{filename}")
+    if 'bzd' not in sftp_client.listdir():
+        sftp_client.mkdir("bzd/")
+    if str(store_id) not in sftp_client.listdir('bzd'):
+        sftp_client.mkdir(f"bzd/{store_id}/")
+    sftp_client.put(filename, f"bzd/{store_id}/{filename}")
     return filename
 
 
