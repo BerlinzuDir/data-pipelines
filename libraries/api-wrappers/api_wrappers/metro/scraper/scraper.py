@@ -11,8 +11,41 @@ PRODUCT_DETAIL_ENDPOINT = 'https://produkte.metro.de/evaluate.article.v1/'
 
 
 def get_products_from_metro(store_id, **kwargs) -> pd.DataFrame:
+    # TODO: include pipe
     products_endpoint = _get_products_endpoint(store_id, **kwargs)
     products = _get_products(products_endpoint)
+    return _scrape_products(products, store_id)
+
+
+def _get_products_endpoint(store_id: str, **kwargs) -> str:
+    products_endpoint = (
+        PRODUCTS_ENDPOINT +
+        f'search?storeId={store_id}' +
+        "&language=de-DE" +
+        "&country=DE" +
+        "&profile=boostRopoTopsellers" +
+        "&facets=true" +
+        "&categories=true"
+    )
+
+    for key, value in kwargs.items():
+        if key in ["categories", "brands"]:
+            continue
+        products_endpoint += f"&{key}={value}"
+    if "categories" in kwargs:
+        products_endpoint += ''.join([f"&filter=category%3A{category}" for category in kwargs["categories"]])
+    if "brands" in kwargs:
+        products_endpoint += ''.join([f"&filter=brand%3A{brand}" for brand in kwargs["brands"]])
+    return products_endpoint
+
+
+def _get_products(products_endpoint: str) -> dict:
+    products_response = requests.get(products_endpoint)
+    products_response.raise_for_status()
+    return json.loads(products_response.content)
+
+
+def _scrape_products(products: dict, store_id: str) -> pd.DataFrame:
     products_dict = {
         "Titel": [],
         "Beschreibung": [],
@@ -26,21 +59,10 @@ def get_products_from_metro(store_id, **kwargs) -> pd.DataFrame:
     }
     for article_id in products["resultIds"]:
         betty_article_id = article_id[:-4]
-        product_detail_endpoint = (
-            PRODUCT_DETAIL_ENDPOINT +
-            f'betty-articles?ids={betty_article_id}' +
-            '&country=DE' +
-            '&locale=de-DE' +
-            f'&storeIds={store_id}' +
-            '&details=true'
-        )
-
-        product_response = requests.get(
-            product_detail_endpoint,
-            headers={"CallTreeId": str(uuid.uuid4())}
-        )
-        product = json.loads(product_response.content)
-        bundles = product["result"][betty_article_id]["variants"][store_id]["bundles"]
+        product_detail_endpoint = _get_product_detail_endpoint(betty_article_id, store_id)
+        product_detail = _get_product_detail(product_detail_endpoint)
+        
+        bundles = product_detail["result"][betty_article_id]["variants"][store_id]["bundles"]
         for bundle in bundles:
             products_dict["Titel"].append(bundles[bundle]["description"])
             products_dict["Beschreibung"].append("")
@@ -86,32 +108,21 @@ def get_products_from_metro(store_id, **kwargs) -> pd.DataFrame:
     return pd.DataFrame.from_dict(products_dict)
 
 
-def _get_products_endpoint(store_id, **kwargs):
-    products_endpoint = (
-        PRODUCTS_ENDPOINT +
-        f'search?storeId={store_id}' +
-        "&language=de-DE" +
-        "&country=DE" +
-        "&profile=boostRopoTopsellers" +
-        "&facets=true" +
-        "&categories=true"
-    )
-
-    for key, value in kwargs.items():
-        if key in ["categories", "brands"]:
-            continue
-        products_endpoint += f"&{key}={value}"
-    if "categories" in kwargs:
-        products_endpoint += ''.join([f"&filter=category%3A{category}" for category in kwargs["categories"]])
-    if "brands" in kwargs:
-        products_endpoint += ''.join([f"&filter=brand%3A{brand}" for brand in kwargs["brands"]])
-    return products_endpoint
+def _get_product_detail_endpoint(betty_article_id: str, store_id: str) -> str:
+    return (
+            PRODUCT_DETAIL_ENDPOINT +
+            f'betty-articles?ids={betty_article_id}' +
+            '&country=DE' +
+            '&locale=de-DE' +
+            f'&storeIds={store_id}' +
+            '&details=true'
+        )
 
 
-def _get_products(products_endpoint):
-    products_response = requests.get(products_endpoint)
-    products_response.raise_for_status()
-    return json.loads(products_response.content)
+def _get_product_detail(product_detail_endpoint: str) -> dict:
+    product_response = requests.get(product_detail_endpoint, headers={"CallTreeId": str(uuid.uuid4())})
+    product_response.raise_for_status()
+    return json.loads(product_response.content)
 
 
 if __name__ == '__main__':
