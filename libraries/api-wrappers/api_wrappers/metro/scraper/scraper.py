@@ -11,7 +11,7 @@ PRODUCT_DETAIL_ENDPOINT = 'https://produkte.metro.de/evaluate.article.v1/'
 
 
 def get_products_from_metro(store_id, **kwargs) -> pd.DataFrame:
-    products_endpoint = _get_products_endpoit(store_id, **kwargs)
+    products_endpoint = _get_products_endpoint(store_id, **kwargs)
     products = _get_products(products_endpoint)
     products_dict = {
         "Titel": [],
@@ -86,7 +86,7 @@ def get_products_from_metro(store_id, **kwargs) -> pd.DataFrame:
     return pd.DataFrame.from_dict(products_dict)
 
 
-def _get_products_endpoit(store_id, **kwargs):
+def _get_products_endpoint(store_id, **kwargs):
     products_endpoint = (
         PRODUCTS_ENDPOINT +
         f'search?storeId={store_id}' +
