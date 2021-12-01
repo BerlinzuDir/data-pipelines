@@ -12,9 +12,7 @@ PRODUCT_DETAIL_ENDPOINT = 'https://produkte.metro.de/evaluate.article.v1/'
 
 def get_products_from_metro(store_id, **kwargs) -> pd.DataFrame:
     products_endpoint = _get_products_endpoit(store_id, **kwargs)
-    products_response = requests.get(products_endpoint)
-    products = json.loads(products_response.content)
-    article_ids = products["resultIds"]
+    products = _get_products(products_endpoint)
     products_dict = {
         "Titel": [],
         "Beschreibung": [],
@@ -26,7 +24,7 @@ def get_products_from_metro(store_id, **kwargs) -> pd.DataFrame:
         "Produktbild": [],
         "gtins/eans": [],
     }
-    for article_id in article_ids:
+    for article_id in products["resultIds"]:
         betty_article_id = article_id[:-4]
         product_detail_endpoint = (
             PRODUCT_DETAIL_ENDPOINT +
@@ -111,6 +109,10 @@ def _get_products_endpoit(store_id, **kwargs):
         products_endpoint += ''.join([f"&filter=brand%3A{brand}" for brand in kwargs["brands"]])
     return products_endpoint
 
+
+def _get_products(products_endpoint):
+    products_response = requests.get(products_endpoint)
+    return json.loads(products_response.content)
 
 if __name__ == '__main__':
     STORE_ID = "0032"
