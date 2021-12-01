@@ -97,12 +97,10 @@ def _get_products_endpoit(store_id, **kwargs):
         "&categories=true"
     )
 
-    if "query" in kwargs:
-        products_endpoint += f"&query={kwargs['query']}"
-    if "rows" in kwargs:
-        products_endpoint += f"&rows={kwargs['rows']}"
-    if "page" in kwargs:
-        products_endpoint += f"&page={kwargs['page']}"
+    for key, value in kwargs.items():
+        if key in ["categories", "brands"]:
+            continue
+        products_endpoint += f"&{key}={value}"
     if "categories" in kwargs:
         products_endpoint += ''.join([f"&filter=category%3A{category}" for category in kwargs["categories"]])
     if "brands" in kwargs:
@@ -112,7 +110,9 @@ def _get_products_endpoit(store_id, **kwargs):
 
 def _get_products(products_endpoint):
     products_response = requests.get(products_endpoint)
+    products_response.raise_for_status()
     return json.loads(products_response.content)
+
 
 if __name__ == '__main__':
     STORE_ID = "0032"
