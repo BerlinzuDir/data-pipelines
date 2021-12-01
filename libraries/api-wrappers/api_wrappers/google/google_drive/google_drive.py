@@ -14,21 +14,20 @@ class File(TypedDict):
 
 
 def get_file_list_from_drive(folder_id: str, credentials_file: str = "api-credentials.json") -> pd.DataFrame:
-    """"""
     return R.pipe(
         connect_do_drive_with_service_account,
         _get_file_list_from_drive_instance(folder_id),
         _assert_that_files_are_present,
         _select_title_and_download_link_from_file_list,
         pd.DataFrame,
-        _set_column_names(["link", "title"]),
+        _set_column_names(["link", "title", "hash"]),
     )(credentials_file)
 
 
 def _select_title_and_download_link_from_file_list(
     file_list: List[GoogleDrive],
 ) -> List[File]:
-    return R.map(R.pick(["title", "webContentLink"]))(file_list)
+    return R.map(R.pick(["title", "webContentLink", "md5Checksum"]))(file_list)
 
 
 @R.curry

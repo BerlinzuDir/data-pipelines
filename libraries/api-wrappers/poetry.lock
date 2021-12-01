@@ -615,7 +615,7 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "ramda"
-version = "0.6.1"
+version = "2021.10.24"
 description = "Python clone of ramda.js (ramdajs.com)"
 category = "main"
 optional = false
@@ -1267,8 +1267,8 @@ pyyaml = [
     {file = "PyYAML-6.0.tar.gz", hash = "sha256:68fb519c14306fec9720a2a5b45bc9f0c8d1b9c72adf45c37baedfcd949c35a2"},
 ]
 ramda = [
-    {file = "ramda-0.6.1-py3-none-any.whl", hash = "sha256:32e5e6d76750db004659cd14e47092dfe0a4662fb4317d4e7f5675355653ba7b"},
-    {file = "ramda-0.6.1.tar.gz", hash = "sha256:8a6961c49b59e0e127129bb47c788c9952959942053d98cc801025b443845f35"},
+    {file = "ramda-2021.10.24-py3-none-any.whl", hash = "sha256:9b0c1650505d6d0affbab000eef611d1ffb4537e76fe01665998d3b2021fb21e"},
+    {file = "ramda-2021.10.24.tar.gz", hash = "sha256:41ac8dcd21bc0da0f772b68f351195abb89ba8bdbc42edfcd43976a32ca62ed9"},
 ]
 regex = [
     {file = "regex-2021.10.8-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:094a905e87a4171508c2a0e10217795f83c636ccc05ddf86e7272c26e14056ae"},

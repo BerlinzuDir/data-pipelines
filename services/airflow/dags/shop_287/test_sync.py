@@ -1,15 +1,12 @@
-from sync import (
+from .sync import (
     product_pipeline,
     TRADER_ID,
-    _load_product_data,
-    _transform_product_data,
     _map_product_category,
 )
 from api_wrappers.lozuka.lozuka_api.caller import BASE_URL
 from api_wrappers.google.google_sheets import get_default_category_mapping
 import responses
 import urllib
-import ramda as R
 import json
 
 
@@ -29,14 +26,6 @@ def test_map_product_category_returns_correct_product_id():
 
     assert _map_product_category(mapping, "Alkoholhaltige Getränke") == ["51"]
     assert _map_product_category(mapping, "Obst Gemüse") == ["36"]
-
-
-def test_transformation_adds_imaged_download_links():
-    res = R.pipe(lambda x: _load_product_data(), _transform_product_data)("")
-    assert (
-        res["Produktbild \n(Dateiname oder url)"].values[0]
-        == "https://drive.google.com/uc?id=10ROgXCXo1uC9M8nLuiMdHe526fLTpKyd&export=download"
-    )
 
 
 def _setup_request_mocks() -> None:
@@ -78,7 +67,7 @@ FIRST_PRODUCT = {
     "description": "Süß und Knackig\nHerkunft: Spanien,\n\n"
     + "Tip: für längere Haltbarkeit, Äpfel und Bananen getrennt lagern.",
     "vat": "7",
-    "images": "https://drive.google.com/uc?id=10ROgXCXo1uC9M8nLuiMdHe526fLTpKyd&export=download",
+    "images": "http://s739086489.online.de/bzd-bilder/287/1.png",
     "stock": 10,
     "unitSection": {
         "weightUnit": "stk",

@@ -8,9 +8,10 @@ authors = ["Jakob J. Kolb <jakob.j.kolb@gmail.com>"]
 python = "^3.8.10"
 returns = "^0.16.0"
 fsspec = "^2021.7.0"
-ramda = "^0.6.1"
+ramda = "^2021.10.24"
 polars = "0.9.12"
 api-wrappers = {path = '../../libraries/api-wrappers', develop=true}
+paramiko = "^2.8.1"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.9.2"

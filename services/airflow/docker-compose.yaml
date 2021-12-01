@@ -61,10 +61,16 @@ services:
       dockerfile: ./docker/nginx/Dockerfile
     volumes:
       - ./files/static:/var/www/static
-      - ./files/thryve:/var/www/thryve
     command: nginx
     ports:
-      - 80:80
+      - "80:80"
+
+  sftp:
+    image: atmoz/sftp
+    container_name: sftp
+    ports:
+      - 21:22
+    command: ${FTP_USER}:${FTP_PASSWORD}:::bzd
 
   postgres:
     image: postgres:13

@@ -48,8 +48,5 @@ def execute_push_df(target_key: str, foo):
     return wrapper
 
 
-R.curry
-
-
 def push(ti: TaskInstance, key: str, value: Any):
     ti.xcom_push(key=key, value=value)
