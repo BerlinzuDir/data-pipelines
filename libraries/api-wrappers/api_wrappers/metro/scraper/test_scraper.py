@@ -1,3 +1,5 @@
+import pdb
+
 import pytest
 import pandas as pd
 
@@ -11,9 +13,13 @@ BRANDS = ["Bionade"]
 @pytest.mark.block_network
 @pytest.mark.vcr
 def test_get_products_from_metro():
-    products_df = get_products_from_metro(store_id=STORE_ID, categories=CATEGORIES, brands=BRANDS)
-    assert len(products_df) == 9
-    pd.testing.assert_frame_equal(products_df[1:3], _expected_dataframe(), check_like=True)
+    products_page_1 = (
+        get_products_from_metro(store_id=STORE_ID, categories=CATEGORIES, brands=BRANDS, rows=5, page=1, query="bio")
+    )
+    products_page_2 = get_products_from_metro(store_id=STORE_ID, categories=CATEGORIES, brands=BRANDS, rows=5, page=2)
+    assert len(products_page_1) == 6
+    assert len(products_page_2) == 3
+    pd.testing.assert_frame_equal(products_page_1.take([2, 4]), _expected_dataframe(), check_like=True)
 
 
 def _expected_dataframe():
@@ -35,5 +41,5 @@ def _expected_dataframe():
             ],
             "gtins/eans": [[4014472002741], [4014472980056]],
         },
-        index=[1, 2],
+        index=[2, 4],
     )

@@ -1,6 +1,5 @@
 import json
 import os
-from typing import List
 
 import pandas as pd
 import requests
@@ -11,23 +10,8 @@ PRODUCTS_ENDPOINT = "https://produkte.metro.de/explore.articlesearch.v1/"
 PRODUCT_DETAIL_ENDPOINT = 'https://produkte.metro.de/evaluate.article.v1/'
 
 
-def get_products_from_metro(store_id, brands: List[str], categories: List[str]) -> pd.DataFrame:
-    products_endpoint = (
-        PRODUCTS_ENDPOINT +
-        f'search?storeId={store_id}' +
-        "&language=de-DE" +
-        "&country=DE" +
-        "&query=*" +
-        "&profile=boostRopoTopsellers" +
-        "&facets=true" +
-        "&categories=true" +
-        "&rows=1000" +
-        "&page=1"  # TODO: next page
-    )
-    if categories:
-        products_endpoint += ''.join([f"&filter=category%3A{category}" for category in categories])
-    if brands:
-        products_endpoint += ''.join([f"&filter=brand%3A{brand}" for brand in brands])
+def get_products_from_metro(store_id, **kwargs) -> pd.DataFrame:
+    products_endpoint = _get_products_endpoit(store_id, **kwargs)
     products_response = requests.get(products_endpoint)
     products = json.loads(products_response.content)
     article_ids = products["resultIds"]
@@ -102,6 +86,30 @@ def get_products_from_metro(store_id, brands: List[str], categories: List[str]) 
                     print("could not  parse gtin from file")
             products_dict["gtins/eans"].append(gtin_eans)
     return pd.DataFrame.from_dict(products_dict)
+
+
+def _get_products_endpoit(store_id, **kwargs):
+    products_endpoint = (
+        PRODUCTS_ENDPOINT +
+        f'search?storeId={store_id}' +
+        "&language=de-DE" +
+        "&country=DE" +
+        "&profile=boostRopoTopsellers" +
+        "&facets=true" +
+        "&categories=true"
+    )
+
+    if "query" in kwargs:
+        products_endpoint += f"&query={kwargs['query']}"
+    if "rows" in kwargs:
+        products_endpoint += f"&rows={kwargs['rows']}"
+    if "page" in kwargs:
+        products_endpoint += f"&page={kwargs['page']}"
+    if "categories" in kwargs:
+        products_endpoint += ''.join([f"&filter=category%3A{category}" for category in kwargs["categories"]])
+    if "brands" in kwargs:
+        products_endpoint += ''.join([f"&filter=brand%3A{brand}" for brand in kwargs["brands"]])
+    return products_endpoint
 
 
 if __name__ == '__main__':
