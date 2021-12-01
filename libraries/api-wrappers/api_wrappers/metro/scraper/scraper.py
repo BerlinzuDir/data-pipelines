@@ -61,7 +61,7 @@ def _scrape_products(products: dict, store_id: str) -> pd.DataFrame:
         betty_article_id = article_id[:-4]
         product_detail_endpoint = _get_product_detail_endpoint(betty_article_id, store_id)
         product_detail = _get_product_detail(product_detail_endpoint)
-        
+
         bundles = product_detail["result"][betty_article_id]["variants"][store_id]["bundles"]
         for bundle in bundles:
             products_dict["Titel"].append(bundles[bundle]["description"])

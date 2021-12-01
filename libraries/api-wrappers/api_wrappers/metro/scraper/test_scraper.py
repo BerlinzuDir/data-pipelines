@@ -1,5 +1,3 @@
-import pdb
-
 import pytest
 import pandas as pd
 
