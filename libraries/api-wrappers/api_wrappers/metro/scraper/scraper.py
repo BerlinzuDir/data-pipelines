@@ -7,7 +7,7 @@ import slate3k
 import uuid
 
 PRODUCTS_ENDPOINT = "https://produkte.metro.de/explore.articlesearch.v1/"
-PRODUCT_DETAIL_ENDPOINT = 'https://produkte.metro.de/evaluate.article.v1/'
+PRODUCT_DETAIL_ENDPOINT = "https://produkte.metro.de/evaluate.article.v1/"
 
 
 def get_products_from_metro(store_id, **kwargs) -> pd.DataFrame:
@@ -18,13 +18,13 @@ def get_products_from_metro(store_id, **kwargs) -> pd.DataFrame:
 
 def _get_products_endpoint(store_id: str, **kwargs) -> str:
     products_endpoint = (
-        PRODUCTS_ENDPOINT +
-        f'search?storeId={store_id}' +
-        "&language=de-DE" +
-        "&country=DE" +
-        "&profile=boostRopoTopsellers" +
-        "&facets=true" +
-        "&categories=true"
+        PRODUCTS_ENDPOINT
+        + f"search?storeId={store_id}"
+        + "&language=de-DE"
+        + "&country=DE"
+        + "&profile=boostRopoTopsellers"
+        + "&facets=true"
+        + "&categories=true"
     )
 
     for key, value in kwargs.items():
@@ -32,9 +32,9 @@ def _get_products_endpoint(store_id: str, **kwargs) -> str:
             continue
         products_endpoint += f"&{key}={value}"
     if "categories" in kwargs:
-        products_endpoint += ''.join([f"&filter=category%3A{category}" for category in kwargs["categories"]])
+        products_endpoint += "".join([f"&filter=category%3A{category}" for category in kwargs["categories"]])
     if "brands" in kwargs:
-        products_endpoint += ''.join([f"&filter=brand%3A{brand}" for brand in kwargs["brands"]])
+        products_endpoint += "".join([f"&filter=brand%3A{brand}" for brand in kwargs["brands"]])
     return products_endpoint
 
 
@@ -77,12 +77,14 @@ def _scrape_products(products: dict, store_id: str) -> pd.DataFrame:
             )
             net_piece_unit = list(bundles[bundle]["contentData"].keys())[0]
             products_dict["Maßeinheit"].append(
-                "stk" if int(bundles[bundle]["bundleSize"]) >
-                1 else bundles[bundle]["contentData"][net_piece_unit]["uom"]
+                "stk"
+                if int(bundles[bundle]["bundleSize"]) > 1
+                else bundles[bundle]["contentData"][net_piece_unit]["uom"]
             )
             products_dict["Verpackungsgröße"].append(
-                bundles[bundle]["bundleSize"] if int(bundles[bundle]["bundleSize"]) >
-                1 else bundles[bundle]["contentData"][net_piece_unit]["value"]
+                bundles[bundle]["bundleSize"]
+                if int(bundles[bundle]["bundleSize"]) > 1
+                else bundles[bundle]["contentData"][net_piece_unit]["value"]
             )
             products_dict["Kategorie"].append(bundles[bundle]["categories"][0]["name"])
             products_dict["Produktbild"].append(bundles[bundle]["imageUrl"])
@@ -93,17 +95,17 @@ def _scrape_products(products: dict, store_id: str) -> pd.DataFrame:
             if pdf_url:
                 response = requests.get(pdf_url)
                 filename = "my_pdf.pdf"
-                with open(filename, 'wb') as my_data:
+                with open(filename, "wb") as my_data:
                     my_data.write(response.content)
-                with open(filename, 'rb') as pdf_file:
+                with open(filename, "rb") as pdf_file:
                     pdf_content = slate3k.PDF(pdf_file)
                 os.remove(filename)
                 keyword = "GTIN / EAN : "
                 gtin_ean_index = pdf_content[0].find(keyword)
                 zutat_index = pdf_content[0].find("\n\nZutat\n")
-                gtin_ean = pdf_content[0][int(gtin_ean_index + len(keyword)):zutat_index]
-                if ',' in gtin_ean:
-                    gtin_eans = gtin_ean.split(',')
+                gtin_ean = pdf_content[0][int(gtin_ean_index + len(keyword)) : zutat_index]
+                if "," in gtin_ean:
+                    gtin_eans = gtin_ean.split(",")
                 else:
                     try:
                         gtin_eans = [int(gtin_ean)]
@@ -118,13 +120,13 @@ def _scrape_products(products: dict, store_id: str) -> pd.DataFrame:
 
 def _get_product_detail_endpoint(betty_article_id: str, store_id: str) -> str:
     return (
-            PRODUCT_DETAIL_ENDPOINT +
-            f'betty-articles?ids={betty_article_id}' +
-            '&country=DE' +
-            '&locale=de-DE' +
-            f'&storeIds={store_id}' +
-            '&details=true'
-        )
+        PRODUCT_DETAIL_ENDPOINT
+        + f"betty-articles?ids={betty_article_id}"
+        + "&country=DE"
+        + "&locale=de-DE"
+        + f"&storeIds={store_id}"
+        + "&details=true"
+    )
 
 
 def _get_product_detail(product_detail_endpoint: str) -> dict:
@@ -133,9 +135,9 @@ def _get_product_detail(product_detail_endpoint: str) -> dict:
     return json.loads(product_response.content)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     STORE_ID = "0032"
-    CATEGORIES = ['food/obst-gemüse']
+    CATEGORIES = ["food/obst-gemüse"]
     BRANDS = [""]
     RESTRICTION = "18a94965-6d24-3396-ae3a-61af860565d1"
     products_df = get_products_from_metro(store_id=STORE_ID, restriction=RESTRICTION, rows=20, page=1)

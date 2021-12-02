@@ -4,7 +4,7 @@ import pandas as pd
 from scraper import get_products_from_metro
 
 STORE_ID = "0032"
-CATEGORIES = ['food']
+CATEGORIES = ["food"]
 BRANDS = ["Bionade"]
 QUERY = "bio"
 
@@ -12,8 +12,8 @@ QUERY = "bio"
 @pytest.mark.block_network
 @pytest.mark.vcr
 def test_get_products_from_metro():
-    products_page_1 = (
-        get_products_from_metro(store_id=STORE_ID, categories=CATEGORIES, brands=BRANDS, rows=5, page=1, query=QUERY)
+    products_page_1 = get_products_from_metro(
+        store_id=STORE_ID, categories=CATEGORIES, brands=BRANDS, rows=5, page=1, query=QUERY
     )
     products_page_2 = get_products_from_metro(store_id=STORE_ID, categories=CATEGORIES, brands=BRANDS, rows=5, page=2)
     assert len(products_page_1) == 6
