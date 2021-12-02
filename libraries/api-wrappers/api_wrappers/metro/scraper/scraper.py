@@ -139,4 +139,3 @@ if __name__ == '__main__':
     BRANDS = [""]
     RESTRICTION = "18a94965-6d24-3396-ae3a-61af860565d1"
     products_df = get_products_from_metro(store_id=STORE_ID, restriction=RESTRICTION, rows=20, page=1)
-    import pdb;pdb.set_trace()
