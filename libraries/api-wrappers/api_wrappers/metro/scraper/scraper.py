@@ -58,6 +58,8 @@ def _scrape_products(products: dict, store_id: str) -> pd.DataFrame:
         "gtins/eans": [],
     }
     for article_id in products["resultIds"]:
+        if not products["results"][article_id]["isAvailable"]:
+            continue
         betty_article_id = article_id[:-4]
         product_detail_endpoint = _get_product_detail_endpoint(betty_article_id, store_id)
         product_detail = _get_product_detail(product_detail_endpoint)
