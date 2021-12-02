@@ -63,8 +63,11 @@ def _scrape_products(products: dict, store_id: str) -> pd.DataFrame:
         betty_article_id = article_id[:-4]
         product_detail_endpoint = _get_product_detail_endpoint(betty_article_id, store_id)
         product_detail = _get_product_detail(product_detail_endpoint)
-
-        bundles = product_detail["result"][betty_article_id]["variants"][store_id]["bundles"]
+        try:
+            # TODO: make this for the whole product and log error
+            bundles = product_detail["result"][betty_article_id]["variants"][store_id]["bundles"]
+        except Exception:
+            continue
         for bundle in bundles:
             products_dict["Titel"].append(bundles[bundle]["description"])
             products_dict["Beschreibung"].append("")
@@ -87,26 +90,29 @@ def _scrape_products(products: dict, store_id: str) -> pd.DataFrame:
                 pdf_url = bundles[bundle]["details"]["media"]["documents"][0]["url"]
             except IndexError:
                 pdf_url = ""
-            response = requests.get(pdf_url)
-            filename = "my_pdf.pdf"
-            with open(filename, 'wb') as my_data:
-                my_data.write(response.content)
-            with open(filename, 'rb') as pdf_file:
-                pdf_content = slate3k.PDF(pdf_file)
-            os.remove(filename)
-            keyword = "GTIN / EAN : "
-            gtin_ean_index = pdf_content[0].find(keyword)
-            zutat_index = pdf_content[0].find("\n\nZutat\n")
-            gtin_ean = pdf_content[0][int(gtin_ean_index + len(keyword)):zutat_index]
-            if ',' in gtin_ean:
-                gtin_eans = gtin_ean.split(',')
+            if pdf_url:
+                response = requests.get(pdf_url)
+                filename = "my_pdf.pdf"
+                with open(filename, 'wb') as my_data:
+                    my_data.write(response.content)
+                with open(filename, 'rb') as pdf_file:
+                    pdf_content = slate3k.PDF(pdf_file)
+                os.remove(filename)
+                keyword = "GTIN / EAN : "
+                gtin_ean_index = pdf_content[0].find(keyword)
+                zutat_index = pdf_content[0].find("\n\nZutat\n")
+                gtin_ean = pdf_content[0][int(gtin_ean_index + len(keyword)):zutat_index]
+                if ',' in gtin_ean:
+                    gtin_eans = gtin_ean.split(',')
+                else:
+                    try:
+                        gtin_eans = [int(gtin_ean)]
+                    except Exception:
+                        gtin_eans = []
+                        print("could not  parse gtin from file")
+                products_dict["gtins/eans"].append(gtin_eans)
             else:
-                try:
-                    gtin_eans = [int(gtin_ean)]
-                except Exception:
-                    gtin_eans = []
-                    print("could not  parse gtin from file")
-            products_dict["gtins/eans"].append(gtin_eans)
+                products_dict["gtins/eans"].append("")
     return pd.DataFrame.from_dict(products_dict)
 
 
@@ -131,4 +137,6 @@ if __name__ == '__main__':
     STORE_ID = "0032"
     CATEGORIES = ['food/obst-gemüse']
     BRANDS = [""]
-    get_products_from_metro(store_id=STORE_ID, categories=CATEGORIES, brands=BRANDS)
+    RESTRICTION = "18a94965-6d24-3396-ae3a-61af860565d1"
+    products_df = get_products_from_metro(store_id=STORE_ID, restriction=RESTRICTION, rows=20, page=1)
+    import pdb;pdb.set_trace()
