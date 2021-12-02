@@ -103,7 +103,7 @@ def _scrape_products(products: dict, store_id: str) -> pd.DataFrame:
                 keyword = "GTIN / EAN : "
                 gtin_ean_index = pdf_content[0].find(keyword)
                 zutat_index = pdf_content[0].find("\n\nZutat\n")
-                gtin_ean = pdf_content[0][int(gtin_ean_index + len(keyword)) : zutat_index]
+                gtin_ean = pdf_content[0][int(gtin_ean_index + len(keyword)): zutat_index]
                 if "," in gtin_ean:
                     gtin_eans = gtin_ean.split(",")
                 else:
