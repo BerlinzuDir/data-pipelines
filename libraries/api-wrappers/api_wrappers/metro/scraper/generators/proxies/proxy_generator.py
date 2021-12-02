@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 import random
 
 
-def proxy_generator(seed=None):
+def generate_proxy(seed=None):
     if seed:
         random.seed(seed)
     response = requests.get("https://sslproxies.org/")

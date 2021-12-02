@@ -11,7 +11,6 @@ PRODUCT_DETAIL_ENDPOINT = 'https://produkte.metro.de/evaluate.article.v1/'
 
 
 def get_products_from_metro(store_id, **kwargs) -> pd.DataFrame:
-    # TODO: include pipe
     products_endpoint = _get_products_endpoint(store_id, **kwargs)
     products = _get_products(products_endpoint)
     return _scrape_products(products, store_id)
@@ -66,7 +65,8 @@ def _scrape_products(products: dict, store_id: str) -> pd.DataFrame:
         try:
             # TODO: make this for the whole product and log error
             bundles = product_detail["result"][betty_article_id]["variants"][store_id]["bundles"]
-        except Exception:
+        except Exception as error:
+            print(error)
             continue
         for bundle in bundles:
             products_dict["Titel"].append(bundles[bundle]["description"])
