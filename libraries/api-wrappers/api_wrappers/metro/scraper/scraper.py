@@ -92,7 +92,7 @@ def _scrape_products(products: dict, store_id: str) -> pd.DataFrame:
     return pd.DataFrame.from_dict(products_dict)
 
 
-def _scrape_article_id(products_dict: dict, article_id: str, store_id:str) -> dict:
+def _scrape_article_id(products_dict: dict, article_id: str, store_id: str) -> dict:
 
     betty_article_id = article_id[:-4]
     product_detail_endpoint = _get_product_detail_endpoint(betty_article_id, store_id)
@@ -132,6 +132,7 @@ def _scrape_article_id(products_dict: dict, article_id: str, store_id:str) -> di
         else:
             products_dict["gtins/eans"].append("")
     return products_dict
+
 
 def _get_product_detail_endpoint(betty_article_id: str, store_id: str) -> str:
     return (
