@@ -51,11 +51,7 @@ def _get_products(products_endpoint: str) -> dict:
             proxies = PROXY_GENERATOR.proxies
             headers = generate_header()
             products_response = requests.get(
-                products_endpoint,
-                proxies=proxies,
-                headers=headers,
-                verify=False,
-                timeout=30
+                products_endpoint, proxies=proxies, headers=headers, verify=False, timeout=30
             )
             products_response.raise_for_status()
             return json.loads(products_response.content)
@@ -168,7 +164,7 @@ def _get_eans(pdf_endpoint: str):
     keyword = "GTIN / EAN : "
     gtin_ean_index = pdf_content[0].find(keyword)
     zutat_index = pdf_content[0].find("\n\nZutat\n")
-    gtin_ean = pdf_content[0][int(gtin_ean_index + len(keyword)): zutat_index]
+    gtin_ean = pdf_content[0][int(gtin_ean_index + len(keyword)) : zutat_index]
     if "," in gtin_ean:
         gtin_eans = gtin_ean.split(",")
     else:

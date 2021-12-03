@@ -6,7 +6,6 @@ import random
 
 
 class ProxyGenerator:
-
     def __init__(self):
         self.proxies = None
 

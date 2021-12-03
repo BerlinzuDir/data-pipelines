@@ -13,9 +13,9 @@ QUERY = "bio"
 
 @pytest.mark.block_network
 @pytest.mark.vcr
-@patch('scraper.PROXY_GENERATOR')
+@patch("scraper.PROXY_GENERATOR")
 def test_get_products_from_metro(proxy_generator):
-    proxy_generator.proxies = {'https': '95.111.225.137:443'}
+    proxy_generator.proxies = {"https": "95.111.225.137:443"}
 
     products_page_1 = get_products_from_metro(
         store_id=STORE_ID,
