@@ -16,10 +16,15 @@ PROXY_GENERATOR = ProxyGenerator()
 
 
 def get_products_from_metro(store_id, **kwargs) -> pd.DataFrame:
-    PROXY_GENERATOR.reset_proxy()
-    products_endpoint = _get_products_endpoint(store_id, **kwargs)
-    products = _get_products(products_endpoint)
-    return _scrape_products(products, store_id)
+    products_df_list = []
+    while True:
+        PROXY_GENERATOR.reset_proxy()
+        products_endpoint = _get_products_endpoint(store_id, **kwargs)
+        products = _get_products(products_endpoint)
+        products_df_list.append(_scrape_products(products, store_id))
+        if not products["nextPage"]:
+            return pd.concat(products_df_list)
+        kwargs["page"] = products["nextPage"]
 
 
 def _get_products_endpoint(store_id: str, **kwargs) -> str:
