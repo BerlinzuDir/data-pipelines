@@ -6,17 +6,17 @@ import requests
 import slate3k
 import uuid
 
-from generators import ProxyGenerator, generate_header
+from api_wrappers.metro.scraper.generators import ProxyGenerator, generate_header
 
 
 PRODUCTS_ENDPOINT = "https://produkte.metro.de/explore.articlesearch.v1/"
 PRODUCT_DETAIL_ENDPOINT = "https://produkte.metro.de/evaluate.article.v1/"
 
 PROXY_GENERATOR = ProxyGenerator()
-PROXY_GENERATOR.reset_proxy()
 
 
 def get_products_from_metro(store_id, **kwargs) -> pd.DataFrame:
+    PROXY_GENERATOR.reset_proxy()
     products_endpoint = _get_products_endpoint(store_id, **kwargs)
     products = _get_products(products_endpoint)
     return _scrape_products(products, store_id)

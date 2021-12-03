@@ -1,8 +1,9 @@
+from unittest.mock import MagicMock
+
 import pytest
 import pandas as pd
 
-from unittest.mock import patch
-from scraper import get_products_from_metro
+from api_wrappers.metro.scraper import get_products_from_metro, PROXY_GENERATOR
 
 
 STORE_ID = "0032"
@@ -13,9 +14,10 @@ QUERY = "bio"
 
 @pytest.mark.block_network
 @pytest.mark.vcr
-@patch("scraper.PROXY_GENERATOR")
-def test_get_products_from_metro(proxy_generator):
-    proxy_generator.proxies = {"https": "95.111.225.137:443"}
+def test_get_products_from_metro():
+    def side_effect(proxy_generator):
+        proxy_generator.proxies = {"https": "95.111.225.137:443"}
+    PROXY_GENERATOR.reset_proxy = MagicMock(side_effect=side_effect(PROXY_GENERATOR))
 
     products_page_1 = get_products_from_metro(
         store_id=STORE_ID,
