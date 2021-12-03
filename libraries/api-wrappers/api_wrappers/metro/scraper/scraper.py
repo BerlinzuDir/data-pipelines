@@ -111,9 +111,7 @@ def _scrape_article_id(products_dict: dict, article_id: str, store_id: str) -> d
         )
         net_piece_unit = list(bundles[bundle]["contentData"].keys())[0]
         products_dict["Maßeinheit"].append(
-            "stk"
-            if int(bundles[bundle]["bundleSize"]) > 1
-            else bundles[bundle]["contentData"][net_piece_unit]["uom"]
+            "stk" if int(bundles[bundle]["bundleSize"]) > 1 else bundles[bundle]["contentData"][net_piece_unit]["uom"]
         )
         products_dict["Verpackungsgröße"].append(
             bundles[bundle]["bundleSize"]
