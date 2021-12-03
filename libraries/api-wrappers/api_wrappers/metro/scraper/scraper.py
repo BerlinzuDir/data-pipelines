@@ -64,6 +64,8 @@ def _get_products(products_endpoint: str) -> dict:
 
 def _scrape_products(products: dict, store_id: str) -> pd.DataFrame:
     products_dict = {
+        "Id": [],
+        "Marke": [],
         "Titel": [],
         "Beschreibung": [],
         "Bruttopreis": [],
@@ -87,6 +89,10 @@ def _scrape_products(products: dict, store_id: str) -> pd.DataFrame:
             print(error)
             continue
         for bundle in bundles:
+            if bundles[bundle]["stores"]["00032"]["sellingPriceInfo"]["applicablePromos"]:
+                continue
+            products_dict["Id"].append(bundles[bundle]["bundleId"]["bettyBundleId"])
+            products_dict["Marke"].append(bundles[bundle]["brandName"])
             products_dict["Titel"].append(bundles[bundle]["description"])
             products_dict["Beschreibung"].append("")
             products_dict["Bruttopreis"].append(bundles[bundle]["stores"]["00032"]["sellingPriceInfo"]["finalPrice"])

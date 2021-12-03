@@ -41,6 +41,8 @@ def _expected_dataframe():
                 "Bionade Hollunder Glas - 12 x 0,33 l Kästen",
                 "Bionade Zitrone naturtrüb Glas - 12 x 0,33 l Kästen",
             ],
+            "Id": ["BTY-X35329400320022", "BTY-X36737500320022"],
+            "Marke": ["BIONADE", "BIONADE"],
             "Beschreibung": ["", ""],
             "Bruttopreis": [12.17, 12.17],
             "Mehrwertsteuer": [19] * 2,
