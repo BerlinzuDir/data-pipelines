@@ -17,6 +17,7 @@ QUERY = "bio"
 def test_get_products_from_metro():
     def side_effect(proxy_generator):
         proxy_generator.proxies = {"https": "95.111.225.137:443"}
+
     PROXY_GENERATOR.reset_proxy = MagicMock(side_effect=side_effect(PROXY_GENERATOR))
 
     products_page_1 = get_products_from_metro(
