@@ -84,51 +84,54 @@ def _scrape_products(products: dict, store_id: str) -> pd.DataFrame:
     for article_id in products["resultIds"]:
         if not products["results"][article_id]["isAvailable"]:
             continue
-        betty_article_id = article_id[:-4]
-        product_detail_endpoint = _get_product_detail_endpoint(betty_article_id, store_id)
-        product_detail = _get_product_detail(product_detail_endpoint)
         try:
-            # TODO: make this for the whole product and log error
-            bundles = product_detail["result"][betty_article_id]["variants"][store_id]["bundles"]
+            products_dict = _scrape_article_id(products_dict, article_id, store_id)
         except Exception as error:
             print(error)
             continue
-        for bundle in bundles:
-            if bundles[bundle]["stores"]["00032"]["sellingPriceInfo"]["applicablePromos"]:
-                continue
-            products_dict["Id"].append(bundles[bundle]["bundleId"]["bettyBundleId"])
-            products_dict["Marke"].append(bundles[bundle]["brandName"])
-            products_dict["Titel"].append(bundles[bundle]["description"])
-            products_dict["Beschreibung"].append("")
-            products_dict["Bruttopreis"].append(bundles[bundle]["stores"]["00032"]["sellingPriceInfo"]["finalPrice"])
-            products_dict["Mehrwertsteuer"].append(
-                int(bundles[bundle]["stores"]["00032"]["sellingPriceInfo"]["vatPercent"] * 100)
-            )
-            net_piece_unit = list(bundles[bundle]["contentData"].keys())[0]
-            products_dict["Maßeinheit"].append(
-                "stk"
-                if int(bundles[bundle]["bundleSize"]) > 1
-                else bundles[bundle]["contentData"][net_piece_unit]["uom"]
-            )
-            products_dict["Verpackungsgröße"].append(
-                bundles[bundle]["bundleSize"]
-                if int(bundles[bundle]["bundleSize"]) > 1
-                else bundles[bundle]["contentData"][net_piece_unit]["value"]
-            )
-            products_dict["Kategorie"].append(bundles[bundle]["categories"][0]["name"])
-            products_dict["Produktbild"].append(bundles[bundle]["imageUrl"])
-            try:
-                pdf_endpoint = bundles[bundle]["details"]["media"]["documents"][0]["url"]
-            except IndexError:
-                pdf_endpoint = ""
-            if pdf_endpoint:
-                eans = _get_eans(pdf_endpoint)
-                products_dict["gtins/eans"].append(eans)
-            else:
-                products_dict["gtins/eans"].append("")
-
     return pd.DataFrame.from_dict(products_dict)
 
+
+def _scrape_article_id(products_dict: dict, article_id: str, store_id:str) -> dict:
+
+    betty_article_id = article_id[:-4]
+    product_detail_endpoint = _get_product_detail_endpoint(betty_article_id, store_id)
+    product_detail = _get_product_detail(product_detail_endpoint)
+    bundles = product_detail["result"][betty_article_id]["variants"][store_id]["bundles"]
+    for bundle in bundles:
+        if bundles[bundle]["stores"]["00032"]["sellingPriceInfo"]["applicablePromos"]:
+            continue
+        products_dict["Id"].append(bundles[bundle]["bundleId"]["bettyBundleId"])
+        products_dict["Marke"].append(bundles[bundle]["brandName"])
+        products_dict["Titel"].append(bundles[bundle]["description"])
+        products_dict["Beschreibung"].append("")
+        products_dict["Bruttopreis"].append(bundles[bundle]["stores"]["00032"]["sellingPriceInfo"]["finalPrice"])
+        products_dict["Mehrwertsteuer"].append(
+            int(bundles[bundle]["stores"]["00032"]["sellingPriceInfo"]["vatPercent"] * 100)
+        )
+        net_piece_unit = list(bundles[bundle]["contentData"].keys())[0]
+        products_dict["Maßeinheit"].append(
+            "stk"
+            if int(bundles[bundle]["bundleSize"]) > 1
+            else bundles[bundle]["contentData"][net_piece_unit]["uom"]
+        )
+        products_dict["Verpackungsgröße"].append(
+            bundles[bundle]["bundleSize"]
+            if int(bundles[bundle]["bundleSize"]) > 1
+            else bundles[bundle]["contentData"][net_piece_unit]["value"]
+        )
+        products_dict["Kategorie"].append(bundles[bundle]["categories"][0]["name"])
+        products_dict["Produktbild"].append(bundles[bundle]["imageUrl"])
+        try:
+            pdf_endpoint = bundles[bundle]["details"]["media"]["documents"][0]["url"]
+        except IndexError:
+            pdf_endpoint = ""
+        if pdf_endpoint:
+            eans = _get_eans(pdf_endpoint)
+            products_dict["gtins/eans"].append(eans)
+        else:
+            products_dict["gtins/eans"].append("")
+    return products_dict
 
 def _get_product_detail_endpoint(betty_article_id: str, store_id: str) -> str:
     return (
