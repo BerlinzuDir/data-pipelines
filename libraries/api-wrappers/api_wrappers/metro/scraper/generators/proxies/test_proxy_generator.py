@@ -1,5 +1,5 @@
 import pytest
-from proxy_generator import generate_proxy
+from .proxy_generator import generate_proxy
 
 
 @pytest.mark.block_network

@@ -1,4 +1,4 @@
-from header_generator import generate_header
+from .header_generator import generate_header
 
 
 def test_generate_header():

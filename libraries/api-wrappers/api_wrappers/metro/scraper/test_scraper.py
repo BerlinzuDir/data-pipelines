@@ -1,7 +1,9 @@
 import pytest
 import pandas as pd
 
+from unittest.mock import patch, MagicMock
 from scraper import get_products_from_metro
+
 
 STORE_ID = "0032"
 CATEGORIES = ["food"]
@@ -11,9 +13,17 @@ QUERY = "bio"
 
 @pytest.mark.block_network
 @pytest.mark.vcr
-def test_get_products_from_metro():
+@patch('scraper.PROXY_GENERATOR')
+def test_get_products_from_metro(proxy_generator):
+    proxy_generator.proxies = {'https': '95.111.225.137:443'}
+
     products_page_1 = get_products_from_metro(
-        store_id=STORE_ID, categories=CATEGORIES, brands=BRANDS, rows=5, page=1, query=QUERY
+        store_id=STORE_ID,
+        categories=CATEGORIES,
+        brands=BRANDS,
+        rows=5,
+        page=1,
+        query=QUERY,
     )
     products_page_2 = get_products_from_metro(store_id=STORE_ID, categories=CATEGORIES, brands=BRANDS, rows=5, page=2)
     assert len(products_page_1) == 6
@@ -29,7 +39,7 @@ def _expected_dataframe():
                 "Bionade Zitrone naturtrüb Glas - 12 x 0,33 l Kästen",
             ],
             "Beschreibung": ["", ""],
-            "Bruttopreis": [10.06, 12.17],
+            "Bruttopreis": [12.17, 12.17],
             "Mehrwertsteuer": [19] * 2,
             "Maßeinheit": ["stk"] * 2,
             "Verpackungsgröße": ["12"] * 2,

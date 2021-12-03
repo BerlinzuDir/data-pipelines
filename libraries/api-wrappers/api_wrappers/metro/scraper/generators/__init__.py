@@ -1,3 +1,4 @@
-from .proxy_generator import proxy_generator
+from .proxies.proxy_generator import ProxyGenerator
+from .header.header_generator import generate_header
 
-__all__ = ["proxy_generator"]
+__all__ = ["ProxyGenerator", "generate_header"]

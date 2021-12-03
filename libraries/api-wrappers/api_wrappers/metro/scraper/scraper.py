@@ -6,8 +6,14 @@ import requests
 import slate3k
 import uuid
 
+from generators import ProxyGenerator, generate_header
+
+
 PRODUCTS_ENDPOINT = "https://produkte.metro.de/explore.articlesearch.v1/"
 PRODUCT_DETAIL_ENDPOINT = "https://produkte.metro.de/evaluate.article.v1/"
+
+PROXY_GENERATOR = ProxyGenerator()
+PROXY_GENERATOR.reset_proxy()
 
 
 def get_products_from_metro(store_id, **kwargs) -> pd.DataFrame:
@@ -39,9 +45,25 @@ def _get_products_endpoint(store_id: str, **kwargs) -> str:
 
 
 def _get_products(products_endpoint: str) -> dict:
-    products_response = requests.get(products_endpoint)
-    products_response.raise_for_status()
-    return json.loads(products_response.content)
+    count = 10
+    while count:
+        try:
+            proxies = PROXY_GENERATOR.proxies
+            headers = generate_header()
+            products_response = requests.get(
+                products_endpoint,
+                proxies=proxies,
+                headers=headers,
+                verify=False,
+                timeout=30
+            )
+            products_response.raise_for_status()
+            return json.loads(products_response.content)
+        except Exception as error:
+            print(f"Failed requesting products due to: {error}")
+            PROXY_GENERATOR.reset_proxy()
+            count -= 1
+    raise Exception
 
 
 def _scrape_products(products: dict, store_id: str) -> pd.DataFrame:
@@ -89,32 +111,15 @@ def _scrape_products(products: dict, store_id: str) -> pd.DataFrame:
             products_dict["Kategorie"].append(bundles[bundle]["categories"][0]["name"])
             products_dict["Produktbild"].append(bundles[bundle]["imageUrl"])
             try:
-                pdf_url = bundles[bundle]["details"]["media"]["documents"][0]["url"]
+                pdf_endpoint = bundles[bundle]["details"]["media"]["documents"][0]["url"]
             except IndexError:
-                pdf_url = ""
-            if pdf_url:
-                response = requests.get(pdf_url)
-                filename = "my_pdf.pdf"
-                with open(filename, "wb") as my_data:
-                    my_data.write(response.content)
-                with open(filename, "rb") as pdf_file:
-                    pdf_content = slate3k.PDF(pdf_file)
-                os.remove(filename)
-                keyword = "GTIN / EAN : "
-                gtin_ean_index = pdf_content[0].find(keyword)
-                zutat_index = pdf_content[0].find("\n\nZutat\n")
-                gtin_ean = pdf_content[0][int(gtin_ean_index + len(keyword)): zutat_index]
-                if "," in gtin_ean:
-                    gtin_eans = gtin_ean.split(",")
-                else:
-                    try:
-                        gtin_eans = [int(gtin_ean)]
-                    except Exception:
-                        gtin_eans = []
-                        print("could not  parse gtin from file")
-                products_dict["gtins/eans"].append(gtin_eans)
+                pdf_endpoint = ""
+            if pdf_endpoint:
+                eans = _get_eans(pdf_endpoint)
+                products_dict["gtins/eans"].append(eans)
             else:
                 products_dict["gtins/eans"].append("")
+
     return pd.DataFrame.from_dict(products_dict)
 
 
@@ -130,9 +135,66 @@ def _get_product_detail_endpoint(betty_article_id: str, store_id: str) -> str:
 
 
 def _get_product_detail(product_detail_endpoint: str) -> dict:
-    product_response = requests.get(product_detail_endpoint, headers={"CallTreeId": str(uuid.uuid4())})
-    product_response.raise_for_status()
-    return json.loads(product_response.content)
+    count = 10
+    while count:
+        try:
+            proxies = PROXY_GENERATOR.proxies
+            headers = generate_header()
+            headers["CallTreeId"] = str(uuid.uuid4())
+            product_response = requests.get(
+                product_detail_endpoint,
+                proxies=proxies,
+                headers=headers,
+                verify=False,
+                timeout=30,
+            )
+            product_response.raise_for_status()
+            return json.loads(product_response.content)
+        except Exception as error:
+            print(f"Failed requesting product detail due to: {error}")
+            PROXY_GENERATOR.reset_proxy()
+            count -= 1
+    raise Exception
+
+
+def _get_eans(pdf_endpoint: str):
+    response = _get_pdf(pdf_endpoint)
+    filename = "my_pdf.pdf"
+    with open(filename, "wb") as my_data:
+        my_data.write(response.content)
+    with open(filename, "rb") as pdf_file:
+        pdf_content = slate3k.PDF(pdf_file)
+    os.remove(filename)
+    keyword = "GTIN / EAN : "
+    gtin_ean_index = pdf_content[0].find(keyword)
+    zutat_index = pdf_content[0].find("\n\nZutat\n")
+    gtin_ean = pdf_content[0][int(gtin_ean_index + len(keyword)): zutat_index]
+    if "," in gtin_ean:
+        gtin_eans = gtin_ean.split(",")
+    else:
+        try:
+            gtin_eans = [int(gtin_ean)]
+        except Exception as error:
+            print(error)
+            gtin_eans = []
+            print("could not  parse gtin from file")
+    return gtin_eans
+
+
+def _get_pdf(pdf_endpoint: str) -> requests.Response:
+    count = 10
+    while count:
+        try:
+            proxies = PROXY_GENERATOR.proxies
+            headers = generate_header()
+            response = requests.get(pdf_endpoint, proxies=proxies, headers=headers, verify=False, timeout=30)
+            response.raise_for_status()
+            return response
+        except Exception as error:
+            print(f"Failed requesting pdf due to: {error}")
+            PROXY_GENERATOR.reset_proxy()
+            count -= 1
+    raise Exception
 
 
 if __name__ == "__main__":
