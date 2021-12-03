@@ -1,7 +1,7 @@
 import pytest
 import pandas as pd
 
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 from scraper import get_products_from_metro
 
 
