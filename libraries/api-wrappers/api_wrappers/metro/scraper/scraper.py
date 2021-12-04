@@ -21,6 +21,7 @@ def get_products_from_metro(store_id, path="./", **kwargs) -> pd.DataFrame:
         try:
             products_endpoint = _get_products_endpoint(store_id, **kwargs)
             products = _get_products(products_endpoint)
+            logging.info(f"Processing page {products['page']}/{products['totalPages']}")
             products_df = _scrape_products(products, store_id)
             filename = f'{path}/products_{kwargs["category"].split("/")[-1]}_{products["page"]}'
             _store(products_df, filename, config=kwargs)
@@ -62,7 +63,7 @@ def _get_products(products_endpoint: str) -> dict:
             headers = generate_header()
             proxies = get_proxy()
             products_response = requests.get(
-                products_endpoint, proxies=proxies, headers=headers, verify=False, timeout=15
+                products_endpoint, proxies=proxies, headers=headers, timeout=15
             )
             products_response.raise_for_status()
             return json.loads(products_response.content)
@@ -92,7 +93,7 @@ def _scrape_products(products: dict, store_id: str) -> pd.DataFrame:
         try:
             products_dict = _scrape_article_id(products_dict, article_id, store_id)
         except Exception as error:
-            logging.error(f"Failed requesting article due to: {error}")
+            logging.error(f"Failed requesting article({article_id}) due to: {error}")
             continue
     return pd.DataFrame.from_dict(products_dict)
 
@@ -101,38 +102,41 @@ def _scrape_article_id(products_dict: dict, article_id: str, store_id: str) -> d
     betty_article_id = article_id[:-4]
     product_detail_endpoint = _get_product_detail_endpoint(betty_article_id, store_id)
     product_detail = _get_product_detail(product_detail_endpoint)
-    bundles = product_detail["result"][betty_article_id]["variants"][store_id]["bundles"]
-    for bundle in bundles:
-        if bundles[bundle]["stores"]["00032"]["sellingPriceInfo"]["applicablePromos"]:
-            continue
-        if int(bundles[bundle]["bundleSize"]) > 1:
-            continue
-        products_dict["Id"].append(bundles[bundle]["bundleId"]["bettyBundleId"])
-        products_dict["Marke"].append(bundles[bundle]["brandName"])
-        products_dict["Titel"].append(bundles[bundle]["description"])
-        products_dict["Beschreibung"].append("")
-        products_dict["Bruttopreis"].append(bundles[bundle]["stores"]["00032"]["sellingPriceInfo"]["finalPrice"])
-        products_dict["Mehrwertsteuer"].append(
-            int(bundles[bundle]["stores"]["00032"]["sellingPriceInfo"]["vatPercent"] * 100)
-        )
-        net_piece_unit = list(bundles[bundle]["contentData"].keys())[0]
-        products_dict["Maßeinheit"].append(bundles[bundle]["contentData"][net_piece_unit]["uom"])
-        products_dict["Verpackungsgröße"].append(bundles[bundle]["contentData"][net_piece_unit]["value"])
-        products_dict["Kategorie"].append(bundles[bundle]["categories"][0]["name"])
-        products_dict["Produktbild"].append(bundles[bundle]["imageUrl"])
-        try:
-            pdf_endpoint = bundles[bundle]["details"]["media"]["documents"][0]["url"]
-        except IndexError:
-            pdf_endpoint = ""
-        if pdf_endpoint:
+    try:
+        bundles = product_detail["result"][betty_article_id]["variants"][store_id]["bundles"]
+        for bundle in bundles:
+            if bundles[bundle]["stores"]["00032"]["sellingPriceInfo"]["applicablePromos"]:
+                continue
+            if int(bundles[bundle]["bundleSize"]) > 1:
+                continue
+            products_dict["Id"].append(bundles[bundle]["bundleId"]["bettyBundleId"])
+            products_dict["Marke"].append(bundles[bundle]["brandName"])
+            products_dict["Titel"].append(bundles[bundle]["description"])
+            products_dict["Beschreibung"].append("")
+            products_dict["Bruttopreis"].append(bundles[bundle]["stores"]["00032"]["sellingPriceInfo"]["finalPrice"])
+            products_dict["Mehrwertsteuer"].append(
+                int(bundles[bundle]["stores"]["00032"]["sellingPriceInfo"]["vatPercent"] * 100)
+            )
+            net_piece_unit = list(bundles[bundle]["contentData"].keys())[0]
+            products_dict["Maßeinheit"].append(bundles[bundle]["contentData"][net_piece_unit]["uom"])
+            products_dict["Verpackungsgröße"].append(bundles[bundle]["contentData"][net_piece_unit]["value"])
+            products_dict["Kategorie"].append(bundles[bundle]["categories"][0]["name"])
+            products_dict["Produktbild"].append(bundles[bundle]["imageUrl"])
             try:
-                eans = _get_eans(pdf_endpoint)
-                products_dict["gtins/eans"].append(eans)
-            except Exception as error:
+                pdf_endpoint = bundles[bundle]["details"]["media"]["documents"][0]["url"]
+            except IndexError:
+                pdf_endpoint = ""
+            if pdf_endpoint:
+                try:
+                    eans = _get_eans(pdf_endpoint)
+                    products_dict["gtins/eans"].append(eans)
+                except Exception as error:
+                    products_dict["gtins/eans"].append("")
+                    logging.error(f"Failed getting eans due to: {error}")
+            else:
                 products_dict["gtins/eans"].append("")
-                logging.error(f"Failed getting eans due to: {error}")
-        else:
-            products_dict["gtins/eans"].append("")
+    except Exception as error:
+        logging.error(f"Failed getting article({article_id} details due to: {error}")
     return products_dict
 
 
@@ -158,7 +162,6 @@ def _get_product_detail(product_detail_endpoint: str) -> dict:
                 product_detail_endpoint,
                 proxies=proxies,
                 headers=headers,
-                verify=False,
                 timeout=15,
             )
             product_response.raise_for_status()
@@ -188,9 +191,8 @@ def _get_eans(pdf_endpoint: str):
         try:
             gtin_eans = [int(gtin_ean)]
         except Exception as error:
-            print(error)
             gtin_eans = []
-            print("could not  parse gtin from file")
+            logging.error(f"Failed parsing gtin from file due to: {error}")
     return gtin_eans
 
 
@@ -200,11 +202,12 @@ def _get_pdf(pdf_endpoint: str) -> requests.Response:
         try:
             proxies = get_proxy()
             headers = generate_header()
-            response = requests.get(pdf_endpoint, proxies=proxies, headers=headers, verify=False, timeout=15)
+            response = requests.get(pdf_endpoint, proxies=proxies, headers=headers, timeout=15)
             response.raise_for_status()
             return response
         except Exception as error:
-            print(f"Failed requesting pdf due to: {error}")
+            logging.error(f"Failed requesting pdf due to: {error}")
+
             count -= 1
     raise Exception
 
