@@ -27,7 +27,7 @@ def get_products_from_metro(store_id, path="./", **kwargs) -> pd.DataFrame:
         if products["nextPage"]:
             kwargs["page"] = products["nextPage"]
         else:
-            return pd.concat(products_df_list)
+            return pd.concat(products_df_list, ignore_index=True)
 
 
 def _get_products_endpoint(store_id: str, **kwargs) -> str:

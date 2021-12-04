@@ -10,7 +10,7 @@ from api_wrappers.metro.scraper import get_products_from_metro, PROXY_GENERATOR
 
 STORE_ID = "0032"
 CATEGORY = "food"
-BRANDS = ["Bionade"]
+BRANDS = ["Bionade", "Teekanne"]
 QUERY = "bio"
 
 
@@ -42,31 +42,38 @@ class TestScraper(TestCase):
             rows=5,
             query=QUERY,
         )
-
-        assert len(os.listdir(self.tmp_path)) == 2
-        pd.testing.assert_frame_equal(products.take([2, 4]), self._expected_dataframe, check_like=True)
+        assert len(os.listdir(self.tmp_path)) == 4
+        pd.testing.assert_frame_equal(
+            products.take([2, 14]),
+            self._expected_dataframe,
+            check_like=True,
+            check_dtype=False,
+        )
 
     @property
     def _expected_dataframe(self):
         return pd.DataFrame(
             {
                 "Titel": [
-                    "Bionade Hollunder Glas - 12 x 0,33 l Kästen",
+                    "Teekanne Bio Gastro Luxury Cup 20 Stk. English Breakfast",
                     "Bionade Zitrone naturtrüb Glas - 12 x 0,33 l Kästen",
                 ],
-                "Id": ["BTY-X35329400320022", "BTY-X36737500320022"],
-                "Marke": ["BIONADE", "BIONADE"],
+                "Id": ["BTY-X38886000320021", "BTY-X36737500320022"],
+                "Marke": ["TEEKANNE", "BIONADE"],
                 "Beschreibung": ["", ""],
-                "Bruttopreis": [12.17, 12.17],
-                "Mehrwertsteuer": [19] * 2,
-                "Maßeinheit": ["stk"] * 2,
-                "Verpackungsgröße": ["12"] * 2,
-                "Kategorie": ["Food / Getränke / Alkoholfreie Getränke / Erfrischungsgetränke"] * 2,
+                "Bruttopreis": [1.61, 12.17],
+                "Mehrwertsteuer": [7, 19],
+                "Maßeinheit": ["GRAM", "stk"],
+                "Verpackungsgröße": [40, "12"],
+                "Kategorie": [
+                    "Food / Getränke / Tee, Kaffee & Kakao / Tee",
+                    "Food / Getränke / Alkoholfreie Getränke / Erfrischungsgetränke"
+                ],
                 "Produktbild": [
-                    "https://cdn.metro-group.com/de/de_pim_353252001002_01.png?format=jpg&quality=80&dpi=72",
+                    "https://cdn.metro-group.com/de/de_pim_388818001001_01.png?format=jpg&quality=80&dpi=72",
                     "https://cdn.metro-group.com/de/de_pim_367333001002_01.png?format=jpg&quality=80&dpi=72",
                 ],
-                "gtins/eans": [[4014472002741], [4014472980056]],
+                "gtins/eans": [[9001475012391], [4014472980056]],
             },
-            index=[2, 4],
+            index=[2, 14],
         )
