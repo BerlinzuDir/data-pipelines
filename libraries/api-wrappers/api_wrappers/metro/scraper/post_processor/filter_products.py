@@ -2,11 +2,12 @@ import os
 import pandas as pd
 
 
-def post_process_product_data(data_directory):
+def post_process_product_data(data_directory, excluded_brands):
     products = _load_data(data_directory)
     return (
         products.pipe(_drop_missing_eans)
                 .pipe(_drop_corrupt_eans)
+                .pipe(_drop_brands, excluded_brands=excluded_brands)
             )
 
 
@@ -41,7 +42,12 @@ def _mask_corrupt_ean(row):
         return False
 
 
+def _drop_brands(products: pd.DataFrame, excluded_brands: list):
+    return products.loc[~products["Marke"].isin(excluded_brands)]
+
+
 if __name__ == '__main__':
     DATA_DIRECTORY = 'api_wrappers/metro/data/'
-    products = post_process_product_data(DATA_DIRECTORY)
+    EXCLUDED_BRANDS = ["METRO Chef", "aro", "METRO Chef Bio", "METRO Premium", "METRO Chef Gourvenience"]
+    products = post_process_product_data(DATA_DIRECTORY, excluded_brands=EXCLUDED_BRANDS)
     products.to_csv('bio.csv')
