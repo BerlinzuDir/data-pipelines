@@ -22,7 +22,7 @@ def get_products_from_metro(store_id, path="./", **kwargs) -> pd.DataFrame:
         products_endpoint = _get_products_endpoint(store_id, **kwargs)
         products = _get_products(products_endpoint)
         products_df = _scrape_products(products, store_id)
-        _store_csv(products_df, f'{path}/products_{kwargs["category"].split("/")[-1]}_{products["page"]}.csv')
+        _store(products_df, f'{path}/products_{kwargs["category"].split("/")[-1]}_{products["page"]}', config=kwargs)
         products_df_list.append(products_df)
         if products["nextPage"]:
             kwargs["page"] = products["nextPage"]
@@ -210,8 +210,10 @@ def _get_pdf(pdf_endpoint: str) -> requests.Response:
     raise Exception
 
 
-def _store_csv(df: pd.DataFrame, filepath: str):
-    df.to_csv(filepath, index=False)
+def _store(df: pd.DataFrame, filepath: str, config: dict):
+    with open(filepath + '_config' + '.json', 'w') as fp:
+        json.dump(config, fp)
+    df.to_csv(filepath + '.csv', index=False)
 
 
 if __name__ == "__main__":

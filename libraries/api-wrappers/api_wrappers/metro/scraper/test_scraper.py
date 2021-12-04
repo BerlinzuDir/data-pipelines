@@ -42,7 +42,7 @@ class TestScraper(TestCase):
             rows=5,
             query=QUERY,
         )
-        assert len(os.listdir(self.tmp_path)) == 4
+        assert len(os.listdir(self.tmp_path)) == 8
         pd.testing.assert_frame_equal(
             products.take([2, 14]),
             self._expected_dataframe,
