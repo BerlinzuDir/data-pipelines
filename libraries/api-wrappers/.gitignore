@@ -137,5 +137,9 @@ dmypy.json
 
 **/api-credentials.json
 **/smartproxy_credentials.json
+
 # editor settings
 .idea
+
+# data
+**/metro/data

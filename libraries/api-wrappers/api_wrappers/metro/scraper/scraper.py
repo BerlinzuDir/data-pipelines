@@ -16,15 +16,18 @@ PRODUCT_DETAIL_ENDPOINT = "https://produkte.metro.de/evaluate.article.v1/"
 def get_products_from_metro(store_id, path="./", **kwargs) -> pd.DataFrame:
     products_df_list = []
     while True:
-        products_endpoint = _get_products_endpoint(store_id, **kwargs)
-        products = _get_products(products_endpoint)
-        products_df = _scrape_products(products, store_id)
-        _store(products_df, f'{path}/products_{kwargs["category"].split("/")[-1]}_{products["page"]}', config=kwargs)
-        products_df_list.append(products_df)
-        if products["nextPage"]:
-            kwargs["page"] = products["nextPage"]
-        else:
-            return pd.concat(products_df_list, ignore_index=True)
+        try:
+            products_endpoint = _get_products_endpoint(store_id, **kwargs)
+            products = _get_products(products_endpoint)
+            products_df = _scrape_products(products, store_id)
+            _store(products_df, f'{path}/products_{kwargs["category"].split("/")[-1]}_{products["page"]}', config=kwargs)
+            products_df_list.append(products_df)
+            if products["nextPage"]:
+                kwargs["page"] = products["nextPage"]
+            else:
+                return pd.concat(products_df_list, ignore_index=True)
+        except Exception as error:
+            print(f"Stop processing page {kwargs['page']} due to {error}")
 
 
 def _get_products_endpoint(store_id: str, **kwargs) -> str:
