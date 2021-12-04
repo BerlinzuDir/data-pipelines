@@ -1,5 +1,6 @@
 import json
 import os
+import traceback
 
 import pandas as pd
 import requests
@@ -15,23 +16,23 @@ PRODUCT_DETAIL_ENDPOINT = "https://produkte.metro.de/evaluate.article.v1/"
 
 
 def get_products_from_metro(store_id, path="./", **kwargs) -> pd.DataFrame:
-    logging.info(f'Process scraping of store({store_id}) with arguments: {kwargs}')
+    logging.info(f'Processing store({store_id}) with arguments: {kwargs}')
     products_df_list = []
     while True:
+        products_endpoint = _get_products_endpoint(store_id, **kwargs)
+        products = _get_products(products_endpoint)
+        logging.info(f"Processing page {products['page']}/{products['totalPages']}")
         try:
-            products_endpoint = _get_products_endpoint(store_id, **kwargs)
-            products = _get_products(products_endpoint)
-            logging.info(f"Processing page {products['page']}/{products['totalPages']}")
             products_df = _scrape_products(products, store_id)
             filename = f'{path}/products_{kwargs["category"].split("/")[-1]}_{products["page"]}'
             _store(products_df, filename, config=kwargs)
             products_df_list.append(products_df)
-            if products["nextPage"]:
-                kwargs["page"] = products["nextPage"]
-            else:
-                return pd.concat(products_df_list, ignore_index=True)
-        except Exception as error:
-            print(f"Stop processing page {kwargs['page']} due to {error}")
+        except Exception:
+            logging.error(f"Stop processing page {kwargs['page']} due to:\n {traceback.format_exc()}")
+        if products["nextPage"]:
+            kwargs["page"] = products["nextPage"]
+        else:
+            return pd.concat(products_df_list, ignore_index=True)
 
 
 def _get_products_endpoint(store_id: str, **kwargs) -> str:
@@ -67,8 +68,8 @@ def _get_products(products_endpoint: str) -> dict:
             )
             products_response.raise_for_status()
             return json.loads(products_response.content)
-        except Exception as error:
-            logging.error(f"Failed requesting products due to: {error}")
+        except Exception:
+            logging.error(f"Failed requesting products due to:\n {traceback.format_exc()}")
             count -= 1
     raise Exception
 
@@ -92,8 +93,8 @@ def _scrape_products(products: dict, store_id: str) -> pd.DataFrame:
             continue
         try:
             products_dict = _scrape_article_id(products_dict, article_id, store_id)
-        except Exception as error:
-            logging.error(f"Failed requesting article({article_id}) due to: {error}")
+        except Exception:
+            logging.error(f"Failed requesting article({article_id}) due to:\n {traceback.format_exc()}")
             continue
     return pd.DataFrame.from_dict(products_dict)
 
@@ -101,7 +102,10 @@ def _scrape_products(products: dict, store_id: str) -> pd.DataFrame:
 def _scrape_article_id(products_dict: dict, article_id: str, store_id: str) -> dict:
     betty_article_id = article_id[:-4]
     product_detail_endpoint = _get_product_detail_endpoint(betty_article_id, store_id)
-    product_detail = _get_product_detail(product_detail_endpoint)
+    try:
+        product_detail = _get_product_detail(product_detail_endpoint)
+    except Exception:
+        logging.error(f"Failed requesting article detail of {article_id} due to:\n {traceback.format_exc()}")
     try:
         bundles = product_detail["result"][betty_article_id]["variants"][store_id]["bundles"]
         for bundle in bundles:
@@ -130,13 +134,13 @@ def _scrape_article_id(products_dict: dict, article_id: str, store_id: str) -> d
                 try:
                     eans = _get_eans(pdf_endpoint)
                     products_dict["gtins/eans"].append(eans)
-                except Exception as error:
+                except Exception:
                     products_dict["gtins/eans"].append("")
-                    logging.error(f"Failed getting eans due to: {error}")
+                    logging.error(f"Failed getting eans due to:\n {traceback.format_exc()}")
             else:
                 products_dict["gtins/eans"].append("")
-    except Exception as error:
-        logging.error(f"Failed getting article({article_id} details due to: {error}")
+    except Exception:
+        logging.error(f"Failed scraping article({article_id} details due to:\n {traceback.format_exc()}")
     return products_dict
 
 
@@ -166,8 +170,7 @@ def _get_product_detail(product_detail_endpoint: str) -> dict:
             )
             product_response.raise_for_status()
             return json.loads(product_response.content)
-        except Exception as error:
-            print(f"Failed requesting product detail due to: {error}")
+        except Exception:
             count -= 1
     raise Exception
 
@@ -190,9 +193,9 @@ def _get_eans(pdf_endpoint: str):
     else:
         try:
             gtin_eans = [int(gtin_ean)]
-        except Exception as error:
+        except Exception:
             gtin_eans = []
-            logging.error(f"Failed parsing gtin from file due to: {error}")
+            logging.error(f"Failed parsing gtin from file due to:\n {traceback.format_exc()}")
     return gtin_eans
 
 
@@ -205,8 +208,8 @@ def _get_pdf(pdf_endpoint: str) -> requests.Response:
             response = requests.get(pdf_endpoint, proxies=proxies, headers=headers, timeout=15)
             response.raise_for_status()
             return response
-        except Exception as error:
-            logging.error(f"Failed requesting pdf due to: {error}")
+        except Exception:
+            logging.error(f"Failed requesting pdf due to:\n {traceback.format_exc()}")
 
             count -= 1
     raise Exception
