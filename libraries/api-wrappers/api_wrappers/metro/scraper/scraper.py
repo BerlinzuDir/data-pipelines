@@ -15,16 +15,19 @@ PRODUCT_DETAIL_ENDPOINT = "https://produkte.metro.de/evaluate.article.v1/"
 PROXY_GENERATOR = ProxyGenerator()
 
 
-def get_products_from_metro(store_id, **kwargs) -> pd.DataFrame:
+def get_products_from_metro(store_id, path="./", **kwargs) -> pd.DataFrame:
     products_df_list = []
     while True:
         PROXY_GENERATOR.reset_proxy()
         products_endpoint = _get_products_endpoint(store_id, **kwargs)
         products = _get_products(products_endpoint)
-        products_df_list.append(_scrape_products(products, store_id))
-        if not products["nextPage"]:
+        products_df = _scrape_products(products, store_id)
+        _store_csv(products_df, f'{path}/products_{kwargs["category"].split("/")[-1]}_{products["page"]}.csv')
+        products_df_list.append(products_df)
+        if products["nextPage"]:
+            kwargs["page"] = products["nextPage"]
+        else:
             return pd.concat(products_df_list)
-        kwargs["page"] = products["nextPage"]
 
 
 def _get_products_endpoint(store_id: str, **kwargs) -> str:
@@ -39,24 +42,24 @@ def _get_products_endpoint(store_id: str, **kwargs) -> str:
     )
 
     for key, value in kwargs.items():
-        if key in ["categories", "brands"]:
+        if key in ["category", "brands"]:
             continue
         products_endpoint += f"&{key}={value}"
-    if "categories" in kwargs:
-        products_endpoint += "".join([f"&filter=category%3A{category}" for category in kwargs["categories"]])
+    if "category" in kwargs:
+        products_endpoint += f"&filter=category%3A{kwargs['category']}"
     if "brands" in kwargs:
         products_endpoint += "".join([f"&filter=brand%3A{brand}" for brand in kwargs["brands"]])
     return products_endpoint
 
 
 def _get_products(products_endpoint: str) -> dict:
-    count = 10
+    count = 5
     while count:
         try:
             proxies = PROXY_GENERATOR.proxies
             headers = generate_header()
             products_response = requests.get(
-                products_endpoint, proxies=proxies, headers=headers, verify=False, timeout=30
+                products_endpoint, proxies=proxies, headers=headers, verify=False, timeout=20
             )
             products_response.raise_for_status()
             return json.loads(products_response.content)
@@ -205,6 +208,10 @@ def _get_pdf(pdf_endpoint: str) -> requests.Response:
             PROXY_GENERATOR.reset_proxy()
             count -= 1
     raise Exception
+
+
+def _store_csv(df: pd.DataFrame, filepath: str):
+    df.to_csv(filepath, index=False)
 
 
 if __name__ == "__main__":
