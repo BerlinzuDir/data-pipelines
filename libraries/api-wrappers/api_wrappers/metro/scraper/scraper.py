@@ -1,24 +1,22 @@
 import json
 import os
+import pdb
 
 import pandas as pd
 import requests
 import slate3k
 import uuid
 
-from api_wrappers.metro.scraper.generators import ProxyGenerator, generate_header
+from api_wrappers.metro.scraper.generators import get_proxy, generate_header
 
 
 PRODUCTS_ENDPOINT = "https://produkte.metro.de/explore.articlesearch.v1/"
 PRODUCT_DETAIL_ENDPOINT = "https://produkte.metro.de/evaluate.article.v1/"
 
-PROXY_GENERATOR = ProxyGenerator()
-
 
 def get_products_from_metro(store_id, path="./", **kwargs) -> pd.DataFrame:
     products_df_list = []
     while True:
-        PROXY_GENERATOR.reset_proxy()
         products_endpoint = _get_products_endpoint(store_id, **kwargs)
         products = _get_products(products_endpoint)
         products_df = _scrape_products(products, store_id)
@@ -56,8 +54,8 @@ def _get_products(products_endpoint: str) -> dict:
     count = 5
     while count:
         try:
-            proxies = PROXY_GENERATOR.proxies
             headers = generate_header()
+            proxies = get_proxy()
             products_response = requests.get(
                 products_endpoint, proxies=proxies, headers=headers, verify=False, timeout=20
             )
@@ -65,7 +63,6 @@ def _get_products(products_endpoint: str) -> dict:
             return json.loads(products_response.content)
         except Exception as error:
             print(f"Failed requesting products due to: {error}")
-            PROXY_GENERATOR.reset_proxy()
             count -= 1
     raise Exception
 
@@ -147,10 +144,10 @@ def _get_product_detail_endpoint(betty_article_id: str, store_id: str) -> str:
 
 
 def _get_product_detail(product_detail_endpoint: str) -> dict:
-    count = 10
+    count = 5
     while count:
         try:
-            proxies = PROXY_GENERATOR.proxies
+            proxies = get_proxy()
             headers = generate_header()
             headers["CallTreeId"] = str(uuid.uuid4())
             product_response = requests.get(
@@ -158,13 +155,12 @@ def _get_product_detail(product_detail_endpoint: str) -> dict:
                 proxies=proxies,
                 headers=headers,
                 verify=False,
-                timeout=30,
+                timeout=20,
             )
             product_response.raise_for_status()
             return json.loads(product_response.content)
         except Exception as error:
             print(f"Failed requesting product detail due to: {error}")
-            PROXY_GENERATOR.reset_proxy()
             count -= 1
     raise Exception
 
@@ -195,17 +191,16 @@ def _get_eans(pdf_endpoint: str):
 
 
 def _get_pdf(pdf_endpoint: str) -> requests.Response:
-    count = 10
+    count = 5
     while count:
         try:
-            proxies = PROXY_GENERATOR.proxies
+            proxies = get_proxy()
             headers = generate_header()
-            response = requests.get(pdf_endpoint, proxies=proxies, headers=headers, verify=False, timeout=30)
+            response = requests.get(pdf_endpoint, proxies=proxies, headers=headers, verify=False, timeout=20)
             response.raise_for_status()
             return response
         except Exception as error:
             print(f"Failed requesting pdf due to: {error}")
-            PROXY_GENERATOR.reset_proxy()
             count -= 1
     raise Exception
 

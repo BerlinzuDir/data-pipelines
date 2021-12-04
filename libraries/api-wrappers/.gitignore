@@ -136,6 +136,6 @@ dmypy.json
 .gitsecret/keys/random_seed
 
 **/api-credentials.json
-
+**/smartproxy_credentials.json
 # editor settings
 .idea

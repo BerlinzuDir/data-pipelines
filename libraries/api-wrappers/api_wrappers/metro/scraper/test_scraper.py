@@ -1,11 +1,10 @@
 import os
 from unittest import TestCase
-from unittest.mock import MagicMock
 
 import pytest
 import pandas as pd
 
-from api_wrappers.metro.scraper import get_products_from_metro, PROXY_GENERATOR
+from api_wrappers.metro.scraper import get_products_from_metro
 
 
 STORE_ID = "0032"
@@ -29,11 +28,6 @@ class TestScraper(TestCase):
     @pytest.mark.block_network
     @pytest.mark.vcr
     def test_get_products_from_metro(self):
-        def side_effect(proxy_generator):
-            proxy_generator.proxies = {"https": "82.33.214.117:8080"}
-
-        PROXY_GENERATOR.reset_proxy = MagicMock(side_effect=side_effect(PROXY_GENERATOR))
-
         products = get_products_from_metro(
             path=self.tmp_path,
             store_id=STORE_ID,

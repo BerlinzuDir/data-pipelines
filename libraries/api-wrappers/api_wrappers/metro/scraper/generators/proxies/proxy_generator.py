@@ -1,27 +1,15 @@
-import ipaddress
-
-import requests
-from bs4 import BeautifulSoup
-import random
+import json
+import os
 
 
-class ProxyGenerator:
-    def __init__(self):
-        self.proxies = None
+def get_proxy() -> dict:
+    credentials = _get_credentials()
+    proxy = f'http://{credentials["username"]}:{credentials["password"]}@de.smartproxy.com:20000'
+    return {'http': proxy, 'https': proxy}
 
-    def reset_proxy(self, seed=None):
-        if seed:
-            random.seed(seed)
-        response = requests.get("https://sslproxies.org/")
-        soup = BeautifulSoup(response.content, "html.parser")
-        proxy_ips = map(lambda x: x.text, soup.findAll("td")[::8])
-        proxy_ports = map(lambda x: x.text, soup.findAll("td")[1::8])
-        proxy_ips_ports = list(map(lambda x: x[0] + ":" + x[1], list(zip(proxy_ips, proxy_ports))))
-        while True:
-            proxy = {"https": random.choice(proxy_ips_ports)}
-            try:
-                ipaddress.ip_address(proxy["https"].split(":")[0])
-                self.proxies = proxy
-                break
-            except ValueError as error:
-                print(error)
+
+def _get_credentials() -> dict:
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    credentials_file = os.path.join(dir_path, 'smartproxy_credentials.json')
+    with open(credentials_file, 'r') as credentials:
+        return json.load(credentials)
