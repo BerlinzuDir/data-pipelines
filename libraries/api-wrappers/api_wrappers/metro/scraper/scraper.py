@@ -20,7 +20,8 @@ def get_products_from_metro(store_id, path="./", **kwargs) -> pd.DataFrame:
             products_endpoint = _get_products_endpoint(store_id, **kwargs)
             products = _get_products(products_endpoint)
             products_df = _scrape_products(products, store_id)
-            _store(products_df, f'{path}/products_{kwargs["category"].split("/")[-1]}_{products["page"]}', config=kwargs)
+            filename = f'{path}/products_{kwargs["category"].split("/")[-1]}_{products["page"]}'
+            _store(products_df, filename, config=kwargs)
             products_df_list.append(products_df)
             if products["nextPage"]:
                 kwargs["page"] = products["nextPage"]
