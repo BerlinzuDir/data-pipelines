@@ -10,7 +10,6 @@ import ramda as R
 
 TRADER_ID = "405"
 PRODUCTS_CSV_ENDPOINT = "https://catalog.stolitschniy.shop/private/2VNgFokABP/vendors/berlinzudir/export"
-FTP_SERVER_URL = 'http://home739086481.1and1-data.host/bzd-bilder/405/'
 FTP_ENDPOINT = "http://s739086489.online.de/bzd-bilder"
 PRODUCTS_TRANSLATION_DICT = {
     "id": "ID",
