@@ -4,7 +4,7 @@ import datetime
 from pathlib import Path
 
 from scraper import get_products_from_metro
-from post_processor.filter_products import post_process_product_data
+from post_processor.post_processor import post_process_product_data
 
 # Setup logging
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -45,4 +45,5 @@ for category in CATEGORIES_ALL:
 
 EXCLUDED_BRANDS = ["METRO Chef", "aro", "METRO Chef Bio", "METRO Premium", "METRO Chef Gourvenience"]
 DATA_DIRECTORY = 'api_wrappers/metro/data/'
-post_process_product_data(DATA_DIRECTORY, excluded_brands=EXCLUDED_BRANDS)
+products = post_process_product_data(DATA_DIRECTORY, excluded_brands=EXCLUDED_BRANDS)
+products.to_csv('all_products.csv')
