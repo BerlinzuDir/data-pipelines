@@ -1,10 +1,13 @@
-from sync import product_pipeline, TRADER_ID
+from .sync import product_pipeline, TRADER_ID
 from api_wrappers.lozuka.lozuka_api.caller import BASE_URL
 import responses
 import urllib
 import json
+import pytest
 
 
+@pytest.mark.block_network
+@pytest.mark.vcr
 @responses.activate
 def test_product_pipeline():
     responses.add_passthru("https://oauth2.googleapis.com/token")
@@ -12,7 +15,7 @@ def test_product_pipeline():
     _setup_request_mocks()
     product_pipeline()
     assert len(responses.calls) == 2
-    assert len(json.loads(responses.calls[1].request.body)["data"]["articles"]) == 322
+    assert len(json.loads(responses.calls[1].request.body)["data"]["articles"]) == 311
     assert json.loads(responses.calls[1].request.body)["data"]["articles"][0] == FIRST_PRODUCT
 
 
@@ -54,7 +57,7 @@ FIRST_PRODUCT = {
     "priceNetto": 6.53,
     "description": "",
     "vat": "7",
-    "images": "https://catalog.stolitschniy.shop/static/img/products/normalized/4030011750737.jpg",
+    "images": "http://s739086489.online.de/bzd-bilder/405/4030011750737.jpg",
     "stock": None,
     "unitSection": {
         "weightUnit": "g",

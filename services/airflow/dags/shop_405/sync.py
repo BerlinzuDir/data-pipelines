@@ -1,5 +1,4 @@
 import json
-import os
 
 import pandas as pd
 import pathlib
@@ -8,11 +7,11 @@ from api_wrappers.google.google_sheets import get_default_category_mapping
 from api_wrappers.lozuka.lozuka_api import post_articles
 import ramda as R
 
-from erorrs import MissingCategoryTranslation
 
 TRADER_ID = "405"
 PRODUCTS_CSV_ENDPOINT = "https://catalog.stolitschniy.shop/private/2VNgFokABP/vendors/berlinzudir/export"
 FTP_SERVER_URL = 'http://home739086481.1and1-data.host/bzd-bilder/405/'
+FTP_ENDPOINT = "http://s739086489.online.de/bzd-bilder"
 PRODUCTS_TRANSLATION_DICT = {
     "id": "ID",
     "name": "Titel",
@@ -70,20 +69,7 @@ def _get_path_of_file() -> str:
 
 
 def _load_product_data() -> pd.DataFrame:
-    import requests
-    import shutil
-
-    products = get_product_data_from_sheets(PRODUCTS_CSV_ENDPOINT)
-    if not os.path.isdir("405"):
-        os.mkdir("405")
-    for idx, row in products.iterrows():
-        if os.path.isfile(f'405/{row["id"]}.jpg'):
-            continue
-        response = requests.get(row["pic"], stream=True)
-        response.raw.decode_content = True
-        with open(f'405/{row["id"]}.jpg', 'wb') as f:
-            shutil.copyfileobj(response.raw, f)
-    return products
+    return get_product_data_from_sheets(PRODUCTS_CSV_ENDPOINT)
 
 
 def _transform_product_data(product_data: pd.DataFrame) -> pd.DataFrame:
@@ -96,7 +82,9 @@ def _transform_product_data(product_data: pd.DataFrame) -> pd.DataFrame:
         lambda category_name: _map_product_category(mapping, CATEGORIES_TRANSLATION_DICT[category_name])
     )
     product_data["Beschreibung"].fillna("", inplace=True)
-    product_data["Produktbild \n(Dateiname oder url)"] = FTP_SERVER_URL + product_data["ID"].astype(str) + '.jpg'
+    product_data["Produktbild \n(Dateiname oder url)"] = (
+        f"{FTP_ENDPOINT}/{TRADER_ID}/" + product_data["ID"].astype(str) + '.jpg'
+    )
     return product_data
 
 
@@ -111,6 +99,13 @@ def _map_product_category(mapping: pd.DataFrame, category_name: str) -> int:
 
 def raise_value_error(message):
     raise ValueError(message)
+
+
+class MissingCategoryTranslation(Exception):
+    """Raised when the input value is too small"""
+    def __init__(self, category):
+        message = f'Category "{category}" not in Translation Dict'
+        super().__init__(message)
 
 
 if __name__ == "__main__":
