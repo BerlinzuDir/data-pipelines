@@ -55,6 +55,7 @@ def _exclude_categories(products: pd.DataFrame, excluded_categories: list) -> pd
     products["Kategorie"] = products["Kategorie"].str.lower()
     for excluded_category in excluded_categories:
         products = products.loc[~products["Kategorie"].str.contains(excluded_category)]
+    return products
 
 
 if __name__ == '__main__':
