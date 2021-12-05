@@ -8,48 +8,6 @@ from api_wrappers.lozuka.lozuka_api import post_articles
 import ramda as R
 
 
-TRADER_ID = "405"
-PRODUCTS_CSV_ENDPOINT = "https://catalog.stolitschniy.shop/private/2VNgFokABP/vendors/berlinzudir/export"
-FTP_ENDPOINT = "http://s739086489.online.de/bzd-bilder"
-PRODUCTS_TRANSLATION_DICT = {
-    "id": "ID",
-    "name": "Titel",
-    "description": "Beschreibung",
-    "price": "Bruttopreis",
-    "tax": "Mehrwertsteuer prozent",
-    "unit": "Maßeinheit",
-    "weight": "Verpackungsgröße",
-    "category": "Kategorie",
-    "Rückgabe Möglich": "Rückgabe Möglich",
-    "Kühlpflichtig": "Kühlpflichtig",
-    "Produktbild \n(Dateiname oder url)": "Produktbild \n(Dateiname oder url)",
-    "Bestand": "Bestand",
-    "Maßeinheit \nfür Bestand": "Maßeinheit \nfür Bestand",
-    "GTIN/EAN": "GTIN/EAN",
-    "ISBN": "ISBN",
-    "SEO \nkeywords": "SEO \nkeywords",
-    "SEO \nBeschreibungstext": "SEO \nBeschreibungstext",
-    "SEO \nSeitentitel": "SEO \nSeitentitel",
-}
-CATEGORIES_TRANSLATION_DICT = {
-    "suesswaren": "Süßwaren Salzgebäck",
-    "spirituosen": "Alkoholhaltige Getränke",
-    "konserven": "Konserven",
-    "getreide": "Backwaren  Cerealien",
-    "fisch": "Fisch Meeresfrüchte",
-    "getraenke": "Erfrischungsgetränke",
-    "teigwaren": "Süßwaren Salzgebäck",
-    "molkerei": "Käse Milchprodukte",
-    "kaviar": "Fisch Meeresfrüchte",
-    "fleisch": "Fleisch- Wurstwaren",
-    "drogerie": "Drogerie",
-    "kaffe": "Kaffee Tee",
-    "brot": "Backwaren Cerealien",
-    "tee": "Kaffee Tee",
-    "tk": "Tiefkühlkost",
-}
-
-
 def product_pipeline():
     return R.pipe(
         lambda *args: _load_product_data(),
@@ -107,5 +65,43 @@ class MissingCategoryTranslation(Exception):
         super().__init__(message)
 
 
-if __name__ == "__main__":
-    product_pipeline()
+TRADER_ID = "405"
+PRODUCTS_CSV_ENDPOINT = "https://catalog.stolitschniy.shop/private/2VNgFokABP/vendors/berlinzudir/export"
+FTP_ENDPOINT = "http://s739086489.online.de/bzd-bilder"
+PRODUCTS_TRANSLATION_DICT = {
+    "id": "ID",
+    "name": "Titel",
+    "description": "Beschreibung",
+    "price": "Bruttopreis",
+    "tax": "Mehrwertsteuer prozent",
+    "unit": "Maßeinheit",
+    "weight": "Verpackungsgröße",
+    "category": "Kategorie",
+    "Rückgabe Möglich": "Rückgabe Möglich",
+    "Kühlpflichtig": "Kühlpflichtig",
+    "Produktbild \n(Dateiname oder url)": "Produktbild \n(Dateiname oder url)",
+    "Bestand": "Bestand",
+    "Maßeinheit \nfür Bestand": "Maßeinheit \nfür Bestand",
+    "GTIN/EAN": "GTIN/EAN",
+    "ISBN": "ISBN",
+    "SEO \nkeywords": "SEO \nkeywords",
+    "SEO \nBeschreibungstext": "SEO \nBeschreibungstext",
+    "SEO \nSeitentitel": "SEO \nSeitentitel",
+}
+CATEGORIES_TRANSLATION_DICT = {
+    "suesswaren": "Süßwaren Salzgebäck",
+    "spirituosen": "Alkoholhaltige Getränke",
+    "konserven": "Konserven",
+    "getreide": "Backwaren  Cerealien",
+    "fisch": "Fisch Meeresfrüchte",
+    "getraenke": "Erfrischungsgetränke",
+    "teigwaren": "Süßwaren Salzgebäck",
+    "molkerei": "Käse Milchprodukte",
+    "kaviar": "Fisch Meeresfrüchte",
+    "fleisch": "Fleisch- Wurstwaren",
+    "drogerie": "Drogerie",
+    "kaffe": "Kaffee Tee",
+    "brot": "Backwaren Cerealien",
+    "tee": "Kaffee Tee",
+    "tk": "Tiefkühlkost",
+}
