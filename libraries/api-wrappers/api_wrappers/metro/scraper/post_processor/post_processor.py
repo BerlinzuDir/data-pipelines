@@ -5,10 +5,11 @@ import pandas as pd
 def post_process_product_data(data_directory, excluded_brands, excluded_categories) -> pd.DataFrame:
     products = _load_data(data_directory)
     return (
-        products.pipe(_drop_missing_eans)
-            .pipe(_drop_corrupt_eans)
-            .pipe(_exclude_brands, excluded_brands=excluded_brands)
-            .pipe(_exclude_categories, excluded_categories=excluded_categories)
+        products.pipe(
+            _drop_missing_eans).pipe(
+            _drop_corrupt_eans).pipe(
+            _exclude_brands, excluded_brands=excluded_brands).pipe(
+            _exclude_categories, excluded_categories=excluded_categories)
     )
 
 
@@ -50,11 +51,11 @@ def _exclude_brands(products: pd.DataFrame, excluded_brands: list) -> pd.DataFra
     return products.loc[~products["Marke"].isin(excluded_brands)]
 
 
-def _exclude_categories(products:pd.DataFrame, excluded_categories: list) -> pd.DataFrame:
+def _exclude_categories(products: pd.DataFrame, excluded_categories: list) -> pd.DataFrame:
     products["Kategorie"] = products["Kategorie"].str.lower()
     for excluded_category in excluded_categories:
         products = products.loc[~products["Kategorie"].str.contains(excluded_category)]
-    import pdb;pdb.set_trace()
+
 
 if __name__ == '__main__':
     DATA_NAME = ""
