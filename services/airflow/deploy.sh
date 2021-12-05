@@ -1,7 +1,7 @@
 cd data-pipelines
 git checkout main
 git stash
-git pull
+git reset --hard origin/main
 git secret reveal -f
 cd services/airflow
 mv .env.prod .env
