@@ -2,6 +2,7 @@ import os
 from shutil import rmtree
 
 import numpy as np
+import pandas as pd
 import pytest
 
 from dags.shop_405.sync_images import sync_images
@@ -19,6 +20,7 @@ def test_load_images_to_sftp(clean_cwd):
 
     assert len(file_list) == 4
     assert f'{products["id"].iloc[0]}' + '.jpg' in file_list
+    assert isinstance(products, pd.DataFrame)
 
 
 def _decorate_load_product_data():

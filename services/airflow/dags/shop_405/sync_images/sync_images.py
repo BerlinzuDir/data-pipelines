@@ -77,7 +77,7 @@ def _load_sftp_credentials_from_env() -> FtpCredentials:
 
 @contextmanager
 def _connect_to_sftp(credentials: FtpCredentials):
-    transport = paramiko.Transport((credentials["hostname"], 21))
+    transport = paramiko.Transport((credentials["hostname"], 22))
     transport.connect(username=credentials["username"], password=credentials["password"])
     client = paramiko.SFTPClient.from_transport(transport)
     try:
