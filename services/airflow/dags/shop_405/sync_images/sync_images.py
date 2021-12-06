@@ -1,24 +1,17 @@
-"""
-if not os.path.isdir("405"):
-    os.mkdir("405")
-for idx, row in products.iterrows():
-    if os.path.isfile(f'405/{row["id"]}.jpg'):
-        continue
-    response = requests.get(row["pic"], stream=True)
-    response.raw.decode_content = True
-    with open(f'405/{row["id"]}.jpg', 'wb') as f:
-        shutil.copyfileobj(response.raw, f)
-"""
-
 from contextlib import contextmanager
 import requests
 import shutil
 import pandas as pd
-from typing import TypedDict, List
+from typing import TypedDict
 import paramiko
 from time import sleep
 import os
 import ramda as R
+
+from api_wrappers.external.sheets import get_product_data_from_sheets
+
+
+PRODUCTS_CSV_ENDPOINT = "https://catalog.stolitschniy.shop/private/2VNgFokABP/vendors/berlinzudir/export"
 
 
 class FtpCredentials(TypedDict):
@@ -27,19 +20,24 @@ class FtpCredentials(TypedDict):
     hostname: str
 
 
-def load_images_to_sftp(products_df: pd.DataFrame, store_id: int) -> pd.DataFrame:
+def load_images_to_sftp(store_id: int) -> pd.DataFrame:
+    products = _load_product_data()
     R.pipe(
         _get_file_list,
         _download_all_files,
         _load_all_files_to_sftp(store_id),
-    )(products_df)
-    return products_df
+    )(products)
+    return products
 
 
-def _get_file_list(products_df: pd.DataFrame) -> pd.DataFrame:
-    products_df["ID"] += ".jpg"
-    products_df = products_df.rename(columns={"Produktbild \n(Dateiname oder url)": "link", "ID": "title"})
-    return products_df[["link", "title"]]
+def _load_product_data() -> pd.DataFrame:
+    return get_product_data_from_sheets(PRODUCTS_CSV_ENDPOINT)
+
+
+def _get_file_list(products: pd.DataFrame) -> pd.DataFrame:
+    products = products.rename(columns={"pic": "link", "id": "title"})
+    products["title"] = products["title"].astype(str) + ".jpg"
+    return products[["link", "title"]]
 
 
 def _download_all_files(file_list: pd.DataFrame) -> pd.DataFrame:
@@ -49,7 +47,6 @@ def _download_all_files(file_list: pd.DataFrame) -> pd.DataFrame:
 
 def _download(url: str, filename: str) -> None:
     while not os.path.isfile(filename):
-
         response = requests.get(url, stream=True)
 
         # Check if the image was retrieved successfully
@@ -80,7 +77,7 @@ def _load_sftp_credentials_from_env() -> FtpCredentials:
 
 @contextmanager
 def _connect_to_sftp(credentials: FtpCredentials):
-    transport = paramiko.Transport((credentials["hostname"], 22))
+    transport = paramiko.Transport((credentials["hostname"], 21))
     transport.connect(username=credentials["username"], password=credentials["password"])
     client = paramiko.SFTPClient.from_transport(transport)
     try:
