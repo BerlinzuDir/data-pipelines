@@ -34,7 +34,7 @@ def _transform_product_data(product_data: pd.DataFrame) -> pd.DataFrame:
     )
     product_data["Beschreibung"].fillna("", inplace=True)
     product_data["Produktbild \n(Dateiname oder url)"] = (
-        f"{FTP_ENDPOINT}/{TRADER_ID}/" + product_data["ID"].astype(str) + '.jpg'
+        f"{FTP_ENDPOINT}/{TRADER_ID}/" + product_data["ID"].astype(str) + ".jpg"
     )
     return product_data
 

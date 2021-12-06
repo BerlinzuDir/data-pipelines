@@ -19,16 +19,19 @@ def test_load_images_to_sftp(clean_cwd):
     file_list = _file_list_sftp()
 
     assert len(file_list) == 4
-    assert f'{products["id"].iloc[0]}' + '.jpg' in file_list
+    assert f'{products["id"].iloc[0]}' + ".jpg" in file_list
     assert isinstance(products, pd.DataFrame)
 
 
 def _decorate_load_product_data():
     """Cut the return dataframe of _load_product_data to shorten test run."""
+
     def dec(func):
         def inner():
             return func()[:4]
+
         return inner
+
     sync_images._load_product_data = dec(_load_product_data)
 
 

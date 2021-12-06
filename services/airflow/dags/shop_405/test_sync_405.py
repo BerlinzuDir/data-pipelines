@@ -60,7 +60,8 @@ PRODUCTS_INPUT = (
     'uesswaren","1":"suesswaren"},"tags":{"0":"imported, online, wolt","1":"imported, online, wolt"},"supplier":{"0":"'
     'Monolith","1":"Monolith"},"pic":{"0":"https:\\/\\/catalog.stolitschniy.shop\\/static\\/img\\/products\\/normalize'
     'd\\/4030957751188.jpg","1":"https:\\/\\/catalog.stolitschniy.shop\\/static\\/img\\/products\\/normalized\\/4030011'
-    '750737.jpg"},"description":{"0":null,"1":null}}')
+    '750737.jpg"},"description":{"0":null,"1":null}}'
+)
 
 FIRST_PRODUCT = {
     "name": "Akazienhonig mit Sommertracht mild, flüßig",
