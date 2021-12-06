@@ -1,37 +1,51 @@
 import os
+from shutil import rmtree
 
-import pandas as pd
+import numpy as np
+import pytest
 
-from .sync_images import load_images_to_sftp, _load_sftp_credentials_from_env, _connect_to_sftp
-
-
-def test_load_images_to_sftp():
-    products = load_images_to_sftp(PRODUCTS, STORE_ID)
-    assert os.path.isfile(ID_1 + '.jpg')
-    assert _file_exists_on_sftp(ID_1 + '.jpg')
-    assert os.path.isfile(ID_2 + '.jpg')
-    assert _file_exists_on_sftp(ID_2 + '.jpg')
-    pd.testing.assert_frame_equal(products, PRODUCTS)
-
-
-def _file_exists_on_sftp(filename):
-    credentials = _load_sftp_credentials_from_env()
-    with _connect_to_sftp(credentials) as client:
-        exists = filename in client.listdir(f"bzd/{STORE_ID}")
-        if exists:
-            client.remove(f"bzd/{STORE_ID}/{filename}")
-    return exists
-
+from dags.shop_405.sync_images import sync_images
+from .sync_images import load_images_to_sftp, _load_sftp_credentials_from_env, _connect_to_sftp, _load_product_data
 
 STORE_ID = 405
 
-ID_1 = "id_1"
-ID_2 = "id_2"
 
-IMAGE_URL1 = "http://static-files/static/images/1.jpeg"
-IMAGE_URL2 = "http://static-files/static/images/2.jpg"
+@pytest.mark.vcr
+def test_load_images_to_sftp(clean_cwd):
+    _decorate_load_product_data()
+    products = load_images_to_sftp(STORE_ID)
 
-PRODUCTS = pd.DataFrame(
-    columns=["Produktbild \n(Dateiname oder url)", "ID"],
-    data=[[IMAGE_URL1, ID_1], [IMAGE_URL2, ID_2]],
-)
+    file_list = _file_list_sftp()
+
+    assert len(file_list) == 4
+    assert f'{products["id"].iloc[0]}' + '.jpg' in file_list
+
+
+def _decorate_load_product_data():
+    """Cut the return dataframe of _load_product_data to shorten test run."""
+    def dec(func):
+        def inner():
+            return func()[:4]
+        return inner
+    sync_images._load_product_data = dec(_load_product_data)
+
+
+def _file_list_sftp():
+    credentials = _load_sftp_credentials_from_env()
+    with _connect_to_sftp(credentials) as client:
+        file_list = client.listdir(f"bzd/{STORE_ID}")
+        for filename in file_list:
+            client.remove(f"bzd/{STORE_ID}/{filename}")
+    return file_list
+
+
+@pytest.fixture
+def clean_cwd():
+    directory = "dir" + str(np.random.randint(10000, 99999))
+    os.mkdir(directory)
+    os.chdir(directory)
+    try:
+        yield directory
+    finally:
+        os.chdir("../")
+        rmtree(directory)
