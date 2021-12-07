@@ -27,6 +27,12 @@ def test_load_images_to_sftp(_decorate_load_product_data, _file_ids_on_sftp, _ex
     }
 
 
+def test_file_list_sftp():
+    # TODO
+    # Has to be tested since is mocked in the public method
+    assert True
+
+
 @pytest.fixture
 def _decorate_load_product_data():
     """Cut the return dataframe of _load_product_data to shorten test run."""
