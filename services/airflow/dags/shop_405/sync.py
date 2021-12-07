@@ -101,6 +101,7 @@ def _translation_dict_categories() -> dict:
         "brot": "Backwaren Cerealien",
         "tee": "Kaffee Tee",
         "tk": "Tiefkühlkost",
+        "fischkonserven": "Konserven",
     }
 
 
@@ -108,5 +109,5 @@ class MissingCategoryTranslation(Exception):
     """Raised when the input value is too small"""
 
     def __init__(self, category):
-        message = f'Category "{category}" not in Translation Dict'
+        message = f'Categories "{category}" not in Translation Dict'
         super().__init__(message)
