@@ -28,6 +28,7 @@ def load_images_to_sftp(store_id: int) -> pd.DataFrame:
     products = _load_product_data()
     R.pipe(
         _get_file_list,
+        _file_difference_sftp(store_id),
         _download_all_files,
         _load_all_files_to_sftp(store_id),
     )(products)
@@ -42,6 +43,42 @@ def _get_file_list(products: pd.DataFrame) -> pd.DataFrame:
     products = products.rename(columns={"pic": "link", "id": "title"})
     products["title"] = products["title"].astype(str) + ".jpg"
     return products[["link", "title"]]
+
+
+@R.curry
+def _file_difference_sftp(store_id: int, file_list: pd.DataFrame):
+    file_list_sftp = _file_list_sftp(store_id)
+    return file_list[~file_list["title"].isin(file_list_sftp)]
+
+
+def _file_list_sftp(store_id: int):
+    credentials = _load_sftp_credentials_from_env()
+    with _connect_to_sftp(credentials) as client:
+        file_list = client.listdir(f"bzd/{store_id}")
+        for filename in file_list:
+            client.remove(f"bzd/{store_id}/{filename}")
+    return file_list
+
+
+def _load_sftp_credentials_from_env() -> FtpCredentials:
+    return FtpCredentials(
+        username=os.environ["FTP_USER"],
+        password=os.environ["FTP_PASSWORD"],
+        hostname=os.environ["FTP_HOSTNAME"],
+        port=int(os.environ["FTP_PORT"]),
+    )
+
+
+@contextmanager
+def _connect_to_sftp(credentials: FtpCredentials):
+    transport = paramiko.Transport((credentials["hostname"], credentials["port"]))
+    transport.connect(username=credentials["username"], password=credentials["password"])
+    client = paramiko.SFTPClient.from_transport(transport)
+    try:
+        yield client
+    finally:
+
+        client.close()
 
 
 def _download_all_files(file_list: pd.DataFrame) -> pd.DataFrame:
@@ -69,26 +106,6 @@ def _load_all_files_to_sftp(store_id: int, file_list: pd.DataFrame):
     credentials = _load_sftp_credentials_from_env()
     with _connect_to_sftp(credentials) as sftp_client:
         file_list["title"].apply(lambda title: _load_single_image_to_sftp(sftp_client, store_id, title))
-
-
-def _load_sftp_credentials_from_env() -> FtpCredentials:
-    return FtpCredentials(
-        username=os.environ["FTP_USER"],
-        password=os.environ["FTP_PASSWORD"],
-        hostname=os.environ["FTP_HOSTNAME"],
-        port=int(os.environ["FTP_PORT"]),
-    )
-
-
-@contextmanager
-def _connect_to_sftp(credentials: FtpCredentials):
-    transport = paramiko.Transport((credentials["hostname"], credentials["port"]))
-    transport.connect(username=credentials["username"], password=credentials["password"])
-    client = paramiko.SFTPClient.from_transport(transport)
-    try:
-        yield client
-    finally:
-        client.close()
 
 
 @R.curry
