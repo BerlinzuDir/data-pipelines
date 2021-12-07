@@ -29,7 +29,7 @@ dag = DAG(
     default_args=default_args,
     description="Extract product data and image links from google and upload to lozuka api",
     schedule_interval=timedelta(days=1),
-    start_date=days_ago(2),
+    start_date=days_ago(0),
     tags=["example"],
     on_failure_callback=slack_notifier_factory(create_slack_error_message_from_task_context),
 )
