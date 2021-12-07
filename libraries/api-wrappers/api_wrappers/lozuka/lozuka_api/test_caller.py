@@ -1,9 +1,9 @@
-import urllib.parse
 import pytest
-from unittest.mock import patch
-
-import pandas as pd
 import responses
+import urllib.parse
+import pandas as pd
+
+from unittest.mock import patch
 
 from api_wrappers.lozuka.lozuka_api import post_articles, get_articles, BASE_URL
 
@@ -14,12 +14,12 @@ TRADER_ID = 123
 
 @responses.activate
 @patch("api_wrappers.lozuka.lozuka_api.caller.transform_articles")
-def test_post_articles(transform_articles_patch) -> None:
+def test_post_articles(transform_articles_patch, _access_token) -> None:
     """Test posting articles from a dataframe to the lozuka api-endpoint."""
     transform_articles_patch.return_value = 12
 
-    _mock_access_token_endpoint()
-    _mock_endpoint('post')
+    _mock_access_token_endpoint(_access_token)
+    _mock_endpoint('post', '')
 
     post_articles(
         login_details=LOGIN_DETAILS,
@@ -31,29 +31,32 @@ def test_post_articles(transform_articles_patch) -> None:
 
 
 @responses.activate
-def test_get_articles():
-    #articles = get_articles(login_details=LOGIN_DETAILS, trader_id=TRADER_ID,)
-    #assert len(responses.calls) == 2
-    pass
+def test_get_articles(_articles, _access_token):
+    _mock_access_token_endpoint(_access_token)
+    _mock_endpoint('get', _articles)
+
+    articles = get_articles(login_details=LOGIN_DETAILS, trader_id=TRADER_ID)
+    assert len(responses.calls) == 2
+    assert articles == {'a': '12'}
 
 
-def _mock_access_token_endpoint() -> None:
+def _mock_access_token_endpoint(_access_token) -> None:
     request_url = urllib.parse.urljoin(BASE_URL, "/auth/login")
     responses.add(
         responses.POST,
         request_url,
         match_querystring=True,
-        body=_access_token(),
+        body=_access_token,
         status=200,
         match=[responses.matchers.urlencoded_params_matcher(LOGIN_DETAILS)]
     )
 
 
-def _mock_endpoint(mode):
+def _mock_endpoint(mode, _articles):
     endpoint = _get_endpoint(mode)
     request_url = urllib.parse.urljoin(BASE_URL, endpoint)
     responses_mode = responses.POST if mode == "post" else responses.GET
-    responses.add(responses_mode, request_url, match_querystring=True, status=200)
+    responses.add(responses_mode, request_url, match_querystring=True, status=200, body=_articles)
 
 
 def _get_endpoint(mode):
@@ -65,6 +68,7 @@ def _get_endpoint(mode):
     return urllib.parse.urljoin(BASE_URL, endpoint)
 
 
+@pytest.fixture
 def _access_token() -> bytes:
     return (
         b'["{\\"access_token\\":\\"123456789\\",'
@@ -73,3 +77,8 @@ def _access_token() -> bytes:
         b'\\"scope\\":null,'
         b'\\"refresh_token\\":\\"111\\"}"]'
     )
+
+
+@pytest.fixture
+def _articles() -> bytes:
+    return b'{"a": "12"}'
