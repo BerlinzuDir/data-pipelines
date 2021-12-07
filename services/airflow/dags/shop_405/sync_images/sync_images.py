@@ -18,6 +18,7 @@ class FtpCredentials(TypedDict):
     username: str
     password: str
     hostname: str
+    port: int
 
 
 def load_images_to_sftp(store_id: int) -> pd.DataFrame:
@@ -72,12 +73,13 @@ def _load_sftp_credentials_from_env() -> FtpCredentials:
         username=os.environ["FTP_USER"],
         password=os.environ["FTP_PASSWORD"],
         hostname=os.environ["FTP_HOSTNAME"],
+        port=int(os.environ["FTP_PORT"]),
     )
 
 
 @contextmanager
 def _connect_to_sftp(credentials: FtpCredentials):
-    transport = paramiko.Transport((credentials["hostname"], 22))
+    transport = paramiko.Transport((credentials["hostname"], credentials["port"]))
     transport.connect(username=credentials["username"], password=credentials["password"])
     client = paramiko.SFTPClient.from_transport(transport)
     try:

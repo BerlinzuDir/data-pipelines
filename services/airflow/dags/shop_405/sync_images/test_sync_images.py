@@ -1,18 +1,20 @@
 import os
-from shutil import rmtree
-
-import numpy as np
-import pandas as pd
 import pytest
+import numpy as np
+
+from shutil import rmtree
+from unittest import TestCase
 
 from dags.shop_405.sync_images import sync_images
 from .sync_images import load_images_to_sftp, _load_sftp_credentials_from_env, _connect_to_sftp, _load_product_data
 
+
+TESTCASE = TestCase()
 STORE_ID = 405
 
 
 @pytest.mark.vcr
-def test_load_images_to_sftp(clean_cwd):
+def test_load_images_to_sftp(_clean_cwd, _expected_columns):
     _decorate_load_product_data()
     products = load_images_to_sftp(STORE_ID)
 
@@ -20,7 +22,8 @@ def test_load_images_to_sftp(clean_cwd):
 
     assert len(file_list) == 4
     assert f'{products["id"].iloc[0]}' + ".jpg" in file_list
-    assert isinstance(products, pd.DataFrame)
+    TESTCASE.assertListEqual(list(products.columns), _expected_columns)
+    assert len(products) == 4
 
 
 def _decorate_load_product_data():
@@ -45,7 +48,13 @@ def _file_list_sftp():
 
 
 @pytest.fixture
-def clean_cwd():
+def _expected_columns():
+    return ['id', 'name', 'ru name', 'price', 'tax', 'weight', 'unit', 'category',
+            'tags', 'supplier', 'pic', 'description']
+
+
+@pytest.fixture
+def _clean_cwd():
     directory = "dir" + str(np.random.randint(10000, 99999))
     os.mkdir(directory)
     os.chdir(directory)
