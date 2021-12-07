@@ -1,4 +1,5 @@
 from contextlib import contextmanager
+
 import requests
 import shutil
 import pandas as pd
@@ -8,6 +9,7 @@ from time import sleep
 import os
 import ramda as R
 
+from dags.helpers.decorators import clean_up
 from api_wrappers.external.sheets import get_product_data_from_sheets
 
 
@@ -21,6 +23,7 @@ class FtpCredentials(TypedDict):
     port: int
 
 
+@clean_up
 def load_images_to_sftp(store_id: int) -> pd.DataFrame:
     products = _load_product_data()
     R.pipe(

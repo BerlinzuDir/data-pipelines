@@ -1,8 +1,5 @@
-import os
 import pytest
-import numpy as np
 
-from shutil import rmtree
 from unittest import TestCase
 
 from dags.shop_405.sync_images import sync_images
@@ -14,7 +11,7 @@ STORE_ID = 405
 
 
 @pytest.mark.vcr
-def test_load_images_to_sftp(_clean_cwd, _expected_columns):
+def test_load_images_to_sftp(_expected_columns):
     _decorate_load_product_data()
     products = load_images_to_sftp(STORE_ID)
 
@@ -28,7 +25,6 @@ def test_load_images_to_sftp(_clean_cwd, _expected_columns):
 
 def _decorate_load_product_data():
     """Cut the return dataframe of _load_product_data to shorten test run."""
-
     def dec(func):
         def inner():
             return func()[:4]
@@ -63,13 +59,3 @@ def _expected_columns():
         "pic",
         "description",
     ]
-
-
-@pytest.fixture
-def _clean_cwd():
-    directory = "dir" + str(np.random.randint(10000, 99999))
-    os.mkdir(directory)
-    os.chdir(directory)
-    yield
-    os.chdir("../")
-    rmtree(directory)
