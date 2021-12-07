@@ -25,6 +25,7 @@ def test_load_images_to_sftp(_expected_columns):
 
 def _decorate_load_product_data():
     """Cut the return dataframe of _load_product_data to shorten test run."""
+
     def dec(func):
         def inner():
             return func()[:4]
