@@ -23,7 +23,7 @@ def post_articles(login_details: dict, trader_id: int, articles: pd.DataFrame) -
 def get_articles(login_details: dict, trader_id: int):
     request_url = _request_url("get", login_details, trader_id)
     response = requests.get(request_url)
-    return json.loads(response.content)
+    return json.loads(response.content)["data"]
 
 
 def _request_url(mode, login_details, trader_id: int):

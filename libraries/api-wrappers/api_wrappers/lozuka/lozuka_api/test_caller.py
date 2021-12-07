@@ -37,7 +37,7 @@ def test_get_articles(_articles, _access_token):
 
     articles = get_articles(login_details=LOGIN_DETAILS, trader_id=TRADER_ID)
     assert len(responses.calls) == 2
-    assert articles == {"a": "12"}
+    assert articles == [{"a": "12"}]
 
 
 def _mock_access_token_endpoint(_access_token) -> None:
@@ -81,4 +81,4 @@ def _access_token() -> bytes:
 
 @pytest.fixture
 def _articles() -> bytes:
-    return b'{"a": "12"}'
+    return b'{"data": [{"a": "12"}]}'
