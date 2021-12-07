@@ -23,8 +23,8 @@ def test_load_images_to_sftp(_decorate_load_product_data, _file_ids_on_sftp, _ex
     assert len(products) == 4
     assert len(_file_ids_on_sftp) == 3
     assert (
-        set(products["id"].astype(str).values).difference(set(_file_ids_on_sftp)) ==
-        {EXISTING_IMAGE_ON_SFTP.replace('.jpg', '')}
+        set(products["id"].astype(str).values).difference(set(_file_ids_on_sftp))
+        == {EXISTING_IMAGE_ON_SFTP.replace('.jpg', '')}
     )
 
 
