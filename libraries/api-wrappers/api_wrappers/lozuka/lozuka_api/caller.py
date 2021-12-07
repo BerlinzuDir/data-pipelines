@@ -12,7 +12,7 @@ BASE_URL = "https://berlinzudir.de/"
 
 @curry
 def post_articles(login_details: dict, trader_id: int, articles: pd.DataFrame) -> None:
-    request_url = _request_url(login_details, trader_id)
+    request_url = _request_url("post", login_details, trader_id)
     articles = transform_articles(articles)
     response = requests.post(request_url, data=articles)
     response.raise_for_status()
@@ -20,8 +20,18 @@ def post_articles(login_details: dict, trader_id: int, articles: pd.DataFrame) -
         raise ResponseError(f"Posting Articles to {request_url} resulted in status code {response.status_code}.")
 
 
-def _request_url(login_details, trader_id: int):
-    endpoint = f"/import/v1/articles/import?trader={trader_id}&access_token={_access_token(login_details)}"
+def get_articles(login_details: dict, trader_id: int):
+    request_url = _request_url("get", login_details, trader_id)
+    response = requests.get(request_url)
+    return json.loads(response.content)
+
+
+def _request_url(mode, login_details, trader_id: int):
+    assert mode in ["post", "get"], f"'{mode} not valid as input argument"
+    if mode == "post":
+        endpoint = f"/import/v1/articles/import?trader={trader_id}&access_token={_access_token(login_details)}"
+    else:
+        endpoint = f"/import/v1/articles?trader={trader_id}&access_token={_access_token(login_details)}"
     return urllib.parse.urljoin(BASE_URL, endpoint)
 
 
