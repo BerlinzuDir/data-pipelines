@@ -19,7 +19,7 @@ def test_post_articles(transform_articles_patch, _access_token) -> None:
     transform_articles_patch.return_value = 12
 
     _mock_access_token_endpoint(_access_token)
-    _mock_endpoint('post', '')
+    _mock_endpoint("post", "")
 
     post_articles(
         login_details=LOGIN_DETAILS,
@@ -33,11 +33,11 @@ def test_post_articles(transform_articles_patch, _access_token) -> None:
 @responses.activate
 def test_get_articles(_articles, _access_token):
     _mock_access_token_endpoint(_access_token)
-    _mock_endpoint('get', _articles)
+    _mock_endpoint("get", _articles)
 
     articles = get_articles(login_details=LOGIN_DETAILS, trader_id=TRADER_ID)
     assert len(responses.calls) == 2
-    assert articles == {'a': '12'}
+    assert articles == {"a": "12"}
 
 
 def _mock_access_token_endpoint(_access_token) -> None:
@@ -48,7 +48,7 @@ def _mock_access_token_endpoint(_access_token) -> None:
         match_querystring=True,
         body=_access_token,
         status=200,
-        match=[responses.matchers.urlencoded_params_matcher(LOGIN_DETAILS)]
+        match=[responses.matchers.urlencoded_params_matcher(LOGIN_DETAILS)],
     )
 
 
