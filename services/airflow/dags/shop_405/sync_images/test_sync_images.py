@@ -10,7 +10,7 @@ from .sync_images import load_images_to_sftp, _load_product_data, _file_list_sft
 
 TESTCASE = TestCase()
 STORE_ID = 405
-EXISTING_IMAGE_ON_SFTP = '4850001270355.jpg'
+EXISTING_IMAGE_ON_SFTP = "4850001270355.jpg"
 
 
 @pytest.mark.vcr
@@ -22,10 +22,9 @@ def test_load_images_to_sftp(_decorate_load_product_data, _file_ids_on_sftp, _ex
     TESTCASE.assertListEqual(list(products.columns), _expected_columns)
     assert len(products) == 4
     assert len(_file_ids_on_sftp) == 3
-    assert (
-        set(products["id"].astype(str).values).difference(set(_file_ids_on_sftp))
-        == {EXISTING_IMAGE_ON_SFTP.replace('.jpg', '')}
-    )
+    assert set(products["id"].astype(str).values).difference(set(_file_ids_on_sftp)) == {
+        EXISTING_IMAGE_ON_SFTP.replace(".jpg", "")
+    }
 
 
 @pytest.fixture
@@ -43,7 +42,7 @@ def _decorate_load_product_data():
 
 @pytest.fixture
 def _file_ids_on_sftp():
-    return [file.replace('.jpg', '') for file in _file_list_sftp(STORE_ID)]
+    return [file.replace(".jpg", "") for file in _file_list_sftp(STORE_ID)]
 
 
 @pytest.fixture
