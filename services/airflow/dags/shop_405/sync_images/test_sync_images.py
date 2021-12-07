@@ -49,8 +49,20 @@ def _file_list_sftp():
 
 @pytest.fixture
 def _expected_columns():
-    return ['id', 'name', 'ru name', 'price', 'tax', 'weight', 'unit', 'category',
-            'tags', 'supplier', 'pic', 'description']
+    return [
+        "id",
+        "name",
+        "ru name",
+        "price",
+        "tax",
+        "weight",
+        "unit",
+        "category",
+        "tags",
+        "supplier",
+        "pic",
+        "description",
+    ]
 
 
 @pytest.fixture
