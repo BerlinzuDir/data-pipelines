@@ -49,7 +49,7 @@ def _file_list_sftp():
 
 @pytest.fixture
 def _expected_columns():
-    return [
+    yield [
         "id",
         "name",
         "ru name",
@@ -70,8 +70,6 @@ def _clean_cwd():
     directory = "dir" + str(np.random.randint(10000, 99999))
     os.mkdir(directory)
     os.chdir(directory)
-    try:
-        yield directory
-    finally:
-        os.chdir("../")
-        rmtree(directory)
+    yield
+    os.chdir("../")
+    rmtree(directory)
