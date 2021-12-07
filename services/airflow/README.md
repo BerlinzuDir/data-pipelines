@@ -18,4 +18,5 @@ Usage:
 2. Install poetry: `$pip install --user poetry`
 3. run git-secret reveal
 4. Run `make build` then `make  setup`
-5. Run tests: `$make watch` or open the Airflow UI on `localhost:8080` and login with username: `airflow` and password: `airflow`
+5. Run tests: `make unittests` 
+6. `$make watch` or open the Airflow UI on `localhost:8080` and login with username: `airflow` and password: `airflow`
