@@ -57,11 +57,11 @@ def file_exists_on_sftp(filename):
 STORE_ID = 1234
 FOLDER_ID = "1lQ2dyF3bschhZIl4MdMZ-Bn0VmbEz5Qv"
 
-IMAGE_URL1 = "http://localhost:80/static/images/1.jpeg"
+IMAGE_URL1 = "http://static-files/static/images/1.jpeg"
 HASH1 = "1lakskdfklasdf"
 FILENAME1 = "1.jpeg"
 
-IMAGE_URL2 = "http://localhost:80/static/images/2.jpg"
+IMAGE_URL2 = "http://static-files/static/images/2.jpg"
 HASH2 = "1lakskdasdfuiobjkdasldkj"
 FILENAME2 = "2.jpg"
 
