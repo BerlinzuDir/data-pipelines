@@ -1,4 +1,4 @@
-from .clean_up import clean_up
+from .cwd_cleanup import cwd_cleanup
 
 
-__all__ = ["clean_up"]
+__all__ = ["cwd_cleanup"]
