@@ -24,7 +24,7 @@ class FtpCredentials(TypedDict):
 
 
 @cwd_cleanup
-def load_images_to_sftp(store_id: int) -> pd.DataFrame:
+def load_images_to_sftp(store_id: str) -> pd.DataFrame:
     products = _load_product_data()
     R.pipe(
         _get_file_list,
@@ -46,17 +46,17 @@ def _get_file_list(products: pd.DataFrame) -> pd.DataFrame:
 
 
 @R.curry
-def _file_difference_sftp(store_id: int, file_list: pd.DataFrame):
+def _file_difference_sftp(store_id: str, file_list: pd.DataFrame):
     file_list_sftp = _file_list_sftp(store_id)
     return file_list[~file_list["title"].isin(file_list_sftp)]
 
 
-def _file_list_sftp(store_id: int):
+def _file_list_sftp(store_id: str):
     credentials = _load_sftp_credentials_from_env()
     with _connect_to_sftp(credentials) as sftp_client:
         if "bzd" not in sftp_client.listdir():
             return []
-        if str(store_id) not in sftp_client.listdir("bzd"):
+        if store_id not in sftp_client.listdir("bzd"):
             return []
         file_list = sftp_client.listdir(f"bzd/{store_id}")
     return file_list
@@ -104,17 +104,17 @@ def _download(url: str, filename: str) -> None:
 
 
 @R.curry
-def _load_all_files_to_sftp(store_id: int, file_list: pd.DataFrame):
+def _load_all_files_to_sftp(store_id: str, file_list: pd.DataFrame):
     credentials = _load_sftp_credentials_from_env()
     with _connect_to_sftp(credentials) as sftp_client:
         file_list["title"].apply(lambda title: _load_single_image_to_sftp(sftp_client, store_id, title))
 
 
 @R.curry
-def _load_single_image_to_sftp(sftp_client, store_id: int, filename: str) -> str:
+def _load_single_image_to_sftp(sftp_client, store_id: str, filename: str) -> str:
     if "bzd" not in sftp_client.listdir():
         sftp_client.mkdir("bzd/")
-    if str(store_id) not in sftp_client.listdir("bzd"):
+    if store_id not in sftp_client.listdir("bzd"):
         sftp_client.mkdir(f"bzd/{store_id}/")
     sftp_client.put(filename, f"bzd/{store_id}/{filename}")
     return filename
