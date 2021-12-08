@@ -18,7 +18,7 @@ class FileListDict(TypedDict):
 
 
 @cwd_cleanup
-def load_files_from_google_to_sftp(store_id: int, google_drive_folder_id: str) -> None:
+def load_files_from_google_to_sftp(store_id: str, google_drive_folder_id: str) -> None:
     R.pipe(
         get_file_list_from_drive,
         _download_all_files,
@@ -44,7 +44,7 @@ def _load_sftp_credentials_from_env() -> FtpCredentials:
 
 
 @R.curry
-def _load_all_files_to_sftp(store_id: int, file_list: pd.DataFrame) -> pd.DataFrame:
+def _load_all_files_to_sftp(store_id: str, file_list: pd.DataFrame) -> pd.DataFrame:
     credentials = _load_sftp_credentials_from_env()
     with _connect_to_sftp(credentials) as sftp_client:
         file_list["title"].apply(lambda title: _load_single_image_to_sftp(sftp_client, store_id, title))
@@ -63,10 +63,10 @@ def _connect_to_sftp(credentials: FtpCredentials):
 
 
 @R.curry
-def _load_single_image_to_sftp(sftp_client, store_id: int, filename: str) -> str:
+def _load_single_image_to_sftp(sftp_client, store_id: str, filename: str) -> str:
     if "bzd" not in sftp_client.listdir():
         sftp_client.mkdir("bzd/")
-    if str(store_id) not in sftp_client.listdir("bzd"):
+    if store_id not in sftp_client.listdir("bzd"):
         sftp_client.mkdir(f"bzd/{store_id}/")
     sftp_client.put(filename, f"bzd/{store_id}/{filename}")
     return filename
