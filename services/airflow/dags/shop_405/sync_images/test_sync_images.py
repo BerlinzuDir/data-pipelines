@@ -5,8 +5,13 @@ import pytest
 from unittest import TestCase
 
 from dags.shop_405.sync_images import sync_images
-from .sync_images import load_images_to_sftp, _load_product_data, _file_list_sftp, _load_sftp_credentials_from_env, \
-    _connect_to_sftp
+from .sync_images import (
+    load_images_to_sftp,
+    _load_product_data,
+    _file_list_sftp,
+    _load_sftp_credentials_from_env,
+    _connect_to_sftp,
+)
 
 TESTCASE = TestCase()
 STORE_ID = 405
