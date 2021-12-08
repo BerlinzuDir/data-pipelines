@@ -1,8 +1,7 @@
 import os.path
-from shutil import rmtree
-import pytest
-import numpy as np
 import pandas as pd
+
+from dags.helpers.decorators import cwd_cleanup
 from .sync_images import (
     _download,
     _load_single_image_to_sftp,
@@ -13,14 +12,14 @@ from .sync_images import (
 )
 
 
-def test_load_files_from_google_to_sftp(clean_cwd):
+def test_load_files_from_google_to_sftp():
     load_files_from_google_to_sftp(STORE_ID, FOLDER_ID)
 
-    assert os.path.isfile(GOOGLE_FILENAME)
     assert file_exists_on_sftp(GOOGLE_FILENAME)
 
 
-def test_download_all(clean_cwd):
+@cwd_cleanup
+def test_download_all():
     file_list = _download_all_files(FILE_LIST)
 
     pd.testing.assert_frame_equal(file_list, FILE_LIST)
@@ -28,12 +27,14 @@ def test_download_all(clean_cwd):
     assert os.path.isfile(FILENAME2)
 
 
-def test_download_file(clean_cwd):
+@cwd_cleanup
+def test_download_file():
     _download(IMAGE_URL1, FILENAME1)
     assert os.path.isfile(FILENAME1)
 
 
-def test_load_to_sftp(clean_cwd):
+@cwd_cleanup
+def test_load_to_sftp():
     _download(IMAGE_URL1, FILENAME1)
     assert os.path.isfile(FILENAME1)
 
@@ -53,26 +54,14 @@ def file_exists_on_sftp(filename):
     return exists
 
 
-@pytest.fixture
-def clean_cwd():
-    directory = "dir" + str(np.random.randint(10000, 99999))
-    os.mkdir(directory)
-    os.chdir(directory)
-    try:
-        yield directory
-    finally:
-        os.chdir("../")
-        rmtree(directory)
-
-
 STORE_ID = 1234
 FOLDER_ID = "1lQ2dyF3bschhZIl4MdMZ-Bn0VmbEz5Qv"
 
-IMAGE_URL1 = "http://static-files/static/images/1.jpeg"
+IMAGE_URL1 = "http://localhost:80/static/images/1.jpeg"
 HASH1 = "1lakskdfklasdf"
 FILENAME1 = "1.jpeg"
 
-IMAGE_URL2 = "http://static-files/static/images/2.jpg"
+IMAGE_URL2 = "http://localhost:80/static/images/2.jpg"
 HASH2 = "1lakskdasdfuiobjkdasldkj"
 FILENAME2 = "2.jpg"
 

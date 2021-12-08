@@ -7,6 +7,8 @@ import paramiko
 from time import sleep
 import os
 import ramda as R
+
+from dags.helpers.decorators import cwd_cleanup
 from api_wrappers.google import get_file_list_from_drive
 
 
@@ -16,6 +18,7 @@ class FileListDict(TypedDict):
     hash: List[str]
 
 
+@cwd_cleanup
 def load_files_from_google_to_sftp(store_id: int, google_drive_folder_id: str) -> None:
     R.pipe(
         get_file_list_from_drive,
@@ -29,6 +32,7 @@ class FtpCredentials(TypedDict):
     username: str
     password: str
     hostname: str
+    port: int
 
 
 def _load_sftp_credentials_from_env() -> FtpCredentials:
@@ -36,6 +40,7 @@ def _load_sftp_credentials_from_env() -> FtpCredentials:
         username=os.environ["FTP_USER"],
         password=os.environ["FTP_PASSWORD"],
         hostname=os.environ["FTP_HOSTNAME"],
+        port=int(os.environ["FTP_PORT"]),
     )
 
 
@@ -49,7 +54,7 @@ def _load_all_files_to_sftp(store_id: int, file_list: pd.DataFrame) -> pd.DataFr
 
 @contextmanager
 def _connect_to_sftp(credentials: FtpCredentials):
-    transport = paramiko.Transport((credentials["hostname"], 22))
+    transport = paramiko.Transport((credentials["hostname"], credentials["port"]))
     transport.connect(username=credentials["username"], password=credentials["password"])
     client = paramiko.SFTPClient.from_transport(transport)
     try:
