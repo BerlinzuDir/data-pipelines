@@ -4,7 +4,6 @@ import numpy as np
 
 import pandas as pd
 import pytest
-import requests
 from pydrive2.files import ApiRequestError
 
 from api_wrappers.google.google_drive import get_file_list_from_drive, download_file_from_drive
