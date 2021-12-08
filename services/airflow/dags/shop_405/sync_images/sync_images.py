@@ -53,10 +53,12 @@ def _file_difference_sftp(store_id: int, file_list: pd.DataFrame):
 
 def _file_list_sftp(store_id: int):
     credentials = _load_sftp_credentials_from_env()
-    with _connect_to_sftp(credentials) as client:
-        file_list = client.listdir(f"bzd/{store_id}")
-        for filename in file_list:
-            client.remove(f"bzd/{store_id}/{filename}")
+    with _connect_to_sftp(credentials) as sftp_client:
+        if "bzd" not in sftp_client.listdir():
+            return []
+        if str(store_id) not in sftp_client.listdir("bzd"):
+            return []
+        file_list = sftp_client.listdir(f"bzd/{store_id}")
     return file_list
 
 
