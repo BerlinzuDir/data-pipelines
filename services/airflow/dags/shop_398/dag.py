@@ -3,8 +3,8 @@ from datetime import timedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago
-from .sync import product_pipeline, TRADER_ID, GOOGLE_DRIVE_ADDRESS
-from .sync_images import load_files_from_google_to_sftp
+from dags.shop_398.sync import product_pipeline, TRADER_ID, GOOGLE_DRIVE_ADDRESS
+from dags.shop_398.sync_images import load_files_from_google_to_sftp
 from dags.helpers.dag_helpers import (
     slack_notifier_factory,
     create_slack_error_message_from_task_context,
