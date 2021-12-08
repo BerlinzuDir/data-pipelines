@@ -11,7 +11,7 @@ import ramda as R
 TRADER_ID = "407"
 FTP_ENDPOINT = "http://s739086489.online.de/bzd-bilder"
 GOOGLE_SHEETS_ADDRESS = "1_wRovPxM810eGCseDIga-N5iI7dwrSnlsWrItw17O8c"
-GOOGLE_DRIVE_ADDRESS = "1xLbWEWLnF4-niD9mLqMfPTkM87w8AVxG"
+GOOGLE_DRIVE_ADDRESS = "1EgUTQ7p8jFGWzSBvTlwRMRkTpLa2ptez"
 
 
 def product_pipeline():
