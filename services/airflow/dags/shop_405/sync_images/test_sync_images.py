@@ -5,6 +5,7 @@ import pytest
 from unittest import TestCase
 
 from dags.shop_405.sync_images import sync_images
+from dags.shop_405.sync import TRADER_ID
 from .sync_images import (
     load_images_to_sftp,
     _load_product_data,
@@ -14,7 +15,7 @@ from .sync_images import (
 )
 
 TESTCASE = TestCase()
-STORE_ID = 405
+STORE_ID = f"{TRADER_ID}_test"
 EXISTING_IMAGE_ON_SFTP = "4850001270355.jpg"
 
 

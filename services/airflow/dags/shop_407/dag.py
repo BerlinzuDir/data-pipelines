@@ -3,10 +3,8 @@ from datetime import timedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago
-
-from dags.airflow_fp import pull_execute, execute_push_df
-from dags.shop_405.sync import product_pipeline, TRADER_ID
-from dags.shop_405.sync_images import load_images_to_sftp
+from dags.shop_407.sync import product_pipeline, TRADER_ID, GOOGLE_DRIVE_ADDRESS
+from dags.shop_407.sync_images import load_files_from_google_to_sftp
 from dags.helpers.dag_helpers import (
     slack_notifier_factory,
     create_slack_error_message_from_task_context,
@@ -20,7 +18,6 @@ default_args = {
     "provide_context": True,
 }
 
-
 dag = DAG(
     f"shop_{TRADER_ID}_product_upload",
     default_args=default_args,
@@ -31,19 +28,15 @@ dag = DAG(
     on_failure_callback=slack_notifier_factory(create_slack_error_message_from_task_context),
 )
 
-
 load_images = PythonOperator(
-    task_id="load_images_from_trader_to_ftp",
-    python_callable=execute_push_df(
-        "products",
-        lambda *_: load_images_to_sftp(TRADER_ID),
-    ),
+    task_id="load_images_from_ggl_to_ftp",
+    python_callable=lambda *_: load_files_from_google_to_sftp(TRADER_ID, GOOGLE_DRIVE_ADDRESS),
     dag=dag,
 )
 
 load_product_data = PythonOperator(
     task_id="load_product_data_to_lozuka",
-    python_callable=pull_execute("products", product_pipeline),
+    python_callable=product_pipeline,
     dag=dag,
 )
 

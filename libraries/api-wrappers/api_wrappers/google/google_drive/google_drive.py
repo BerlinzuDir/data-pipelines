@@ -18,16 +18,29 @@ def get_file_list_from_drive(folder_id: str, credentials_file: str = "api-creden
         connect_do_drive_with_service_account,
         _get_file_list_from_drive_instance(folder_id),
         _assert_that_files_are_present,
-        _select_title_and_download_link_from_file_list,
+        _select_title_and_id_from_file_list,
         pd.DataFrame,
-        _set_column_names(["link", "title", "hash"]),
+        _set_column_names,
     )(credentials_file)
 
 
-def _select_title_and_download_link_from_file_list(
+def download_file_from_drive(drive_file_id: str, filename: str, credentials_file: str = "api-credentials.json") -> None:
+    R.pipe(
+        connect_do_drive_with_service_account,
+        _download_file(drive_file_id, filename)
+    )(credentials_file)
+
+
+@R.curry
+def _download_file(drive_file_id: str, filename: str, drive: GoogleDrive):
+    file = drive.CreateFile({'id': drive_file_id})
+    return file.GetContentFile(filename)
+
+
+def _select_title_and_id_from_file_list(
     file_list: List[GoogleDrive],
 ) -> List[File]:
-    return R.map(R.pick(["title", "webContentLink", "md5Checksum"]))(file_list)
+    return R.map(R.pick(["title", "id", "md5Checksum"]))(file_list)
 
 
 @R.curry
@@ -43,6 +56,5 @@ def _assert_that_files_are_present(file_list: List) -> List[str]:
 
 
 @R.curry
-def _set_column_names(columns: List[str], df: pd.DataFrame) -> pd.DataFrame:
-    df.columns = columns
-    return df
+def _set_column_names(df: pd.DataFrame) -> pd.DataFrame:
+    return df.rename(columns={"md5Checksum": "hash"})
