@@ -10,6 +10,10 @@ import urllib
 import json
 
 
+def test_trader_id():
+    assert isinstance(TRADER_ID, str)
+
+
 @responses.activate
 def test_product_pipeline():
     responses.add_passthru("https://oauth2.googleapis.com/token")

@@ -6,6 +6,10 @@ import json
 import pytest
 
 
+def test_trader_id():
+    assert isinstance(TRADER_ID, str)
+
+
 @pytest.mark.block_network
 @pytest.mark.vcr
 @responses.activate
