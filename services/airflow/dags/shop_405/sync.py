@@ -8,7 +8,7 @@ import ramda as R
 
 
 FTP_ENDPOINT = "http://s739086489.online.de/bzd-bilder"
-TRADER_ID = 405
+TRADER_ID = "405"
 
 
 def product_pipeline(products: json):
