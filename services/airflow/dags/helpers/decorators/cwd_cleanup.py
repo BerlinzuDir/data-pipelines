@@ -6,6 +6,8 @@ import numpy as np
 def cwd_cleanup(func):
     def inner(*args):
         directory = "dir" + str(np.random.randint(10000, 99999))
+        while os.path.isdir(directory):
+            directory = "dir" + str(np.random.randint(10000, 99999))
         os.mkdir(directory)
         os.chdir(directory)
         try:
