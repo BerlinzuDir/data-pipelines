@@ -5,8 +5,13 @@ import numpy as np
 
 def cwd_cleanup(func):
     def inner(*args):
-        directory = "dir" + str(np.random.randint(10000, 99999))
-        os.mkdir(directory)
+        while True:
+            directory = "dir" + str(np.random.randint(10000, 99999))
+            try:
+                os.mkdir(directory)
+            except FileExistsError:
+                continue
+            break
         os.chdir(directory)
         try:
             return_value = func(*args)
