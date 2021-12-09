@@ -18,8 +18,8 @@ def test_product_pipeline():
     product_pipeline(PRODUCTS_INPUT)
 
     assert len(responses.calls) == 2
-    assert len(json.loads(responses.calls[1].request.body)["data"]["articles"]) == 2
-    assert json.loads(responses.calls[1].request.body)["data"]["articles"][1] == FIRST_PRODUCT
+    assert len(json.loads(responses.calls[1].request.body)["data"]["articles"]) == 1
+    assert json.loads(responses.calls[1].request.body)["data"]["articles"][0] == FIRST_PRODUCT
 
 
 def _setup_request_mocks() -> None:
@@ -56,8 +56,8 @@ PRODUCTS_INPUT = (
     '{"id":{"0":4030957751188,"1":4030011750737},"name":{"0":"Akazienhonig","1":"Akazienhonig mit Sommertracht mild, '
     'fl\\u00fc\\u00dfig"},"ru name":{"0":"\\u0410\\u043a\\u0430\\u0446\\u0438\\u0435\\u0432\\u044b\\u0439 \\u043c\\u04'
     '51\\u0434","1":"\\u041c\\u0451\\u0434 \\u0430\\u043a\\u0430\\u0446\\u0438\\u0435\\u0432\\u044b\\u0439"},"price":{'
-    '"0":5.29,"1":6.99},"tax":{"0":7,"1":7},"weight":{"0":500.0,"1":500.0},"unit":{"0":"g","1":"g"},"category":{"0":"s'
-    'uesswaren","1":"suesswaren"},"tags":{"0":"imported, online, wolt","1":"imported, online, wolt"},"supplier":{"0":"'
+    '"0":5.29,"1":6.99},"tax":{"0":7,"1":7},"weight":{"0":500.0,"1":500.0},"unit":{"0":"g","1":"g"},"category":{"0":"'
+    'None","1":"suesswaren"},"tags":{"0":"imported, online, wolt","1":"imported, online, wolt"},"supplier":{"0":"'
     'Monolith","1":"Monolith"},"pic":{"0":"https:\\/\\/catalog.stolitschniy.shop\\/static\\/img\\/products\\/normalize'
     'd\\/4030957751188.jpg","1":"https:\\/\\/catalog.stolitschniy.shop\\/static\\/img\\/products\\/normalized\\/4030011'
     '750737.jpg"},"description":{"0":null,"1":null}}'
