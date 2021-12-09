@@ -28,7 +28,8 @@ def _transform_product_data(product_data: pd.DataFrame) -> pd.DataFrame:
     mapping = get_default_category_mapping()
     category_difference = set(product_data["Kategorie"].unique()).difference(_translation_dict_categories().keys())
     if category_difference:
-        raise MissingCategoryTranslation(category_difference)
+        product_data = product_data[~product_data["Kategorie"].isin(list(category_difference))]
+        # TODO: error logging and notification
     product_data["Kategorie"] = product_data["Kategorie"].apply(
         lambda category_name: _map_product_category(mapping, _translation_dict_categories()[category_name])
     )
