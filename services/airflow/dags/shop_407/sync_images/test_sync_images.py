@@ -5,7 +5,7 @@ import pytest
 from dags.shop_407.sync_images import sync_images
 from .sync_images import _load_sftp_credentials_from_env, _connect_to_sftp, load_images_to_sftp
 
-from dags.shop_407.sync import TRADER_ID, _load_product_data
+from dags.shop_407.sync import TRADER_ID
 
 
 TESTCASE = TestCase()
@@ -33,7 +33,7 @@ def _decorate_load_product_data():
 
         return inner
 
-    sync_images._load_product_data = dec(_load_product_data)
+    sync_images._load_product_data = dec(sync_images._load_product_data)
 
 
 def file_exists_on_sftp(filename):

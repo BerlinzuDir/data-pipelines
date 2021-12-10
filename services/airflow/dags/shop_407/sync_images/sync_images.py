@@ -1,7 +1,7 @@
 from contextlib import contextmanager
 
 import pandas as pd
-from typing import TypedDict, List
+from typing import TypedDict
 import paramiko
 import os
 import ramda as R
@@ -41,14 +41,14 @@ def _get_file_list(google_drive_adress: str, products: pd.DataFrame) -> pd.DataF
     file_list_drive = get_file_list_from_drive(google_drive_adress)
     products = products.rename(columns={"ID": "title"})
     file_list_drive["title"] = file_list_drive["title"].str.replace('JPG', 'jpg')
-    products["Produktbild \n(Dateiname mit Endung)"] = products["Produktbild \n(Dateiname mit Endung)"].str.replace('JPG', 'jpg').str.replace('PNG', 'png')
-    not_assigned_images_sheet = set(products["Produktbild \n(Dateiname mit Endung)"].values).difference(file_list_drive["title"].values)
-    not_assigned_images_drive = set(file_list_drive["title"].values).difference(products["Produktbild \n(Dateiname mit Endung)"].values)
+    products["Produktbild \n(Dateiname oder url)"] = products["Produktbild \n(Dateiname oder url)"].str.replace('JPG', 'jpg').str.replace('PNG', 'png')
+    not_assigned_images_sheet = set(products["Produktbild \n(Dateiname oder url)"].values).difference(file_list_drive["title"].values)
+    not_assigned_images_drive = set(file_list_drive["title"].values).difference(products["Produktbild \n(Dateiname oder url)"].values)
     if not_assigned_images_sheet or not_assigned_images_drive:
         # TODO: send notification and log warning
-        products = products[~products["Produktbild \n(Dateiname mit Endung)"].isin(not_assigned_images_sheet)]
+        products = products[~products["Produktbild \n(Dateiname oder url)"].isin(not_assigned_images_sheet)]
     products["title"] = products["title"].astype(str)
-    products = products.merge(file_list_drive, how='left', left_on="Produktbild \n(Dateiname mit Endung)", right_on='title')
+    products = products.merge(file_list_drive, how='left', left_on="Produktbild \n(Dateiname oder url)", right_on='title')
     products["title"] = products["title_x"] + products["title_y"].apply(lambda x: '.' + x.split('.')[-1])
     return products[["id", "title"]]
 
