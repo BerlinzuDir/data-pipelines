@@ -21,7 +21,7 @@ def test_product_pipeline():
     _setup_request_mocks()
     product_pipeline()
     assert len(responses.calls) == 2
-    assert len(json.loads(responses.calls[1].request.body)["data"]["articles"]) == 5
+    assert len(json.loads(responses.calls[1].request.body)["data"]["articles"]) == 4
 
 
 def test_map_product_category_returns_correct_product_id():
