@@ -1,5 +1,5 @@
 from .sync_images import _load_sftp_credentials_from_env, _connect_to_sftp, load_files_from_google_to_sftp
-from dags.shop_287.sync import TRADER_ID
+from dags.shop_287 import TRADER_ID
 
 
 def test_load_files_from_google_to_sftp():
