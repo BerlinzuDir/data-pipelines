@@ -10,6 +10,10 @@ import urllib
 import json
 
 
+def test_trader_id():
+    assert isinstance(TRADER_ID, str)
+
+
 @responses.activate
 def test_product_pipeline():
     responses.add_passthru("https://oauth2.googleapis.com/token")
@@ -17,7 +21,7 @@ def test_product_pipeline():
     _setup_request_mocks()
     product_pipeline()
     assert len(responses.calls) == 2
-    assert len(json.loads(responses.calls[1].request.body)["data"]["articles"]) == 35
+    assert len(json.loads(responses.calls[1].request.body)["data"]["articles"]) == 168
 
 
 def test_map_product_category_returns_correct_product_id():

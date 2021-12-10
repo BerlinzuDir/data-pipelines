@@ -23,9 +23,7 @@ def days_ago(n, hour=0, minute=0, second=0, microsecond=0):
 
     print(os.environ.get("AIRFLOW__AIRFLOW__CORE__DEFAULT_TIMEZONE"))
     tz = pendulum.tz.timezone("Europe/Berlin")
-    today = dt.datetime.now(tz=tz).replace(
-        hour=hour, minute=minute, second=second, microsecond=microsecond
-    )
+    today = dt.datetime.now(tz=tz).replace(hour=hour, minute=minute, second=second, microsecond=microsecond)
     return today - timedelta(days=n)
 
 
@@ -36,9 +34,7 @@ with DAG(
     schedule_interval=timedelta(days=1),
     start_date=days_ago(2, hour=10),
     tags=["example"],
-    on_failure_callback=slack_notifier_factory(
-        create_slack_error_message_from_task_context
-    ),
+    on_failure_callback=slack_notifier_factory(create_slack_error_message_from_task_context),
 ) as dag:
 
     email = email.EmailOperator(

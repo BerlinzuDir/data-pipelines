@@ -29,16 +29,12 @@ dag = DAG(
     schedule_interval=timedelta(days=1),
     start_date=days_ago(2),
     tags=["example"],
-    on_failure_callback=slack_notifier_factory(
-        create_slack_error_message_from_task_context
-    ),
+    on_failure_callback=slack_notifier_factory(create_slack_error_message_from_task_context),
 )
 
 load_images = PythonOperator(
     task_id="load_images_from_ggl_to_ftp",
-    python_callable=lambda *_: load_files_from_google_to_sftp(
-        TRADER_ID, GOOGLE_DRIVE_ADDRESS
-    ),
+    python_callable=lambda *_: load_files_from_google_to_sftp(TRADER_ID, GOOGLE_DRIVE_ADDRESS),
     dag=dag,
 )
 
