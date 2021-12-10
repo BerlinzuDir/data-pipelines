@@ -19,9 +19,9 @@ def test_product_pipeline():
     responses.add_passthru("https://oauth2.googleapis.com/token")
     responses.add_passthru("https://sheets.googleapis.com")
     _setup_request_mocks()
-    product_pipeline()
+    product_pipeline(PRODUCTS_INPUT)
     assert len(responses.calls) == 2
-    assert len(json.loads(responses.calls[1].request.body)["data"]["articles"]) == 52
+    assert len(json.loads(responses.calls[1].request.body)["data"]["articles"]) == 1
 
 
 def test_map_product_category_returns_correct_product_id():
@@ -61,22 +61,6 @@ access_token: bytes = (
     b'\\"refresh_token\\":\\"111\\"}"]'
 )
 
-FIRST_PRODUCT = {
-    "name": "Apfel - Pink Lady changed",
-    "itemNumber": "1",
-    "category": ["36"],
-    "priceBrutto": 0.59,
-    "priceNetto": 0.55,
-    "description": "Süß und Knackig\nHerkunft: Spanien,\n\n"
-    + "Tip: für längere Haltbarkeit, Äpfel und Bananen getrennt lagern.",
-    "vat": "7",
-    "images": "http://s739086489.online.de/bzd-bilder/287/1.png",
-    "stock": 10,
-    "unitSection": {
-        "weightUnit": "stk",
-        "weight": "1",
-        "priceSection": {"price": 0.59, "vat": "7"},
-        "variantSection": [],
-        "ean": "",
-    },
-}
+PRODUCTS_INPUT = (
+    '{"ID":{"0":1330},"Titel":{"0":"Wei\\u00dfwein: Allegria Vino Bianco"},"Beschreibung":{"0":"Herkunft: Italien.\\nAllegria Vino Bianco \\/ Italien, Umbrien \\/ Cuve \\/ trocken, frische Frucht von Cox Orange und Mirabelle bei s\\u00fcffig, knackiger S\\u00e4ure \\/ 12,0% vol \\/ 1L \\/ enth\\u00e4lt Sulfite."},"Bruttopreis":{"0":"\\u20ac7.40"},"Mehrwertsteuer prozent":{"0":19},"Ma\\u00dfeinheit":{"0":"l"},"Verpackungsgr\\u00f6\\u00dfe":{"0":1.0},"Kategorie":{"0":"Alkoholhaltige Getr\\u00e4nke"},"R\\u00fcckgabe M\\u00f6glich":{"0":"nein"},"K\\u00fchlpflichtig":{"0":"Raumtemperatur: 15-25\\u00b0C"},"Produktbild \\n(Dateiname oder url)":{"0":"Wei\\u00dfwein: Allegria Vino Bianco.jpg"},"Bestand":{"0":""},"Ma\\u00dfeinheit \\nf\\u00fcr Bestand":{"0":""},"GTIN\\/EAN":{"0":""},"ISBN":{"0":""},"SEO \\nkeywords":{"0":""},"SEO \\nBeschreibungstext":{"0":""},"SEO \\nSeitentitel":{"0":""}}'
+)

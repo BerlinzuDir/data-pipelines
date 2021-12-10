@@ -2,7 +2,6 @@ import json
 
 import pandas as pd
 import pathlib
-from api_wrappers.google import get_product_data_from_sheets
 from api_wrappers.google.google_sheets import get_default_category_mapping
 from api_wrappers.lozuka.lozuka_api import post_articles
 import ramda as R
@@ -14,12 +13,16 @@ GOOGLE_SHEETS_ADDRESS = "1_wRovPxM810eGCseDIga-N5iI7dwrSnlsWrItw17O8c"
 GOOGLE_DRIVE_ADDRESS = "1EgUTQ7p8jFGWzSBvTlwRMRkTpLa2ptez"
 
 
-def product_pipeline():
-    return R.pipe(
-        _load_product_data,
+def product_pipeline(products: json):
+    R.pipe(
+        _from_json_records,
         _transform_product_data,
         post_articles(_load_credentials("/shop-secrets.json"), TRADER_ID),
-    )("")
+    )(products)
+
+
+def _from_json_records(products: str) -> pd.DataFrame:
+    return pd.DataFrame.from_records(json.loads(products))
 
 
 def _load_credentials(filename: str):
@@ -29,10 +32,6 @@ def _load_credentials(filename: str):
 
 def _get_path_of_file() -> str:
     return str(pathlib.Path(__file__).parent.resolve())
-
-
-def _load_product_data(*args) -> pd.DataFrame:
-    return get_product_data_from_sheets(GOOGLE_SHEETS_ADDRESS)
 
 
 def _transform_product_data(products: pd.DataFrame):
