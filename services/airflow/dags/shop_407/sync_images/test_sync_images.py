@@ -13,14 +13,15 @@ STORE_ID = f"{TRADER_ID}_test"
 FOLDER_ID = "1lQ2dyF3bschhZIl4MdMZ-Bn0VmbEz5Qv"
 
 
+@pytest.mark.vcr
 def test_load_images_to_sftp(_decorate_load_product_data, _sftp_cleanup):
     products = load_images_to_sftp(STORE_ID)
 
-    assert len(products) == 4
-    assert file_exists_on_sftp('1330.jpg')
-    assert file_exists_on_sftp("1459.jpg")
-    assert file_exists_on_sftp('1578.jpg')
-    assert file_exists_on_sftp("1593.jpg")
+    file_list_sftp = _file_list_sftp(STORE_ID)
+    file_list_products = [url.split('/')[-1] for url in products["Produktbild \n(Dateiname oder url)"].values]
+
+    assert len(file_list_sftp) == 4
+    assert set(file_list_products) == set(file_list_sftp)
 
 
 @pytest.fixture
@@ -36,13 +37,15 @@ def _decorate_load_product_data():
     sync_images._load_product_data = dec(sync_images._load_product_data)
 
 
-def file_exists_on_sftp(filename):
+def _file_list_sftp(store_id: str):
     credentials = _load_sftp_credentials_from_env()
-    with _connect_to_sftp(credentials) as client:
-        exists = filename in client.listdir(f"bzd/{STORE_ID}")
-        if exists:
-            client.remove(f"bzd/{STORE_ID}/{filename}")
-    return exists
+    with _connect_to_sftp(credentials) as sftp_client:
+        if "bzd" not in sftp_client.listdir():
+            return []
+        if store_id not in sftp_client.listdir("bzd"):
+            return []
+        file_list = sftp_client.listdir(f"bzd/{store_id}")
+    return file_list
 
 
 @pytest.fixture

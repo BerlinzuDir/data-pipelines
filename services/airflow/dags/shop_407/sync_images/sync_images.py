@@ -10,7 +10,7 @@ from api_wrappers.google import get_product_data_from_sheets
 from api_wrappers.google.google_drive import download_file_from_drive
 from dags.helpers.decorators import cwd_cleanup
 from api_wrappers.google import get_file_list_from_drive
-from dags.shop_407.sync import GOOGLE_SHEETS_ADDRESS, GOOGLE_DRIVE_ADDRESS
+from dags.shop_407.sync import GOOGLE_SHEETS_ADDRESS, GOOGLE_DRIVE_ADDRESS, TRADER_ID, FTP_ENDPOINT
 
 
 class FtpCredentials(TypedDict):
@@ -29,7 +29,7 @@ def load_images_to_sftp(store_id: str) -> pd.DataFrame:
         _load_all_files_to_sftp(store_id),
         lambda df: df.to_dict(),  # return values have to be json serializable
     )(products)
-    return products
+    return _set_image_url(products)
 
 
 def _load_product_data() -> pd.DataFrame:
@@ -94,3 +94,12 @@ def _load_single_image_to_sftp(sftp_client, store_id: str, filename: str) -> str
         sftp_client.mkdir(f"bzd/{store_id}/")
     sftp_client.put(filename, f"bzd/{store_id}/{filename}")
     return filename
+
+
+def _set_image_url(products: pd.DataFrame) -> pd.DataFrame:
+    products["Produktbild \n(Dateiname oder url)"] = (
+        f"{FTP_ENDPOINT}/{TRADER_ID}/" + products["ID"].astype(str)
+        + '.'
+        + products["Produktbild \n(Dateiname oder url)"].apply(lambda x: x.split('.')[-1].lower())
+    )
+    return products
