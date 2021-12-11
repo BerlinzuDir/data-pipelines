@@ -8,7 +8,7 @@ import ramda as R
 
 
 TRADER_ID: str = "407"
-FTP_ENDPOINT = "http://s739086489.online.de/bzd-bilder"
+FTP_ENDPOINT = "http://s739086489.online.de/bzd-bilder/bzd"
 GOOGLE_SHEETS_ADDRESS = "1_wRovPxM810eGCseDIga-N5iI7dwrSnlsWrItw17O8c"
 GOOGLE_DRIVE_ADDRESS = "1EgUTQ7p8jFGWzSBvTlwRMRkTpLa2ptez"
 
