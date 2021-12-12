@@ -19,10 +19,10 @@ def test_product_pipeline():
     responses.add_passthru("https://oauth2.googleapis.com/token")
     responses.add_passthru("https://sheets.googleapis.com")
     _setup_request_mocks()
-    product_pipeline()
+    product_pipeline(PRODUCTS_INPUT)
     # TODO compare post request data
     assert len(responses.calls) == 2
-    assert len(json.loads(responses.calls[1].request.body)["data"]["articles"]) == 168
+    assert len(json.loads(responses.calls[1].request.body)["data"]["articles"]) == 4
 
 
 def test_map_product_category_returns_correct_product_id():
