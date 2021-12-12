@@ -64,20 +64,20 @@ access_token: bytes = (
 PRODUCTS_INPUT = (
     '{"ID":{"0":1,"1":2,"2":3,"3":4},"Titel":{"0":"Red Bull Energy Drink 250 ml","1":"Mandarin Veneto 330 ml","2":"Hot '
     'Blood Energy Drink 250 ml","3":"Peison Energy Drink 250 ml"},"Beschreibung":{"0":"Herkunft: \\u00d6sterreich.\\nZu'
-    'taten: Wasser, Saccharose, Glucose, S\\u00e4ureregulator Natriumcitrate, Kohlens\\u00e4ure, Taurin (0,4%), Glucur'
-    'onolacton (0,24%), Koffein (0,03%), Inosit, Vitamine (Niacin, Pantothens\\u00e4ure, B6,B12), Aroma, Farbstoffe (e'
+    "taten: Wasser, Saccharose, Glucose, S\\u00e4ureregulator Natriumcitrate, Kohlens\\u00e4ure, Taurin (0,4%), Glucur"
+    "onolacton (0,24%), Koffein (0,03%), Inosit, Vitamine (Niacin, Pantothens\\u00e4ure, B6,B12), Aroma, Farbstoffe (e"
     'infache Zuckerkul\\u00f6r, Riboflavin).","1":"Name: \\u0645\\u0646\\u062f\\u0631\\u064a\\u0646 \\u0641\\u064a\\u0'
-    '646\\u062a\\u0648\\nHerkunft: T\\u00fcrkei.\\nZutaten: Wasser, Fruktose, Glukose, sirup, Kohlendioxid, S\\u00e4ure'
-    'regulator (ZitronenS\\u00e4ure), Farbstoffe (schwarzes Karottensaftkonzentrat), Ammonium -sulfite- karamell), Arom'
-    'en, Konservierungsmittel ( Natriumbenzoat).\\n\\nTip: Nach dem \\u00d6ffnen gek\\u00fchlt bei maximal 7\\u00b0C f'
-    '\\u00fcr maximal 3 Tage in einem geschlossenen Beh\\u00e4lter aufbewahren. (Fleischerzeugnis nicht in der ge\\u00'
+    "646\\u062a\\u0648\\nHerkunft: T\\u00fcrkei.\\nZutaten: Wasser, Fruktose, Glukose, sirup, Kohlendioxid, S\\u00e4ure"
+    "regulator (ZitronenS\\u00e4ure), Farbstoffe (schwarzes Karottensaftkonzentrat), Ammonium -sulfite- karamell), Arom"
+    "en, Konservierungsmittel ( Natriumbenzoat).\\n\\nTip: Nach dem \\u00d6ffnen gek\\u00fchlt bei maximal 7\\u00b0C f"
+    "\\u00fcr maximal 3 Tage in einem geschlossenen Beh\\u00e4lter aufbewahren. (Fleischerzeugnis nicht in der ge\\u00"
     'f6ffneten Konservendose aufbewahren).","2":"Herkunft: Deutschland.\\nZutaten: Wasser, Zucker, Dextrose, S\\u00e4u'
-    'erungsmittel: Zitronens\\u00e4ure, Kohlens\\u00e4ure, Taurin (0,4%); S\\u00e4ueregulatoren: Natriumcitrate, Magne'
-    'siumcarbonate, Aroma, Koffein (0,024), Farbstoffe: Ammonsulfiz-Zuckerkul\\u00f6r, Riboflavine; Vitamine: Niacin, '
-    'Pantothens\\u00e4ure, VitaminB6, Vitamin B12; Inosit (0,01%).\\n\\nTip: Trocken und vor W\\u00e4rme gesch\\u00fct'
+    "erungsmittel: Zitronens\\u00e4ure, Kohlens\\u00e4ure, Taurin (0,4%); S\\u00e4ueregulatoren: Natriumcitrate, Magne"
+    "siumcarbonate, Aroma, Koffein (0,024), Farbstoffe: Ammonsulfiz-Zuckerkul\\u00f6r, Riboflavine; Vitamine: Niacin, "
+    "Pantothens\\u00e4ure, VitaminB6, Vitamin B12; Inosit (0,01%).\\n\\nTip: Trocken und vor W\\u00e4rme gesch\\u00fct"
     'zt lagern.","3":"Herkunft: T\\u00fcrkei.\\nZutaten: Kohlens\\u00e4urehaltiges Wasser, Zucker, S\\u00e4ure (Zitron'
-    'ens\\u00e4ure), Koffein, Taurin, Glucuronolacton, Inositol, nat\\u00fcrliche Farbstoffe (Karamell E150c, Riboflav'
-    'in E101), naturidentisches Rote-Beere-Aroma, Konservierungsstoff (Natriumbonzoat, Kaliumsorbat), Niacin, Pamothen'
+    "ens\\u00e4ure), Koffein, Taurin, Glucuronolacton, Inositol, nat\\u00fcrliche Farbstoffe (Karamell E150c, Riboflav"
+    "in E101), naturidentisches Rote-Beere-Aroma, Konservierungsstoff (Natriumbonzoat, Kaliumsorbat), Niacin, Pamothen"
     's\\u00e4ure, Vitamin B6, Vitamin B12.\\n\\nTip: Trocken und vor W\\u00e4rme gesch\\u00fctzt lagern."},"Bruttoprei'
     's":{"0":"$1.00","1":"$1.00","2":"$1.00","3":"$1.00"},"Mehrwertsteuer prozent":{"0":7,"1":7,"2":7,"3":7},"Ma\\u00d'
     'feinheit":{"0":"ml","1":"ml","2":"ml","3":"ml"},"Verpackungsgr\\u00f6\\u00dfe":{"0":250.0,"1":330.0,"2":250.0,"3"'
