@@ -18,7 +18,7 @@ def test_load_images_to_sftp(_decorate_load_product_data, _sftp_cleanup):
     products = load_images_to_sftp(STORE_ID)
 
     file_list_sftp = _file_list_sftp(STORE_ID)
-    file_list_products = [url.split('/')[-1] for url in products["Produktbild \n(Dateiname oder url)"].values]
+    file_list_products = [url.split("/")[-1] for url in products["Produktbild \n(Dateiname oder url)"].values]
 
     assert (
         products["Produktbild \n(Dateiname oder url)"].iloc[0]

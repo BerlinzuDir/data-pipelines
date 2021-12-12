@@ -47,16 +47,16 @@ def _get_file_list(google_drive_adress: str, products: pd.DataFrame) -> pd.DataF
 
 
 def _standardize_image_format(dataframe: pd.DataFrame, column: str) -> pd.DataFrame:
-    format_translation = {'JPG': 'jpg', 'jpeg': 'jpg', 'JPEG': 'jpg', 'PNG': 'png'}
+    format_translation = {"JPG": "jpg", "jpeg": "jpg", "JPEG": "jpg", "PNG": "png"}
     for key, val in format_translation.items():
         dataframe[column] = dataframe[column].str.replace(key, val)
     return dataframe
 
 
 def _check_products_for_image_file(file_list_drive: pd.DataFrame, products: pd.DataFrame) -> pd.DataFrame:
-    not_assigned_images_sheet = set(
-        products["Produktbild \n(Dateiname oder url)"].values
-    ).difference(file_list_drive["title"].values)
+    not_assigned_images_sheet = set(products["Produktbild \n(Dateiname oder url)"].values).difference(
+        file_list_drive["title"].values
+    )
     if not_assigned_images_sheet:
         # TODO: send notification and log warning
         return products[~products["Produktbild \n(Dateiname oder url)"].isin(not_assigned_images_sheet)]
@@ -64,8 +64,8 @@ def _check_products_for_image_file(file_list_drive: pd.DataFrame, products: pd.D
 
 
 def _get_file_id_filename(file_list: pd.DataFrame, products: pd.DataFrame) -> pd.DataFrame:
-    products = products.merge(file_list, how='left', left_on="Produktbild \n(Dateiname oder url)", right_on='title')
-    products["sftp_filename"] = products["ID"] + products["title"].apply(lambda x: '.' + x.split('.')[-1])
+    products = products.merge(file_list, how="left", left_on="Produktbild \n(Dateiname oder url)", right_on="title")
+    products["sftp_filename"] = products["ID"] + products["title"].apply(lambda x: "." + x.split(".")[-1])
     return products[["id", "sftp_filename"]]
 
 
@@ -116,8 +116,9 @@ def _load_single_image_to_sftp(sftp_client, store_id: str, filename: str) -> str
 
 def _set_image_url(products: pd.DataFrame) -> pd.DataFrame:
     products["Produktbild \n(Dateiname oder url)"] = (
-        f"{FTP_ENDPOINT}/{TRADER_ID}/" + products["ID"].astype(str)
-        + '.'
-        + products["Produktbild \n(Dateiname oder url)"].apply(lambda x: x.split('.')[-1].lower())
+        f"{FTP_ENDPOINT}/{TRADER_ID}/"
+        + products["ID"].astype(str)
+        + "."
+        + products["Produktbild \n(Dateiname oder url)"].apply(lambda x: x.split(".")[-1].lower())
     )
     return products
