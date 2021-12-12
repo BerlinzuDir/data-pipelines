@@ -5,7 +5,7 @@ from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago
 
 from dags.airflow_fp import pull_execute, execute_push_df
-from dags.shop_390.sync import product_pipeline, TRADER_ID, GOOGLE_DRIVE_ADDRESS
+from dags.shop_390.sync import product_pipeline, TRADER_ID
 from dags.shop_390.sync_images import load_images_to_sftp
 from dags.helpers.dag_helpers import (
     slack_notifier_factory,
@@ -35,7 +35,8 @@ load_images = PythonOperator(
     python_callable=execute_push_df(
         "products",
         lambda *_: load_images_to_sftp(TRADER_ID),
-    ),    dag=dag,
+    ),
+    dag=dag,
 )
 
 load_product_data = PythonOperator(

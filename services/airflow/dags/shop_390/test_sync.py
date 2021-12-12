@@ -65,16 +65,16 @@ access_token: bytes = (
 PRODUCTS_INPUT = (
     '{"ID":{"0":1,"1":2,"2":3,"3":4},"Titel":{"0":"Al Amira Sonnenblumenkerne 250g","1":"Al-Khair Ghee pflanzlich 2kg",'
     '"2":"Al Raii Corned Beef 340 g","3":"Al Raii Labneh Balls mit  Minzgeschmack 725 g"},"Beschreibung":{"0":"Name: '
-    '\\u0628\\u0632\\u0631 \\u062f\\u0648\\u0627\\u0631 \\u0627\\u0644\\u0634\\u0645\\u0633\\nHerkunft:Libanon. \\nZu'
+    "\\u0628\\u0632\\u0631 \\u062f\\u0648\\u0627\\u0631 \\u0627\\u0644\\u0634\\u0645\\u0633\\nHerkunft:Libanon. \\nZu"
     'taten:Sonnenblumenkerne, Salz, Maisst\\u00e4rke, Zitronens\\u00e4ure (E330).","1":"Name: \\u0627\\u0644\\u062e\\'
-    'u064a\\u0631 \\u0633\\u0645\\u0646\\u0629 \\u0646\\u0628\\u0627\\u062a\\u064a\\u0629 \\u0646\\u0642\\u064a\\u062'
-    '9\\nHerkunft: Syrien. \\nZutaten: Raffiniertes Palm\\u00f6l, Zusatzstoffe Beta-Carotin 0,0025%, Aromen: 0,012%, '
-    'Antioxidans (0,01% von BHT + BHA). Vitamine w\\u00e4hrend des Produktionsprozesses: Vitamin A (2000 International'
+    "u064a\\u0631 \\u0633\\u0645\\u0646\\u0629 \\u0646\\u0628\\u0627\\u062a\\u064a\\u0629 \\u0646\\u0642\\u064a\\u062"
+    "9\\nHerkunft: Syrien. \\nZutaten: Raffiniertes Palm\\u00f6l, Zusatzstoffe Beta-Carotin 0,0025%, Aromen: 0,012%, "
+    "Antioxidans (0,01% von BHT + BHA). Vitamine w\\u00e4hrend des Produktionsprozesses: Vitamin A (2000 International"
     'e Einheiten\\/100 g), Vitamin D (200 Internationale Einheiten\\/100 g). ","2":"Name: \\u0644\\u062d\\u0645 \\u062'
-    '8\\u0642\\u0631\\u064a \\u0643\\u0648\\u0631\\u0646\\u062f\\u0628\\u064a\\u0641 \\u0627\\u0644\\u0631\\u0627\\u06'
-    '39\\u064a\\nHerkunft: Brasilien.  \\nZutaten: Rindfleisch 98,3%, (Rindfleisch 57%, Kopffleisch, Rindfleischherz),'
+    "8\\u0642\\u0631\\u064a \\u0643\\u0648\\u0631\\u0646\\u062f\\u0628\\u064a\\u0641 \\u0627\\u0644\\u0631\\u0627\\u06"
+    "39\\u064a\\nHerkunft: Brasilien.  \\nZutaten: Rindfleisch 98,3%, (Rindfleisch 57%, Kopffleisch, Rindfleischherz),"
     ' Salz, Konservierungsmittel (Natiumnitrit E250).","3":"Name: \\u0644\\u0628\\u0646\\u0629 \\u0627\\u0644\\u0631\\'
-    'u0627\\u0639\\u064a \\u0645\\u0639 \\u0627\\u0644\\u0646\\u0639\\u0646\\u0627\\u0639\\nHerkunft: Niederlande.  \\'
+    "u0627\\u0639\\u064a \\u0645\\u0639 \\u0627\\u0644\\u0646\\u0639\\u0646\\u0627\\u0639\\nHerkunft: Niederlande.  \\"
     'nZutaten: Kuhmilch, Salz, Starterkultur, Labaustauschstoff, Minze."},"Bruttopreis":{"0":"\\u20ac1,49","1":"\\u20a'
     'c7,49","2":"\\u20ac3,99","3":"\\u20ac5,00"},"Mehrwertsteuer prozent":{"0":7,"1":7,"2":7,"3":7},"Ma\\u00dfeinheit"'
     ':{"0":"g","1":"kg","2":"g","3":"g"},"Verpackungsgr\\u00f6\\u00dfe":{"0":250,"1":2,"2":340,"3":725},"Kategorie":{"'
@@ -88,12 +88,11 @@ PRODUCTS_INPUT = (
     '1":"","2":"","3":""},"GTIN\\/EAN":{"0":"","1":"","2":"","3":""},"ISBN":{"0":"","1":"","2":"","3":""},"SEO \\nkeyw'
     'ords":{"0":"N\\u00fcsse, Saaten, Samen, Sonnenblumen, Erdn\\u00fcsse, Kerne, melonenkerne, Honigmelonenkerne, Ger'
     '\\u00f6stet, R\\u00f6sterei, Knabber, Knabbereien, Schalenfr\\u00fcchte, Haselnuss ","1":"\\u00d6l, Butter, Butte'
-    'rschmalz, Butterreinfett, Fett, Creme, Ern\\u00e4hrung, Speisequark, Quark, Backstein, Butter, Milch, Milchproduk'
-    'te, Laban, K\\u00e4se, Milcheiwei\\u00df, Pflanzen\\u00f6l Pflanzenfett, Distel\\u00f6l, Sonnenblumen\\u00f6l, Er'
+    "rschmalz, Butterreinfett, Fett, Creme, Ern\\u00e4hrung, Speisequark, Quark, Backstein, Butter, Milch, Milchproduk"
+    "te, Laban, K\\u00e4se, Milcheiwei\\u00df, Pflanzen\\u00f6l Pflanzenfett, Distel\\u00f6l, Sonnenblumen\\u00f6l, Er"
     'dnuss\\u00f6l, Sesam\\u00f6l, Raps\\u00f6l, Oliven\\u00f6l, Lein\\u00f6l","2":"Lebensmittel, Ern\\u00e4hrung, Fle'
-    'isch, H\\u00e4hnchen, H\\u00fchnerfleisch, H\\u00e4hnchenbrust, H\\u00e4hnchenschenkel, Keule, H\\u00e4hnchen-Unt'
-    'erschenkel, Rindfleisch, Lammfleisch, Salami, Beef, Luncheon, Paniermehl, Hackfleisch, Rinderhack, Konserven, Wur'
+    "isch, H\\u00e4hnchen, H\\u00fchnerfleisch, H\\u00e4hnchenbrust, H\\u00e4hnchenschenkel, Keule, H\\u00e4hnchen-Unt"
+    "erschenkel, Rindfleisch, Lammfleisch, Salami, Beef, Luncheon, Paniermehl, Hackfleisch, Rinderhack, Konserven, Wur"
     'st","3":"Speisequark, Quark, Backstein, Butter, Milch, Milchprodukte, Laban, K\\u00e4se, Ghee, Ern\\u00e4hrung"},'
     '"SEO \\nBeschreibungstext":{"0":"","1":"","2":"","3":""},"SEO \\nSeitentitel":{"0":"","1":"","2":"","3":""}}'
-
 )
