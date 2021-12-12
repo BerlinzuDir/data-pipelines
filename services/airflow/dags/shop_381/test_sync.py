@@ -65,44 +65,44 @@ PRODUCTS_INPUT = (
     '{"ID":{"0":"1","1":"2","2":"3","3":"4"},"Titel":{"0":"Malandra Crystal (500ml, 40%vol.)","1":"Malandra Oak (500ml,'
     ' 40%vol.)","2":"Malandra Set - Crystal & Oak (2x 500ml, 40%vol.)","3":"Malandra Tasting Set Single - Crystal + Oa'
     'k (2x 50ml, 40%vol.)"},"Beschreibung":{"0":"Malandra Crystal hat den urspr\\u00fcnglichen brasilianische Spirituos'
-    'e.\\nHergestellt auf dem Land in Brasilien und destilliert aus dem frischen Saft von Zuckerrohr, ist dieser Maland'
-    'ra frisch und sanft.\\n\\nMalandra Crystal verbrachte 6 (sechs) Monate in F\\u00e4ssern aus rostfreiem Stahl und 1'
-    ' (ein) Jahr in Holzf\\u00e4ssern aus Cariniana, einem einheimischen brasilianischen Baum, der keine Farbe, sondern'
+    "e.\\nHergestellt auf dem Land in Brasilien und destilliert aus dem frischen Saft von Zuckerrohr, ist dieser Maland"
+    "ra frisch und sanft.\\n\\nMalandra Crystal verbrachte 6 (sechs) Monate in F\\u00e4ssern aus rostfreiem Stahl und 1"
+    " (ein) Jahr in Holzf\\u00e4ssern aus Cariniana, einem einheimischen brasilianischen Baum, der keine Farbe, sondern"
     ' fruchtige Noten verleiht.\\n\\nErwarten Sie einen klaren Cacha\\u00e7a, mit Zuckerrohr- und Fruchtnoten.","1":"Ma'
-    'landra Oak ist eine Kombination aus Brasilien und Deutschland.\\n\\nIn den l\\u00e4ndlichen Gebieten Brasiliens he'
-    'rgestellt und aus dem frischen Saft des Zuckerrohrs destilliert, ist diese Malandra weich und rund.\\n\\nDie Malan'
-    'dra Oak ist in zwei F\\u00e4ssern abgef\\u00fcllt. Sie verbrachte 6 (sechs) Monate in F\\u00e4ssern aus rostfreiem'
-    ' Stahl, 1 (ein) Jahr in Holzf\\u00e4ssern aus Cariniana (brasilianischer einheimischer Baum) und dann 1 (ein) Jahr'
-    ' in europ\\u00e4ischen Eichenf\\u00e4ssern. Da es sich nicht um eine Mischung handelt, hat die Malandra Oak eine d'
-    'oppelte Schicht von Noten: die fruchtige Note des Cariniana-Holzfasses und Noten von Vanille, Kirsche und Eiche au'
+    "landra Oak ist eine Kombination aus Brasilien und Deutschland.\\n\\nIn den l\\u00e4ndlichen Gebieten Brasiliens he"
+    "rgestellt und aus dem frischen Saft des Zuckerrohrs destilliert, ist diese Malandra weich und rund.\\n\\nDie Malan"
+    "dra Oak ist in zwei F\\u00e4ssern abgef\\u00fcllt. Sie verbrachte 6 (sechs) Monate in F\\u00e4ssern aus rostfreiem"
+    " Stahl, 1 (ein) Jahr in Holzf\\u00e4ssern aus Cariniana (brasilianischer einheimischer Baum) und dann 1 (ein) Jahr"
+    " in europ\\u00e4ischen Eichenf\\u00e4ssern. Da es sich nicht um eine Mischung handelt, hat die Malandra Oak eine d"
+    "oppelte Schicht von Noten: die fruchtige Note des Cariniana-Holzfasses und Noten von Vanille, Kirsche und Eiche au"
     's dem europ\\u00e4ischen Eichenfass.\\n\\nWir empfehlen, ihn pur oder zu Cocktails und Longdrinks zu trinken.","2"'
     ':"Das Malandra Set wird mit einer Flasche Malandra Crystal (500mL, 40%vol., 79,98\\/L) und einer Flasche Malandra '
-    'Oak (500mL, 40%vol., 91,98\\/L) geliefert.\\n\\nMalandra Crystal hat den urspr\\u00fcnglichen brasilianischen Geis'
-    't. Hergestellt auf dem Land in Brasilien und destilliert aus dem frischen Saft von Zuckerrohr, ist dieser Malandra'
-    ' frisch und sanft. Malandra Crystal verbrachte 6 (sechs) Monate in F\\u00e4ssern aus rostfreiem Stahl und 1 (ein) '
-    'Jahr in Holzf\\u00e4ssern aus Cariniana, einem einheimischen brasilianischen Baum, der keine Farbe, sondern frucht'
-    'ige Noten verleiht. Erwarten Sie einen klaren Cacha\\u00e7a, mit Zuckerrohr- und Fruchtnoten.\\n\\nMalandra Oak is'
-    't eine Kombination aus Brasilien und Europa. In den l\\u00e4ndlichen Gebieten Brasiliens hergestellt und aus dem f'
-    'rischen Saft des Zuckerrohrs destilliert, ist diese Malandra weich und rund. Die Malandra Oak ist in zwei F\\u00e4'
-    'ssern abgef\\u00fcllt. Sie verbrachte 6 (sechs) Monate in F\\u00e4ssern aus rostfreiem Stahl, 1 (ein) Jahr in Holz'
-    'f\\u00e4ssern aus Cariniana (brasilianischer einheimischer Baum) und dann 1 (ein) Jahr in europ\\u00e4ischen Eiche'
-    'nf\\u00e4ssern. Da es sich nicht um eine Mischung handelt, hat die Malandra Oak eine doppelte Schicht von Noten: d'
-    'ie fruchtige Note des Cariniana-Holzfasses und Noten von Vanille, Kirsche und Eiche aus dem europ\\u00e4ischen Eic'
+    "Oak (500mL, 40%vol., 91,98\\/L) geliefert.\\n\\nMalandra Crystal hat den urspr\\u00fcnglichen brasilianischen Geis"
+    "t. Hergestellt auf dem Land in Brasilien und destilliert aus dem frischen Saft von Zuckerrohr, ist dieser Malandra"
+    " frisch und sanft. Malandra Crystal verbrachte 6 (sechs) Monate in F\\u00e4ssern aus rostfreiem Stahl und 1 (ein) "
+    "Jahr in Holzf\\u00e4ssern aus Cariniana, einem einheimischen brasilianischen Baum, der keine Farbe, sondern frucht"
+    "ige Noten verleiht. Erwarten Sie einen klaren Cacha\\u00e7a, mit Zuckerrohr- und Fruchtnoten.\\n\\nMalandra Oak is"
+    "t eine Kombination aus Brasilien und Europa. In den l\\u00e4ndlichen Gebieten Brasiliens hergestellt und aus dem f"
+    "rischen Saft des Zuckerrohrs destilliert, ist diese Malandra weich und rund. Die Malandra Oak ist in zwei F\\u00e4"
+    "ssern abgef\\u00fcllt. Sie verbrachte 6 (sechs) Monate in F\\u00e4ssern aus rostfreiem Stahl, 1 (ein) Jahr in Holz"
+    "f\\u00e4ssern aus Cariniana (brasilianischer einheimischer Baum) und dann 1 (ein) Jahr in europ\\u00e4ischen Eiche"
+    "nf\\u00e4ssern. Da es sich nicht um eine Mischung handelt, hat die Malandra Oak eine doppelte Schicht von Noten: d"
+    "ie fruchtige Note des Cariniana-Holzfasses und Noten von Vanille, Kirsche und Eiche aus dem europ\\u00e4ischen Eic"
     'henfass. Wir empfehlen, ihn pur oder zu Cocktails und Longdrinks zu trinken.","3":"Das Malandra Tasting Set wird m'
-    'it einer Flasche Malandra Crystal (50mL, 40%vol.),\\u00a0 einer Flasche Malandra Oak (50mL, 40%vol.) und ein Ebook'
-    ' mit Tasting Tips geliefert.\\n\\n> Malandra Crystal hat den urspr\\u00fcnglichen brasilianischen Geist. Hergestel'
-    'lt auf dem Land in Brasilien und destilliert aus dem frischen Saft von Zuckerrohr, ist dieser Malandra frisch und '
-    'sanft. Malandra Crystal verbrachte 6 (sechs) Monate in F\\u00e4ssern aus rostfreiem Stahl und 1 (ein) Jahr in Holz'
-    'f\\u00e4ssern aus Cariniana, einem einheimischen brasilianischen Baum, der keine Farbe, sondern fruchtige Noten ve'
-    'rleiht. Erwarten Sie einen klaren Cacha\\u00e7a, mit Zuckerrohr- und Fruchtnoten.\\n> Malandra Oak ist eine Kombin'
-    'ation aus Brasilien und Europa. In den l\\u00e4ndlichen Gebieten Brasiliens hergestellt und aus dem frischen Saft'
-    ' des Zuckerrohrs destilliert, ist diese Malandra weich und rund. Die Malandra Oak ist in zwei F\\u00e4ssern abgef'
-    '\\u00fcllt. Sie verbrachte 6 (sechs) Monate in F\\u00e4ssern aus rostfreiem Stahl, 1 (ein) Jahr in Holzf\\u00e4ss'
-    'ern aus Cariniana (brasilianischer einheimischer Baum) und dann 1 (ein) Jahr in europ\\u00e4ischen Eichenf\\u00e4'
-    'ssern. Da es sich nicht um eine Mischung handelt, hat die Malandra Oak eine doppelte Schicht von Noten: die fruch'
-    'tige Note des Cariniana-Holzfasses und Noten von Vanille, Kirsche und Eiche aus dem europ\\u00e4ischen Eichenfass'
-    '. Wir empfehlen, ihn pur oder zu Cocktails und Longdrinks zu trinken.\\n> Booklet \\u00fcber die Geschichte des C'
-    'acha\\u00e7a, Produktionsmethoden, zur Alterung von Malandra verwendete H\\u00f6lzer, sensorische Bewertung, Paar'
+    "it einer Flasche Malandra Crystal (50mL, 40%vol.),\\u00a0 einer Flasche Malandra Oak (50mL, 40%vol.) und ein Ebook"
+    " mit Tasting Tips geliefert.\\n\\n> Malandra Crystal hat den urspr\\u00fcnglichen brasilianischen Geist. Hergestel"
+    "lt auf dem Land in Brasilien und destilliert aus dem frischen Saft von Zuckerrohr, ist dieser Malandra frisch und "
+    "sanft. Malandra Crystal verbrachte 6 (sechs) Monate in F\\u00e4ssern aus rostfreiem Stahl und 1 (ein) Jahr in Holz"
+    "f\\u00e4ssern aus Cariniana, einem einheimischen brasilianischen Baum, der keine Farbe, sondern fruchtige Noten ve"
+    "rleiht. Erwarten Sie einen klaren Cacha\\u00e7a, mit Zuckerrohr- und Fruchtnoten.\\n> Malandra Oak ist eine Kombin"
+    "ation aus Brasilien und Europa. In den l\\u00e4ndlichen Gebieten Brasiliens hergestellt und aus dem frischen Saft"
+    " des Zuckerrohrs destilliert, ist diese Malandra weich und rund. Die Malandra Oak ist in zwei F\\u00e4ssern abgef"
+    "\\u00fcllt. Sie verbrachte 6 (sechs) Monate in F\\u00e4ssern aus rostfreiem Stahl, 1 (ein) Jahr in Holzf\\u00e4ss"
+    "ern aus Cariniana (brasilianischer einheimischer Baum) und dann 1 (ein) Jahr in europ\\u00e4ischen Eichenf\\u00e4"
+    "ssern. Da es sich nicht um eine Mischung handelt, hat die Malandra Oak eine doppelte Schicht von Noten: die fruch"
+    "tige Note des Cariniana-Holzfasses und Noten von Vanille, Kirsche und Eiche aus dem europ\\u00e4ischen Eichenfass"
+    ". Wir empfehlen, ihn pur oder zu Cocktails und Longdrinks zu trinken.\\n> Booklet \\u00fcber die Geschichte des C"
+    "acha\\u00e7a, Produktionsmethoden, zur Alterung von Malandra verwendete H\\u00f6lzer, sensorische Bewertung, Paar"
     'ung von Malandra und Cocktailrezepten."},"Bruttopreis":{"0":"\\u20ac33,53","1":"\\u20ac38,57","2":"\\u20ac67,14",'
     '"3":"\\u20ac16,72"},"Mehrwertsteuer prozent":{"0":19,"1":19,"2":19,"3":19},"Ma\\u00dfeinheit":{"0":"ml","1":"ml",'
     '"2":"ml","3":"ml"},"Verpackungsgr\\u00f6\\u00dfe":{"0":500,"1":500,"2":1000,"3":100},"Kategorie":{"0":"Alkoholhal'
