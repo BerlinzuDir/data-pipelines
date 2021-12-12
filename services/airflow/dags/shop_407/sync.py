@@ -26,7 +26,7 @@ def _from_json_records(products: str) -> pd.DataFrame:
     return pd.DataFrame.from_records(json.loads(products))
 
 
-def _load_credentials(filename: str):
+def _load_credentials(filename: str) -> dict:
     with open(_get_path_of_file() + filename) as secrets_json:
         return json.load(secrets_json)
 
@@ -35,7 +35,7 @@ def _get_path_of_file() -> str:
     return str(pathlib.Path(__file__).parent.resolve())
 
 
-def _set_bruttopreis(products: pd.DataFrame):
+def _set_bruttopreis(products: pd.DataFrame) -> pd.DataFrame:
     products["Bruttopreis"] = products["Bruttopreis"].apply(
         lambda price: R.pipe(
             lambda val: val[1:],
@@ -46,7 +46,7 @@ def _set_bruttopreis(products: pd.DataFrame):
     return products
 
 
-def _category_mapping(products: pd.DataFrame):
+def _category_mapping(products: pd.DataFrame) -> pd.DataFrame:
     mapping = get_default_category_mapping()
     products["Kategorie"] = products["Kategorie"].apply(
         lambda category_name: _map_product_category(mapping, category_name)

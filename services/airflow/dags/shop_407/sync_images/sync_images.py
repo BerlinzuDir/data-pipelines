@@ -6,10 +6,9 @@ import paramiko
 import os
 import ramda as R
 
-from api_wrappers.google import get_product_data_from_sheets
 from api_wrappers.google.google_drive import download_file_from_drive
 from dags.helpers.decorators import cwd_cleanup
-from api_wrappers.google import get_file_list_from_drive
+from api_wrappers.google import get_file_list_from_drive, get_product_data_from_sheets
 from dags.shop_407.sync import GOOGLE_SHEETS_ADDRESS, GOOGLE_DRIVE_ADDRESS, TRADER_ID, FTP_ENDPOINT
 
 
@@ -27,7 +26,6 @@ def load_images_to_sftp(store_id: str) -> pd.DataFrame:
         _get_file_list(GOOGLE_DRIVE_ADDRESS),
         _download_all_files,
         _load_all_files_to_sftp(store_id),
-        lambda df: df.to_dict(),  # return values have to be json serializable
     )(products)
     return _set_image_url(products)
 
