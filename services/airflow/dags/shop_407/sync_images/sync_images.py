@@ -39,24 +39,40 @@ def _load_product_data() -> pd.DataFrame:
 @R.curry
 def _get_file_list(google_drive_adress: str, products: pd.DataFrame) -> pd.DataFrame:
     file_list_drive = get_file_list_from_drive(google_drive_adress)
+    file_list_drive = _standardize_image_format(file_list_drive, column="title")
+    products = _standardize_image_format(products, column="Produktbild \n(Dateiname oder url)")
+    products = _check_products_for_image_file(file_list_drive, products)
+    products["ID"] = products["ID"].astype(str)
+    return _get_file_id_filename(file_list_drive, products)
 
 
-    products = products.rename(columns={"ID": "image_id"})
-    file_list_drive["title"] = file_list_drive["title"].str.replace('JPG', 'jpg').str.replace('PNG', 'png')
-    products["Produktbild \n(Dateiname oder url)"] = products["Produktbild \n(Dateiname oder url)"].str.replace('JPG', 'jpg').str.replace('PNG', 'png')
-    not_assigned_images_sheet = set(products["Produktbild \n(Dateiname oder url)"].values).difference(file_list_drive["title"].values)
-    not_assigned_images_drive = set(file_list_drive["title"].values).difference(products["Produktbild \n(Dateiname oder url)"].values)
-    if not_assigned_images_sheet or not_assigned_images_drive:
+def _standardize_image_format(dataframe: pd.DataFrame, column: str) -> pd.DataFrame:
+    format_translation = {'JPG': 'jpg', 'jpeg': 'jpg', 'JPEG': 'jpg', 'PNG': 'png'}
+    for key, val in format_translation.items():
+        dataframe[column] = dataframe[column].str.replace(key, val)
+    return dataframe
+
+
+def _check_products_for_image_file(file_list_drive: pd.DataFrame, products: pd.DataFrame) -> pd.DataFrame:
+    not_assigned_images_sheet = set(
+        products["Produktbild \n(Dateiname oder url)"].values
+    ).difference(file_list_drive["title"].values)
+    if not_assigned_images_sheet:
         # TODO: send notification and log warning
-        products = products[~products["Produktbild \n(Dateiname oder url)"].isin(not_assigned_images_sheet)]
-    products["image_id"] = products["image_id"].astype(str)
-    products = products.merge(file_list_drive, how='left', left_on="Produktbild \n(Dateiname oder url)", right_on='title')
-    products["sftp_filename"] = products["image_id"] + products["title"].apply(lambda x: '.' + x.split('.')[-1])
+        return products[~products["Produktbild \n(Dateiname oder url)"].isin(not_assigned_images_sheet)]
+    return products
+
+
+def _get_file_id_filename(file_list: pd.DataFrame, products: pd.DataFrame) -> pd.DataFrame:
+    products = products.merge(file_list, how='left', left_on="Produktbild \n(Dateiname oder url)", right_on='title')
+    products["sftp_filename"] = products["ID"] + products["title"].apply(lambda x: '.' + x.split('.')[-1])
     return products[["id", "sftp_filename"]]
 
 
 def _download_all_files(file_list: pd.DataFrame) -> pd.DataFrame:
-    file_list[["id", "sftp_filename"]].apply(lambda row: download_file_from_drive(row["id"], row["sftp_filename"]), axis=1)
+    file_list[["id", "sftp_filename"]].apply(
+        lambda row: download_file_from_drive(row["id"], row["sftp_filename"]), axis=1
+    )
     return file_list
 
 
