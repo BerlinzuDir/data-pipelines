@@ -10,7 +10,6 @@ from dags.shop_407.sync import TRADER_ID
 
 TESTCASE = TestCase()
 STORE_ID = f"{TRADER_ID}_test"
-FOLDER_ID = "1lQ2dyF3bschhZIl4MdMZ-Bn0VmbEz5Qv"
 
 
 @pytest.mark.vcr
