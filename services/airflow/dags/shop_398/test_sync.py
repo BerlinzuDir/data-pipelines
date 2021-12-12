@@ -65,22 +65,22 @@ access_token: bytes = (
 PRODUCTS_INPUT = (
     '{"ID":{"0":1,"1":2,"2":3,"3":4},"Titel":{"0":"Baklava Premium 1000 g","1":"Baklava Premium 500 g","2":"Baklava Pre'
     'mium 250 g","3":"Baklava 1000 g"},"Beschreibung":{"0":"Name:  \\u0628\\u0642\\u0644\\u0627\\u0648\\u0629 \\u0645\\'
-    'u0634\\u0643\\u0644 \\u0641\\u0627\\u062e\\u0631\\n\\nHerkunft: Berlin, Deutschland.\\n\\nZutaten: Weizenmehl 18%,'
-    ' Salz 2%, Wasser 10%, Maisstr\\u00e4ke 10%, Planzenfett (Palmfett) 10%, Butter 6%, Pistanzien 12%, Cashewkerne 6%,'
-    ' Walnuss 6%, Zucker 20%, Zitronens\\u00e4ure 1%. kann Spuren von Nussschalen entahlten.\\n\\nTip: Trocken lagern, '
+    "u0634\\u0643\\u0644 \\u0641\\u0627\\u062e\\u0631\\n\\nHerkunft: Berlin, Deutschland.\\n\\nZutaten: Weizenmehl 18%,"
+    " Salz 2%, Wasser 10%, Maisstr\\u00e4ke 10%, Planzenfett (Palmfett) 10%, Butter 6%, Pistanzien 12%, Cashewkerne 6%,"
+    " Walnuss 6%, Zucker 20%, Zitronens\\u00e4ure 1%. kann Spuren von Nussschalen entahlten.\\n\\nTip: Trocken lagern, "
     'vor W\\u00e4rme und direktem Sonnenlicht sch\\u00fczen.","1":"Name:  \\u0628\\u0642\\u0644\\u0627\\u0648\\u0629 \\'
-    'u0645\\u0634\\u0643\\u0644 \\u0641\\u0627\\u062e\\u0631\\n\\nHerkunft: Berlin, Deutschland.\\n\\nZutaten: Weizenme'
-    'hl 18%, Salz 2%, Wasser 10%, Maisstr\\u00e4ke 10%, Planzenfett (Palmfett) 10%, Butter 6%, Pistanzien 12%, Cashewke'
-    'rne 6%, Walnuss 6%, Zucker 20%, Zitronens\\u00e4ure 1%. kann Spuren von Nussschalen entahlten.\\n\\nTip: Trocken l'
+    "u0645\\u0634\\u0643\\u0644 \\u0641\\u0627\\u062e\\u0631\\n\\nHerkunft: Berlin, Deutschland.\\n\\nZutaten: Weizenme"
+    "hl 18%, Salz 2%, Wasser 10%, Maisstr\\u00e4ke 10%, Planzenfett (Palmfett) 10%, Butter 6%, Pistanzien 12%, Cashewke"
+    "rne 6%, Walnuss 6%, Zucker 20%, Zitronens\\u00e4ure 1%. kann Spuren von Nussschalen entahlten.\\n\\nTip: Trocken l"
     'agern, vor W\\u00e4rme und direktem Sonnenlicht sch\\u00fczen.","2":"Name:  \\u0628\\u0642\\u0644\\u0627\\u0648\\u'
-    '0629 \\u0645\\u0634\\u0643\\u0644 \\u0641\\u0627\\u062e\\u0631\\n\\nHerkunft: Berlin, Deutschland.\\n\\nZutaten: W'
-    'eizenmehl 18%, Salz 2%, Wasser 10%, Maisstr\\u00e4ke 10%, Planzenfett (Palmfett) 10%, Butter 6%, Pistanzien 12%, C'
-    'ashewkerne 6%, Walnuss 6%, Zucker 20%, Zitronens\\u00e4ure 1%. kann Spuren von Nussschalen entahlten.\\n\\nTip: Tr'
+    "0629 \\u0645\\u0634\\u0643\\u0644 \\u0641\\u0627\\u062e\\u0631\\n\\nHerkunft: Berlin, Deutschland.\\n\\nZutaten: W"
+    "eizenmehl 18%, Salz 2%, Wasser 10%, Maisstr\\u00e4ke 10%, Planzenfett (Palmfett) 10%, Butter 6%, Pistanzien 12%, C"
+    "ashewkerne 6%, Walnuss 6%, Zucker 20%, Zitronens\\u00e4ure 1%. kann Spuren von Nussschalen entahlten.\\n\\nTip: Tr"
     'ocken lagern, vor W\\u00e4rme und direktem Sonnenlicht sch\\u00fczen.","3":"Name: \\u0628\\u0642\\u0644\\u0627\\u0'
-    '648\\u0629 \\u0645\\u0634\\u0643\\u0644\\n\\nHerkunft: Berlin, Deutschland.\\n\\nZutaten: Weizenmehl 18%, Salz 1%,'
-    ' Wasser 12%, Maisstr\\u00e4ke 10%, Palmfett 12%, Weizengrie\\u00df 10%, Kokos 1%, Glukosesirup 1%, Erdn\\u00fcsse '
-    '13%, Zucker 20%, Zitronens\\u00e4ure 1%, Rosen Aroma 0,5%, Sesampaste 0,5%, Farbestoffe E131, E160a (AZO frei). ka'
-    'nn Spuren von Pistazien, Mandeln und Walnuss entahlten.\\n\\nTip: Trocken lagern, vor W\\u00e4rme und direktem Son'
+    "648\\u0629 \\u0645\\u0634\\u0643\\u0644\\n\\nHerkunft: Berlin, Deutschland.\\n\\nZutaten: Weizenmehl 18%, Salz 1%,"
+    " Wasser 12%, Maisstr\\u00e4ke 10%, Palmfett 12%, Weizengrie\\u00df 10%, Kokos 1%, Glukosesirup 1%, Erdn\\u00fcsse "
+    "13%, Zucker 20%, Zitronens\\u00e4ure 1%, Rosen Aroma 0,5%, Sesampaste 0,5%, Farbestoffe E131, E160a (AZO frei). ka"
+    "nn Spuren von Pistazien, Mandeln und Walnuss entahlten.\\n\\nTip: Trocken lagern, vor W\\u00e4rme und direktem Son"
     'nenlicht sch\\u00fczen."},"Bruttopreis":{"0":"$12.00","1":"$6.00","2":"$3.50","3":"$10.00"},"Mehrwertsteuer prozen'
     't":{"0":7,"1":7,"2":7,"3":7},"Ma\\u00dfeinheit":{"0":"g","1":"g","2":"g","3":"g"},"Verpackungsgr\\u00f6\\u00dfe":{'
     '"0":1000,"1":500,"2":250,"3":1000},"Kategorie":{"0":"S\\u00fc\\u00dfwaren  Salzgeb\\u00e4ck","1":"S\\u00fc\\u00dfw'
@@ -92,15 +92,15 @@ PRODUCTS_INPUT = (
     'line.de\\/bzd-bilder\\/bzd\\/398\\/3.jpg","3":"http:\\/\\/s739086489.online.de\\/bzd-bilder\\/bzd\\/398\\/4.jpg"},'
     '"Bestand":{"0":"","1":"","2":"","3":""},"Ma\\u00dfeinheit \\nf\\u00fcr Bestand":{"0":"","1":"","2":"","3":""},"GTI'
     'N\\/EAN":{"0":"","1":"","2":"","3":""},"ISBN":{"0":"","1":"","2":"","3":""},"SEO Keywords":{"0":"Schoko, Schokolad'
-    'e Waffel, Keks, Biskuit, S\\u00fc\\u00dfwaren, S\\u00fc\\u00dfigkeit, Knabber, Kinder, Chio Chips, Butterkekse, Ge'
-    'b\\u00e4ck, Geb\\u00e4ckspezialit\\u00e4t, Tahini, Halva, Kokosb\\u00e4llchen, Dattelfinger, Sandteig, Sesamkekse,'
+    "e Waffel, Keks, Biskuit, S\\u00fc\\u00dfwaren, S\\u00fc\\u00dfigkeit, Knabber, Kinder, Chio Chips, Butterkekse, Ge"
+    "b\\u00e4ck, Geb\\u00e4ckspezialit\\u00e4t, Tahini, Halva, Kokosb\\u00e4llchen, Dattelfinger, Sandteig, Sesamkekse,"
     ' Namura, Teigtaschen, Butterkekse, ","1":"Schoko, Schokolade Waffel, Keks, Biskuit, S\\u00fc\\u00dfwaren, S\\u00f'
-    'c\\u00dfigkeit, Knabber, Kinder, Chio Chips, Butterkekse, Geb\\u00e4ck, Geb\\u00e4ckspezialit\\u00e4t, Tahini, Ha'
+    "c\\u00dfigkeit, Knabber, Kinder, Chio Chips, Butterkekse, Geb\\u00e4ck, Geb\\u00e4ckspezialit\\u00e4t, Tahini, Ha"
     'lva, Kokosb\\u00e4llchen, Dattelfinger, Sandteig, Sesamkekse, Namura, Teigtaschen, Butterkekse, ","2":"Schoko, Sc'
-    'hokolade Waffel, Keks, Biskuit, S\\u00fc\\u00dfwaren, S\\u00fc\\u00dfigkeit, Knabber, Kinder, Chio Chips, Butterk'
-    'ekse, Geb\\u00e4ck, Geb\\u00e4ckspezialit\\u00e4t, Tahini, Halva, Kokosb\\u00e4llchen, Dattelfinger, Sandteig, Se'
+    "hokolade Waffel, Keks, Biskuit, S\\u00fc\\u00dfwaren, S\\u00fc\\u00dfigkeit, Knabber, Kinder, Chio Chips, Butterk"
+    "ekse, Geb\\u00e4ck, Geb\\u00e4ckspezialit\\u00e4t, Tahini, Halva, Kokosb\\u00e4llchen, Dattelfinger, Sandteig, Se"
     'samkekse, Namura, Teigtaschen, Butterkekse, ","3":"Schoko, Schokolade Waffel, Keks, Biskuit, S\\u00fc\\u00dfwaren'
-    ', S\\u00fc\\u00dfigkeit, Knabber, Kinder, Chio Chips, Butterkekse, Geb\\u00e4ck, Geb\\u00e4ckspezialit\\u00e4t, T'
+    ", S\\u00fc\\u00dfigkeit, Knabber, Kinder, Chio Chips, Butterkekse, Geb\\u00e4ck, Geb\\u00e4ckspezialit\\u00e4t, T"
     'ahini, Halva, Kokosb\\u00e4llchen, Dattelfinger, Sandteig, Sesamkekse, Namura, Teigtaschen, Butterkekse, "},"SEO '
     '\\nBeschreibungstext":{"0":"","1":"","2":"","3":""},"SEO \\nSeitentitel":{"0":"","1":"","2":"","3":""}}'
 )
