@@ -1,0 +1,94 @@
+interactions:
+- request:
+    body: grant_type=password&client_id=1_1gecoa7u5w5c0wocw0wog848cg44swowssogowkk4g08kkowow&client_secret=6cxgiyxytssgkwcsgw480oswgws0cs80cccckosgcwo8k040s0&username=superadmin_berlin&password=9EogLTDe%3DBLiGXuTsGnH
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '206'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.26.0
+    method: POST
+    uri: https://siegen.lozuka.de/oauth/v2/token
+  response:
+    body:
+      string: '{"access_token":"ZWJhYmFlYjNjZjgzMTBlNTQwNTc2YWMwN2JjZWI5ZTk1ZGExNTYyYjQ2Y2E4NzdmYWJkYjYzYzA1NjdhMjMyNA","expires_in":7200,"token_type":"bearer","scope":null,"refresh_token":"ZDI0YWEwMWRjNGIwM2ZlNGI0OWZhZWJlMjA0NmViMGU5NzRiY2UzOTE4NTIwZWQ5YmQ3NDhiNjJiOTUzNTIzOQ"}'
+    headers:
+      Cache-Control:
+      - no-store, private
+      Connection:
+      - Keep-Alive
+      Content-Length:
+      - '263'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Dec 2021 22:30:04 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Pragma:
+      - no-cache
+      Server:
+      - Apache/2.4.29 (Ubuntu)
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.26.0
+    method: GET
+    uri: https://siegen.lozuka.de/api/v1/getDriversOverview?selectedDay=0&access_token=ZWJhYmFlYjNjZjgzMTBlNTQwNTc2YWMwN2JjZWI5ZTk1ZGExNTYyYjQ2Y2E4NzdmYWJkYjYzYzA1NjdhMjMyNA
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA+1WXW/aMBT9K5EfN1rZIWCSp3Vtp6lF3dTytA4hk1zAqxMjx2nVdvz3XQcICf3U
+        unV7qIhCfHztHJ97j+PzW5KAkpdgrgcyBRIRxiNKSYskxqE5ic5viUxI1KEtImKjs+sUo45OiWta
+        jCGRNQW0yETnRQ6GRLfE/WeinO4HGJ3CBxx4NQajZLabAA5dR+yLTGcyFurhUEiFfKr7OdNkYqwg
+        WbNVIrd9PZUZjvCpz3YYXsGABVHgRwF9T9lSBqMVOBHI6Zf+4ejz3uHJQf/wlAxbpSic+xxXLk1u
+        V+s9Kt9OauBIJImBPK93jqWxs0TYUvCwTXcow2tAaVRe1dtXk/a/F5RO4plZQbUp6125NQAWwRMo
+        IBsXZgrGO7NGuJhkAlVIpt2q23sIzNWN40DDboitWNprbH4sdXO9M505ArRNvYC2vW7X64V4dzMJ
+        VVhhpXYKvmsANXqu41LOSTQRKocFzijji2JeVZXf44vW8jGg4QJlXZfjJsTnvIs4qrVvAO9JlTJ/
+        h7UHPov8bkRZJdpNkVtQShiUgmGVKqWvRlgbaiziCxJhHd+ImSqyaZ6CnWmsDhdmYNTIo7jQY1LC
+        K+RYqxVQ6XwgYTJBpUU8yxsyV0Gl0kFnCW205ktgW24l7+WAcJMDAk9zqII2HBBqckBgm4M2CRhp
+        Ia0lIOi1/dLuhVCjuZGxk2w3CBFLdZEhjQDTLIwU7pnUkmDBpDIbTQzIetbQaHyr1BsDyiytK+ET
+        QFU/NUbtbUa8wYi9PqPgjkb+bi94dUrDDSnO+RPO6UXspc6JdZpCuSbvp3d/OXod3vLKovOqQtsy
+        3LFUqEzDcd8kTmzAbLnuzBbWTpHknd2taTvGGrbzaSd8lu0qJhvf1Zj8hvc6/GXe6z7uvX9Q6fy/
+        8N7Q/VrEaivU19V3xV+1D6rPiO+Ybx9ywrdDztsh5zUPOQ+dbHqP7c9+qVT37WTzN082vT+9u4aP
+        72Xs2XsZu7OXscXwF7AR5YCyDQAA
+    headers:
+      Cache-Control:
+      - no-cache, private
+      Connection:
+      - Keep-Alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '762'
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Mon, 13 Dec 2021 22:30:04 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Server:
+      - Apache/2.4.29 (Ubuntu)
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+version: 1
