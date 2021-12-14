@@ -13,9 +13,7 @@ TRADER_ID = "405"
 
 def product_pipeline(products: json):
     R.pipe(
-        _from_json_records,
-        _transform_product_data,
-        _post_products(_load_credentials("/shop-secrets.json"), TRADER_ID)
+        _from_json_records, _transform_product_data, _post_products(_load_credentials("/shop-secrets.json"), TRADER_ID)
     )(products)
 
 
@@ -122,7 +120,7 @@ class MissingCategoryTranslation(Exception):
         super().__init__(message)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     from api_wrappers.external.sheets import get_product_data_from_sheets
     from dags.shop_405.sync_images.sync_images import PRODUCTS_CSV_ENDPOINT
 
