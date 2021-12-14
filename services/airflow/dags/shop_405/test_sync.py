@@ -109,7 +109,7 @@ FIRST_PRODUCT = {
         "variantSection": [
             {
                 "variantName": "Gebinde",
-                "variantValueSection": [{"variantValueName": "Flasche", "variantValuePrice": "0.25"}]
+                "variantValueSection": [{"variantValueName": "Flasche", "variantValuePrice": "0.25"}],
             }
         ],
         "ean": None,

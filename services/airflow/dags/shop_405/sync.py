@@ -79,16 +79,16 @@ def _set_beschreibung(products: pd.DataFrame) -> pd.DataFrame:
 
 
 def _set_title(products: pd.DataFrame) -> pd.DataFrame:
-    products.loc[products["tags"].str.contains('mehrweg'), "Titel"] += " MEHRWEG"
-    products.loc[products["tags"].str.contains('einweg'), "Titel"] += " EINWEG"
+    products.loc[products["tags"].str.contains("mehrweg"), "Titel"] += " MEHRWEG"
+    products.loc[products["tags"].str.contains("einweg"), "Titel"] += " EINWEG"
     products["Titel"] = products["Titel"].str.replace('"', "'")
     return products
 
 
 def _set_deposit(products: pd.DataFrame) -> pd.DataFrame:
     products["deposit"] = 0
-    products.loc[products["tags"].str.contains('p8'), "deposit"] = "0.08"
-    products.loc[products["tags"].str.contains('p25'), "deposit"] = "0.25"
+    products.loc[products["tags"].str.contains("p8"), "deposit"] = "0.08"
+    products.loc[products["tags"].str.contains("p25"), "deposit"] = "0.25"
     return products
 
 
@@ -109,7 +109,7 @@ def _get_path_of_file() -> str:
 
 
 @R.curry
-def _post_products(login_details: dict, trader_id: str,  variants: list, products: pd.DataFrame):
+def _post_products(login_details: dict, trader_id: str, variants: list, products: pd.DataFrame):
     product_ids_on_platform = [article["articlenr"] for article in get_articles(login_details, trader_id)]
     to_be_deactivated = set(product_ids_on_platform).difference(set(products["ID"].astype(str).values))
     deactivate_products(login_details, trader_id, list(to_be_deactivated))
@@ -168,10 +168,11 @@ class MissingCategoryTranslation(Exception):
         super().__init__(message)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     from api_wrappers.external.sheets import get_product_data_from_sheets
     from dags.shop_405.sync_images.sync_images import PRODUCTS_CSV_ENDPOINT
     from dotenv import load_dotenv
+
     load_dotenv()
     products = get_product_data_from_sheets(PRODUCTS_CSV_ENDPOINT)
     product_pipeline(products.to_json())
