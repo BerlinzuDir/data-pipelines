@@ -1,5 +1,7 @@
 import json
+import math
 
+import numpy as np
 import pandas as pd
 import pathlib
 from api_wrappers.google.google_sheets import get_default_category_mapping
@@ -17,6 +19,7 @@ def product_pipeline(products: json):
     R.pipe(
         _from_json_records,
         _set_bruttopreis,
+        _set_titel,
         _category_mapping,
         post_articles(_load_credentials("/shop-secrets.json"), TRADER_ID),
     )(products)
@@ -43,6 +46,20 @@ def _set_bruttopreis(products: pd.DataFrame) -> pd.DataFrame:
             lambda val: float(val),
         )(price)
     )
+    products.loc[products["Verpackungsgröße (Verkauf)"] == "", "Verpackungsgröße (Verkauf)"] = np.nan
+    products["Bruttopreis"] = (
+        products["Verpackungsgröße (Verkauf)"].str.replace(',', '.').astype(float) * products["Bruttopreis"]
+    )
+    products["Bruttopreis"] = products["Bruttopreis"].apply(lambda x: math.ceil(x * 10**1) / 10**1 - 0.01)
+    products = products.dropna(subset=[
+        'Bruttopreis','ID', 'Kategorie', 'Kühlpflichtig', 'Maßeinheit', 'Mehrwertsteuer prozent',
+        'Produktbild \n(Dateiname oder url)', 'Titel', 'Verpackungsgröße', 'Verpackungsgröße (Verkauf)'
+    ])
+    return products
+
+
+def _set_titel(products: pd.DataFrame) -> pd.DataFrame:
+    products["Titel"] = "Bio " + products["Titel"]
     return products
 
 
@@ -65,3 +82,13 @@ def _map_product_category(mapping: pd.DataFrame, category_name: str) -> int:
 
 def raise_value_error(message):
     raise ValueError(message)
+
+
+if __name__ == '__main__':
+    from api_wrappers.google.google_sheets import get_product_data_from_sheets
+    from dags.shop_412.sync_images.sync_images import GOOGLE_SHEETS_ADDRESS
+    from dotenv import load_dotenv
+    load_dotenv
+
+    products = get_product_data_from_sheets(GOOGLE_SHEETS_ADDRESS)
+    product_pipeline(products.to_json())

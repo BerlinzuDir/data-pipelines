@@ -120,3 +120,7 @@ def _set_image_url(products: pd.DataFrame) -> pd.DataFrame:
         + products["Produktbild \n(Dateiname oder url)"].apply(lambda x: x.split(".")[-1].lower())
     )
     return products
+
+
+if __name__ == '__main__':
+    load_images_to_sftp(TRADER_ID)
