@@ -65,7 +65,7 @@ def _set_beschreibung(products: pd.DataFrame) -> pd.DataFrame:
 
 def _set_title(products: pd.DataFrame) -> pd.DataFrame:
     products.loc[products["tags"].str.contains('mehrweg'), "Titel"] += " MEHRWEG"
-    products.loc[products["tags"].str.contains('einweg'), "Titel"] += " EINWEG1"
+    products.loc[products["tags"].str.contains('einweg'), "Titel"] += " EINWEG"
     products["Titel"] = products["Titel"].str.replace('"', "'")
     return products
 
