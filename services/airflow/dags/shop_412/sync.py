@@ -19,6 +19,7 @@ def product_pipeline(products: json):
     R.pipe(
         _from_json_records,
         _set_bruttopreis,
+        _set_verpackungsgroesse,
         _set_titel,
         _category_mapping,
         post_articles(_load_credentials("/shop-secrets.json"), TRADER_ID),
@@ -68,6 +69,11 @@ def _set_bruttopreis(products: pd.DataFrame) -> pd.DataFrame:
     return products
 
 
+def _set_verpackungsgroesse(products: pd.DataFrame) -> pd.DataFrame:
+    products["Verpackungsgröße"] = products["Verpackungsgröße (Verkauf)"].str.replace(",", ".").astype(float)
+    return products
+
+
 def _set_titel(products: pd.DataFrame) -> pd.DataFrame:
     products["Titel"] = "Bio " + products["Titel"]
     return products
@@ -99,7 +105,7 @@ if __name__ == "__main__":
     from dags.shop_412.sync_images.sync_images import GOOGLE_SHEETS_ADDRESS
     from dotenv import load_dotenv
 
-    load_dotenv
+    load_dotenv()
 
     products = get_product_data_from_sheets(GOOGLE_SHEETS_ADDRESS)
     product_pipeline(products.to_json())
