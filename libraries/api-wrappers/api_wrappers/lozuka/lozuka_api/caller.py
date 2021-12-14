@@ -26,6 +26,15 @@ def get_articles(login_details: dict, trader_id: int):
     return json.loads(response.content)["data"]
 
 
+def deactivate_products(login_details: dict, trader_id: int, product_ids: list):
+    request_url = _request_url("post", login_details, trader_id)
+    request_data = {"data": {"articles": [{"itemNumber": product_id, "active": "0"} for product_id in product_ids]}}
+    response = requests.post(request_url, data=request_data)
+    response.raise_for_status()
+    if response.status_code != 200:
+        raise ResponseError(f"Deactivating Articles with {request_url} resulted in status code {response.status_code}.")
+
+
 def _request_url(mode, login_details, trader_id: int):
     assert mode in ["post", "get"], f"'{mode} not valid as input argument"
     if mode == "post":
