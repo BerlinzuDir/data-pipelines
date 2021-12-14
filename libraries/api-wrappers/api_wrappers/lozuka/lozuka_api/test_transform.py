@@ -3,13 +3,30 @@ import json
 import pandas as pd
 from jsondiff import diff
 
-from api_wrappers.lozuka.lozuka_api.transform import transform_articles
+from api_wrappers.lozuka.lozuka_api.transform import transform_articles, _variant_section
 
 
 def test_transform_articles():
     transformed_articles = json.loads(_sample_input_products_df().pipe(transform_articles))
     example = {"data": {"articles": [EXAMPLE_PRODUCT]}}
     assert diff(transformed_articles, example) == {}
+
+
+def test_variant_section():
+    input_dict = {"deposit": 123, "bla": 555}
+    variants = [
+        {"name": "Gebinde", "variant_values": [
+            {"name": "Flasche", "price_column": "deposit"},
+            {"name": "Kasten", "price_column": "bla"}],
+         }
+    ]
+    variants_section = _variant_section(variants, input_dict)
+    assert variants_section == [
+        {'variantName': 'Gebinde', 'variantValueSection': [
+            {'VariantValueName': 'Flasche', 'VariantValuePrice': 123},
+            {'VariantValueName': 'Kasten', 'VariantValuePrice': 555},
+        ]}
+    ]
 
 
 def _sample_input_products_df() -> pd.DataFrame:

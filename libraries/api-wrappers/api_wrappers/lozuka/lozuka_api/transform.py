@@ -4,16 +4,21 @@ import pandas as pd
 import ramda as R
 
 
-def transform_articles(articles: pd.DataFrame) -> json:
+def transform_articles(articles: pd.DataFrame, variants: list = None) -> json:
     return R.pipe(
         _transform_to_json,
-        R.map(_transform_json),
+        R.map(_transform_json(variants)),
         lambda x: {"data": {"articles": x}},
         lambda x: json.dumps(x),
     )(articles)
 
 
-def _transform_json(raw: dict) -> dict:
+def _transform_to_json(articles: pd.DataFrame) -> json:
+    return articles.to_dict("records")
+
+
+@R.curry
+def _transform_json(variants: list, raw: dict) -> dict:
     return R.apply_spec(
         {
             "name": R.prop("Titel"),
@@ -32,7 +37,7 @@ def _transform_json(raw: dict) -> dict:
                     "price": R.prop("Bruttopreis"),
                     "vat": R.pipe(R.prop("Mehrwertsteuer prozent"), lambda x: str(x)),
                 },
-                "variantSection": lambda x: [],
+                "variantSection": _variant_section(variants),
                 "ean": R.prop("GTIN/EAN"),
             },
         }
@@ -50,5 +55,21 @@ def _calc_net(brutto: float, taxrate: float) -> float:
     return round(brutto / (1 + float(taxrate) / 100.0), 2)
 
 
-def _transform_to_json(articles: pd.DataFrame) -> json:
-    return articles.to_dict("records")
+@R.curry
+def _variant_section(variants: list, raw: dict) -> list:
+    if not variants:
+        return []
+    variant_section = []
+    for variant in variants:
+        section = {"variantName": variant["name"], "variantValueSection": []}
+        for variant_value in variant["variant_values"]:
+            if not raw[variant_value["price_column"]]:
+                continue
+            section["variantValueSection"].append({
+                            "VariantValueName": variant_value["name"],
+                            "VariantValuePrice": raw[variant_value["price_column"]],
+                        })
+        if not section["variantValueSection"]:
+            continue
+        variant_section.append(section)
+    return variant_section
