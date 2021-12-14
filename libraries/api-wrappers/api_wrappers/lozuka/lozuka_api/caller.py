@@ -28,7 +28,7 @@ def get_articles(login_details: dict, trader_id: int):
 
 def deactivate_products(login_details: dict, trader_id: int, product_ids: list):
     request_url = _request_url("post", login_details, trader_id)
-    request_data = {"data": {"articles": [{"itemNumber": str(product_id), "active": "0"} for product_id in product_ids]}}
+    request_data = {"data": {"articles": [{"itemNumber": str(pid), "active": "0"} for pid in product_ids]}}
     response = requests.post(request_url, data=json.dumps(request_data))
     response.raise_for_status()
     if response.status_code != 200:
