@@ -122,5 +122,5 @@ def _set_image_url(products: pd.DataFrame) -> pd.DataFrame:
     return products
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     load_images_to_sftp(TRADER_ID)

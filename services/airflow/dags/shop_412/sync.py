@@ -48,13 +48,23 @@ def _set_bruttopreis(products: pd.DataFrame) -> pd.DataFrame:
     )
     products.loc[products["Verpackungsgröße (Verkauf)"] == "", "Verpackungsgröße (Verkauf)"] = np.nan
     products["Bruttopreis"] = (
-        products["Verpackungsgröße (Verkauf)"].str.replace(',', '.').astype(float) * products["Bruttopreis"]
+        products["Verpackungsgröße (Verkauf)"].str.replace(",", ".").astype(float) * products["Bruttopreis"]
     )
-    products["Bruttopreis"] = products["Bruttopreis"].apply(lambda x: math.ceil(x * 10**1) / 10**1 - 0.01)
-    products = products.dropna(subset=[
-        'Bruttopreis','ID', 'Kategorie', 'Kühlpflichtig', 'Maßeinheit', 'Mehrwertsteuer prozent',
-        'Produktbild \n(Dateiname oder url)', 'Titel', 'Verpackungsgröße', 'Verpackungsgröße (Verkauf)'
-    ])
+    products["Bruttopreis"] = products["Bruttopreis"].apply(lambda x: math.ceil(x * 10 ** 1) / 10 ** 1 - 0.01)
+    products = products.dropna(
+        subset=[
+            "Bruttopreis",
+            "ID",
+            "Kategorie",
+            "Kühlpflichtig",
+            "Maßeinheit",
+            "Mehrwertsteuer prozent",
+            "Produktbild \n(Dateiname oder url)",
+            "Titel",
+            "Verpackungsgröße",
+            "Verpackungsgröße (Verkauf)",
+        ]
+    )
     return products
 
 
@@ -84,10 +94,11 @@ def raise_value_error(message):
     raise ValueError(message)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     from api_wrappers.google.google_sheets import get_product_data_from_sheets
     from dags.shop_412.sync_images.sync_images import GOOGLE_SHEETS_ADDRESS
     from dotenv import load_dotenv
+
     load_dotenv
 
     products = get_product_data_from_sheets(GOOGLE_SHEETS_ADDRESS)
