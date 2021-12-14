@@ -42,7 +42,7 @@ def _mock_access_token_endpoint(access_token) -> None:
     )
 
 
-def _mock_post_articles_endpoint(trader_id: int) -> None:
+def _mock_post_articles_endpoint(trader_id: str) -> None:
     endpoint = f"/import/v1/articles/import?trader={trader_id}&access_token={123456789}"
     request_url = urllib.parse.urljoin(BASE_URL, endpoint)
     responses.add(responses.POST, request_url, match_querystring=True, status=200)
@@ -61,7 +61,7 @@ PRODUCTS_INPUT = (
     'fl\\u00fc\\u00dfig"},"ru name":{"0":"\\u0410\\u043a\\u0430\\u0446\\u0438\\u0435\\u0432\\u044b\\u0439 \\u043c\\u04'
     '51\\u0434","1":"\\u041c\\u0451\\u0434 \\u0430\\u043a\\u0430\\u0446\\u0438\\u0435\\u0432\\u044b\\u0439"},"price":{'
     '"0":5.29,"1":6.99},"tax":{"0":7,"1":7},"weight":{"0":500.0,"1":500.0},"unit":{"0":"g","1":"g"},"category":{"0":"'
-    'None","1":"suesswaren"},"tags":{"0":"imported, online, wolt","1":"imported, online, wolt"},"supplier":{"0":"'
+    'None","1":"suesswaren"},"tags":{"0":"imported, online, wolt","1":"p25"},"supplier":{"0":"'
     'Monolith","1":"Monolith"},"pic":{"0":"https:\\/\\/catalog.stolitschniy.shop\\/static\\/img\\/products\\/normalize'
     'd\\/4030957751188.jpg","1":"https:\\/\\/catalog.stolitschniy.shop\\/static\\/img\\/products\\/normalized\\/4030011'
     '750737.jpg"},"description":{"0":null,"1":null}}'

@@ -8,15 +8,20 @@ import ramda as R
 
 
 FTP_ENDPOINT = "http://s739086489.online.de/bzd-bilder/bzd"
-TRADER_ID = "405"
 VARIANTS = [{"name": "Gebinde", "variant_values": [{"name": "Flasche", "price_column": "deposit"}]}]
+TRADER_ID: str = "405"
 
 
 def product_pipeline(products: json):
     R.pipe(
         _from_json_records,
-        _transform_product_data,
-        _post_products(_load_credentials("/shop-secrets.json"), TRADER_ID, None),
+        _translate_columns,
+        _category_mapping,
+        _set_beschreibung,
+        _set_title,
+        _set_image_url,
+        _set_deposit,
+        _post_products(_load_credentials("/shop-secrets.json"), TRADER_ID, VARIANTS),
     )(products)
 
 
@@ -24,21 +29,20 @@ def _from_json_records(products: str) -> pd.DataFrame:
     return pd.DataFrame.from_records(json.loads(products))
 
 
-def _transform_product_data(product_data: pd.DataFrame) -> pd.DataFrame:
-    product_data = product_data.rename(columns=_translation_dict_products())
+def _translate_columns(products: pd.DataFrame) -> pd.DataFrame:
+    return products.rename(columns=_translation_dict_products())
+
+
+def _category_mapping(products: pd.DataFrame) -> pd.DataFrame:
     mapping = get_default_category_mapping()
-    category_difference = set(product_data["Kategorie"].unique()).difference(_translation_dict_categories().keys())
+    category_difference = set(products["Kategorie"].unique()).difference(_translation_dict_categories().keys())
     if category_difference:
-        product_data = product_data[~product_data["Kategorie"].isin(list(category_difference))]
+        products = products[~products["Kategorie"].isin(list(category_difference))]
         # TODO: error logging and notification
-    product_data["Kategorie"] = product_data["Kategorie"].apply(
+    products["Kategorie"] = products["Kategorie"].apply(
         lambda category_name: _map_product_category(mapping, _translation_dict_categories()[category_name])
     )
-    product_data["Beschreibung"].fillna("", inplace=True)
-    product_data["Produktbild \n(Dateiname oder url)"] = (
-        f"{FTP_ENDPOINT}/{TRADER_ID}/" + product_data["ID"].astype(str) + ".jpg"
-    )
-    return product_data
+    return products
 
 
 @R.curry
@@ -52,6 +56,32 @@ def _map_product_category(mapping: pd.DataFrame, category_name: str) -> int:
 
 def _raise_value_error(message):
     raise ValueError(message)
+
+
+def _set_beschreibung(products: pd.DataFrame) -> pd.DataFrame:
+    products["Beschreibung"].fillna("", inplace=True)
+    return products
+
+
+def _set_title(products: pd.DataFrame) -> pd.DataFrame:
+    products.loc[products["tags"].str.contains('mehrweg'), "Titel"] += " MEHRWEG"
+    products.loc[products["tags"].str.contains('einweg'), "Titel"] += " EINWEG1"
+    products["Titel"] = products["Titel"].str.replace('"', "'")
+    return products
+
+
+def _set_deposit(products: pd.DataFrame) -> pd.DataFrame:
+    products["deposit"] = 0
+    products.loc[products["tags"].str.contains('p8'), "deposit"] = "0.08"
+    products.loc[products["tags"].str.contains('p25'), "deposit"] = "0.25"
+    return products
+
+
+def _set_image_url(products: pd.DataFrame) -> pd.DataFrame:
+    products["Produktbild \n(Dateiname oder url)"] = (
+        f"{FTP_ENDPOINT}/{TRADER_ID}/" + products["ID"].astype(str) + ".jpg"
+    )
+    return products
 
 
 def _load_credentials(filename: str):
@@ -131,7 +161,6 @@ if __name__ == '__main__':
     from api_wrappers.external.sheets import get_product_data_from_sheets
     from dotenv import load_dotenv
     load_dotenv()
-    from dags.shop_405.sync_images import load_images_to_sftp
     PRODUCTS_CSV_ENDPOINT = "https://catalog.stolitschniy.shop/private/2VNgFokABP/vendors/berlinzudir/export"
 
     products = get_product_data_from_sheets(PRODUCTS_CSV_ENDPOINT)

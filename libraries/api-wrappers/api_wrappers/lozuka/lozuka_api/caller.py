@@ -11,22 +11,23 @@ BASE_URL = "https://berlinzudir.de/"
 
 
 @curry
-def post_articles(login_details: dict, trader_id: int, variants: list, articles: pd.DataFrame) -> None:
+def post_articles(login_details: dict, trader_id: str, variants: list, articles: pd.DataFrame) -> None:
     request_url = _request_url("post", login_details, trader_id)
     articles = transform_articles(articles, variants)
+    import pdb;pdb.set_trace()
     response = requests.post(request_url, data=articles)
     response.raise_for_status()
     if response.status_code != 200:
         raise ResponseError(f"Posting Articles to {request_url} resulted in status code {response.status_code}.")
 
 
-def get_articles(login_details: dict, trader_id: int):
+def get_articles(login_details: dict, trader_id: str):
     request_url = _request_url("get", login_details, trader_id)
     response = requests.get(request_url)
     return json.loads(response.content)["data"]
 
 
-def deactivate_products(login_details: dict, trader_id: int, product_ids: list):
+def deactivate_products(login_details: dict, trader_id: str, product_ids: list):
     request_url = _request_url("post", login_details, trader_id)
     request_data = {"data": {"articles": [{"itemNumber": str(product_id), "active": "0"} for product_id in product_ids]}}
     response = requests.post(request_url, data=json.dumps(request_data))
@@ -35,7 +36,7 @@ def deactivate_products(login_details: dict, trader_id: int, product_ids: list):
         raise ResponseError(f"Deactivating Articles with {request_url} resulted in status code {response.status_code}.")
 
 
-def _request_url(mode, login_details, trader_id: int):
+def _request_url(mode, login_details, trader_id: str):
     assert mode in ["post", "get"], f"'{mode} not valid as input argument"
     if mode == "post":
         endpoint = f"/import/v1/articles/import?trader={trader_id}&access_token={_access_token(login_details)}"
