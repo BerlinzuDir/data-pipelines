@@ -9,13 +9,14 @@ import ramda as R
 
 FTP_ENDPOINT = "http://s739086489.online.de/bzd-bilder/bzd"
 TRADER_ID = "405"
+VARIANTS = [{"name": "Gebinde", "variant_values": [{"name": "Flasche", "price_column": "deposit"}]}]
 
 
 def product_pipeline(products: json):
     R.pipe(
         _from_json_records,
         _transform_product_data,
-        _post_products(_load_credentials("/shop-secrets.json"), TRADER_ID),
+        _post_products(_load_credentials("/shop-secrets.json"), TRADER_ID, None),
     )(products)
 
 
@@ -63,11 +64,15 @@ def _get_path_of_file() -> str:
 
 
 @R.curry
-def _post_products(login_details: dict, trader_id: str, products: pd.DataFrame):
-    products_ids_on_platform = [product["articlenr"] for product in get_articles(login_details, trader_id)]
-    products_to_deactivate = set(products_ids_on_platform).difference(set(products["ID"].astype(str).values))
-    deactivate_products(login_details, trader_id, products_to_deactivate)
-    post_articles(login_details, trader_id, products)
+def _post_products(login_details: dict, trader_id: str, variants: list, products: pd.DataFrame):
+    products_platform = get_articles(login_details, trader_id)
+    products_article_nr_on_platform = [product["articlenr"] for product in products_platform]
+    products_to_deactivate = set(products_article_nr_on_platform).difference(set(products["ID"].astype(str).values))
+    products_to_deavtivate = [
+        product["id"] for product in products_platform if product["articlenr"] in products_to_deactivate
+    ]
+    deactivate_products(login_details, trader_id, products_to_deavtivate)
+    post_articles(login_details, trader_id, variants, products)
 
 
 def _translation_dict_products() -> dict:
@@ -123,6 +128,11 @@ class MissingCategoryTranslation(Exception):
 
 
 if __name__ == '__main__':
+    from api_wrappers.external.sheets import get_product_data_from_sheets
+    from dotenv import load_dotenv
+    load_dotenv()
     from dags.shop_405.sync_images import load_images_to_sftp
-    products = load_images_to_sftp(TRADER_ID)
-    product_pipeline(products)
+    PRODUCTS_CSV_ENDPOINT = "https://catalog.stolitschniy.shop/private/2VNgFokABP/vendors/berlinzudir/export"
+
+    products = get_product_data_from_sheets(PRODUCTS_CSV_ENDPOINT)
+    product_pipeline(products.to_json())
