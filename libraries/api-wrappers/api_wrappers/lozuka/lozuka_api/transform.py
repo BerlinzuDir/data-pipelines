@@ -21,7 +21,7 @@ def _transform_to_json(articles: pd.DataFrame) -> json:
 def _transform_json(variants: list, raw: dict) -> dict:
     return R.apply_spec(
         {
-            "name": R.prop("Titel"),
+            "name": R.pipe(R.prop("Titel"), lambda x: x.replace("'", "").replace('"', '')),
             "itemNumber": R.pipe(R.prop("ID"), lambda x: str(x)),
             "category": R.prop("Kategorie"),
             "priceBrutto": R.prop("Bruttopreis"),
@@ -66,8 +66,8 @@ def _variant_section(variants: list, raw: dict) -> list:
             if not raw[variant_value["price_column"]]:
                 continue
             section["variantValueSection"].append({
-                            "variantValueName": variant_value["name"],
-                            "variantValuePrice": raw[variant_value["price_column"]],
+                            "VariantValueName": variant_value["name"],
+                            "VariantValuePrice": raw[variant_value["price_column"]],
                         })
         if not section["variantValueSection"]:
             continue

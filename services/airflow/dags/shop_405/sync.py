@@ -16,6 +16,7 @@ def product_pipeline(products: json):
     R.pipe(
         _from_json_records,
         _translate_columns,
+        _drop_na_values,
         _category_mapping,
         _set_beschreibung,
         _set_title,
@@ -31,6 +32,20 @@ def _from_json_records(products: str) -> pd.DataFrame:
 
 def _translate_columns(products: pd.DataFrame) -> pd.DataFrame:
     return products.rename(columns=_translation_dict_products())
+
+
+def _drop_na_values(products: pd.DataFrame) -> pd.DataFrame:
+    mandatory_fields = [
+        "Kategorie",
+        "ID",
+        "Titel",
+        "pic",
+        "Bruttopreis",
+        "Mehrwertsteuer prozent",
+        "Maßeinheit",
+        "Verpackungsgröße",
+    ]
+    return products.dropna(subset=mandatory_fields)
 
 
 def _category_mapping(products: pd.DataFrame) -> pd.DataFrame:
