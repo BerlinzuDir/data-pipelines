@@ -14,7 +14,6 @@ BASE_URL = "https://berlinzudir.de/"
 def post_articles(login_details: dict, trader_id: str, variants: list, articles: pd.DataFrame) -> None:
     request_url = _request_url("post", login_details, trader_id)
     articles = transform_articles(articles, variants)
-    import pdb;pdb.set_trace()
     response = requests.post(request_url, data=articles)
     response.raise_for_status()
     if response.status_code != 200:

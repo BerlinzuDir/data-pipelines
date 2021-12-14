@@ -3,7 +3,7 @@ import json
 import pandas as pd
 import pathlib
 from api_wrappers.google.google_sheets import get_default_category_mapping
-from api_wrappers.lozuka.lozuka_api import post_articles, get_articles, deactivate_products
+from api_wrappers.lozuka.lozuka_api import post_articles, deactivate_products, get_articles
 import ramda as R
 
 
@@ -94,14 +94,10 @@ def _get_path_of_file() -> str:
 
 
 @R.curry
-def _post_products(login_details: dict, trader_id: str, variants: list, products: pd.DataFrame):
-    products_platform = get_articles(login_details, trader_id)
-    products_article_nr_on_platform = [product["articlenr"] for product in products_platform]
-    products_to_deactivate = set(products_article_nr_on_platform).difference(set(products["ID"].astype(str).values))
-    products_to_deavtivate = [
-        product["id"] for product in products_platform if product["articlenr"] in products_to_deactivate
-    ]
-    deactivate_products(login_details, trader_id, products_to_deavtivate)
+def _post_products(login_details: dict, trader_id: str,  variants: list, products: pd.DataFrame):
+    product_ids_on_platform = [article["articlenr"] for article in get_articles(login_details, trader_id)]
+    to_be_deactivated = set(product_ids_on_platform).difference(set(products["ID"].astype(str).values))
+    deactivate_products(login_details, trader_id, list(to_be_deactivated))
     post_articles(login_details, trader_id, variants, products)
 
 
@@ -159,9 +155,8 @@ class MissingCategoryTranslation(Exception):
 
 if __name__ == '__main__':
     from api_wrappers.external.sheets import get_product_data_from_sheets
+    from dags.shop_405.sync_images.sync_images import PRODUCTS_CSV_ENDPOINT
     from dotenv import load_dotenv
     load_dotenv()
-    PRODUCTS_CSV_ENDPOINT = "https://catalog.stolitschniy.shop/private/2VNgFokABP/vendors/berlinzudir/export"
-
     products = get_product_data_from_sheets(PRODUCTS_CSV_ENDPOINT)
     product_pipeline(products.to_json())

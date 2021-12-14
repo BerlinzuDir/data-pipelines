@@ -66,8 +66,8 @@ def _variant_section(variants: list, raw: dict) -> list:
             if not raw[variant_value["price_column"]]:
                 continue
             section["variantValueSection"].append({
-                            "VariantValueName": variant_value["name"],
-                            "VariantValuePrice": raw[variant_value["price_column"]],
+                            "variantValueName": variant_value["name"],
+                            "variantValuePrice": raw[variant_value["price_column"]],
                         })
         if not section["variantValueSection"]:
             continue
