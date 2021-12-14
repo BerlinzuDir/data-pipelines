@@ -3,11 +3,11 @@ import json
 import pandas as pd
 import pathlib
 from api_wrappers.google.google_sheets import get_default_category_mapping
-from api_wrappers.lozuka.lozuka_api import post_articles
+from api_wrappers.lozuka.lozuka_api import post_articles, get_articles, deactivate_products
 import ramda as R
 
 
-FTP_ENDPOINT = "http://s739086489.online.de/bzd-bilder"
+FTP_ENDPOINT = "http://s739086489.online.de/bzd-bilder/bzd"
 TRADER_ID = "405"
 
 
@@ -15,7 +15,7 @@ def product_pipeline(products: json):
     R.pipe(
         _from_json_records,
         _transform_product_data,
-        post_articles(_load_credentials("/shop-secrets.json"), TRADER_ID),
+        _post_products(_load_credentials("/shop-secrets.json"), TRADER_ID),
     )(products)
 
 
@@ -60,6 +60,14 @@ def _load_credentials(filename: str):
 
 def _get_path_of_file() -> str:
     return str(pathlib.Path(__file__).parent.resolve())
+
+
+@R.curry
+def _post_products(login_details: dict, trader_id: str, products: pd.DataFrame):
+    products_ids_on_platform = [product["articlenr"] for product in get_articles(login_details, trader_id)]
+    products_to_deactivate = set(products_ids_on_platform).difference(set(products["ID"].astype(str).values))
+    deactivate_products(login_details, trader_id, products_to_deactivate)
+    post_articles(login_details, trader_id, products)
 
 
 def _translation_dict_products() -> dict:
@@ -112,3 +120,9 @@ class MissingCategoryTranslation(Exception):
     def __init__(self, category):
         message = f'Categories "{category}" not in Translation Dict'
         super().__init__(message)
+
+
+if __name__ == '__main__':
+    from dags.shop_405.sync_images import load_images_to_sftp
+    products = load_images_to_sftp(TRADER_ID)
+    product_pipeline(products)
