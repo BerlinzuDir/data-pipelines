@@ -20,9 +20,9 @@ def test_product_pipeline():
     responses.add_passthru("https://sheets.googleapis.com")
     _setup_request_mocks()
     product_pipeline(PRODUCTS_INPUT)
-    # TODO compare post request data
     assert len(responses.calls) == 2
     assert len(json.loads(responses.calls[1].request.body)["data"]["articles"]) == 4
+    assert (json.loads(responses.calls[1].request.body)["data"]["articles"][0] == PRODUCT_OUTPUT)
 
 
 def test_map_product_category_returns_correct_product_id():
@@ -79,3 +79,13 @@ PRODUCTS_INPUT = (
     '},"ISBN":{"0":"","1":"","2":"","3":""},"SEO \\nkeywords":{"0":"","1":"","2":"","3":""},"SEO \\nBeschreibungstext"'
     ':{"0":"","1":"","2":"","3":""},"SEO \\nSeitentitel":{"0":"","1":"","2":"","3":""}}'
 )
+
+PRODUCT_OUTPUT = {
+    'name': 'Bio Zitronen Fino Kal 2-3', 'itemNumber': '1', 'category': ['36'], 'priceBrutto': 1.99,
+    'priceNetto': 1.86, 'description': 'Herkunft: Spanien\nKlasse: II\nVerband: EG-Bio \n', 'vat': '7',
+    'images': 'http://s739086489.online.de/bzd-bilder/bzd/412/1.jpg', 'stock': '',
+    'unitSection': {
+        'weightUnit': 'g', 'weight': '500.0', 'priceSection': {'price': 1.99, 'vat': '7'}, 'variantSection': [],
+        'ean': ''
+    }
+}
