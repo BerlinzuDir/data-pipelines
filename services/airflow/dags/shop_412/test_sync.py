@@ -84,7 +84,7 @@ PRODUCT_OUTPUT = {
     "name": "Bio Zitronen Fino Kal 2-3",
     "itemNumber": "1",
     "category": ["36"],
-    "priceBrutto": 1.99,
+    "priceBrutto": 1.995,
     "priceNetto": 1.86,
     "description": "Herkunft: Spanien\nKlasse: II\nVerband: EG-Bio \n",
     "vat": "7",
@@ -93,7 +93,7 @@ PRODUCT_OUTPUT = {
     "unitSection": {
         "weightUnit": "g",
         "weight": "500.0",
-        "priceSection": {"price": 1.99, "vat": "7"},
+        "priceSection": {"price": 1.995, "vat": "7"},
         "variantSection": [],
         "ean": "",
     },

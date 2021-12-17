@@ -59,7 +59,7 @@ def _set_bruttopreis(products: pd.DataFrame) -> pd.DataFrame:
     products["Bruttopreis"] = (
         products["Verpackungsgröße (Verkauf)"].str.replace(",", ".").astype(float) * products["Bruttopreis"]
     )
-    products["Bruttopreis"] = products["Bruttopreis"].apply(lambda x: math.ceil(x * 10 ** 1) / 10 ** 1 - 0.01)
+    # products["Bruttopreis"] = products["Bruttopreis"].apply(lambda x: math.ceil(x * 10 ** 1) / 10 ** 1 - 0.01)
     products = products.dropna(
         subset=[
             "Bruttopreis",
