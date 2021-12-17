@@ -42,9 +42,9 @@ def _get_path_of_file() -> str:
 
 def _set_verpackungsgroesse(products: pd.DataFrame) -> pd.DataFrame:
     products.loc[products["Verpackungsgröße (Verkauf)"] == "", "Verpackungsgröße (Verkauf)"] = np.nan
-    products["Verpackungsgröße"] = (
-        products["Verpackungsgröße"] * products["Verpackungsgröße (Verkauf)"].str.replace(",", ".").astype(float)
-    )
+    products["Verpackungsgröße"] = products["Verpackungsgröße"] * products["Verpackungsgröße (Verkauf)"].str.replace(
+        ",", "."
+    ).astype(float)
     return products
 
 
@@ -80,9 +80,9 @@ def _set_units(products: pd.DataFrame) -> pd.DataFrame:
 
 
 def _set_units_of_row(df_row: pd.Series) -> pd.Series:
-    if df_row["Verpackungsgröße"] < 1. and df_row["Maßeinheit"] == 'kg':
+    if df_row["Verpackungsgröße"] < 1.0 and df_row["Maßeinheit"] == "kg":
         df_row["Verpackungsgröße"] = int(df_row["Verpackungsgröße"] * 1000)
-        df_row["Maßeinheit"] = 'g'
+        df_row["Maßeinheit"] = "g"
     return df_row
 
 
