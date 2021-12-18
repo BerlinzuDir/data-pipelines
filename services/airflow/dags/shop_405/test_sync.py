@@ -24,9 +24,7 @@ def test_product_pipeline():
     assert len(responses.calls) == 6
     assert len(json.loads(responses.calls[5].request.body)["data"]["articles"]) == 4
     assert json.loads(responses.calls[5].request.body)["data"]["articles"][0] == FIRST_PRODUCT
-    assert json.loads(responses.calls[3].request.body) == {
-        "data": {"articles": [{"itemNumber": "14", "active": "0"}, {"itemNumber": "12", "active": "0"}]}
-    }
+    assert json.loads(responses.calls[3].request.body) == {"data": {"articles": [{"itemNumber": "12", "active": "0"}]}}
 
 
 def _setup_request_mocks() -> None:
@@ -54,7 +52,7 @@ def _mock_get_articles_endpoint(trader_id: int) -> None:
         request_url,
         match_querystring=True,
         status=200,
-        body=b'{"data": [{"articlenr": "12", "name": "bla"}, {"articlenr": "14", "name": "blub"}]}',
+        body=b'{"data": [{"articlenr": "12", "name": "bla"}]}',
     )
 
 
