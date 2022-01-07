@@ -136,3 +136,4 @@ dmypy.json
 .gitsecret/keys/random_seed
 **/shop-secrets.json
 **/api-credentials.json
+airflow.cfg

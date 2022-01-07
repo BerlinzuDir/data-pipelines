@@ -43,7 +43,7 @@ x-airflow-common:
     - ../../libraries:/libraries
     - ./dags:/opt/airflow/dags
     - airflow-logs-volume:/opt/airflow/logs
-    - ./setup.cfg:/opt/airflow/setup.cfg
+    - ./airflow.cfg:/opt/airflow/airflow.cfg
   user: "${AIRFLOW_UID:-50000}:${AIRFLOW_GID:-50000}"
   depends_on:
     redis:

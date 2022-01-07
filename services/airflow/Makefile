@@ -18,7 +18,7 @@ integrationtest:
 	docker exec airflow-scheduler pytest -v -k 'integration'
 
 lint:
-	docker exec airflow-scheduler poetry run flake8 
+	poetry run flake8
 	
 stylecheck:
 	docker exec airflow-scheduler poetry run black --check
