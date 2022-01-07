@@ -46,12 +46,10 @@ there_are_orders = R.pipe(
 
 
 @R.curry
-def generate_email_body_from_order_list(
-    config: dict, orders: List[pd.DataFrame]
-) -> str:
-    email_body = f"<h3>Hallo {config['name']}</h3><br> Anbei die Bestellungen für den heutigen Tag zur abholung ab 13:00<br>"
+def generate_email_body_from_order_list(config: dict, orders: List[pd.DataFrame]) -> str:
+    email_body = (
+        f"<h3>Hallo {config['name']}</h3><br> Anbei die Bestellungen für den heutigen Tag zur abholung ab 13:00<br>"
+    )
     for i, order in enumerate(orders):
-        email_body += f"<h4> Bestellung No. {i+1}</h4>" + order.to_html().replace(
-            "\n", ""
-        )
+        email_body += f"<h4> Bestellung No. {i+1}</h4>" + order.to_html().replace("\n", "")
     return email_body

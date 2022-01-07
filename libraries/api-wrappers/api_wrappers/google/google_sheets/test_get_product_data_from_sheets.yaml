@@ -1,0 +1,174 @@
+interactions:
+- request:
+    body: assertion=eyJ0eXAiOiAiSldUIiwgImFsZyI6ICJSUzI1NiIsICJraWQiOiAiM2UyNTNhOTQ2MDNkZjkxMTk1YjdjNDBiYjJiNmZhYmM1MTQwZDg0YiJ9.eyJpYXQiOiAxNjQxNTkyNzIxLCAiZXhwIjogMTY0MTU5NjMyMSwgImlzcyI6ICJzaG9wLWRhdGEtc2NyaXB0c0BzaG9wLWFwaXMtMzEyOTEwLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwgImF1ZCI6ICJodHRwczovL29hdXRoMi5nb29nbGVhcGlzLmNvbS90b2tlbiIsICJzY29wZSI6ICJodHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9hdXRoL3NwcmVhZHNoZWV0cyBodHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9hdXRoL2RyaXZlIn0.L1Hsa8KO6MHufdnVacupz1qezPx5NXr_lUWoirXDPDvN8yRpeJ6MBGDEZoifxfvnWR2UwnCdp3xvdX05HJR_hlT4R4n64HHZ8-klmoOA4AmA9eXw-jL1vvW2IlvfsyIDpnEDZGrcBnylWJ9ykl7Nhxv-3NV6gL_us_p7edTBiM_RCmgmr6WH0dLEX3OG7Aa2KksDe5atIUJzFha7WY1mxJx_NC0bJTiOr52rZRP65S7l1leyNkTl_MfOXQm-D5DYUZbs7P1jcoZkyzTZUD3Ztfa43WU3Nd0MkaMGKeH1kyl8zC9XIlCETiXYLxdTmk9LeZVC2Q4a5WROy7V8e2OtUQ&grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '858'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.26.0
+    method: POST
+    uri: https://oauth2.googleapis.com/token
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAC/x3QS3KCMAAA0LtkrY5KUOgOCRVLQAwUoptMCqGDyieEVqDTu9fpEd77ATzLhFKs
+        b26iBi9g5GtzkS0+lhb9Xk6xT2q3tdM+jplgRorVY0K2eudHsqW5L1fw6l/6dtUpFvfUNmIzKnTr
+        su/46uDtr6VwguNXnVZrCBW6BlCTPq5leHcTwifEIeRvklKbVdMQant8U9Itx9NmObSZV9U6zQ8o
+        Rg6TGvaKPIo2yRwVkxU+AodTtFWJGM66fyd0ThvbTL16JwsuMSb65012r7p17N0qIhqiMCcsNO9z
+        LIooNc5Nk4MZEENbdkKx8gnXdNOcgf8F1o+teFbsBO9EB37/AOtcJL0kAQAA
+    headers:
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Cache-Control:
+      - private
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 07 Jan 2022 21:58:41 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Origin
+      - X-Origin
+      - Referer
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.26.0
+      authorization:
+      - Bearer ya29.c.b0AXv0zTMRnHpCWtTT_e_8WLswzDCsUaOR7XdMq14jMZtp1rs_TtXC8T9Sf5AZGra1IKGjieENOunWm244sDjN43qMLnqPlHVRazDa44aJqXXC_mzxP3GLksqHiyQ60xpcKmn5XdIDTDE_q3LKfdSS6V-DfzAPwNEaXD7sVexY5MlRX-XoC9WKnBqfaqLLR5gkqrF5AOtHmSR3DX4dR_P9l-LefSW8Yood
+    method: GET
+    uri: https://sheets.googleapis.com/v4/spreadsheets/1th9FMMnpng9OL7zpB2Trc85BnWBhq9LgBnr6DBwbvQM?includeGridData=false
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAC/7WX227iMBCG73kKlGsWcg7pHeHQrcqhS9PtaldVFRITrCZx1jFtacW7r+2UHAFt
+        pZQLBPPb4/lmxmR4b7XbQhJj4HjJBgBy5QkXbUEiG3Mym0Vx5JuLqfEWW7KN3b5mRffW5q859a0I
+        6yPrZfX8YyZ0mIsYoxhgAkFC979TC7URSALA3N1g5G2fSHvkEBDx9VQNkOuksgceR+OD2dkStARU
+        cpm0mD8Ovw/ml5lMYAh+o4jvG2/ZoT0L4ABmbj2wdrYBmSAcOiSLhQorx33yMdpG3hAFCBckKmLA
+        uKVObvExoLGWbatgyw6WPiz7gyTEjufByC/7JCimBrmwH0N/w2JSij4RISisLAzAmq+rHfTMckyT
+        MwigH4UgYqsEa2Hbi5mQLXrBTnxLME22v+NJ/DleTqaL+8fheDrNlxHwWk8Tta8RBpVE7TtFOSIT
+        J4QB9+1g6ASdxIkS/vYtARiuhcryW/jG8yaWuAOW8rUTJKBghsQJoHtESAiGT4BsaGD+5ohOw+V9
+        AI5oFaJbsuONlzOz2virHDcT9rUKVNqo7qvkqXRCtceOd1m9zwphtArBFK+tvQFhMQx6H2Ho4N2k
+        VKwBK1ahAdgmHiq7tH+y00pRu0y3dzG/cfb4ly10anKF9GQ2c5BCRs+dZw2G15fLxd189OlTS8rx
+        7HP70QpwpVaFMsCnYQbD4XhuSw2RiF1Z6/dlRVNPIoldTZY0va/rp9jErsl02dCahZQbgzQlQ1cN
+        sU6QQ8o0flU7WT+6QDT6qiKpzTIqzTGy6BTjDKKhGLKmmqcRRelL6qg216yiYtJmPAepp/2snaZU
+        WBJEuVlG7ct/WsSuyjpUNPtnCpjmRzebhdObK2BKIJ/rUlWit/VM/Yz0LjeFOL2aXzfGJ+r8da5B
+        lfRV/8HNAPv/g/bx6aF1+MZhBf4czx/EhSd5bbLm9nxcL45V5ZnbpQ6LwxWdkV4rG9Lx4SOjl8ur
+        4pOWskPv5vj5LHXoZUgHIcJHO1GsVmIbRgdZVmv4+wz/IcXPh5k7HLBgNoTEyUWv5yE36foI+QHo
+        uijsFVYmPa/3mf8qPeBBIrT2rX+iPu7t9wwAAA==
+    headers:
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Cache-Control:
+      - private
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 07 Jan 2022 21:58:42 GMT
+      Server:
+      - ESF
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Origin
+      - X-Origin
+      - Referer
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.26.0
+      authorization:
+      - Bearer ya29.c.b0AXv0zTMRnHpCWtTT_e_8WLswzDCsUaOR7XdMq14jMZtp1rs_TtXC8T9Sf5AZGra1IKGjieENOunWm244sDjN43qMLnqPlHVRazDa44aJqXXC_mzxP3GLksqHiyQ60xpcKmn5XdIDTDE_q3LKfdSS6V-DfzAPwNEaXD7sVexY5MlRX-XoC9WKnBqfaqLLR5gkqrF5AOtHmSR3DX4dR_P9l-LefSW8Yood
+    method: GET
+    uri: https://sheets.googleapis.com/v4/spreadsheets/1th9FMMnpng9OL7zpB2Trc85BnWBhq9LgBnr6DBwbvQM/values/%27Products%27
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAC/21STW/TQBC951cMOYHklAQpQviWkKqNSpuqiQCJcFjHE2fr9diaXVMK4oL4H71w
+        5MCpp5zYf8IvYWwqeVs42Np5783HvtnPPYA+K8qwH0P/nMu03jj7aDKK346Gw2E/avhCXZY80wWS
+        1SU1wovFm+Vf7oMyNVrB3kkEd3/B57OWb88r7dB04RTtZseok5qyAOXaubIS3HbgKe74CtlZhzUy
+        VFx+QnIBr/wNatqhDsDXyJXa5FLdZuxvRdFxJ8phVrIOoAu/3+SZShBO/W1m9GYXyP1+Z6ptAzod
+        DNsalbtEmxTW9HgmVTWpAqFMZcyazZN713WK0v8OLclbv2f4R3O0mp89PZycdch8OQ2i5eFCcnO8
+        vio5tQ/x0GGx7qN7KFhKbzGy3UvLvI/ur2/UZUyqLRoYwLmmHF6p9Doo5vf+BmpK4YTEcZ2t6RhZ
+        nN+6GJaVIo0UrWlNK13F0N7U+O/y2BjhWBmXKM5lkgj8t7ZJU2mqSBESZOgYiRwYJXo66Lr+/vpj
+        GI1fdMDz7mhd3gXBJRaJdQBHWPi9DXZPsofgJai6cFhUyMrVHMNoPHg2/vXzZadQzZiDSpwYGHHi
+        4LLK7vzrNd+X3h/y2cQPUAMAAA==
+    headers:
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Cache-Control:
+      - private
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 07 Jan 2022 21:58:42 GMT
+      Server:
+      - ESF
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Origin
+      - X-Origin
+      - Referer
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 200
+      message: OK
+version: 1

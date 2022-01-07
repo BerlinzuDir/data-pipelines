@@ -21,9 +21,7 @@ def get_order_list(shop_id: str, order_date: date):
                 R.pipe(R.nth(1), lambda d: d.day - datetime.today().day),
             ],
         ),
-        lambda get_orders_for_delivery_time: R.map(
-            get_orders_for_delivery_time, ["17:00", "19:00"]
-        ),
+        lambda get_orders_for_delivery_time: R.map(get_orders_for_delivery_time, ["17:00", "19:00"]),
         R.reduce(
             lambda l, o: R.concat(l, R.prop("orders", o)),
             [],
@@ -65,7 +63,5 @@ def parse_order(order: dict):
 
 
 @R.curry
-def get_orders_for_store(
-    store_id: Union[int, str], order_date: datetime
-) -> List[pd.DataFrame]:
+def get_orders_for_store(store_id: Union[int, str], order_date: datetime) -> List[pd.DataFrame]:
     return R.pipe(get_order_list, R.map(parse_order))(store_id, order_date)

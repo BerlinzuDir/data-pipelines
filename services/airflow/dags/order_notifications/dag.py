@@ -18,7 +18,7 @@ dag = DAG(
 
 
 def load_config_files(folder_name: str):
-    files = Path(__file__).with_name(folder_name).glob("**/*")
+    files = sorted(Path(__file__).with_name(folder_name).glob("**/*"))
     return R.map(load_yaml_file, files)
 
 

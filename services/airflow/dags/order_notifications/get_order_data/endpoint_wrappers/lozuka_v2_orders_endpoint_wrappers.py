@@ -38,7 +38,5 @@ def get_pickup_overview(
 
 def get_tour_overview(token: OrdersAPIToken):
     return R.pipe(requests.get, R.prop("text"), json.loads)(
-        f"{BASE_URL}/getDriversOverview"
-        + "?selectedDay=0"
-        + f"&access_token={token['access_token']}"
+        f"{BASE_URL}/getDriversOverview" + "?selectedDay=0" + f"&access_token={token['access_token']}"
     )
