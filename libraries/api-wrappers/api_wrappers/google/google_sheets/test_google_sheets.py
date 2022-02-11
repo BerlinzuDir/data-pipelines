@@ -1,14 +1,21 @@
 import pandas as pd
 import pandas.api.types as ptypes
+import vcr
 
 from .google_sheets import get_product_data_from_sheets, get_default_category_mapping
 
 
+@vcr.use_cassette(
+    "api_wrappers/google/google_sheets/test_get_product_data_from_sheets.yaml",
+    record_mode="once",
+)
 def test_get_product_data_from_sheets():
     products = get_product_data_from_sheets(sheet_address)
     assert isinstance(products, pd.DataFrame)
 
     example_df = pd.DataFrame(columns=columns, data=data)
+    print(example_df.values)
+    print(products.values)
     assert products.equals(example_df)
 
 
@@ -58,6 +65,7 @@ data = [
         "Obst  Gemüse",
         "nein",
         "Raumtemperatur: 15-25°C",
-        *(8 * [""]),  # Note the empty string for empty cells
+        "apfel-pink-lady.jpg",
+        *(7 * [""]),  # Note the empty string for empty cells
     ]
 ]
