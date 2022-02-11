@@ -1,5 +1,8 @@
-from .sync_images import _load_sftp_credentials_from_env, _connect_to_sftp, load_files_from_google_to_sftp
-from dags.shop_287.sync import TRADER_ID
+from .sync_images import (
+    _load_sftp_credentials_from_env,
+    _connect_to_sftp,
+    load_files_from_google_to_sftp,
+)
 
 
 def test_load_files_from_google_to_sftp():
@@ -18,5 +21,5 @@ def file_exists_on_sftp(filename):
     return exists
 
 
-STORE_ID = f"{TRADER_ID}_test"
+STORE_ID = f"{287}_test"
 FOLDER_ID = "1lQ2dyF3bschhZIl4MdMZ-Bn0VmbEz5Qv"

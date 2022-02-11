@@ -1,5 +1,5 @@
 from .sync import product_pipeline, TRADER_ID
-from api_wrappers.lozuka.lozuka_api.caller import BASE_URL
+from api_wrappers.lozuka import BASE_URL
 import responses
 import urllib
 import json

@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import pathlib
 from api_wrappers.google.google_sheets import get_default_category_mapping
-from api_wrappers.lozuka.lozuka_api import post_articles
+from api_wrappers.lozuka import post_articles
 import ramda as R
 
 

@@ -3,7 +3,7 @@ from .sync import (
     TRADER_ID,
     _map_product_category,
 )
-from api_wrappers.lozuka.lozuka_api.caller import BASE_URL
+from api_wrappers.lozuka import BASE_URL
 from api_wrappers.google.google_sheets import get_default_category_mapping
 import responses
 import urllib

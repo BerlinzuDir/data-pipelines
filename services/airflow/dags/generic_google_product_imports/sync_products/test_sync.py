@@ -1,13 +1,14 @@
 from .sync import (
     product_pipeline,
-    TRADER_ID,
     _map_product_category,
 )
-from api_wrappers.lozuka.lozuka_api.caller import BASE_URL
+from api_wrappers.lozuka import BASE_URL
 from api_wrappers.google.google_sheets import get_default_category_mapping
 import responses
 import urllib
 import json
+
+TRADER_ID = "287"
 
 
 def test_trader_id():
@@ -19,7 +20,11 @@ def test_product_pipeline():
     responses.add_passthru("https://oauth2.googleapis.com/token")
     responses.add_passthru("https://sheets.googleapis.com")
     _setup_request_mocks()
-    product_pipeline()
+    product_pipeline(
+        "287",
+        "1HrA07_T95T6OyL-T012tGF4F6ZuaHalzFmSTtYAyjpo",
+        "http://s739086489.online.de/bzd-bilder",
+    )
     assert len(responses.calls) == 2
     assert len(json.loads(responses.calls[1].request.body)["data"]["articles"]) == 2
     assert json.loads(responses.calls[1].request.body)["data"]["articles"][0] == FIRST_PRODUCT
