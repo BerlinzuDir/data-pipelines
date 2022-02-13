@@ -45,7 +45,7 @@ def _mock_access_token_endpoint(access_token) -> None:
 
 
 def _mock_get_articles_endpoint(trader_id: int) -> None:
-    endpoint = f"/import/v1/articles?trader={TRADER_ID}&access_token={123456789}"
+    endpoint = f"/import/v1/articles?trader={trader_id}&access_token={123456789}"
     request_url = urllib.parse.urljoin(BASE_URL, endpoint)
     responses.add(
         responses.GET,
