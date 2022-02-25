@@ -7,7 +7,9 @@ from api_wrappers.lozuka.lozuka_api.transform import transform_articles
 
 
 def test_transform_articles():
-    transformed_articles = json.loads(_sample_input_products_df().pipe(transform_articles))
+    transformed_articles = json.loads(
+        _sample_input_products_df().pipe(transform_articles)
+    )
     example = {"data": {"articles": [EXAMPLE_PRODUCT]}}
     assert diff(transformed_articles, example) == {}
 

@@ -17,21 +17,34 @@ class FileListDict(TypedDict):
     hash: List[str]
 
 
-@cwd_cleanup
-def load_files_from_google_to_sftp(store_id: str, google_drive_folder_id: str) -> None:
-    R.pipe(
-        get_file_list_from_drive,
-        _download_all_files,
-        _load_all_files_to_sftp(store_id),
-        lambda df: df.to_dict(),  # return values have to be json serializable
-    )(google_drive_folder_id)
-
-
 class FtpCredentials(TypedDict):
     username: str
     password: str
     hostname: str
     port: int
+
+
+@cwd_cleanup
+def load_files_from_google_to_sftp(store_id: str, google_drive_id: str) -> None:
+    R.pipe(
+        get_file_list_from_drive,
+        _download_all_files,
+        _load_all_files_to_sftp(store_id),
+        R.invoker(0, "to_dict"),  # return values have to be json serializable
+    )(google_drive_id)
+
+
+def _download_all_files(file_list: pd.DataFrame) -> pd.DataFrame:
+    file_list[["id", "title"]].apply(lambda row: download_file_from_drive(row["id"], row["title"]), axis=1)
+    return file_list
+
+
+@R.curry
+def _load_all_files_to_sftp(store_id: str, file_list: pd.DataFrame) -> pd.DataFrame:
+    credentials = _load_sftp_credentials_from_env()
+    with _connect_to_sftp(credentials) as sftp_client:
+        file_list["title"].apply(lambda title: _load_single_image_to_sftp(sftp_client, store_id, title))
+    return file_list
 
 
 def _load_sftp_credentials_from_env() -> FtpCredentials:
@@ -41,14 +54,6 @@ def _load_sftp_credentials_from_env() -> FtpCredentials:
         hostname=os.environ["FTP_HOSTNAME"],
         port=int(os.environ["FTP_PORT"]),
     )
-
-
-@R.curry
-def _load_all_files_to_sftp(store_id: str, file_list: pd.DataFrame) -> pd.DataFrame:
-    credentials = _load_sftp_credentials_from_env()
-    with _connect_to_sftp(credentials) as sftp_client:
-        file_list["title"].apply(lambda title: _load_single_image_to_sftp(sftp_client, store_id, title))
-    return file_list
 
 
 @contextmanager
@@ -70,8 +75,3 @@ def _load_single_image_to_sftp(sftp_client, store_id: str, filename: str) -> str
         sftp_client.mkdir(f"bzd/{store_id}/")
     sftp_client.put(filename, f"bzd/{store_id}/{filename}")
     return filename
-
-
-def _download_all_files(file_list: pd.DataFrame) -> pd.DataFrame:
-    file_list[["id", "title"]].apply(lambda row: download_file_from_drive(row["id"], row["title"]), axis=1)
-    return file_list

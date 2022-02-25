@@ -5,7 +5,12 @@ import pandas as pd
 
 from unittest.mock import patch
 
-from api_wrappers.lozuka.lozuka_api import post_articles, get_articles, BASE_URL, deactivate_products
+from api_wrappers.lozuka.lozuka_api import (
+    post_articles,
+    get_articles,
+    BASE_URL,
+    deactivate_products,
+)
 
 
 LOGIN_DETAILS = {"username": "sample_username", "password": "sample_pw"}
@@ -37,7 +42,10 @@ def test_get_articles(_articles, _access_token):
 
     articles = get_articles(login_details=LOGIN_DETAILS, trader_id=TRADER_ID)
     assert len(responses.calls) == 2
-    assert articles == [{"articlenr": "12", "name": "bla"}, {"articlenr": "14", "name": "blub"}]
+    assert articles == [
+        {"articlenr": "12", "name": "bla"},
+        {"articlenr": "14", "name": "blub"},
+    ]
 
 
 @responses.activate
@@ -47,12 +55,13 @@ def test_deactivate_products(_articles, _access_token):
     _mock_endpoint("post", "")
 
     deactivate_products(
-        login_details=LOGIN_DETAILS,
-        trader_id=TRADER_ID,
-        product_ids=['14']
+        login_details=LOGIN_DETAILS, trader_id=TRADER_ID, product_ids=["14"]
     )
     assert len(responses.calls) == 2
-    assert responses.calls[1].request.body == '{"data": {"articles": [{"itemNumber": "14", "active": "0"}]}}'
+    assert (
+        responses.calls[1].request.body
+        == '{"data": {"articles": [{"itemNumber": "14", "active": "0"}]}}'
+    )
 
 
 def _mock_access_token_endpoint(_access_token) -> None:
@@ -71,13 +80,17 @@ def _mock_endpoint(mode, _articles):
     endpoint = _get_endpoint(mode)
     request_url = urllib.parse.urljoin(BASE_URL, endpoint)
     responses_mode = responses.POST if mode == "post" else responses.GET
-    responses.add(responses_mode, request_url, match_querystring=True, status=200, body=_articles)
+    responses.add(
+        responses_mode, request_url, match_querystring=True, status=200, body=_articles
+    )
 
 
 def _get_endpoint(mode):
     assert mode in ["post", "get"], f"'{mode} not valid as input argument"
     if mode == "post":
-        endpoint = f"/import/v1/articles/import?trader={TRADER_ID}&access_token=123456789"
+        endpoint = (
+            f"/import/v1/articles/import?trader={TRADER_ID}&access_token=123456789"
+        )
     else:
         endpoint = f"/import/v1/articles?trader={TRADER_ID}&access_token=123456789"
     return urllib.parse.urljoin(BASE_URL, endpoint)

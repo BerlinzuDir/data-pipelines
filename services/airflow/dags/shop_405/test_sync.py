@@ -1,5 +1,5 @@
 from .sync import product_pipeline, TRADER_ID
-from api_wrappers.lozuka.lozuka_api.caller import BASE_URL
+from api_wrappers.lozuka import BASE_URL
 import responses
 import urllib
 import json
@@ -45,7 +45,7 @@ def _mock_access_token_endpoint(access_token) -> None:
 
 
 def _mock_get_articles_endpoint(trader_id: int) -> None:
-    endpoint = f"/import/v1/articles?trader={TRADER_ID}&access_token={123456789}"
+    endpoint = f"/import/v1/articles?trader={trader_id}&access_token={123456789}"
     request_url = urllib.parse.urljoin(BASE_URL, endpoint)
     responses.add(
         responses.GET,
