@@ -25,3 +25,6 @@ stylecheck:
 
 watch:
 	docker exec -it airflow-scheduler pytest -f --ignore ./logs -k 'not integration'
+
+watchthis:
+	docker exec -it airflow-scheduler pytest -f --ignore ./logs -k ${TEST}

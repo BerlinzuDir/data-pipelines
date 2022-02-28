@@ -11,8 +11,8 @@ fsspec = "^2021.7.0"
 polars = "0.9.12"
 api-wrappers = {path = '../../libraries/api-wrappers', develop=true}
 paramiko = "^2.8.1"
-apache-airflow = "^2.2.2"
-ramda = "^0.6.4"
+apache-airflow = "^2.2.4"
+strongtyping = "^2"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.9.2"

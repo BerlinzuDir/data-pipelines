@@ -7,14 +7,17 @@ import ramda as R
 from api_wrappers.google import get_product_data_from_sheets
 from api_wrappers.google.google_sheets import get_default_category_mapping
 from api_wrappers.lozuka import post_articles, get_articles, deactivate_products
+from dags.generic_google_product_imports.types import DagConfig
+from strongtyping.strong_typing import match_typing
 
 
-def product_pipeline(trader_id, google_sheets_address, ftp_endpoint):
+@match_typing
+def product_pipeline(config: DagConfig):
     return R.pipe(
         _load_product_data,
-        _transform_product_data(trader_id, ftp_endpoint),
-        _update_products(_load_credentials("/shop-secrets.json"), trader_id),
-    )(google_sheets_address)
+        _transform_product_data(config["trader_id"], config["ftp_endpoint"]),
+        _update_products(_load_credentials("/shop-secrets.json"), config["trader_id"]),
+    )(config["google_sheets_id"])
 
 
 def _load_product_data(google_sheets_address) -> pd.DataFrame:

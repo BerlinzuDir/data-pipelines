@@ -1,14 +1,16 @@
+import os
 from contextlib import contextmanager
+from typing import TypedDict, List
 
 import pandas as pd
-from typing import TypedDict, List
 import paramiko
-import os
 import ramda as R
+from strongtyping.strong_typing import match_typing
 
-from api_wrappers.google.google_drive import download_file_from_drive
-from dags.helpers.decorators import cwd_cleanup
 from api_wrappers.google import get_file_list_from_drive
+from api_wrappers.google.google_drive import download_file_from_drive
+from dags.generic_google_product_imports.types import DagConfig
+from dags.helpers.decorators import cwd_cleanup
 
 
 class FileListDict(TypedDict):
@@ -25,13 +27,14 @@ class FtpCredentials(TypedDict):
 
 
 @cwd_cleanup
-def load_files_from_google_to_sftp(store_id: str, google_drive_id: str) -> None:
+@match_typing
+def load_files_from_google_to_sftp(config: DagConfig) -> None:
     R.pipe(
         get_file_list_from_drive,
         _download_all_files,
-        _load_all_files_to_sftp(store_id),
+        _load_all_files_to_sftp(config["trader_id"]),
         R.invoker(0, "to_dict"),  # return values have to be json serializable
-    )(google_drive_id)
+    )(config["google_drive_id"])
 
 
 def _download_all_files(file_list: pd.DataFrame) -> pd.DataFrame:
