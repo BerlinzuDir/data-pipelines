@@ -1,9 +1,8 @@
-FROM apache/airflow:2.2.1-python3.8
+FROM apache/airflow:2.2.4-python3.8
 
 USER root
 
 RUN apt-get update && \
-    apt-get upgrade -y && \
     apt-get install -y git
 
 RUN groupadd airflow && \
