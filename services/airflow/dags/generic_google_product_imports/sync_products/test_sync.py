@@ -19,11 +19,7 @@ def test_product_pipeline():
     responses.add_passthru("https://oauth2.googleapis.com/token")
     responses.add_passthru("https://sheets.googleapis.com")
     _setup_request_mocks(TRADER_ID, ACCESS_TOKEN)
-    product_pipeline(
-        "287",
-        "1HrA07_T95T6OyL-T012tGF4F6ZuaHalzFmSTtYAyjpo",
-        "http://s739086489.online.de/bzd-bilder",
-    )
+    product_pipeline(CONFIG)
     assert len(responses.calls) == 6
 
     assert json.loads(responses.calls[3].request.body) == {"data": {"articles": [{"itemNumber": "12", "active": "0"}]}}
@@ -76,6 +72,13 @@ def _mock_post_articles_endpoint(trader_id: Union[str, int]) -> None:
 
 
 TRADER_ID = "287"
+
+CONFIG = {
+    "trader_id": TRADER_ID,
+    "google_drive_id": "",
+    "google_sheets_id": "1HrA07_T95T6OyL-T012tGF4F6ZuaHalzFmSTtYAyjpo",
+    "ftp_endpoint": "http://s739086489.online.de/bzd-bilder",
+}
 
 ACCESS_TOKEN: bytes = (
     b'["{\\"access_token\\":\\"123456789\\",'
